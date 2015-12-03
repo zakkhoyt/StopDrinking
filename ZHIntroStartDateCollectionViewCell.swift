@@ -11,6 +11,20 @@ import UIKit
 
 class ZHIntroStartDateCollectionViewCell: ZHIntroCollectionViewCell {
 
+    override var user: ZHUserModel? {
+        didSet {
+            if user?.startDate == nil {
+                datePickerView.selectDate(NSDate())
+                datePickerView.scrollToToday(true)
+                nextButton.enabled = false
+            } else {
+                datePickerView.selectDate(user?.startDate)
+//                datePickerView.scrollToDate(user?.startDate, animated: true)
+                datePickerView.scrollToToday(true)
+                nextButton.enabled = true
+            }
+        }
+    }
     
     
     @IBOutlet weak var datePickerView: RSDFDatePickerView!
@@ -20,12 +34,6 @@ class ZHIntroStartDateCollectionViewCell: ZHIntroCollectionViewCell {
         datePickerView.dataSource = self
         datePickerView.delegate = self
 
-        if user?.startDate == nil {
-            nextButton.enabled = false
-        } else {
-            datePickerView.selectDate(user?.startDate)
-            nextButton.enabled = true
-        }
         
     }
 
@@ -39,17 +47,17 @@ class ZHIntroStartDateCollectionViewCell: ZHIntroCollectionViewCell {
 
 extension ZHIntroStartDateCollectionViewCell: RSDFDatePickerViewDataSource{
     func datePickerView(view: RSDFDatePickerView!, shouldMarkDate date: NSDate!) -> Bool {
-        let startDate = user?.startDate
-        if startDate == nil{
-            return false
+        if let startDate = user?.startDate {
+
+            // Only mark the progress days (zone)
+            if date.timeIntervalSince1970 >= startDate.timeIntervalSince1970 &&
+                date.timeIntervalSince1970 <= NSDate().timeIntervalSince1970 {
+                    return true
+            } else {
+                return false
+            }
         }
-        
-        if date.timeIntervalSince1970 >= user?.startDate!.timeIntervalSince1970 &&
-            date.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {
-                return true
-        } else {
-            return false
-        }
+        return false
     }
     
     func datePickerView(view: RSDFDatePickerView!, isCompletedAllTasksOnDate date: NSDate!) -> Bool {
@@ -69,14 +77,30 @@ extension ZHIntroStartDateCollectionViewCell: RSDFDatePickerViewDataSource{
 
 
 extension ZHIntroStartDateCollectionViewCell: RSDFDatePickerViewDelegate{
+
     func datePickerView(view: RSDFDatePickerView!, didSelectDate date: NSDate!) {
         print("selected date: " + date.description)
         user?.startDate = date
         nextButton.enabled = true
     }
+
+    func datePickerView(view: RSDFDatePickerView!, shouldHighlightDate date: NSDate!) -> Bool {
+        if date.timeIntervalSince1970 <= NSDate().timeIntervalSince1970 {
+            return true
+        } else {
+            // TODO: Popup label
+            return false
+        }
+    }
     
     func datePickerView(view: RSDFDatePickerView!, shouldSelectDate date: NSDate!) -> Bool {
-        return true;
+        if date.timeIntervalSince1970 <= NSDate().timeIntervalSince1970 {
+            return true
+        } else {
+            // TODO: Popup label
+            return false
+        }
+
     }
     
 

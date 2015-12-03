@@ -34,8 +34,14 @@ class ZHIntroViewController: UIViewController {
         
         UIApplication.sharedApplication().statusBarStyle = .Default
         
-        user = ZHUserModel()
-        user?.firstName = "Zakkus"
+        // See if there is a user in userdefaults
+        let storedUser = ZHUserDefaults.sharedInstance.currentUser()
+        if let storedUser = storedUser {
+            user = storedUser
+        } else {
+            user = ZHUserModel()
+            user?.firstName = "Zakkus"
+        }
 
         let nib0 = UINib(nibName: "ZHIntroWelcomeCollectionViewCell", bundle: NSBundle.mainBundle())
         collectionView.registerNib(nib0, forCellWithReuseIdentifier: "ZHIntroWelcomeCollectionViewCell")
@@ -155,6 +161,7 @@ extension ZHIntroViewController: UICollectionViewDataSource {
         case 7:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroRedditCollectionViewCell", forIndexPath: indexPath) as? ZHIntroRedditCollectionViewCell
             cell?.user = user
+            cell?.viewController = self
             cell?.nextHandler = ({ () -> Void in
                 self.scrollToNextPage()
             })

@@ -32,71 +32,43 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkk-pe-O1S">
-                                <rect key="frame" x="8" y="294" width="32" height="30"/>
+                                <rect key="frame" x="8" y="294" width="36" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="Later"/>
                                 <connections>
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Y5f-ph-95q"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="wXz-eQ-TFW">
-                                <rect key="frame" x="8" y="36" width="335" height="174"/>
+                                <rect key="frame" x="8" y="36" width="335" height="250"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">This app shows you content from Reddit's /r/stopdrinking subreddit. Signing in is not required but will allow you to reply and upvote. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fom-RB-cHD">
-                                <rect key="frame" x="8" y="256" width="335" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="-1" id="dDD-la-uCV"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9v-Ll-Fyg">
-                                <rect key="frame" x="8" y="218" width="335" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="-1" id="N94-HR-2VE"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxz-sA-UyB">
-                                <rect key="frame" x="8" y="218" width="335" height="68"/>
+                                <rect key="frame" x="154" y="156" width="42" height="20.5"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="68" id="EnY-Xd-uI5"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="fom-RB-cHD" secondAttribute="trailing" constant="8" id="22j-m5-ZRD"/>
-                            <constraint firstItem="bxz-sA-UyB" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="5RQ-eu-3L2"/>
                             <constraint firstItem="wXz-eQ-TFW" firstAttribute="top" secondItem="NBQ-o3-EL8" secondAttribute="bottom" constant="7.5" id="Fvn-uo-UYQ"/>
-                            <constraint firstItem="fom-RB-cHD" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="Gdj-XG-Tt4"/>
                             <constraint firstAttribute="bottom" secondItem="wkk-pe-O1S" secondAttribute="bottom" constant="8" id="HUj-ga-nLA"/>
-                            <constraint firstItem="wkk-pe-O1S" firstAttribute="top" secondItem="fom-RB-cHD" secondAttribute="bottom" constant="8" id="Hdk-9g-EPk"/>
-                            <constraint firstAttribute="trailing" secondItem="J9v-Ll-Fyg" secondAttribute="trailing" constant="8" id="Lcg-sr-qfX"/>
-                            <constraint firstItem="fom-RB-cHD" firstAttribute="top" secondItem="J9v-Ll-Fyg" secondAttribute="bottom" constant="8" id="OoK-hb-BCW"/>
                             <constraint firstItem="wkk-pe-O1S" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="RAr-SR-qIP"/>
-                            <constraint firstItem="wkk-pe-O1S" firstAttribute="top" secondItem="bxz-sA-UyB" secondAttribute="bottom" constant="8" id="U9V-zq-NMw"/>
-                            <constraint firstAttribute="trailing" secondItem="bxz-sA-UyB" secondAttribute="trailing" constant="8" id="b7G-JG-r5a"/>
-                            <constraint firstItem="J9v-Ll-Fyg" firstAttribute="top" secondItem="wXz-eQ-TFW" secondAttribute="bottom" constant="8" id="cdH-v6-W1A"/>
+                            <constraint firstItem="bxz-sA-UyB" firstAttribute="centerY" secondItem="bzy-Cg-cyd" secondAttribute="centerY" id="bD9-dG-VoQ"/>
                             <constraint firstItem="NBQ-o3-EL8" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="dqk-km-06C"/>
                             <constraint firstItem="NBQ-o3-EL8" firstAttribute="top" secondItem="bzy-Cg-cyd" secondAttribute="top" constant="8" id="f8i-Le-vFd"/>
                             <constraint firstAttribute="bottom" secondItem="aYu-1i-POV" secondAttribute="bottom" constant="8" id="fhb-c4-kCR"/>
                             <constraint firstItem="aYu-1i-POV" firstAttribute="centerX" secondItem="bzy-Cg-cyd" secondAttribute="centerX" id="jda-lL-lbh"/>
+                            <constraint firstItem="bxz-sA-UyB" firstAttribute="centerX" secondItem="bzy-Cg-cyd" secondAttribute="centerX" id="kY7-g3-vkT"/>
                             <constraint firstAttribute="trailing" secondItem="wXz-eQ-TFW" secondAttribute="trailing" constant="8" id="lAK-7t-Vab"/>
-                            <constraint firstItem="J9v-Ll-Fyg" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="qtU-KU-AgG"/>
+                            <constraint firstItem="wkk-pe-O1S" firstAttribute="top" secondItem="wXz-eQ-TFW" secondAttribute="bottom" constant="8" id="oQv-zt-81E"/>
                             <constraint firstAttribute="trailing" secondItem="NBQ-o3-EL8" secondAttribute="trailing" constant="8" id="sGy-nH-JlV"/>
                             <constraint firstItem="wXz-eQ-TFW" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="t2C-m3-4Yb"/>
                         </constraints>
@@ -116,10 +88,8 @@
             <connections>
                 <outlet property="errorLabel" destination="bxz-sA-UyB" id="Ex1-od-682"/>
                 <outlet property="nextButton" destination="wkk-pe-O1S" id="Xgu-z5-dLc"/>
-                <outlet property="passwordTextField" destination="fom-RB-cHD" id="ZMj-mf-RDb"/>
                 <outlet property="signInButton" destination="aYu-1i-POV" id="IrB-C6-bbs"/>
                 <outlet property="textView" destination="wXz-eQ-TFW" id="YoT-X4-46i"/>
-                <outlet property="usernameTextField" destination="J9v-Ll-Fyg" id="UDX-fW-lwl"/>
             </connections>
             <point key="canvasLocation" x="118.5" y="564"/>
         </collectionViewCell>
