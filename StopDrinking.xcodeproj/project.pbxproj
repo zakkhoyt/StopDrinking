@@ -46,6 +46,12 @@
 		C635D8151C1013F900616D3A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8141C1013F900616D3A /* TodayViewController.swift */; };
 		C635D8181C1013F900616D3A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D8161C1013F900616D3A /* MainInterface.storyboard */; };
 		C635D81C1C1013F900616D3A /* StopDrinkingToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C635D8101C1013F900616D3A /* StopDrinkingToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */; };
+		C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */; };
+		C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */; };
+		C69FC7361C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FC7341C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib */; };
+		C69FC7391C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */; };
+		C69FC73A1C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7381C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +143,12 @@
 		C635D8171C1013F900616D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		C635D8191C1013F900616D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C635D8211C10151A00616D3A /* StopDrinkingToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinkingToday.entitlements; sourceTree = "<group>"; };
+		C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reddit.storyboard; sourceTree = "<group>"; };
+		C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditThreadViewController.swift; sourceTree = "<group>"; };
+		C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditCommentTableViewCell.xib; sourceTree = "<group>"; };
+		C69FC7341C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditPostDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditCommentTableViewCell.swift; sourceTree = "<group>"; };
+		C69FC7381C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditPostDetailsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +299,7 @@
 			children = (
 				C635D7C11C0FB23C00616D3A /* Intro */,
 				C635D7F01C0FBDB100616D3A /* Home */,
+				C69FC7321C10E37C00A3E3E0 /* RedditThread */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -341,6 +354,7 @@
 				C635D7991C0EEA9B00616D3A /* LaunchScreen.storyboard */,
 				C635D7941C0EEA9B00616D3A /* Intro.storyboard */,
 				C635D7EC1C0FBAB400616D3A /* Main.storyboard */,
+				C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -350,6 +364,10 @@
 			children = (
 				C635D8071C10076800616D3A /* ZHAvatarView.swift */,
 				C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */,
+				C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */,
+				C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */,
+				C69FC7381C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift */,
+				C69FC7341C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -363,6 +381,14 @@
 				C635D8191C1013F900616D3A /* Info.plist */,
 			);
 			path = StopDrinkingToday;
+			sourceTree = "<group>";
+		};
+		C69FC7321C10E37C00A3E3E0 /* RedditThread */ = {
+			isa = PBXGroup;
+			children = (
+				C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */,
+			);
+			name = RedditThread;
 			sourceTree = "<group>";
 		};
 		CEC67ADF13500CC01298F9F0 /* Frameworks */ = {
@@ -509,6 +535,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69FC7361C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib in Resources */,
 				C635D7D91C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.xib in Resources */,
 				C635D7CD1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.xib in Resources */,
 				C635D7DD1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib in Resources */,
@@ -518,11 +545,13 @@
 				C635D7C71C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.xib in Resources */,
 				C635D7E11C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.xib in Resources */,
 				C635D7ED1C0FBAB400616D3A /* Main.storyboard in Resources */,
+				C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */,
 				C635D79B1C0EEA9B00616D3A /* LaunchScreen.storyboard in Resources */,
 				C635D7981C0EEA9B00616D3A /* Assets.xcassets in Resources */,
 				C635D7D51C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.xib in Resources */,
 				C635D7E51C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.xib in Resources */,
 				C635D7961C0EEA9B00616D3A /* Intro.storyboard in Resources */,
+				C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,11 +624,14 @@
 				C635D7DC1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.swift in Sources */,
 				C635D7D01C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.swift in Sources */,
 				C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */,
+				C69FC7391C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift in Sources */,
 				C635D7CC1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.swift in Sources */,
 				C635D7D41C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.swift in Sources */,
 				C635D7E81C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.swift in Sources */,
 				C635D7E01C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.swift in Sources */,
+				C69FC73A1C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift in Sources */,
 				C635D7E41C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.swift in Sources */,
+				C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */,
 				C635D7D81C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */,
 				C635D7BF1C0EEB6900616D3A /* ZHIntroViewController.swift in Sources */,
 				C635D8041C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift in Sources */,
@@ -923,6 +955,7 @@
 				C635D81F1C1013F900616D3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

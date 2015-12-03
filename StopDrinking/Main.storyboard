@@ -158,11 +158,20 @@
                     <connections>
                         <outlet property="tableView" destination="e5m-LE-clh" id="mSG-RY-13f"/>
                         <segue destination="l6w-Zc-hKA" kind="presentation" identifier="SegueMainToIntro" id="LFh-PP-nUk"/>
+                        <segue destination="yss-QP-ICL" kind="show" identifier="SegueMainToRedditThread" id="gDg-fY-B55"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65j-Rt-g8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1003" y="361"/>
+        </scene>
+        <!--Reddit-->
+        <scene sceneID="iyr-aa-e7J">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Reddit" id="yss-QP-ICL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PoO-CV-brR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1579.5" y="464"/>
         </scene>
         <!--Intro-->
         <scene sceneID="EMq-Di-w2t">

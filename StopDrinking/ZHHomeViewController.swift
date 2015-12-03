@@ -18,6 +18,7 @@ enum ZHHomeViewControllerTableViewSection: Int{
 
 class ZHHomeViewController: UIViewController {
     let SegueMainToIntro = "SegueMainToIntro"
+    let SegueMainToRedditThread = "SegueMainToRedditThread"
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -66,6 +67,9 @@ class ZHHomeViewController: UIViewController {
                     self.tableView.reloadData() 
                 })
             })
+        } else if segue.identifier == SegueMainToRedditThread {
+            let vc = segue.destinationViewController as? ZHRedditThreadViewController
+            vc?.post = sender as? RKLink
         }
     }
     
@@ -139,5 +143,8 @@ extension ZHHomeViewController: UITableViewDataSource {
 }
 
 extension ZHHomeViewController: UITableViewDelegate {
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let post = posts[indexPath.row]
+        performSegueWithIdentifier(SegueMainToRedditThread, sender: post)
+    }
 }
