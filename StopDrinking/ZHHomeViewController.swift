@@ -26,11 +26,12 @@ class ZHHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        let user = ZHUserDefaults.currentUser()
+        let user = ZHUserDefaults.sharedInstance.currentUser()
         if user == nil {
             performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
         } else {
@@ -45,13 +46,20 @@ class ZHHomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//        return .LightContent
+//    }
+    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueMainToIntro {
             let vc = segue.destinationViewController as? ZHIntroViewController
             vc?.introCompleteHandler = ({ (user: ZHUserModel) -> Void in
                 
-                ZHUserDefaults.setCurrentUser(user)
+                ZHUserDefaults.sharedInstance.setCurrentUser(user)
                 
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in
                     self.tableView.reloadData() 
@@ -115,7 +123,7 @@ extension ZHHomeViewController: UITableViewDataSource {
         switch indexPath.section {
         case ZHHomeViewControllerTableViewSection.Status.rawValue:
             let cell = tableView.dequeueReusableCellWithIdentifier("ZHHomeSummaryTableViewCell") as? ZHHomeSummaryTableViewCell
-            let user = ZHUserDefaults.currentUser()
+            let user = ZHUserDefaults.sharedInstance.currentUser()
             cell?.user = user
             return cell!
         case ZHHomeViewControllerTableViewSection.Reddit.rawValue:

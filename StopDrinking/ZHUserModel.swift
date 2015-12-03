@@ -59,10 +59,22 @@ class ZHUserModel: NSObject {
         let days = daysSinceStartDate()
         
         if let days = days {
-            return "\(days) without a drink"
+            return "\(days) since your last drink. (" + stringForStartDate() + ")"
         } else {
             return ""
         }
+    }
+    
+    func stringForStartDate() -> String {
+        if let startDate = startDate {
+            let formatString = "MMMM dd, YYYY"
+            let formatter = NSDateFormatter()
+            formatter.timeZone = NSTimeZone.localTimeZone()
+            formatter.dateFormat = formatString
+            let dateString = formatter.stringFromDate(startDate)
+            return dateString
+        }
+        return ""
     }
     
     func stringForDrinksMissed() -> String {
@@ -70,7 +82,7 @@ class ZHUserModel: NSObject {
         if let days = days {
             if let drinksPerDay = drinksPerDay {
                 let drinks = drinksPerDay * days
-                return "Passed on \(drinks)"
+                return "Passed on \(drinks) drinks"
             }
         }
         return ""

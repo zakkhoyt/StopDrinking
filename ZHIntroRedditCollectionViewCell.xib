@@ -65,11 +65,22 @@
                                     <outlet property="delegate" destination="-1" id="N94-HR-2VE"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxz-sA-UyB">
+                                <rect key="frame" x="8" y="218" width="335" height="68"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="EnY-Xd-uI5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fom-RB-cHD" secondAttribute="trailing" constant="8" id="22j-m5-ZRD"/>
+                            <constraint firstItem="bxz-sA-UyB" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="5RQ-eu-3L2"/>
                             <constraint firstItem="wXz-eQ-TFW" firstAttribute="top" secondItem="NBQ-o3-EL8" secondAttribute="bottom" constant="7.5" id="Fvn-uo-UYQ"/>
                             <constraint firstItem="fom-RB-cHD" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="Gdj-XG-Tt4"/>
                             <constraint firstAttribute="bottom" secondItem="wkk-pe-O1S" secondAttribute="bottom" constant="8" id="HUj-ga-nLA"/>
@@ -77,6 +88,8 @@
                             <constraint firstAttribute="trailing" secondItem="J9v-Ll-Fyg" secondAttribute="trailing" constant="8" id="Lcg-sr-qfX"/>
                             <constraint firstItem="fom-RB-cHD" firstAttribute="top" secondItem="J9v-Ll-Fyg" secondAttribute="bottom" constant="8" id="OoK-hb-BCW"/>
                             <constraint firstItem="wkk-pe-O1S" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="RAr-SR-qIP"/>
+                            <constraint firstItem="wkk-pe-O1S" firstAttribute="top" secondItem="bxz-sA-UyB" secondAttribute="bottom" constant="8" id="U9V-zq-NMw"/>
+                            <constraint firstAttribute="trailing" secondItem="bxz-sA-UyB" secondAttribute="trailing" constant="8" id="b7G-JG-r5a"/>
                             <constraint firstItem="J9v-Ll-Fyg" firstAttribute="top" secondItem="wXz-eQ-TFW" secondAttribute="bottom" constant="8" id="cdH-v6-W1A"/>
                             <constraint firstItem="NBQ-o3-EL8" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="dqk-km-06C"/>
                             <constraint firstItem="NBQ-o3-EL8" firstAttribute="top" secondItem="bzy-Cg-cyd" secondAttribute="top" constant="8" id="f8i-Le-vFd"/>
@@ -101,6 +114,7 @@
             </constraints>
             <size key="customSize" width="351" height="332"/>
             <connections>
+                <outlet property="errorLabel" destination="bxz-sA-UyB" id="Ex1-od-682"/>
                 <outlet property="nextButton" destination="wkk-pe-O1S" id="Xgu-z5-dLc"/>
                 <outlet property="passwordTextField" destination="fom-RB-cHD" id="ZMj-mf-RDb"/>
                 <outlet property="signInButton" destination="aYu-1i-POV" id="IrB-C6-bbs"/>

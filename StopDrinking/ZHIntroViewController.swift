@@ -32,6 +32,8 @@ class ZHIntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.sharedApplication().statusBarStyle = .Default
+        
         user = ZHUserModel()
         user?.firstName = "Zakkus"
 

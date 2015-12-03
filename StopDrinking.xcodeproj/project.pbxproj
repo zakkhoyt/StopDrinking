@@ -42,6 +42,10 @@
 		C635D8041C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8031C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift */; };
 		C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8071C10076800616D3A /* ZHAvatarView.swift */; };
 		C635D80B1C100AFF00616D3A /* ZHAvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */; };
+		C635D8121C1013F900616D3A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C635D8111C1013F900616D3A /* NotificationCenter.framework */; };
+		C635D8151C1013F900616D3A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8141C1013F900616D3A /* TodayViewController.swift */; };
+		C635D8181C1013F900616D3A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D8161C1013F900616D3A /* MainInterface.storyboard */; };
+		C635D81C1C1013F900616D3A /* StopDrinkingToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C635D8101C1013F900616D3A /* StopDrinkingToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +63,28 @@
 			remoteGlobalIDString = C635D78C1C0EEA9B00616D3A;
 			remoteInfo = StopDrinking;
 		};
+		C635D81A1C1013F900616D3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C635D7851C0EEA9B00616D3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C635D80F1C1013F900616D3A;
+			remoteInfo = StopDrinkingToday;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C635D8201C1013F900616D3A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C635D81C1C1013F900616D3A /* StopDrinkingToday.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1B51889755BA23C663064996 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +131,12 @@
 		C635D8031C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHomeRedditTableViewCell.swift; sourceTree = "<group>"; };
 		C635D8071C10076800616D3A /* ZHAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHAvatarView.swift; sourceTree = "<group>"; };
 		C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHAvatarView.xib; sourceTree = "<group>"; };
+		C635D8101C1013F900616D3A /* StopDrinkingToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StopDrinkingToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C635D8111C1013F900616D3A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C635D8141C1013F900616D3A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C635D8171C1013F900616D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C635D8191C1013F900616D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C635D8211C10151A00616D3A /* StopDrinkingToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinkingToday.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +162,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C635D80D1C1013F900616D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C635D8121C1013F900616D3A /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -149,6 +188,7 @@
 				C635D78F1C0EEA9B00616D3A /* StopDrinking */,
 				C635D7A41C0EEA9B00616D3A /* StopDrinkingTests */,
 				C635D7AF1C0EEA9B00616D3A /* StopDrinkingUITests */,
+				C635D8131C1013F900616D3A /* StopDrinkingToday */,
 				C635D78E1C0EEA9B00616D3A /* Products */,
 				670B06C0CC73E30F96A15C10 /* Pods */,
 				CEC67ADF13500CC01298F9F0 /* Frameworks */,
@@ -161,6 +201,7 @@
 				C635D78D1C0EEA9B00616D3A /* StopDrinking.app */,
 				C635D7A11C0EEA9B00616D3A /* StopDrinkingTests.xctest */,
 				C635D7AC1C0EEA9B00616D3A /* StopDrinkingUITests.xctest */,
+				C635D8101C1013F900616D3A /* StopDrinkingToday.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,10 +354,22 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		C635D8131C1013F900616D3A /* StopDrinkingToday */ = {
+			isa = PBXGroup;
+			children = (
+				C635D8211C10151A00616D3A /* StopDrinkingToday.entitlements */,
+				C635D8141C1013F900616D3A /* TodayViewController.swift */,
+				C635D8161C1013F900616D3A /* MainInterface.storyboard */,
+				C635D8191C1013F900616D3A /* Info.plist */,
+			);
+			path = StopDrinkingToday;
+			sourceTree = "<group>";
+		};
 		CEC67ADF13500CC01298F9F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1B51889755BA23C663064996 /* libPods.a */,
+				C635D8111C1013F900616D3A /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -333,10 +386,12 @@
 				C635D78A1C0EEA9B00616D3A /* Frameworks */,
 				C635D78B1C0EEA9B00616D3A /* Resources */,
 				EBC719AEEB4A649001F564A9 /* Copy Pods Resources */,
+				C635D8201C1013F900616D3A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C635D81B1C1013F900616D3A /* PBXTargetDependency */,
 			);
 			name = StopDrinking;
 			productName = StopDrinking;
@@ -379,6 +434,23 @@
 			productReference = C635D7AC1C0EEA9B00616D3A /* StopDrinkingUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		C635D80F1C1013F900616D3A /* StopDrinkingToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C635D81D1C1013F900616D3A /* Build configuration list for PBXNativeTarget "StopDrinkingToday" */;
+			buildPhases = (
+				C635D80C1C1013F900616D3A /* Sources */,
+				C635D80D1C1013F900616D3A /* Frameworks */,
+				C635D80E1C1013F900616D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StopDrinkingToday;
+			productName = StopDrinkingToday;
+			productReference = C635D8101C1013F900616D3A /* StopDrinkingToday.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -400,6 +472,15 @@
 						CreatedOnToolsVersion = 7.1.1;
 						TestTargetID = C635D78C1C0EEA9B00616D3A;
 					};
+					C635D80F1C1013F900616D3A = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = J7U74N85YF;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = C635D7881C0EEA9B00616D3A /* Build configuration list for PBXProject "StopDrinking" */;
@@ -418,6 +499,7 @@
 				C635D78C1C0EEA9B00616D3A /* StopDrinking */,
 				C635D7A01C0EEA9B00616D3A /* StopDrinkingTests */,
 				C635D7AB1C0EEA9B00616D3A /* StopDrinkingUITests */,
+				C635D80F1C1013F900616D3A /* StopDrinkingToday */,
 			);
 		};
 /* End PBXProject section */
@@ -455,6 +537,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C635D80E1C1013F900616D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C635D8181C1013F900616D3A /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +625,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C635D80C1C1013F900616D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C635D8151C1013F900616D3A /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -547,6 +645,11 @@
 			isa = PBXTargetDependency;
 			target = C635D78C1C0EEA9B00616D3A /* StopDrinking */;
 			targetProxy = C635D7AD1C0EEA9B00616D3A /* PBXContainerItemProxy */;
+		};
+		C635D81B1C1013F900616D3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C635D80F1C1013F900616D3A /* StopDrinkingToday */;
+			targetProxy = C635D81A1C1013F900616D3A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -565,6 +668,14 @@
 				C635D79A1C0EEA9B00616D3A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C635D8161C1013F900616D3A /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C635D8171C1013F900616D3A /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -659,6 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = StopDrinking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.StopDrinking;
@@ -674,6 +786,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = StopDrinking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.StopDrinking;
@@ -730,6 +843,40 @@
 			};
 			name = Release;
 		};
+		C635D81E1C1013F900616D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_ENTITLEMENTS = StopDrinkingToday/StopDrinkingToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = StopDrinkingToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.StopDrinking.StopDrinkingToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C635D81F1C1013F900616D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_ENTITLEMENTS = StopDrinkingToday/StopDrinkingToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = StopDrinkingToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.StopDrinking.StopDrinkingToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -768,6 +915,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C635D81D1C1013F900616D3A /* Build configuration list for PBXNativeTarget "StopDrinkingToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C635D81E1C1013F900616D3A /* Debug */,
+				C635D81F1C1013F900616D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
