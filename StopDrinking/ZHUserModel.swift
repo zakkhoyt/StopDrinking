@@ -82,7 +82,7 @@ class ZHUserModel: NSObject {
         if let days = days {
             if let drinksPerDay = drinksPerDay {
                 let drinks = drinksPerDay * days
-                return "Passed on \(drinks) drinks"
+                return "You've passed on \(drinks) drinks"
             }
         }
         return ""
@@ -93,7 +93,7 @@ class ZHUserModel: NSObject {
         if let days = days {
             if let moneyPerDay = moneyPerDay {
                 let money = moneyPerDay * days
-                return "Saved $\(money)"
+                return "You've saved $\(money)"
             }
         }
         return ""
@@ -105,7 +105,8 @@ class ZHUserModel: NSObject {
             if let caloriesPerDrink = caloriesPerDrink {
                 if let drinksPerDay = drinksPerDay {
                     let calories = days * drinksPerDay * caloriesPerDrink
-                    return "Not consumed $\(calories)"
+                    let fat = calories / 3500
+                    return "You've skipped drinking \(calories) Calories or \(fat) lbs of fat"
                 }
             }
         }
