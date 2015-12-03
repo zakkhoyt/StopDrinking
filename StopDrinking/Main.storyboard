@@ -1,7 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sv3-Wy-cBV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="L0r-xv-T4C">
+            <objects>
+                <viewController id="zvb-od-Acy" customClass="ZHHomeViewController" customModule="StopDrinking" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C7z-7T-Efe"/>
+                        <viewControllerLayoutGuide type="bottom" id="MAd-cl-v7P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fI9-AN-CYy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aAj-0p-dfg">
+                        <barButtonItem key="leftBarButtonItem" title="Get Help" id="XQd-vh-uXV"/>
+                        <barButtonItem key="rightBarButtonItem" title="You" id="w2K-SP-pap">
+                            <connections>
+                                <action selector="introButtonTouchUpInside:" destination="zvb-od-Acy" id="cBm-Jn-Ydj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="l6w-Zc-hKA" kind="presentation" identifier="SegueMainToIntro" id="LFh-PP-nUk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65j-Rt-g8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="361"/>
+        </scene>
+        <!--Intro-->
+        <scene sceneID="EMq-Di-w2t">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Intro" id="l6w-Zc-hKA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BTv-wW-USy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1527.5" y="361"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ld3-pf-1yz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sv3-Wy-cBV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eVx-uZ-osk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zvb-od-Acy" kind="relationship" relationship="rootViewController" id="qDi-wL-CIu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUa-JI-4hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="191" y="361"/>
+        </scene>
+    </scenes>
 </document>

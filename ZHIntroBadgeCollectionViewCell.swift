@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZHIntroBadgeCollectionViewCell: UICollectionViewCell {
+class ZHIntroBadgeCollectionViewCell: ZHIntroCollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

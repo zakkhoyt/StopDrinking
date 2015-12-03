@@ -1,18 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZHIntroWelcomeCollectionViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZHIntroWelcomeCollectionViewCell" id="gTV-IL-0wX" customClass="ZHIntroWelcomeCollectionViewCell" customModule="StopDrinking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="245" height="299"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="245" height="299"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQI-i9-wV1">
+                        <rect key="frame" x="0.0" y="0.0" width="245" height="299"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G9-0U-1V2">
+                                <rect key="frame" x="8" y="8" width="229" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1B-wx-Zgp">
+                                <rect key="frame" x="106.5" y="261" width="32" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qku-NQ-cvJ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Led-hn-jHm">
+                                <rect key="frame" x="8" y="36.5" width="229" height="216.5"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u1B-wx-Zgp" firstAttribute="top" secondItem="Led-hn-jHm" secondAttribute="bottom" constant="8" id="70A-pj-klP"/>
+                            <constraint firstItem="1G9-0U-1V2" firstAttribute="top" secondItem="GQI-i9-wV1" secondAttribute="top" constant="8" id="DWy-vc-kB9"/>
+                            <constraint firstItem="Led-hn-jHm" firstAttribute="leading" secondItem="GQI-i9-wV1" secondAttribute="leading" constant="8" id="Egv-1w-O9e"/>
+                            <constraint firstAttribute="trailing" secondItem="1G9-0U-1V2" secondAttribute="trailing" constant="8" id="H6E-Mi-vjC"/>
+                            <constraint firstItem="u1B-wx-Zgp" firstAttribute="centerX" secondItem="GQI-i9-wV1" secondAttribute="centerX" id="Ifb-I0-Phh"/>
+                            <constraint firstItem="Led-hn-jHm" firstAttribute="top" secondItem="1G9-0U-1V2" secondAttribute="bottom" constant="8" id="RtI-7m-aTT"/>
+                            <constraint firstItem="1G9-0U-1V2" firstAttribute="leading" secondItem="GQI-i9-wV1" secondAttribute="leading" constant="8" id="ecq-dX-317"/>
+                            <constraint firstAttribute="bottom" secondItem="u1B-wx-Zgp" secondAttribute="bottom" constant="8" id="mzh-tz-uv0"/>
+                            <constraint firstAttribute="trailing" secondItem="Led-hn-jHm" secondAttribute="trailing" constant="8" id="yIu-uO-QgY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <animations/>
+            <constraints>
+                <constraint firstItem="GQI-i9-wV1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0VX-ur-QMA"/>
+                <constraint firstItem="GQI-i9-wV1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Vza-in-k1i"/>
+                <constraint firstAttribute="bottom" secondItem="GQI-i9-wV1" secondAttribute="bottom" id="ohJ-vs-dxX"/>
+                <constraint firstAttribute="trailing" secondItem="GQI-i9-wV1" secondAttribute="trailing" id="tck-BW-Zuw"/>
+            </constraints>
+            <size key="customSize" width="245" height="299"/>
+            <point key="canvasLocation" x="163.5" y="361.5"/>
         </collectionViewCell>
     </objects>
 </document>

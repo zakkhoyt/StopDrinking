@@ -1,18 +1,76 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZHIntroCaloriesPerDayCollectionViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZHIntroCaloriesPerDayCollectionViewCell" id="gTV-IL-0wX" customClass="ZHIntroCaloriesPerDayCollectionViewCell" customModule="StopDrinking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="408"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="323" height="408"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNA-8q-ATo">
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="408"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories per drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPN-to-fkP">
+                                <rect key="frame" x="8" y="8" width="307" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W40-op-jkP">
+                                <rect key="frame" x="145.5" y="370" width="32" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1W4-rf-kp3"/>
+                                </connections>
+                            </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lvD-ey-5Qb">
+                                <rect key="frame" x="114.5" y="332.5" width="94" height="29"/>
+                                <animations/>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U8-kv-vh8">
+                                <rect key="frame" x="156.5" y="304" width="10.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W40-op-jkP" firstAttribute="centerX" secondItem="vNA-8q-ATo" secondAttribute="centerX" id="28O-jB-it8"/>
+                            <constraint firstAttribute="trailing" secondItem="tPN-to-fkP" secondAttribute="trailing" constant="8" id="3EV-Ry-k5g"/>
+                            <constraint firstItem="tPN-to-fkP" firstAttribute="top" secondItem="vNA-8q-ATo" secondAttribute="top" constant="8" id="97h-3w-CGE"/>
+                            <constraint firstItem="lvD-ey-5Qb" firstAttribute="centerX" secondItem="vNA-8q-ATo" secondAttribute="centerX" id="MxL-dF-Ftm"/>
+                            <constraint firstAttribute="bottom" secondItem="W40-op-jkP" secondAttribute="bottom" constant="8" id="Rl2-7b-gO2"/>
+                            <constraint firstItem="lvD-ey-5Qb" firstAttribute="top" secondItem="3U8-kv-vh8" secondAttribute="bottom" constant="8" id="WgU-IY-PJT"/>
+                            <constraint firstItem="W40-op-jkP" firstAttribute="top" secondItem="lvD-ey-5Qb" secondAttribute="bottom" constant="8.5" id="fFy-wU-J6A"/>
+                            <constraint firstItem="3U8-kv-vh8" firstAttribute="centerX" secondItem="vNA-8q-ATo" secondAttribute="centerX" id="gFF-Aj-DUr"/>
+                            <constraint firstItem="lvD-ey-5Qb" firstAttribute="top" secondItem="3U8-kv-vh8" secondAttribute="bottom" constant="8" id="x9u-6m-0GU"/>
+                            <constraint firstItem="tPN-to-fkP" firstAttribute="leading" secondItem="vNA-8q-ATo" secondAttribute="leading" constant="8" id="xoz-Pq-X4x"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <animations/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="vNA-8q-ATo" secondAttribute="bottom" id="ELq-aU-hvP"/>
+                <constraint firstItem="vNA-8q-ATo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="M1C-JH-5A5"/>
+                <constraint firstAttribute="trailing" secondItem="vNA-8q-ATo" secondAttribute="trailing" id="evD-cN-0a1"/>
+                <constraint firstItem="vNA-8q-ATo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xdI-fw-wBx"/>
+            </constraints>
+            <size key="customSize" width="323" height="408"/>
+            <point key="canvasLocation" x="132.5" y="408"/>
         </collectionViewCell>
     </objects>
 </document>

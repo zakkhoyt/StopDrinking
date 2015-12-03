@@ -9,5 +9,13 @@
 import UIKit
 
 class ZHIntroCollectionViewCell: UICollectionViewCell {
+    var nextHandler:(()->Void)!
+ 
     
+    @IBAction func nextButtonTouchUpInside(sender: AnyObject) {
+        if nextHandler != nil {
+            nextHandler()
+        }
+    }
+
 }

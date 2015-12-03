@@ -1,0 +1,53 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Mantle (1.5.6):
+    - Mantle/extobjc (= 1.5.6)
+  - Mantle/extobjc (1.5.6)
+  - MBProgressHUD (0.9.1)
+  - Onboard (2.1.7)
+  - Ophiuchus (1.0.3)
+  - RATreeView (1.0.4)
+  - RedditKit (1.3.0):
+    - AFNetworking (~> 2.3)
+    - Mantle (~> 1.5)
+  - RSDayFlow (1.3.0)
+
+DEPENDENCIES:
+  - MBProgressHUD (~> 0.9.1)
+  - Onboard
+  - Ophiuchus (~> 1.0.3)
+  - RATreeView (~> 1.0)
+  - RedditKit (~> 1.3)
+  - RSDayFlow
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Mantle: a197db93e0f1e36194b1fdbc078219a8492eaef2
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  Onboard: 87648089e1b76d13b4f5bf8f7a1cdb144092f0af
+  Ophiuchus: 486de58f85284047835a26e23ac9fe4fe2255391
+  RATreeView: 1236f106710195646c32dc0aa90feeaadf505a3b
+  RedditKit: b6bccd8f65cc9b4a79befa177e21432d03d946a8
+  RSDayFlow: d9dbd8a7f0d57019a482220e5f3ed9d836fdb397
+
+COCOAPODS: 0.38.2

@@ -1,18 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZHIntroRedditCollectionViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZHIntroRedditCollectionViewCell" id="gTV-IL-0wX" customClass="ZHIntroRedditCollectionViewCell" customModule="StopDrinking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="332"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="351" height="332"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzy-Cg-cyd">
+                        <rect key="frame" x="0.0" y="0.0" width="351" height="332"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reddit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBQ-o3-EL8">
+                                <rect key="frame" x="8" y="8" width="335" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYu-1i-POV">
+                                <rect key="frame" x="152" y="294" width="47" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="opN-Tn-gA2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkk-pe-O1S">
+                                <rect key="frame" x="157.5" y="256" width="36" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Later"/>
+                                <connections>
+                                    <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Y5f-ph-95q"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wXz-eQ-TFW">
+                                <rect key="frame" x="8" y="36" width="335" height="212"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wXz-eQ-TFW" firstAttribute="top" secondItem="NBQ-o3-EL8" secondAttribute="bottom" constant="7.5" id="2ip-mG-0Sv"/>
+                            <constraint firstItem="wXz-eQ-TFW" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="3po-8f-iPa"/>
+                            <constraint firstItem="aYu-1i-POV" firstAttribute="top" secondItem="wkk-pe-O1S" secondAttribute="bottom" constant="8" id="95T-FV-vtk"/>
+                            <constraint firstAttribute="bottom" secondItem="aYu-1i-POV" secondAttribute="bottom" constant="8" id="M0j-6L-ddK"/>
+                            <constraint firstItem="wkk-pe-O1S" firstAttribute="centerX" secondItem="bzy-Cg-cyd" secondAttribute="centerX" id="OzJ-st-9Mu"/>
+                            <constraint firstItem="aYu-1i-POV" firstAttribute="centerX" secondItem="bzy-Cg-cyd" secondAttribute="centerX" id="Q1g-GE-Wge"/>
+                            <constraint firstAttribute="trailing" secondItem="wXz-eQ-TFW" secondAttribute="trailing" constant="8" id="YbN-ed-PXo"/>
+                            <constraint firstItem="wkk-pe-O1S" firstAttribute="top" secondItem="wXz-eQ-TFW" secondAttribute="bottom" constant="8" id="bmX-xJ-3aG"/>
+                            <constraint firstItem="NBQ-o3-EL8" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="dqk-km-06C"/>
+                            <constraint firstItem="NBQ-o3-EL8" firstAttribute="top" secondItem="bzy-Cg-cyd" secondAttribute="top" constant="8" id="f8i-Le-vFd"/>
+                            <constraint firstAttribute="trailing" secondItem="NBQ-o3-EL8" secondAttribute="trailing" constant="8" id="sGy-nH-JlV"/>
+                            <constraint firstItem="aYu-1i-POV" firstAttribute="top" secondItem="wkk-pe-O1S" secondAttribute="bottom" constant="8" id="wfT-zx-KkJ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <animations/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bzy-Cg-cyd" secondAttribute="bottom" id="3Yb-Ot-89l"/>
+                <constraint firstAttribute="trailing" secondItem="bzy-Cg-cyd" secondAttribute="trailing" id="Rl2-6i-7Bh"/>
+                <constraint firstItem="bzy-Cg-cyd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a0Q-bI-QAE"/>
+                <constraint firstItem="bzy-Cg-cyd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wCX-bb-HU4"/>
+            </constraints>
+            <size key="customSize" width="351" height="332"/>
+            <point key="canvasLocation" x="118.5" y="564"/>
         </collectionViewCell>
     </objects>
 </document>

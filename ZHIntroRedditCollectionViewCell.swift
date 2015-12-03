@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZHIntroRedditCollectionViewCell: UICollectionViewCell {
+class ZHIntroRedditCollectionViewCell: ZHIntroCollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

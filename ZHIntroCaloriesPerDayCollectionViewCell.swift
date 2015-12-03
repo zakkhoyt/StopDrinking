@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZHIntroCaloriesPerDayCollectionViewCell: UICollectionViewCell {
+class ZHIntroCaloriesPerDayCollectionViewCell: ZHIntroCollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

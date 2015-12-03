@@ -1,18 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ZHIntroDrinksPerDayCollectionViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZHIntroDrinksPerDayCollectionViewCell" id="gTV-IL-0wX" customClass="ZHIntroDrinksPerDayCollectionViewCell" customModule="StopDrinking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="284" height="538"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="284" height="538"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDw-2v-xNh">
+                        <rect key="frame" x="0.0" y="0.0" width="284" height="538"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drinks per Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-1q-gF8">
+                                <rect key="frame" x="8" y="8" width="268" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7z-kZ-gRD">
+                                <rect key="frame" x="126" y="500" width="32" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="aYk-ep-jfu"/>
+                                </connections>
+                            </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-aA-zff">
+                                <rect key="frame" x="95" y="462.5" width="94" height="29"/>
+                                <animations/>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEg-Ba-Cds">
+                                <rect key="frame" x="137" y="434" width="10.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H7z-kZ-gRD" firstAttribute="top" secondItem="ZUc-aA-zff" secondAttribute="bottom" constant="8.5" id="2P5-EF-VPe"/>
+                            <constraint firstAttribute="bottom" secondItem="H7z-kZ-gRD" secondAttribute="bottom" constant="8" id="6TH-XL-sgh"/>
+                            <constraint firstItem="ZUc-aA-zff" firstAttribute="centerX" secondItem="GDw-2v-xNh" secondAttribute="centerX" id="9qF-Xn-iEE"/>
+                            <constraint firstItem="mbg-1q-gF8" firstAttribute="leading" secondItem="GDw-2v-xNh" secondAttribute="leading" constant="8" id="D9Q-Ah-968"/>
+                            <constraint firstAttribute="trailing" secondItem="mbg-1q-gF8" secondAttribute="trailing" constant="8" id="Efr-Ca-8zh"/>
+                            <constraint firstItem="H7z-kZ-gRD" firstAttribute="centerX" secondItem="GDw-2v-xNh" secondAttribute="centerX" id="LSQ-Je-zHp"/>
+                            <constraint firstItem="ZUc-aA-zff" firstAttribute="top" secondItem="HEg-Ba-Cds" secondAttribute="bottom" constant="8" id="eIa-JB-pdn"/>
+                            <constraint firstItem="HEg-Ba-Cds" firstAttribute="centerX" secondItem="GDw-2v-xNh" secondAttribute="centerX" id="h4I-4u-DGO"/>
+                            <constraint firstItem="mbg-1q-gF8" firstAttribute="top" secondItem="GDw-2v-xNh" secondAttribute="top" constant="8" id="pLZ-JO-ZVU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <animations/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="GDw-2v-xNh" secondAttribute="bottom" id="5dt-aU-dxf"/>
+                <constraint firstItem="GDw-2v-xNh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IrX-7V-8xy"/>
+                <constraint firstAttribute="trailing" secondItem="GDw-2v-xNh" secondAttribute="trailing" id="VSU-Ap-1VM"/>
+                <constraint firstItem="GDw-2v-xNh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="w9S-iR-gG8"/>
+            </constraints>
+            <size key="customSize" width="284" height="538"/>
+            <point key="canvasLocation" x="146" y="385"/>
         </collectionViewCell>
     </objects>
 </document>

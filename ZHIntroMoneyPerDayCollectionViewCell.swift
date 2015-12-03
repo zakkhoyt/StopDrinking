@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZHIntroMoneyPerDayCollectionViewCell: UICollectionViewCell {
+class ZHIntroMoneyPerDayCollectionViewCell: ZHIntroCollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

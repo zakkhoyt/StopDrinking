@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ZHIntroWelcomeCollectionViewCell: UICollectionViewCell {
+class ZHIntroWelcomeCollectionViewCell: ZHIntroCollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    class func cellFromNib() -> ZHIntroWelcomeCollectionViewCell {
+        let cell = NSBundle.mainBundle().loadNibNamed("ZHIntroWelcomeCollectionViewCell", owner: self, options: nil).first
+        return cell as! ZHIntroWelcomeCollectionViewCell
     }
 
 }

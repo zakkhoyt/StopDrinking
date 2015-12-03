@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ZHIntroStartDateCollectionViewCell: UICollectionViewCell {
+class ZHIntroStartDateCollectionViewCell: ZHIntroCollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+
+    class func cellFromNib() -> ZHIntroStartDateCollectionViewCell {
+        let cell = NSBundle.mainBundle().loadNibNamed("ZHIntroStartDateCollectionViewCell", owner: self, options: nil).first
+        return cell as! ZHIntroStartDateCollectionViewCell
     }
 
 }
