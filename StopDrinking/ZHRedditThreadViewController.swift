@@ -25,10 +25,15 @@ class ZHRedditThreadViewController: UIViewController {
         super.viewDidLoad()
         
         UIApplication.sharedApplication().statusBarHidden = false
-        
+        treeView.rowsCollapsingAnimation = RATreeViewRowAnimationTop
+        treeView.rowsExpandingAnimation = RATreeViewRowAnimationTop
+        treeView.expandsChildRowsWhenRowExpands = true
+        treeView.collapsesChildRowsWhenRowCollapses = true
         treeView.dataSource = self;
         treeView.delegate = self;
         treeView.separatorStyle = RATreeViewCellSeparatorStyleNone
+        treeView.backgroundColor = UIColor.darkGrayColor()
+        treeView.separatorColor = UIColor.darkGrayColor()
         
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         RKClient.sharedClient().commentsForLink(post, completion: { (comments, pagination, error) -> Void in
@@ -96,12 +101,13 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
     
     func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
         if item == nil {
-            if index == 0 {
+            if index == ZHRedditThreadViewControllerSection.Post.rawValue {
                 return post
             } else {
                 return comments![index-1]
             }
         } else {
+
             let comment = item as! RKComment?
             return comment!.replies[index]
         }
@@ -115,15 +121,33 @@ extension ZHRedditThreadViewController: RATreeViewDelegate {
 //    }
 //    
 //    
-//    - (NSInteger)treeView:(RATreeView *)treeView indentationLevelForRowForItem:(id)item;
     
     func treeView(treeView: RATreeView!, willExpandRowForItem item: AnyObject!) {
+//        treeView.alwaysBounceHorizontal = false
+//        treeView.scrollEnabled = false
         let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
         cell.expanded = true
     }
     
     func treeView(treeView: RATreeView!, willCollapseRowForItem item: AnyObject!) {
+//        treeView.alwaysBounceHorizontal = false
+//        treeView.scrollEnabled = false
+
         let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
         cell.expanded = false
     }
+    
+    
+    func treeView(treeView: RATreeView!, didCollapseRowForItem item: AnyObject!) {
+//        treeView.alwaysBounceHorizontal = true
+//        treeView.scrollEnabled = true
+        
+    }
+    
+    func treeView(treeView: RATreeView!, didExpandRowForItem item: AnyObject!) {
+//        treeView.alwaysBounceHorizontal = true
+//        treeView.scrollEnabled = true
+
+    }
+
 }
