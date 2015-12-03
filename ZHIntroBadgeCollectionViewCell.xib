@@ -16,14 +16,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rt-lj-ZqD">
                         <rect key="frame" x="0.0" y="0.0" width="342" height="338"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEQ-uN-Mqx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEQ-uN-Mqx">
                                 <rect key="frame" x="8" y="8" width="326" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXQ-3M-fDP">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXQ-3M-fDP">
                                 <rect key="frame" x="155" y="300" width="32" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Next"/>
@@ -31,8 +31,8 @@
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bha-AD-PUr"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P7A-4c-zEs">
-                                <rect key="frame" x="0.0" y="36.5" width="342" height="255.5"/>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="badge" translatesAutoresizingMaskIntoConstraints="NO" id="P7A-4c-zEs">
+                                <rect key="frame" x="0.0" y="36" width="342" height="255.5"/>
                                 <animations/>
                             </imageView>
                         </subviews>
@@ -62,7 +62,13 @@
                 <constraint firstItem="6Rt-lj-ZqD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xmQ-fJ-75e"/>
             </constraints>
             <size key="customSize" width="342" height="338"/>
+            <connections>
+                <outlet property="nextButton" destination="QXQ-3M-fDP" id="BM1-Am-gds"/>
+            </connections>
             <point key="canvasLocation" x="123" y="567"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="badge" width="680" height="205"/>
+    </resources>
 </document>

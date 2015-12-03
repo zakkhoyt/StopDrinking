@@ -10,9 +10,30 @@ import UIKit
 
 class ZHIntroCaloriesPerDayCollectionViewCell: ZHIntroCollectionViewCell {
 
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var textView: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        if user?.caloriesPerDrink == nil {
+            nextButton.enabled = false
+            updateLabel(UInt(stepper.value))
+        } else {
+            updateLabel(UInt((user?.caloriesPerDrink!)!))
+            stepper.value = Double((user?.caloriesPerDrink!)!)
+            nextButton.enabled = true
+        }
+    }
+    
+    @IBAction func stepperValueChanged(sender: UIStepper) {
+        updateLabel(UInt(sender.value))
+        nextButton.enabled = sender.value > 0 ? true : false
+    }
+    
+    func updateLabel(value: UInt) {
+        label.text = "\(value) Calories"
+        user?.caloriesPerDrink = value
     }
 
 }

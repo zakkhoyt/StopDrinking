@@ -16,8 +16,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utN-bQ-1Dr">
                         <rect key="frame" x="0.0" y="0.0" width="322" height="369"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money per day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-mD-hFE">
-                                <rect key="frame" x="8" y="8" width="306" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money per day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-mD-hFE">
+                                <rect key="frame" x="8" y="8" width="306" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -34,6 +34,9 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Wmj-Yr-31L">
                                 <rect key="frame" x="114" y="293.5" width="94" height="29"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="gTV-IL-0wX" eventType="valueChanged" id="adQ-gQ-5ub"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POI-hH-0hb">
                                 <rect key="frame" x="156" y="265" width="10.5" height="20.5"/>
@@ -70,6 +73,11 @@
                 <constraint firstItem="utN-bQ-1Dr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zEO-f2-IAO"/>
             </constraints>
             <size key="customSize" width="322" height="369"/>
+            <connections>
+                <outlet property="label" destination="POI-hH-0hb" id="VCo-pf-PZy"/>
+                <outlet property="nextButton" destination="OAw-iz-Zpc" id="pfN-0c-MiA"/>
+                <outlet property="stepper" destination="Wmj-Yr-31L" id="ZOm-99-IXn"/>
+            </connections>
             <point key="canvasLocation" x="320" y="239.5"/>
         </collectionViewCell>
     </objects>

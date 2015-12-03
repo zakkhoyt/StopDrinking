@@ -10,9 +10,10 @@ import UIKit
 
 class ZHIntroWelcomeCollectionViewCell: ZHIntroCollectionViewCell {
 
+    @IBOutlet weak var textView: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        textView.text = "Let's set up a few data points to help you track your progress"
     }
     
     class func cellFromNib() -> ZHIntroWelcomeCollectionViewCell {

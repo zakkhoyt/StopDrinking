@@ -10,9 +10,28 @@ import UIKit
 
 class ZHIntroMoneyPerDayCollectionViewCell: ZHIntroCollectionViewCell {
 
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        if user?.moneyPerDay == nil {
+            nextButton.enabled = false
+            updateLabel(UInt(stepper.value))
+        } else {
+            updateLabel(UInt((user?.moneyPerDay!)!))
+            stepper.value = Double((user?.moneyPerDay!)!)
+            nextButton.enabled = true
+        }
     }
-
+    
+    @IBAction func stepperValueChanged(sender: UIStepper) {
+        updateLabel(UInt(sender.value))
+        nextButton.enabled = sender.value > 0 ? true : false
+    }
+    
+    func updateLabel(value: UInt) {
+        label.text = "$\(value)"
+        user?.moneyPerDay = value
+    }
 }

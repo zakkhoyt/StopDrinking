@@ -16,7 +16,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXh-0x-5ap">
                         <rect key="frame" x="0.0" y="0.0" width="372" height="434"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIk-nQ-EVt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's begin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIk-nQ-EVt">
                                 <rect key="frame" x="8" y="8" width="356" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -66,6 +66,9 @@
                 <constraint firstItem="qXh-0x-5ap" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gUo-Oh-Tjz"/>
             </constraints>
             <size key="customSize" width="372" height="434"/>
+            <connections>
+                <outlet property="nextButton" destination="mgf-Qp-3WX" id="TZk-90-wLz"/>
+            </connections>
             <point key="canvasLocation" x="430" y="615"/>
         </collectionViewCell>
     </objects>

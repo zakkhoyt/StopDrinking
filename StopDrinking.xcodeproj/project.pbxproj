@@ -36,6 +36,12 @@
 		C635D7EB1C0FB31700616D3A /* ZHIntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7EA1C0FB31700616D3A /* ZHIntroCollectionViewCell.swift */; };
 		C635D7ED1C0FBAB400616D3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D7EC1C0FBAB400616D3A /* Main.storyboard */; };
 		C635D7EF1C0FBB6500616D3A /* ZHHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7EE1C0FBB6500616D3A /* ZHHomeViewController.swift */; };
+		C635D7F51C0FD17C00616D3A /* ZHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */; };
+		C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */; };
+		C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8011C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift */; };
+		C635D8041C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8031C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift */; };
+		C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8071C10076800616D3A /* ZHAvatarView.swift */; };
+		C635D80B1C100AFF00616D3A /* ZHAvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +99,13 @@
 		C635D7EA1C0FB31700616D3A /* ZHIntroCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroCollectionViewCell.swift; sourceTree = "<group>"; };
 		C635D7EC1C0FBAB400616D3A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C635D7EE1C0FBB6500616D3A /* ZHHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHomeViewController.swift; sourceTree = "<group>"; };
+		C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHUserModel.swift; sourceTree = "<group>"; };
+		C635D7F71C0FD88B00616D3A /* StopDrinking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StopDrinking-Bridging-Header.h"; sourceTree = "<group>"; };
+		C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHUserDefaults.swift; sourceTree = "<group>"; };
+		C635D8011C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHomeSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		C635D8031C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHomeRedditTableViewCell.swift; sourceTree = "<group>"; };
+		C635D8071C10076800616D3A /* ZHAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHAvatarView.swift; sourceTree = "<group>"; };
+		C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHAvatarView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +168,12 @@
 		C635D78F1C0EEA9B00616D3A /* StopDrinking */ = {
 			isa = PBXGroup;
 			children = (
+				C635D8001C0FF4BD00616D3A /* Controllers */,
+				C635D7F61C0FD17F00616D3A /* Model */,
 				C635D7F31C0FBDC900616D3A /* SupporingFiles */,
 				C635D7F21C0FBDBD00616D3A /* UserInterface */,
 				C635D7F11C0FBDB500616D3A /* ViewControllers */,
+				C635D8091C10076C00616D3A /* View */,
 			);
 			path = StopDrinking;
 			sourceTree = "<group>";
@@ -220,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				C635D7EE1C0FBB6500616D3A /* ZHHomeViewController.swift */,
+				C635D8051C0FFEF700616D3A /* Cell */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -236,10 +253,8 @@
 		C635D7F21C0FBDBD00616D3A /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
-				C635D7941C0EEA9B00616D3A /* Intro.storyboard */,
-				C635D7EC1C0FBAB400616D3A /* Main.storyboard */,
+				C635D8061C10007E00616D3A /* Storyboards */,
 				C635D7971C0EEA9B00616D3A /* Assets.xcassets */,
-				C635D7991C0EEA9B00616D3A /* LaunchScreen.storyboard */,
 			);
 			name = UserInterface;
 			sourceTree = "<group>";
@@ -247,10 +262,55 @@
 		C635D7F31C0FBDC900616D3A /* SupporingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				C635D7F71C0FD88B00616D3A /* StopDrinking-Bridging-Header.h */,
 				C635D7901C0EEA9B00616D3A /* AppDelegate.swift */,
 				C635D79C1C0EEA9B00616D3A /* Info.plist */,
 			);
 			name = SupporingFiles;
+			sourceTree = "<group>";
+		};
+		C635D7F61C0FD17F00616D3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C635D8001C0FF4BD00616D3A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C635D8051C0FFEF700616D3A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C635D8011C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift */,
+				C635D8031C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		C635D8061C10007E00616D3A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C635D7991C0EEA9B00616D3A /* LaunchScreen.storyboard */,
+				C635D7941C0EEA9B00616D3A /* Intro.storyboard */,
+				C635D7EC1C0FBAB400616D3A /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C635D8091C10076C00616D3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C635D8071C10076800616D3A /* ZHAvatarView.swift */,
+				C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		CEC67ADF13500CC01298F9F0 /* Frameworks */ = {
@@ -371,6 +431,7 @@
 				C635D7CD1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.xib in Resources */,
 				C635D7DD1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib in Resources */,
 				C635D7E91C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.xib in Resources */,
+				C635D80B1C100AFF00616D3A /* ZHAvatarView.xib in Resources */,
 				C635D7D11C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.xib in Resources */,
 				C635D7C71C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.xib in Resources */,
 				C635D7E11C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.xib in Resources */,
@@ -437,11 +498,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C635D7F51C0FD17C00616D3A /* ZHUserModel.swift in Sources */,
 				C635D7C61C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.swift in Sources */,
 				C635D7EF1C0FBB6500616D3A /* ZHHomeViewController.swift in Sources */,
 				C635D7EB1C0FB31700616D3A /* ZHIntroCollectionViewCell.swift in Sources */,
 				C635D7DC1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.swift in Sources */,
 				C635D7D01C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.swift in Sources */,
+				C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */,
 				C635D7CC1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.swift in Sources */,
 				C635D7D41C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.swift in Sources */,
 				C635D7E81C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.swift in Sources */,
@@ -449,7 +512,10 @@
 				C635D7E41C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.swift in Sources */,
 				C635D7D81C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */,
 				C635D7BF1C0EEB6900616D3A /* ZHIntroViewController.swift in Sources */,
+				C635D8041C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift in Sources */,
 				C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */,
+				C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */,
+				C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,10 +658,13 @@
 			baseConfigurationReference = 622398508FF14172E3212991 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = StopDrinking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.StopDrinking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StopDrinking/StopDrinking-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -604,10 +673,12 @@
 			baseConfigurationReference = 6354EC00E9788532900F38AE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = StopDrinking/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.StopDrinking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "StopDrinking/StopDrinking-Bridging-Header.h";
 			};
 			name = Release;
 		};

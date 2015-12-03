@@ -16,7 +16,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzy-Cg-cyd">
                         <rect key="frame" x="0.0" y="0.0" width="351" height="332"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reddit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBQ-o3-EL8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reddit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBQ-o3-EL8">
                                 <rect key="frame" x="8" y="8" width="335" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -28,41 +28,64 @@
                                 <animations/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
-                                    <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="opN-Tn-gA2"/>
+                                    <action selector="signInButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="QkS-gX-3jS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkk-pe-O1S">
-                                <rect key="frame" x="157.5" y="256" width="36" height="30"/>
+                                <rect key="frame" x="8" y="294" width="32" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Later"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Y5f-ph-95q"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wXz-eQ-TFW">
-                                <rect key="frame" x="8" y="36" width="335" height="212"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="wXz-eQ-TFW">
+                                <rect key="frame" x="8" y="36" width="335" height="174"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">This app shows you content from Reddit's /r/stopdrinking subreddit. Signing in is not required but will allow you to reply and upvote. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fom-RB-cHD">
+                                <rect key="frame" x="8" y="256" width="335" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="-1" id="dDD-la-uCV"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9v-Ll-Fyg">
+                                <rect key="frame" x="8" y="218" width="335" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="-1" id="N94-HR-2VE"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wXz-eQ-TFW" firstAttribute="top" secondItem="NBQ-o3-EL8" secondAttribute="bottom" constant="7.5" id="2ip-mG-0Sv"/>
-                            <constraint firstItem="wXz-eQ-TFW" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="3po-8f-iPa"/>
-                            <constraint firstItem="aYu-1i-POV" firstAttribute="top" secondItem="wkk-pe-O1S" secondAttribute="bottom" constant="8" id="95T-FV-vtk"/>
-                            <constraint firstAttribute="bottom" secondItem="aYu-1i-POV" secondAttribute="bottom" constant="8" id="M0j-6L-ddK"/>
-                            <constraint firstItem="wkk-pe-O1S" firstAttribute="centerX" secondItem="bzy-Cg-cyd" secondAttribute="centerX" id="OzJ-st-9Mu"/>
-                            <constraint firstItem="aYu-1i-POV" firstAttribute="centerX" secondItem="bzy-Cg-cyd" secondAttribute="centerX" id="Q1g-GE-Wge"/>
-                            <constraint firstAttribute="trailing" secondItem="wXz-eQ-TFW" secondAttribute="trailing" constant="8" id="YbN-ed-PXo"/>
-                            <constraint firstItem="wkk-pe-O1S" firstAttribute="top" secondItem="wXz-eQ-TFW" secondAttribute="bottom" constant="8" id="bmX-xJ-3aG"/>
+                            <constraint firstAttribute="trailing" secondItem="fom-RB-cHD" secondAttribute="trailing" constant="8" id="22j-m5-ZRD"/>
+                            <constraint firstItem="wXz-eQ-TFW" firstAttribute="top" secondItem="NBQ-o3-EL8" secondAttribute="bottom" constant="7.5" id="Fvn-uo-UYQ"/>
+                            <constraint firstItem="fom-RB-cHD" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="Gdj-XG-Tt4"/>
+                            <constraint firstAttribute="bottom" secondItem="wkk-pe-O1S" secondAttribute="bottom" constant="8" id="HUj-ga-nLA"/>
+                            <constraint firstItem="wkk-pe-O1S" firstAttribute="top" secondItem="fom-RB-cHD" secondAttribute="bottom" constant="8" id="Hdk-9g-EPk"/>
+                            <constraint firstAttribute="trailing" secondItem="J9v-Ll-Fyg" secondAttribute="trailing" constant="8" id="Lcg-sr-qfX"/>
+                            <constraint firstItem="fom-RB-cHD" firstAttribute="top" secondItem="J9v-Ll-Fyg" secondAttribute="bottom" constant="8" id="OoK-hb-BCW"/>
+                            <constraint firstItem="wkk-pe-O1S" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="RAr-SR-qIP"/>
+                            <constraint firstItem="J9v-Ll-Fyg" firstAttribute="top" secondItem="wXz-eQ-TFW" secondAttribute="bottom" constant="8" id="cdH-v6-W1A"/>
                             <constraint firstItem="NBQ-o3-EL8" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="dqk-km-06C"/>
                             <constraint firstItem="NBQ-o3-EL8" firstAttribute="top" secondItem="bzy-Cg-cyd" secondAttribute="top" constant="8" id="f8i-Le-vFd"/>
+                            <constraint firstAttribute="bottom" secondItem="aYu-1i-POV" secondAttribute="bottom" constant="8" id="fhb-c4-kCR"/>
+                            <constraint firstItem="aYu-1i-POV" firstAttribute="centerX" secondItem="bzy-Cg-cyd" secondAttribute="centerX" id="jda-lL-lbh"/>
+                            <constraint firstAttribute="trailing" secondItem="wXz-eQ-TFW" secondAttribute="trailing" constant="8" id="lAK-7t-Vab"/>
+                            <constraint firstItem="J9v-Ll-Fyg" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="qtU-KU-AgG"/>
                             <constraint firstAttribute="trailing" secondItem="NBQ-o3-EL8" secondAttribute="trailing" constant="8" id="sGy-nH-JlV"/>
-                            <constraint firstItem="aYu-1i-POV" firstAttribute="top" secondItem="wkk-pe-O1S" secondAttribute="bottom" constant="8" id="wfT-zx-KkJ"/>
+                            <constraint firstItem="wXz-eQ-TFW" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="t2C-m3-4Yb"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -77,6 +100,13 @@
                 <constraint firstItem="bzy-Cg-cyd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wCX-bb-HU4"/>
             </constraints>
             <size key="customSize" width="351" height="332"/>
+            <connections>
+                <outlet property="nextButton" destination="wkk-pe-O1S" id="Xgu-z5-dLc"/>
+                <outlet property="passwordTextField" destination="fom-RB-cHD" id="ZMj-mf-RDb"/>
+                <outlet property="signInButton" destination="aYu-1i-POV" id="IrB-C6-bbs"/>
+                <outlet property="textView" destination="wXz-eQ-TFW" id="YoT-X4-46i"/>
+                <outlet property="usernameTextField" destination="J9v-Ll-Fyg" id="UDX-fW-lwl"/>
+            </connections>
             <point key="canvasLocation" x="118.5" y="564"/>
         </collectionViewCell>
     </objects>

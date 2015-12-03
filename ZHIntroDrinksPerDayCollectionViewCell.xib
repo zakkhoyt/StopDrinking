@@ -16,7 +16,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDw-2v-xNh">
                         <rect key="frame" x="0.0" y="0.0" width="284" height="538"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drinks per Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-1q-gF8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drinks per Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-1q-gF8">
                                 <rect key="frame" x="8" y="8" width="268" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -31,17 +31,20 @@
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="aYk-ep-jfu"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-aA-zff">
-                                <rect key="frame" x="95" y="462.5" width="94" height="29"/>
-                                <animations/>
-                            </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEg-Ba-Cds">
-                                <rect key="frame" x="137" y="434" width="10.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEg-Ba-Cds">
+                                <rect key="frame" x="131.5" y="434" width="21.5" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-aA-zff">
+                                <rect key="frame" x="95" y="462" width="94" height="29"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="gTV-IL-0wX" eventType="valueChanged" id="3zA-5I-m2D"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -69,6 +72,11 @@
                 <constraint firstItem="GDw-2v-xNh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="w9S-iR-gG8"/>
             </constraints>
             <size key="customSize" width="284" height="538"/>
+            <connections>
+                <outlet property="label" destination="HEg-Ba-Cds" id="5Sb-sz-BxQ"/>
+                <outlet property="nextButton" destination="H7z-kZ-gRD" id="BAd-uO-gth"/>
+                <outlet property="stepper" destination="ZUc-aA-zff" id="Y4w-c1-Vn3"/>
+            </connections>
             <point key="canvasLocation" x="146" y="385"/>
         </collectionViewCell>
     </objects>

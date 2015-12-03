@@ -16,7 +16,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNA-8q-ATo">
                         <rect key="frame" x="0.0" y="0.0" width="323" height="408"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories per drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPN-to-fkP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories per drink" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPN-to-fkP">
                                 <rect key="frame" x="8" y="8" width="307" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -31,10 +31,6 @@
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1W4-rf-kp3"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lvD-ey-5Qb">
-                                <rect key="frame" x="114.5" y="332.5" width="94" height="29"/>
-                                <animations/>
-                            </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U8-kv-vh8">
                                 <rect key="frame" x="156.5" y="304" width="10.5" height="20.5"/>
                                 <animations/>
@@ -42,6 +38,47 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Mp-Bq-bgP">
+                                <rect key="frame" x="8" y="36" width="307" height="260"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Here are some guidelines to help. 
+
+Light Lager (12 oz)
+* Light Beer: 100 Calories
+* Regular beer: 150 Calories
+* Heavy beer: 200 Calories
+* Malt Beverages: 250
+* Cider: 200 
+
+Sprits (1 shot)
+* Vodka: 100
+* Whiskey: 100
+* Gin: 100
+* Rum: 100
+* Tequilla: 100
+
+Wine (5 oz)
+* Dark Red: 120
+* White: 110
+
+Mixers:
+* Juice: 125
+* Tonic: 80
+* Soda: 130
+
+Cocktails: Estimate by adding the above and adjusting for the "this guy tips well" size drinks. 
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1000" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="lvD-ey-5Qb">
+                                <rect key="frame" x="114" y="333" width="94" height="29"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="gTV-IL-0wX" eventType="valueChanged" id="xm8-Br-mTN"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,10 +89,14 @@
                             <constraint firstItem="lvD-ey-5Qb" firstAttribute="centerX" secondItem="vNA-8q-ATo" secondAttribute="centerX" id="MxL-dF-Ftm"/>
                             <constraint firstAttribute="bottom" secondItem="W40-op-jkP" secondAttribute="bottom" constant="8" id="Rl2-7b-gO2"/>
                             <constraint firstItem="lvD-ey-5Qb" firstAttribute="top" secondItem="3U8-kv-vh8" secondAttribute="bottom" constant="8" id="WgU-IY-PJT"/>
+                            <constraint firstItem="3U8-kv-vh8" firstAttribute="top" secondItem="0Mp-Bq-bgP" secondAttribute="bottom" constant="8" id="cKS-HL-lyZ"/>
+                            <constraint firstItem="0Mp-Bq-bgP" firstAttribute="top" secondItem="tPN-to-fkP" secondAttribute="bottom" constant="7.5" id="eND-a7-GFl"/>
                             <constraint firstItem="W40-op-jkP" firstAttribute="top" secondItem="lvD-ey-5Qb" secondAttribute="bottom" constant="8.5" id="fFy-wU-J6A"/>
                             <constraint firstItem="3U8-kv-vh8" firstAttribute="centerX" secondItem="vNA-8q-ATo" secondAttribute="centerX" id="gFF-Aj-DUr"/>
+                            <constraint firstItem="0Mp-Bq-bgP" firstAttribute="leading" secondItem="vNA-8q-ATo" secondAttribute="leading" constant="8" id="gwc-Az-7r5"/>
                             <constraint firstItem="lvD-ey-5Qb" firstAttribute="top" secondItem="3U8-kv-vh8" secondAttribute="bottom" constant="8" id="x9u-6m-0GU"/>
                             <constraint firstItem="tPN-to-fkP" firstAttribute="leading" secondItem="vNA-8q-ATo" secondAttribute="leading" constant="8" id="xoz-Pq-X4x"/>
+                            <constraint firstAttribute="trailing" secondItem="0Mp-Bq-bgP" secondAttribute="trailing" constant="8" id="zc4-22-CjV"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -70,6 +111,12 @@
                 <constraint firstItem="vNA-8q-ATo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xdI-fw-wBx"/>
             </constraints>
             <size key="customSize" width="323" height="408"/>
+            <connections>
+                <outlet property="label" destination="3U8-kv-vh8" id="lcY-RW-OHZ"/>
+                <outlet property="nextButton" destination="W40-op-jkP" id="3fR-pE-J8U"/>
+                <outlet property="stepper" destination="lvD-ey-5Qb" id="xAY-VJ-UpS"/>
+                <outlet property="textView" destination="0Mp-Bq-bgP" id="Vsd-qt-7nr"/>
+            </connections>
             <point key="canvasLocation" x="132.5" y="408"/>
         </collectionViewCell>
     </objects>

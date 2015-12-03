@@ -16,7 +16,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQI-i9-wV1">
                         <rect key="frame" x="0.0" y="0.0" width="245" height="299"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G9-0U-1V2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G9-0U-1V2">
                                 <rect key="frame" x="8" y="8" width="229" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -31,7 +31,7 @@
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qku-NQ-cvJ"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Led-hn-jHm">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Led-hn-jHm">
                                 <rect key="frame" x="8" y="36.5" width="229" height="216.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,6 +66,10 @@
                 <constraint firstAttribute="trailing" secondItem="GQI-i9-wV1" secondAttribute="trailing" id="tck-BW-Zuw"/>
             </constraints>
             <size key="customSize" width="245" height="299"/>
+            <connections>
+                <outlet property="nextButton" destination="u1B-wx-Zgp" id="E2k-b7-pqE"/>
+                <outlet property="textView" destination="Led-hn-jHm" id="XIH-BX-gmp"/>
+            </connections>
             <point key="canvasLocation" x="163.5" y="361.5"/>
         </collectionViewCell>
     </objects>
