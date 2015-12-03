@@ -20,7 +20,7 @@
                                 <rect key="frame" x="8" y="8" width="306" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAw-iz-Zpc">
@@ -47,7 +47,7 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Wmj-Yr-31L" firstAttribute="top" secondItem="POI-hH-0hb" secondAttribute="bottom" constant="8" id="0nm-kl-xJS"/>
                             <constraint firstAttribute="bottom" secondItem="OAw-iz-Zpc" secondAttribute="bottom" constant="8" id="2Nq-pp-gaK"/>

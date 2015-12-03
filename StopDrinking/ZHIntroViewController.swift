@@ -32,7 +32,7 @@ class ZHIntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .Default
+//        UIApplication.sharedApplication().statusBarStyle = .Default
         
         // See if there is a user in userdefaults
         let storedUser = ZHUserDefaults.sharedInstance.currentUser()
@@ -64,7 +64,7 @@ class ZHIntroViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -93,13 +93,13 @@ class ZHIntroViewController: UIViewController {
     }
 }
 
-//extension ZHIntroViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        let page = round(scrollView.contentOffset.x / scrollView.bounds.size.width)
-////        let page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
-//        pageControl.currentPage = Int(page)
-//    }
-//}
+extension ZHIntroViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let page = round(scrollView.contentOffset.x / scrollView.bounds.size.width)
+//        let page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
+        pageControl.currentPage = Int(page)
+    }
+}
 
 extension ZHIntroViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

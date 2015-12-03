@@ -32,12 +32,12 @@
                                 <rect key="frame" x="8" y="7" width="345" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Lzx-Sg-P2j" secondAttribute="trailing" constant="8" id="2dg-Ag-7fX"/>
                             <constraint firstItem="Lzx-Sg-P2j" firstAttribute="top" secondItem="vnf-uM-aT7" secondAttribute="top" constant="7" id="7nF-4Q-Lhi"/>

@@ -14,6 +14,20 @@ class ZHIntroCaloriesPerDayCollectionViewCell: ZHIntroCollectionViewCell {
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var textView: UITextView!
     
+    
+    override var user: ZHUserModel? {
+        didSet {
+            if user?.caloriesPerDrink == nil {
+                stepper.value = 0
+                nextButton.enabled = false
+            } else {
+                stepper.value = Double((user?.caloriesPerDrink)!)
+                nextButton.enabled = true
+            }
+            updateLabel((user?.caloriesPerDrink)!)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         if user?.caloriesPerDrink == nil {

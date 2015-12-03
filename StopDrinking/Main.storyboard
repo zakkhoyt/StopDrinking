@@ -18,40 +18,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="371" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e5m-LE-clh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="371" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e5m-LE-clh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ZHHomeSummaryTableViewCell" rowHeight="249" id="zaB-Nc-4JP" customClass="ZHHomeSummaryTableViewCell" customModule="StopDrinking" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="249"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zaB-Nc-4JP" id="KCN-HL-Awd">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="248.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your last drink was on ______" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-rz-U9u">
                                                     <rect key="frame" x="8" y="106" width="584" height="25.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beers not drank" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-xd-u9E">
                                                     <rect key="frame" x="8" y="139" width="584" height="25.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money not spent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVx-HJ-F9v">
                                                     <rect key="frame" x="8" y="173" width="584" height="25.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories not drank" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avc-eq-7yO">
                                                     <rect key="frame" x="8" y="207" width="584" height="25.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPg-oh-TlK" customClass="ZHAvatarView" customModule="StopDrinking" customModuleProvider="target">
@@ -65,6 +69,7 @@
                                                 </view>
                                             </subviews>
                                             <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="Avc-eq-7yO" firstAttribute="leading" secondItem="KCN-HL-Awd" secondAttribute="leadingMargin" id="35J-fx-KEf"/>
                                                 <constraint firstItem="FVx-HJ-F9v" firstAttribute="trailing" secondItem="KCN-HL-Awd" secondAttribute="trailingMargin" id="6NY-uz-CIa"/>
@@ -84,6 +89,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="avatarContainerView" destination="wPg-oh-TlK" id="xut-mq-WGn"/>
                                             <outlet property="caloriesMissedLabel" destination="Avc-eq-7yO" id="QnL-rc-U67"/>
@@ -96,16 +102,11 @@
                                         <rect key="frame" x="0.0" y="341" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bqm-fE-yTp" id="gGX-TB-SSm">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lNK-Oh-Enm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HH-1x-vv6">
-                                                    <rect key="frame" x="0.0" y="-1" width="600" height="99.5"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HH-1x-vv6">
+                                                    <rect key="frame" x="8" y="-1" width="584" height="99.5"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -118,10 +119,10 @@
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="1HH-1x-vv6" firstAttribute="leading" secondItem="gGX-TB-SSm" secondAttribute="leadingMargin" constant="-8" id="WIs-Eb-vIv"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="1HH-1x-vv6" secondAttribute="bottom" constant="-8" id="reF-Hh-shH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="1HH-1x-vv6" secondAttribute="trailing" constant="-8" id="tJa-b0-WDo"/>
-                                                <constraint firstItem="1HH-1x-vv6" firstAttribute="top" secondItem="gGX-TB-SSm" secondAttribute="topMargin" constant="-8" id="zbp-a4-dtF"/>
+                                                <constraint firstItem="1HH-1x-vv6" firstAttribute="leading" secondItem="gGX-TB-SSm" secondAttribute="leadingMargin" id="WIs-Eb-vIv"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1HH-1x-vv6" secondAttribute="bottom" constant="-6.5" id="reF-Hh-shH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1HH-1x-vv6" secondAttribute="trailing" id="tJa-b0-WDo"/>
+                                                <constraint firstItem="1HH-1x-vv6" firstAttribute="top" secondItem="gGX-TB-SSm" secondAttribute="topMargin" constant="-9" id="zbp-a4-dtF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -138,7 +139,7 @@
                             </tableView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="e5m-LE-clh" firstAttribute="top" secondItem="fI9-AN-CYy" secondAttribute="topMargin" id="3mf-Y6-jCd"/>
                             <constraint firstItem="e5m-LE-clh" firstAttribute="leading" secondItem="fI9-AN-CYy" secondAttribute="leadingMargin" constant="-20" id="m4t-Gu-FO0"/>
@@ -191,4 +192,5 @@
             <point key="canvasLocation" x="191" y="361"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -20,13 +20,13 @@
                                 <rect key="frame" x="8" y="8" width="265" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEZ-XJ-cM0" customClass="RSDFDatePickerView">
                                 <rect key="frame" x="0.0" y="36.5" width="281" height="491.5"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5N-AD-Wtb">
                                 <rect key="frame" x="124" y="536" width="32" height="30"/>
@@ -38,7 +38,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="KEZ-XJ-cM0" secondAttribute="trailing" id="EP7-mj-Y0M"/>
                             <constraint firstItem="KEZ-XJ-cM0" firstAttribute="top" secondItem="owm-IB-czl" secondAttribute="bottom" constant="8" id="Nrj-yr-81k"/>

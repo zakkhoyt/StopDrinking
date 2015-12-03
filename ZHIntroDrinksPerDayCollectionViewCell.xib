@@ -20,7 +20,7 @@
                                 <rect key="frame" x="8" y="8" width="268" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7z-kZ-gRD">
@@ -47,7 +47,7 @@
                             </stepper>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="H7z-kZ-gRD" firstAttribute="top" secondItem="ZUc-aA-zff" secondAttribute="bottom" constant="8.5" id="2P5-EF-VPe"/>
                             <constraint firstAttribute="bottom" secondItem="H7z-kZ-gRD" secondAttribute="bottom" constant="8" id="6TH-XL-sgh"/>

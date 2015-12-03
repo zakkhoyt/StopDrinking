@@ -19,7 +19,6 @@ class ZHIntroStartDateCollectionViewCell: ZHIntroCollectionViewCell {
                 nextButton.enabled = false
             } else {
                 datePickerView.selectDate(user?.startDate)
-//                datePickerView.scrollToDate(user?.startDate, animated: true)
                 datePickerView.scrollToToday(true)
                 nextButton.enabled = true
             }
@@ -33,7 +32,7 @@ class ZHIntroStartDateCollectionViewCell: ZHIntroCollectionViewCell {
         super.awakeFromNib()
         datePickerView.dataSource = self
         datePickerView.delegate = self
-
+        datePickerView.backgroundColor = UIColor.darkGrayColor()
         
     }
 

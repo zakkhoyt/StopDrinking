@@ -20,7 +20,7 @@
                                 <rect key="frame" x="8" y="8" width="307" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W40-op-jkP">
@@ -41,7 +41,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Mp-Bq-bgP">
                                 <rect key="frame" x="8" y="36" width="307" height="260"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Here are some guidelines to help. 
 
 Light Lager (12 oz)
@@ -69,6 +69,7 @@ Mixers:
 
 Cocktails: Estimate by adding the above and adjusting for the "this guy tips well" size drinks. 
 </string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -81,7 +82,7 @@ Cocktails: Estimate by adding the above and adjusting for the "this guy tips wel
                             </stepper>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="W40-op-jkP" firstAttribute="centerX" secondItem="vNA-8q-ATo" secondAttribute="centerX" id="28O-jB-it8"/>
                             <constraint firstAttribute="trailing" secondItem="tPN-to-fkP" secondAttribute="trailing" constant="8" id="3EV-Ry-k5g"/>
