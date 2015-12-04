@@ -106,19 +106,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HH-1x-vv6">
-                                                    <rect key="frame" x="8" y="0.0" width="584" height="98"/>
+                                                    <rect key="frame" x="8" y="0.0" width="584" height="112"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIK-IQ-hQC">
-                                                    <rect key="frame" x="8" y="106" width="584" height="20.5"/>
+                                                    <rect key="frame" x="8" y="112" width="584" height="14.5"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -130,7 +130,7 @@
                                                 <constraint firstItem="RIK-IQ-hQC" firstAttribute="leading" secondItem="gGX-TB-SSm" secondAttribute="leadingMargin" id="JYt-5r-fHe"/>
                                                 <constraint firstItem="1HH-1x-vv6" firstAttribute="leading" secondItem="gGX-TB-SSm" secondAttribute="leadingMargin" id="g9t-mv-09A"/>
                                                 <constraint firstItem="RIK-IQ-hQC" firstAttribute="bottom" secondItem="gGX-TB-SSm" secondAttribute="bottomMargin" id="jFT-zh-bH4"/>
-                                                <constraint firstItem="RIK-IQ-hQC" firstAttribute="top" secondItem="1HH-1x-vv6" secondAttribute="bottom" constant="8" id="qIP-JI-DnF"/>
+                                                <constraint firstItem="RIK-IQ-hQC" firstAttribute="top" secondItem="1HH-1x-vv6" secondAttribute="bottom" id="qIP-JI-DnF"/>
                                                 <constraint firstItem="1HH-1x-vv6" firstAttribute="trailing" secondItem="gGX-TB-SSm" secondAttribute="trailingMargin" id="wlv-1a-Y7o"/>
                                                 <constraint firstItem="RIK-IQ-hQC" firstAttribute="trailing" secondItem="gGX-TB-SSm" secondAttribute="trailingMargin" id="wyy-mc-ogl"/>
                                             </constraints>

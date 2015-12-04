@@ -29,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RFKeyboardToolbar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RFMarkdownTextView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RSDayFlow.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,22 +52,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>100048832FFB9FDD73757ACC1CD48CD0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>18D9AF3CB8AB4A4DAE5522446939BBF6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>33FF3CB8D529D102142C93795ADD1A55</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B119A7D977CFF345DF64F6F397A7C12</key>
+		<key>3CDBCC4AC123DC9B592E77253B2C7EF5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4F2298BA458F8F42FA91B8FC2EA96DF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4F3BC9E52C6B4EEF762F64DEE81EC36B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>850A59C8F099FFA86BDE042EA08CBCAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A4A8C599719D3FDA05F3D1D8CE4E4E43</key>
+		<key>B2C26006CD0B6104E0B012B7F37E6DD5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E740B53CEE4D240CBC33162A24B8609B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB70ECD2DA12D2F45DAAE3F449577215</key>
 		<dict>
 			<key>primary</key>
 			<true/>

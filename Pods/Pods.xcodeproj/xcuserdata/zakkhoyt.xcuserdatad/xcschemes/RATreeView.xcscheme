@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F95A12422F9D29837924F85D"
+               BlueprintIdentifier = "24BEA8F297A80A5EC3957922"
                BuildableName = "libRATreeView.a"
                BlueprintName = "RATreeView"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -70,6 +70,14 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
     func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
         if item.isKindOfClass(RKComment) {
             let cell = NSBundle.mainBundle().loadNibNamed("ZHRedditCommentTableViewCell", owner: self, options: nil)[0] as? ZHRedditCommentTableViewCell
+            cell?.expandButtonHandler = ({ (expand: Bool) -> Void in
+                if expand == true {
+                    treeView.expandRowForItem(item, expandChildren: true, withRowAnimation: RATreeViewRowAnimationTop)
+                } else {
+                    treeView.collapseRowForItem(item, collapseChildren: true, withRowAnimation: RATreeViewRowAnimationTop)
+                }
+            })
+            
             if let comment = item as! RKComment? {
                 cell?.comment = comment
             }
@@ -123,7 +131,13 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
 }
 
 extension ZHRedditThreadViewController: RATreeViewDelegate {
+    func treeView(treeView: RATreeView!, shouldCollapaseRowForItem item: AnyObject!) -> Bool {
+        return false
+    }
     
+    func treeView(treeView: RATreeView!, shouldExpandRowForItem item: AnyObject!) -> Bool {
+        return false
+    }
     
 //    func treeView(treeView: RATreeView!, willExpandRowForItem item: AnyObject!) {
 //        if item is RKLink {

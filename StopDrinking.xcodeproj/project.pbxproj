@@ -53,6 +53,7 @@
 		C66623ED1C11348700652B42 /* ZHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */; };
 		C66623EE1C11348D00652B42 /* ZHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */; };
 		C66623F71C114A2400652B42 /* ZHNotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */; };
+		C66623F91C11649300652B42 /* ZHMarkdownParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66623F81C11649300652B42 /* ZHMarkdownParser.swift */; };
 		C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */; };
 		C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */; };
 		C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */; };
@@ -157,6 +158,7 @@
 		C66623E81C1131F400652B42 /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
 		C66623EF1C11364000652B42 /* StopDrinking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinking.entitlements; sourceTree = "<group>"; };
 		C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNotificationScheduler.swift; sourceTree = "<group>"; };
+		C66623F81C11649300652B42 /* ZHMarkdownParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHMarkdownParser.swift; sourceTree = "<group>"; };
 		C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reddit.storyboard; sourceTree = "<group>"; };
 		C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditThreadViewController.swift; sourceTree = "<group>"; };
 		C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditCommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 			children = (
 				C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */,
 				C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */,
+				C66623F81C11649300652B42 /* ZHMarkdownParser.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */,
 				C69FC7411C10F05600A3E3E0 /* README.md in Sources */,
 				C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */,
+				C66623F91C11649300652B42 /* ZHMarkdownParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
