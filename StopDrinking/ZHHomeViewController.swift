@@ -20,6 +20,7 @@ class ZHHomeViewController: UIViewController {
     let SegueMainToIntro = "SegueMainToIntro"
     let SegueMainToWeb = "SegueMainToWeb"
     let SegueMainToRedditThread = "SegueMainToRedditThread"
+    var user: ZHUserModel? = nil
     var statusBarHidden: Bool = false
     
     @IBOutlet weak var tableView: UITableView!
@@ -32,17 +33,31 @@ class ZHHomeViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        let user = ZHUserDefaults.sharedInstance.currentUser()
+        user = ZHUserDefaults.sharedInstance.currentUser()
         if user == nil {
             performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
         } else {
             if user?.notificationTime != nil {
                 ZHNotificationScheduler.scheduleNotifications()
             }
-            
         }
-        
+
         reddit()
+
+        
+//        if RKClient.sharedClient().isSignedIn() == true {
+//            reddit()
+//        } else {
+////            signIntoReddit()
+//            print("TODO: Log into reddit with stored credentials")
+//        }
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
     }
 
     
@@ -59,8 +74,10 @@ class ZHHomeViewController: UIViewController {
         if segue.identifier == SegueMainToIntro {
             let vc = segue.destinationViewController as? ZHIntroViewController
             vc?.introCompleteHandler = ({ (user: ZHUserModel) -> Void in
-                
+                self.user = user
                 ZHUserDefaults.sharedInstance.setCurrentUser(user)
+                
+                
                 
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in
                     self.tableView.reloadData() 
@@ -104,11 +121,51 @@ class ZHHomeViewController: UIViewController {
     
     
     // MARK: Private methods
+    
+//    func signIntoReddit() {
+//        
+//        let user = ZHUserDefaults.sharedInstance.currentUser()
+//        if user == nil {
+//            return
+//        } else {
+//
+//            RKClient.sharedClient().signInWithUsername(user?.redditUsername, password: user?.redditPassword) { (error) -> Void in
+//                if error != nil {
+////                    self.errorLabel.text = error.localizedDescription + "\nTry again"
+////                    UIView.animateWithDuration(0.3, animations: { () -> Void in
+////                        self.errorLabel.alpha = 1.0
+////                        }, completion: { (animated) -> Void in
+////                            UIView.animateWithDuration(0.3, delay: 2, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
+////                                self.errorLabel.alpha = 0
+////                                }, completion: { (animated) -> Void in
+////                            })
+////                    })
+//                } else {
+////                    self.user?.redditUsername = user
+////                    self.user?.redditPassword = pass
+////                    self.user = self.user! // this triggers UI updates
+////                    
+////                    // Pause so the user can see that the sign in worked
+////                    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC)))
+////                    dispatch_after(delayTime, dispatch_get_main_queue()) {
+////                        if(self.nextHandler != nil){
+////                            self.nextHandler()
+////                        }
+////                    }
+//                    user?.redditAuthenticated = true
+//                }
+//                MBProgressHUD.hideHUDForView(self, animated: true)
+//            }
+//        }
+//    }
+    
+    
+    
     func reddit(){
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         RKClient.sharedClient().subredditWithName("stopdrinking", completion: { (subreddit, error) -> Void in
             let pagination = RKPagination()
-            RKClient.sharedClient().linksInSubreddit(subreddit as! RKSubreddit, category: RKSubredditCategory.Top, pagination: pagination, completion: { (posts: [AnyObject]!, page: RKPagination!, error:NSError!) -> Void in
+            RKClient.sharedClient().linksInSubreddit(subreddit as! RKSubreddit, category: RKSubredditCategory.Hot, pagination: pagination, completion: { (posts: [AnyObject]!, page: RKPagination!, error:NSError!) -> Void in
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
                 if error == nil {
                     if self.posts.count == 0 {
@@ -152,7 +209,6 @@ extension ZHHomeViewController: UITableViewDataSource {
         switch indexPath.section {
         case ZHHomeViewControllerTableViewSection.Status.rawValue:
             let cell = tableView.dequeueReusableCellWithIdentifier("ZHHomeSummaryTableViewCell") as? ZHHomeSummaryTableViewCell
-            let user = ZHUserDefaults.sharedInstance.currentUser()
             cell?.user = user
             return cell!
         case ZHHomeViewControllerTableViewSection.Reddit.rawValue:

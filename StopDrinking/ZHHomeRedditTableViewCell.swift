@@ -67,7 +67,7 @@ class ZHHomeRedditTableViewCell: UITableViewCell  {
 //            println("size: " + NSStringFromCGSize(size))
 //            
             
-            userLabel.text = "-" + post!.author + "\t"
+            userLabel.text = "-" + post!.author
             
             UIView.animateWithDuration(3.0, animations: { () -> Void in
                 self.layoutIfNeeded()

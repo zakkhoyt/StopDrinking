@@ -30,10 +30,11 @@ class ZHNotificationScheduler: NSObject {
             let notification = UILocalNotification()
             notification.timeZone = NSTimeZone.defaultTimeZone()
             
-            let futureDate = dateForDaysFromNow(day)
+            let futureDate = dateForDaysFromNow(day, user: user!)
             notification.fireDate = futureDate
             
-            notification.alertBody = user?.stringForDaysQuitWithOffset(UInt(day))
+            let alertBody = user?.stringForDaysQuitWithOffset(UInt(day))
+            notification.alertBody = alertBody
             
             let daysSinceStartDate = user?.daysSinceStartDate()!
             notification.applicationIconBadgeNumber = Int(daysSinceStartDate!)
@@ -53,16 +54,11 @@ class ZHNotificationScheduler: NSObject {
         print("Unscheduled all notifications")
     }
     
-    class func dateForDaysFromNow(daysfromNow: Int) -> NSDate {
+    class func dateForDaysFromNow(daysfromNow: Int, user: ZHUserModel) -> NSDate {
         
-        let user = ZHUserDefaults.sharedInstance.currentUser()
-        if user == nil {
-            print("Error: Can't schedule notification because user is nil")
-            return NSDate()
-        }
 
         let calendar = NSCalendar.currentCalendar()
-        let comp = calendar.components(([.Hour, .Minute]), fromDate: (user?.notificationTime!)!)
+        let comp = calendar.components(([.Hour, .Minute]), fromDate: user.notificationTime!)
         let hour = comp.hour
         let minute = comp.minute
 //        let day = comp.day

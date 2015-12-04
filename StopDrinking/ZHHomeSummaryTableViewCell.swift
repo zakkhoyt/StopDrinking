@@ -23,7 +23,8 @@ class ZHHomeSummaryTableViewCell: UITableViewCell {
     var user: ZHUserModel? = nil {
         didSet {
             avatarView.user = user
-            daysQuitLabel.text = user?.stringForDaysQuit()
+            let daysQuit = user?.stringForDaysQuit()
+            daysQuitLabel.text = daysQuit
             drinksMissedLabel.text = user?.stringForDrinksMissed()
             moneyMissedLabel.text = user?.stringForMoneyMissed()
             caloriesMissedLabel.text = user?.stringForCaloriesMissed()

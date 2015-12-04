@@ -127,6 +127,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIToolbar.appearance().barTintColor = UIColor.darkGrayColor()
         UIToolbar.appearance().tintColor = UIColor.yellowColor()
         
+//        UIView.appearance().backgroundColor = UIColor.darkGrayColor()
+        UITableViewCell.appearance().backgroundColor = UIColor.darkGrayColor()
+        UITableView.appearance().backgroundColor = UIColor.darkGrayColor()
     }
 }
 
