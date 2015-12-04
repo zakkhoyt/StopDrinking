@@ -27,16 +27,14 @@ class ZHIntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if user != nil {
-            navItem.leftBarButtonItem = closeBarButton
-        } else {
-            navItem.leftBarButtonItem = nil
-        }
-        
         // See if there is a user in userdefaults
         let storedUser = ZHUserDefaults.sharedInstance.currentUser()
         if let storedUser = storedUser {
             user = storedUser
+            navItem.leftBarButtonItem = closeBarButton
+        } else {
+            user = ZHUserModel()
+            navItem.leftBarButtonItem = nil
         }
 
         let nib0 = UINib(nibName: "ZHIntroWelcomeCollectionViewCell", bundle: NSBundle.mainBundle())
@@ -89,6 +87,7 @@ class ZHIntroViewController: UIViewController {
     }
     
     @IBAction func closeBarButtonAction(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

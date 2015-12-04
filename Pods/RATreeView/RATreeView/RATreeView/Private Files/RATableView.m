@@ -41,6 +41,7 @@
 - (void)commonInit
 {
   [super setDelegate:self];
+    self.backgroundColor = [UIColor darkGrayColor];
 }
 
 - (void)setTableViewDelegate:(id<UITableViewDelegate>)tableViewDelegate

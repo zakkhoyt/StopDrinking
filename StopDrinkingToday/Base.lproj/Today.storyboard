@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="77u-MA-cUX">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="x46-dj-gWg">
+            <objects>
+                <viewController id="77u-MA-cUX" customClass="ZHTodayViewController" customModule="StopDrinkingToday" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hdj-s7-KCU"/>
+                        <viewControllerLayoutGuide type="bottom" id="itW-I1-WoS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="BRR-j5-73O">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Qz0-VT-Pz4">
+                                <rect key="frame" x="60" y="20" width="540" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdD-cb-TM4">
+                                <rect key="frame" x="16" y="8" width="44" height="44"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="0SK-ks-WcK"/>
+                                    <constraint firstAttribute="height" constant="44" id="N2c-z5-2qu"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-kP-QCA" customClass="ZHAvatarView" customModule="StopDrinkingToday" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ibO-kP-QCA" secondAttribute="height" multiplier="1:1" id="ggv-P5-S3J"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <constraints>
+                            <constraint firstItem="itW-I1-WoS" firstAttribute="top" secondItem="ibO-kP-QCA" secondAttribute="bottom" constant="8" id="5ay-sW-JDj"/>
+                            <constraint firstItem="bdD-cb-TM4" firstAttribute="leading" secondItem="BRR-j5-73O" secondAttribute="leading" constant="16" id="ACY-hG-UyZ"/>
+                            <constraint firstItem="Qz0-VT-Pz4" firstAttribute="leading" secondItem="bdD-cb-TM4" secondAttribute="trailing" id="AEU-9U-UXX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qz0-VT-Pz4" secondAttribute="trailing" constant="-20" id="HE1-tv-DcU"/>
+                            <constraint firstAttribute="centerY" secondItem="bdD-cb-TM4" secondAttribute="centerY" id="Ia3-My-VPc"/>
+                            <constraint firstItem="ibO-kP-QCA" firstAttribute="leading" secondItem="BRR-j5-73O" secondAttribute="leading" constant="8" id="dsA-KK-fzC"/>
+                            <constraint firstItem="Qz0-VT-Pz4" firstAttribute="centerY" secondItem="ibO-kP-QCA" secondAttribute="centerY" id="lbS-qz-3rt"/>
+                            <constraint firstItem="ibO-kP-QCA" firstAttribute="top" secondItem="hdj-s7-KCU" secondAttribute="bottom" constant="8" id="xcM-AN-gHG"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="60"/>
+                    <connections>
+                        <outlet property="avatarView" destination="ibO-kP-QCA" id="zep-vb-hAY"/>
+                        <outlet property="summaryLabel" destination="Qz0-VT-Pz4" id="fNp-ig-RzF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AOD-yH-uoQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967" y="300"/>
+        </scene>
+    </scenes>
+</document>

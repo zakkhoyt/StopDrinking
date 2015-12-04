@@ -22,7 +22,7 @@ class ZHUserModel: NSObject {
         super.init()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    @objc required init?(coder aDecoder: NSCoder) {
         super.init()
         startDate = aDecoder.decodeObjectForKey("startDate") as? NSDate
         drinksPerDay = aDecoder.decodeObjectForKey("drinksPerDay") as? UInt
@@ -44,6 +44,17 @@ class ZHUserModel: NSObject {
         }
     }
 
+
+    func stringForDaysQuitWithOffset(offset: UInt) -> String{
+        let days = daysSinceStartDate()
+        
+        if let days = days {
+            return "\(days + offset) since your last drink. (" + stringForStartDate() + ")"
+        } else {
+            return ""
+        }
+        
+    }
     
     func stringForDaysQuit() -> String{
         let days = daysSinceStartDate()
@@ -137,7 +148,7 @@ class ZHUserModel: NSObject {
 extension ZHUserModel: NSSecureCoding {
     
     
-    func encodeWithCoder(aCoder: NSCoder) {
+    @objc func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(startDate, forKey: "startDate")
         aCoder.encodeObject(drinksPerDay, forKey: "drinksPerDay")
         aCoder.encodeObject(moneyPerDay, forKey: "moneyPerDay")
@@ -148,7 +159,7 @@ extension ZHUserModel: NSSecureCoding {
     }
     
     
-    static func supportsSecureCoding() -> Bool {
+    @objc static func supportsSecureCoding() -> Bool {
         return true;
     }
 

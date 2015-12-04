@@ -1,5 +1,5 @@
 //
-//  TodayViewController.swift
+//  ZHTodayViewController.swift
 //  StopDrinkingToday
 //
 //  Created by Zakk Hoyt on 12/2/15.
@@ -9,16 +9,30 @@
 import UIKit
 import NotificationCenter
 
-class TodayViewController: UIViewController, NCWidgetProviding {
-        
+class ZHTodayViewController: UIViewController, NCWidgetProviding {
+    
+    var user: ZHUserModel? = nil
+
+    @IBOutlet weak var avatarView: ZHAvatarView!
+    @IBOutlet weak var summaryLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
+        user = ZHUserDefaults.sharedInstance.currentUser()
+        self.preferredContentSize = CGSizeMake(0, 60);
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let user = user {
+            avatarView.user = user
+            summaryLabel.text = user.stringForDaysQuit()
+        } else {
+            summaryLabel.text = "Open Stop Drinking to get started"
+        }
+        
+        
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {

@@ -18,6 +18,7 @@ enum ZHHomeViewControllerTableViewSection: Int{
 
 class ZHHomeViewController: UIViewController {
     let SegueMainToIntro = "SegueMainToIntro"
+    let SegueMainToWeb = "SegueMainToWeb"
     let SegueMainToRedditThread = "SegueMainToRedditThread"
     var statusBarHidden: Bool = false
     
@@ -27,8 +28,6 @@ class ZHHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -37,6 +36,9 @@ class ZHHomeViewController: UIViewController {
         if user == nil {
             performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
         } else {
+            if user?.notificationTime != nil {
+                ZHNotificationScheduler.scheduleNotifications()
+            }
             
         }
         
@@ -52,10 +54,6 @@ class ZHHomeViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
-//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-//        return .LightContent
-//    }
-    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueMainToIntro {
@@ -71,6 +69,11 @@ class ZHHomeViewController: UIViewController {
         } else if segue.identifier == SegueMainToRedditThread {
             let vc = segue.destinationViewController as? ZHRedditThreadViewController
             vc?.post = sender as? RKLink
+        } else if segue.identifier == SegueMainToWeb {
+            let nc = segue.destinationViewController as! UINavigationController
+            let vc = nc.viewControllers[0] as! ZHWebViewController
+            vc.url = sender as? NSURL
+
         }
     }
     
@@ -79,6 +82,26 @@ class ZHHomeViewController: UIViewController {
     @IBAction func introButtonTouchUpInside(sender: AnyObject) {
         performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
     }
+    
+    @IBAction func helpBarButtonAction(sender: AnyObject) {
+        let ac = UIAlertController(title: "Chat with someone", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        ac.addAction(UIAlertAction(title: "/r/stopdrinking main chat", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            let url = NSURL(string: "https://kiwiirc.com/client/irc.snoonet.org/stopdrinking/")
+            self.performSegueWithIdentifier(self.SegueMainToWeb, sender: url)
+        }))
+        
+        ac.addAction(UIAlertAction(title: "/r/stopdrinking alternate chat", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            let url = NSURL(string: "http://client00.chat.mibbit.com/?server=irc.snoonet.org&channel=%23stopdrinking")
+            self.performSegueWithIdentifier(self.SegueMainToWeb, sender: url)
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:nil))
+        
+        presentViewController(ac, animated: true) { () -> Void in
+            
+        }
+    }
+    
     
     // MARK: Private methods
     func reddit(){

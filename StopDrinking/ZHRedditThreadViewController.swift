@@ -125,46 +125,46 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
 extension ZHRedditThreadViewController: RATreeViewDelegate {
     
     
-    func treeView(treeView: RATreeView!, willExpandRowForItem item: AnyObject!) {
-        if item is RKLink {
-            
-        } else if item is RKComment {
-            let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
-            cell.expanded = true
-//            treeView.scrollToNearestSelectedRowAtScrollPosition(RATreeViewScrollPositionTop, animated: true)
-////            treeView.scrollToRowForItem(item, atScrollPosition: RATreeViewScrollPositionTop, animated: true)
-        }
-    }
-    
-    func treeView(treeView: RATreeView!, willCollapseRowForItem item: AnyObject!) {
-        if item is RKLink {
-            
-        } else if item is RKComment {
-            let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
-            cell.expanded = false
-        }
-
-    }
-
-    func treeView(treeView: RATreeView!, didExpandRowForItem item: AnyObject!) {
-        if item is RKLink {
-            
-        } else if item is RKComment {
-
-        }
-        
-    }
-
-    
-    func treeView(treeView: RATreeView!, didCollapseRowForItem item: AnyObject!) {
-        if item is RKLink {
-            
-        } else if item is RKComment {
-////            treeView.scrollToRowForItem(item, atScrollPosition: RATreeViewScrollPositionTop, animated: true)
-//            treeView.scrollToNearestSelectedRowAtScrollPosition(RATreeViewScrollPositionTop, animated: true)
-        }
-    }
-    
+//    func treeView(treeView: RATreeView!, willExpandRowForItem item: AnyObject!) {
+//        if item is RKLink {
+//            
+//        } else if item is RKComment {
+//            let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
+//            cell.expanded = true
+////            treeView.scrollToNearestSelectedRowAtScrollPosition(RATreeViewScrollPositionTop, animated: true)
+//////            treeView.scrollToRowForItem(item, atScrollPosition: RATreeViewScrollPositionTop, animated: true)
+//        }
+//    }
+//    
+//    func treeView(treeView: RATreeView!, willCollapseRowForItem item: AnyObject!) {
+//        if item is RKLink {
+//            
+//        } else if item is RKComment {
+//            let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
+//            cell.expanded = false
+//        }
+//
+//    }
+//
+//    func treeView(treeView: RATreeView!, didExpandRowForItem item: AnyObject!) {
+//        if item is RKLink {
+//            
+//        } else if item is RKComment {
+//
+//        }
+//        
+//    }
+//
+//    
+//    func treeView(treeView: RATreeView!, didCollapseRowForItem item: AnyObject!) {
+//        if item is RKLink {
+//            
+//        } else if item is RKComment {
+//////            treeView.scrollToRowForItem(item, atScrollPosition: RATreeViewScrollPositionTop, animated: true)
+////            treeView.scrollToNearestSelectedRowAtScrollPosition(RATreeViewScrollPositionTop, animated: true)
+//        }
+//    }
+//    
 
 }
 

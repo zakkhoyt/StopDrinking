@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tTs-j5-b2U">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Chat-->
+        <scene sceneID="0yf-5L-6FZ">
+            <objects>
+                <viewController id="wgV-tf-p72" customClass="ZHWebViewController" customModule="StopDrinking" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UPn-tB-dvo"/>
+                        <viewControllerLayoutGuide type="bottom" id="jgA-38-cxH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ngk-Ka-nBS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RmR-dk-zrC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wgV-tf-p72" id="pSd-vd-4Rz"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jgA-38-cxH" firstAttribute="top" secondItem="RmR-dk-zrC" secondAttribute="bottom" id="0Hc-kK-sao"/>
+                            <constraint firstItem="RmR-dk-zrC" firstAttribute="leading" secondItem="ngk-Ka-nBS" secondAttribute="leading" id="ax0-OW-cpb"/>
+                            <constraint firstAttribute="trailing" secondItem="RmR-dk-zrC" secondAttribute="trailing" id="hT7-vK-77L"/>
+                            <constraint firstItem="RmR-dk-zrC" firstAttribute="top" secondItem="ngk-Ka-nBS" secondAttribute="top" id="zNJ-4d-tVG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" id="XmA-OX-Hxy">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="b78-i5-RRt">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="wgV-tf-p72" id="mVb-OP-uff"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="RmR-dk-zrC" id="spW-20-0w0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uza-2D-wx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="1531"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yu5-kx-IIu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tTs-j5-b2U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F0s-qo-Okq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wgV-tf-p72" kind="relationship" relationship="rootViewController" id="nNv-Gt-O5U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGi-uh-HXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="1531"/>
+        </scene>
+    </scenes>
+</document>

@@ -159,7 +159,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aAj-0p-dfg">
-                        <barButtonItem key="leftBarButtonItem" title="Get Help" id="XQd-vh-uXV"/>
+                        <barButtonItem key="leftBarButtonItem" title="Get Help" id="XQd-vh-uXV">
+                            <connections>
+                                <action selector="helpBarButtonAction:" destination="zvb-od-Acy" id="4oF-D1-CKd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="w2K-SP-pap">
                             <connections>
                                 <action selector="introButtonTouchUpInside:" destination="zvb-od-Acy" id="cBm-Jn-Ydj"/>
@@ -170,6 +174,7 @@
                         <outlet property="tableView" destination="e5m-LE-clh" id="mSG-RY-13f"/>
                         <segue destination="l6w-Zc-hKA" kind="presentation" identifier="SegueMainToIntro" id="LFh-PP-nUk"/>
                         <segue destination="yss-QP-ICL" kind="show" identifier="SegueMainToRedditThread" id="gDg-fY-B55"/>
+                        <segue destination="kPh-9Q-4jY" kind="show" identifier="SegueMainToWeb" id="ZpU-Wp-yJz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65j-Rt-g8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -183,6 +188,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PoO-CV-brR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1579.5" y="464"/>
+        </scene>
+        <!--Web-->
+        <scene sceneID="aIk-h2-fvA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Web" id="kPh-9Q-4jY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQc-1o-g4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584.5" y="204"/>
         </scene>
         <!--Intro-->
         <scene sceneID="EMq-Di-w2t">
