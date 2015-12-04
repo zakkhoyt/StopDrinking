@@ -20,6 +20,18 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var arrowConstraint: NSLayoutConstraint!
     
+    
+//    override var selected: Bool {
+//        didSet {
+////            print("selected: " + selected ? "true" : "false")
+//            if selected == true {
+//                print("selected")
+//            } else {
+//                print("deselected")
+//            }
+//        }
+//    }
+    
     var expanded: Bool = false {
         didSet{
             renderCellContents()
@@ -39,23 +51,25 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         }
     }
     
+
+    
     func renderCellContents() {
         commentTextView.text = comment?.body
         if comment?.replies.count > 0 && expanded == true {
             arrowImageView.alpha = 1.0
-            UIView .animateWithDuration(0.3, animations: { () -> Void in
+//            UIView .animateWithDuration(0.3, animations: { () -> Void in
                 self.arrowImageView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-            })
-        } else if comment?.replies.count > 0 && expanded == false{
+//            })
+        } else if comment?.replies.count > 0 && expanded == false {
             arrowImageView.alpha = 1.0
-            UIView .animateWithDuration(0.3, animations: { () -> Void in
+//            UIView .animateWithDuration(0.3, animations: { () -> Void in
                 self.arrowImageView.transform = CGAffineTransformMakeRotation(CGFloat(0))
-            })
+//            })
         } else {
             arrowImageView.alpha = 0.3
-            UIView .animateWithDuration(0.3, animations: { () -> Void in
+//            UIView .animateWithDuration(0.3, animations: { () -> Void in
                 self.arrowImageView.transform = CGAffineTransformMakeRotation(CGFloat(0))
-            })
+//            })
 
         }
         
@@ -74,8 +88,11 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
-    
+}
 
+
+extension ZHRedditCommentTableViewCell: UITextViewDelegate {
+    func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
+        return true
+    }
 }

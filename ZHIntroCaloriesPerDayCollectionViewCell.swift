@@ -20,11 +20,12 @@ class ZHIntroCaloriesPerDayCollectionViewCell: ZHIntroCollectionViewCell {
             if user?.caloriesPerDrink == nil {
                 stepper.value = 0
                 nextButton.enabled = false
+                updateLabel(0)
             } else {
                 stepper.value = Double((user?.caloriesPerDrink)!)
                 nextButton.enabled = true
+                updateLabel((user?.caloriesPerDrink)!)
             }
-            updateLabel((user?.caloriesPerDrink)!)
         }
     }
     

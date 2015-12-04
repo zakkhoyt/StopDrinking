@@ -16,8 +16,7 @@ class ZHUserModel: NSObject {
     var caloriesPerDrink: UInt? = nil
     var redditUsername: String? = nil
     var redditPassword: String? = nil
-    
-    var firstName: String? = nil
+    var notificationTime: NSDate? = nil
     
     override init() {
         super.init()
@@ -31,7 +30,7 @@ class ZHUserModel: NSObject {
         caloriesPerDrink = aDecoder.decodeObjectForKey("caloriesPerDrink") as? UInt
         redditUsername = aDecoder.decodeObjectForKey("redditUsername") as? String
         redditPassword = aDecoder.decodeObjectForKey("redditPassword") as? String
-        firstName = aDecoder.decodeObjectForKey("firstName") as? String
+        notificationTime = aDecoder.decodeObjectForKey("notificationTime") as? NSDate
     }
     
 
@@ -45,15 +44,6 @@ class ZHUserModel: NSObject {
         }
     }
 
-    
-
-    func summary() -> String {
-        if let fn = firstName {
-            return "Here is a summary for you, " + fn
-        } else {
-            return "Here is a summary for you"
-        }
-    }
     
     func stringForDaysQuit() -> String{
         let days = daysSinceStartDate()
@@ -154,7 +144,7 @@ extension ZHUserModel: NSSecureCoding {
         aCoder.encodeObject(caloriesPerDrink, forKey: "caloriesPerDrink")
         aCoder.encodeObject(redditUsername, forKey: "redditUsername")
         aCoder.encodeObject(redditPassword, forKey: "redditPassword")
-        aCoder.encodeObject(firstName, forKey: "firstName")
+        aCoder.encodeObject(notificationTime, forKey: "notificationTime")
     }
     
     

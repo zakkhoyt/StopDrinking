@@ -52,7 +52,7 @@
 		C69FC7361C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FC7341C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib */; };
 		C69FC7391C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */; };
 		C69FC73A1C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7381C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift */; };
-		C69FC73C1C10F04400A3E3E0 /* about.txt in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73B1C10F04400A3E3E0 /* about.txt */; };
+		C69FC73C1C10F04400A3E3E0 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73B1C10F04400A3E3E0 /* todo.txt */; };
 		C69FC7401C10F05600A3E3E0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73E1C10F05600A3E3E0 /* Podfile */; };
 		C69FC7411C10F05600A3E3E0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C69FC73F1C10F05600A3E3E0 /* README.md */; };
 /* End PBXBuildFile section */
@@ -152,7 +152,7 @@
 		C69FC7341C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditPostDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditCommentTableViewCell.swift; sourceTree = "<group>"; };
 		C69FC7381C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditPostDetailsTableViewCell.swift; sourceTree = "<group>"; };
-		C69FC73B1C10F04400A3E3E0 /* about.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = about.txt; sourceTree = "<group>"; };
+		C69FC73B1C10F04400A3E3E0 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
 		C69FC73E1C10F05600A3E3E0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		C69FC73F1C10F05600A3E3E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -403,7 +403,7 @@
 			children = (
 				C69FC73E1C10F05600A3E3E0 /* Podfile */,
 				C69FC73F1C10F05600A3E3E0 /* README.md */,
-				C69FC73B1C10F04400A3E3E0 /* about.txt */,
+				C69FC73B1C10F04400A3E3E0 /* todo.txt */,
 			);
 			name = Documents;
 			sourceTree = "<group>";
@@ -554,7 +554,7 @@
 			files = (
 				C69FC7361C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib in Resources */,
 				C635D7D91C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.xib in Resources */,
-				C69FC73C1C10F04400A3E3E0 /* about.txt in Resources */,
+				C69FC73C1C10F04400A3E3E0 /* todo.txt in Resources */,
 				C635D7CD1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.xib in Resources */,
 				C635D7DD1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib in Resources */,
 				C635D7E91C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.xib in Resources */,

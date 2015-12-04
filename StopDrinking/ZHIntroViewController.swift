@@ -16,31 +16,27 @@ class ZHIntroViewController: UIViewController {
     var introCompleteHandler:((user: ZHUserModel)->Void)!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var closeBarButton: UIBarButtonItem!
 
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
+    
     @IBOutlet weak var pageControl: UIPageControl!
     
-    @IBOutlet var introWelcomeView: UIView!
-    @IBOutlet var introStartDateView: UIView!
-    @IBOutlet var introDrinksPerDayView: UIView!
-    @IBOutlet var introMoneyPerDayView: UIView!
-    @IBOutlet var introCaloriesPerDrinkView: UIView!
-    @IBOutlet var introTodayView: UIView!
-    @IBOutlet var introBadgeView: UIView!
-    @IBOutlet var introRedditView: UIView!
-    @IBOutlet var introDoneView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        UIApplication.sharedApplication().statusBarStyle = .Default
+        if user != nil {
+            navItem.leftBarButtonItem = closeBarButton
+        } else {
+            navItem.leftBarButtonItem = nil
+        }
         
         // See if there is a user in userdefaults
         let storedUser = ZHUserDefaults.sharedInstance.currentUser()
         if let storedUser = storedUser {
             user = storedUser
-        } else {
-            user = ZHUserModel()
-            user?.firstName = "Zakkus"
         }
 
         let nib0 = UINib(nibName: "ZHIntroWelcomeCollectionViewCell", bundle: NSBundle.mainBundle())
@@ -91,6 +87,10 @@ class ZHIntroViewController: UIViewController {
     @IBAction func next(sender: AnyObject) {
         scrollToNextPage()
     }
+    
+    @IBAction func closeBarButtonAction(sender: AnyObject) {
+    }
+    
 }
 
 extension ZHIntroViewController: UIScrollViewDelegate {
@@ -186,3 +186,14 @@ extension ZHIntroViewController: UICollectionViewDelegateFlowLayout {
         return collectionView.frame.size
     }
 }
+
+extension ZHIntroViewController: UIBarPositioningDelegate {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached
+    }
+}
+
+
+
+
+

@@ -58,9 +58,6 @@ class ZHIntroRedditCollectionViewCell: ZHIntroCollectionViewCell {
     
     @IBAction func signInButtonTouchUpInside(sender: AnyObject) {
         
-        
-        var usernameTextField: UITextField?
-        var passwordTextField: UITextField?
         let ac = UIAlertController(title: "Enter Password", message: "You have selected to enter your passwod.", preferredStyle: UIAlertControllerStyle.Alert)
         ac.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         ac.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
@@ -78,15 +75,19 @@ class ZHIntroRedditCollectionViewCell: ZHIntroCollectionViewCell {
                             UIView.animateWithDuration(0.3, delay: 2, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
                                 self.errorLabel.alpha = 0
                                 }, completion: { (animated) -> Void in
-                                    
                             })
                     })
                 } else {
                     self.user?.redditUsername = user
                     self.user?.redditPassword = pass
                     self.user = self.user! // this triggers UI updates
-                    if(self.nextHandler != nil){
-                        self.nextHandler()
+                    
+                    // Pause so the user can see that the sign in worked
+                    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC)))
+                    dispatch_after(delayTime, dispatch_get_main_queue()) {
+                        if(self.nextHandler != nil){
+                            self.nextHandler()
+                        }
                     }
                 }
                 MBProgressHUD.hideHUDForView(self, animated: true)
@@ -95,15 +96,14 @@ class ZHIntroRedditCollectionViewCell: ZHIntroCollectionViewCell {
         ac.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Username"
             textField.secureTextEntry = false
-            usernameTextField = textField
+            textField.textAlignment = .Center
         })
         ac.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
             textField.placeholder = "Password"
             textField.secureTextEntry = true
-            passwordTextField = textField
+            textField.textAlignment = .Center
         })
 
-        
         viewController!.presentViewController(ac, animated: true, completion: nil)
     }
     

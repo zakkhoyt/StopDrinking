@@ -14,13 +14,20 @@ class ZHIntroStartDateCollectionViewCell: ZHIntroCollectionViewCell {
     override var user: ZHUserModel? {
         didSet {
             if user?.startDate == nil {
-                datePickerView.selectDate(NSDate())
-                datePickerView.scrollToToday(true)
-                nextButton.enabled = false
+                self.datePickerView.selectDate(NSDate())
+                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC)))
+                dispatch_after(delayTime, dispatch_get_main_queue()) { [unowned self] in
+                    self.datePickerView.scrollToToday(true)
+                    self.nextButton.enabled = false
+                }
+
             } else {
-                datePickerView.selectDate(user?.startDate)
-                datePickerView.scrollToToday(true)
-                nextButton.enabled = true
+                self.datePickerView.selectDate(self.user?.startDate)
+                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC)))
+                dispatch_after(delayTime, dispatch_get_main_queue()) { [unowned self] in
+                    self.datePickerView.scrollToToday(true)
+                    self.nextButton.enabled = true
+                }
             }
         }
     }

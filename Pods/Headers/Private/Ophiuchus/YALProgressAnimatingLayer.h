@@ -1,1 +1,0 @@
-../../../Ophiuchus/Pod/Classes/PathAnimatingLayers/ProgressAnimatingLayer/YALProgressAnimatingLayer.h

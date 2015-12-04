@@ -19,11 +19,13 @@ class ZHIntroMoneyPerDayCollectionViewCell: ZHIntroCollectionViewCell {
             if user?.moneyPerDay == nil {
                 stepper.value = 0
                 nextButton.enabled = false
+                updateLabel(0)
             } else {
                 stepper.value = Double((user?.moneyPerDay)!)
                 nextButton.enabled = true
+                updateLabel((user?.moneyPerDay)!)
             }
-            updateLabel((user?.moneyPerDay)!)
+            
         }
     }
 

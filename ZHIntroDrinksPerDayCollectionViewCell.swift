@@ -18,11 +18,13 @@ class ZHIntroDrinksPerDayCollectionViewCell: ZHIntroCollectionViewCell {
             if user?.drinksPerDay == nil {
                 stepper.value = 0
                 nextButton.enabled = false
+                updateLabel(0)
             } else {
                 stepper.value = Double((user?.drinksPerDay)!)
                 nextButton.enabled = true
+                updateLabel((user?.drinksPerDay)!)
             }
-            updateLabel((user?.drinksPerDay)!)
+            
         }
     }
 

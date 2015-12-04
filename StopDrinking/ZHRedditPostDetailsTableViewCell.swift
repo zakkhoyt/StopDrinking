@@ -12,33 +12,12 @@ class ZHRedditPostDetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bodyTextView: UITextView!
     
-    //    var post: RKLink? = nil {
-    //        didSet{
-    //            if post != nil  {
-    //                let text = NSString(format: "%@\n\n%@\n\n-%@", post!.title, post!.selfText, post!.author)
-    //                bodyTextView.text = text
-    //            } else {
-    //                bodyTextView.text = "post is nil"
-    //            }
-    //        }
-    //    }
     var post: RKLink? = nil{
         didSet{
             let attrString = NSMutableAttributedString()
             var insertPoint: Int = 0
             let paragraph = NSMutableParagraphStyle()
             paragraph.alignment = .Left
-            
-            
-            
-            //            let attr0 = [NSParagraphStyleAttributeName : paragraph,
-            //                NSForegroundColorAttributeName : UIColor.blackColor(),
-            //                NSFontAttributeName: UIFont.boldSystemFontOfSize(28)]
-            //
-            //            let str0 = NSString(format: "%lu.) ", index)
-            //            attrString.appendAttributedString(NSAttributedString(string: str0))
-            //            attrString.setAttributes(attr0, range: NSMakeRange(insertPoint, str0.length))
-            //            insertPoint += str0.length
             
             
             let attr1 = [NSParagraphStyleAttributeName : paragraph,
@@ -67,9 +46,6 @@ class ZHRedditPostDetailsTableViewCell: UITableViewCell {
             
             bodyTextView.attributedText = attrString
             
-            //            let size = postTextView.sizeThatFits(CGSizeMake(self.bounds.width, 100000))
-            //            println("size: " + NSStringFromCGSize(size))
-            //
             UIView.animateWithDuration(3.0, animations: { () -> Void in
                 self.layoutIfNeeded()
             })
@@ -87,4 +63,10 @@ class ZHRedditPostDetailsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+extension ZHRedditPostDetailsTableViewCell: UITextViewDelegate {
+    func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
+        return true
+    }
 }

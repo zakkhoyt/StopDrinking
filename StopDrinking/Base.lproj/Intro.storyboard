@@ -23,15 +23,8 @@
                                 <animations/>
                                 <color key="pageIndicatorTintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Drinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeD-xq-sxr">
-                                <rect key="frame" x="20" y="20" width="560" height="33"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hqz-x9-Xel">
-                                <rect key="frame" x="0.0" y="60.5" width="600" height="486.5"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="483"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Qvg-IM-RsK">
@@ -46,28 +39,46 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="yhs-Q7-qmc"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGR-9i-OPg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="Sf4-HQ-Nke"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Kpy-on-6dn"/>
+                                </connections>
+                            </navigationBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xeD-xq-sxr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Aee-Zb-zJv"/>
-                            <constraint firstItem="hqz-x9-Xel" firstAttribute="top" secondItem="xeD-xq-sxr" secondAttribute="bottom" constant="8" id="NSo-hq-x6L"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hqz-x9-Xel" secondAttribute="trailing" constant="-20" id="RWV-2x-jlQ"/>
-                            <constraint firstItem="xeD-xq-sxr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Rr1-Hp-Rdm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vGR-9i-OPg" secondAttribute="trailing" constant="-20" id="BLC-2c-iqV"/>
+                            <constraint firstItem="vGR-9i-OPg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="aAT-sY-cfw"/>
                             <constraint firstItem="PT0-vM-b1n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gBi-Fu-Ibn"/>
-                            <constraint firstItem="xeD-xq-sxr" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jIg-C9-cPu"/>
+                            <constraint firstItem="PT0-vM-b1n" firstAttribute="top" secondItem="hqz-x9-Xel" secondAttribute="bottom" constant="8" symbolic="YES" id="ijz-BN-iwv"/>
+                            <constraint firstItem="vGR-9i-OPg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="k0M-4Q-Tdu"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PT0-vM-b1n" secondAttribute="bottom" constant="8" id="mwG-td-FJG"/>
-                            <constraint firstItem="PT0-vM-b1n" firstAttribute="top" secondItem="hqz-x9-Xel" secondAttribute="bottom" constant="8" id="rkC-Qr-IPy"/>
-                            <constraint firstItem="hqz-x9-Xel" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vZ4-X8-wfx"/>
+                            <constraint firstItem="hqz-x9-Xel" firstAttribute="leading" secondItem="vGR-9i-OPg" secondAttribute="leading" id="qeu-eo-TuM"/>
+                            <constraint firstItem="hqz-x9-Xel" firstAttribute="trailing" secondItem="vGR-9i-OPg" secondAttribute="trailing" id="tdI-iY-yPR"/>
+                            <constraint firstItem="hqz-x9-Xel" firstAttribute="top" secondItem="vGR-9i-OPg" secondAttribute="bottom" id="u1L-jY-KvG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome to this app" id="22t-ca-KOk"/>
                     <connections>
+                        <outlet property="closeBarButton" destination="yG8-IS-2Z9" id="4ob-e9-Gbu"/>
                         <outlet property="collectionView" destination="hqz-x9-Xel" id="Qn0-jO-YfD"/>
+                        <outlet property="navBar" destination="vGR-9i-OPg" id="S0r-UD-z0T"/>
+                        <outlet property="navItem" destination="Sf4-HQ-Nke" id="ADA-oB-H9q"/>
                         <outlet property="pageControl" destination="PT0-vM-b1n" id="HtP-Bf-GN2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Close" id="yG8-IS-2Z9">
+                    <connections>
+                        <action selector="closeBarButtonAction:" destination="BYZ-38-t0r" id="k6F-hx-DrB"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="1055" y="376"/>
         </scene>

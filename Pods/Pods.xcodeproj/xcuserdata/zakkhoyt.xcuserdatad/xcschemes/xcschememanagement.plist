@@ -8,109 +8,71 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
 		</dict>
 		<key>Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>Onboard.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>Ophiuchus.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>RATreeView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>RSDayFlow.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
 		<key>RedditKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>100048832FFB9FDD73757ACC1CD48CD0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>18D9AF3CB8AB4A4DAE5522446939BBF6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>33FF3CB8D529D102142C93795ADD1A55</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57648F9BFDC6D32CD3E79DA7CB3D6932</key>
+		<key>4B119A7D977CFF345DF64F6F397A7C12</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5AF7B16EB59F2A224B2E2C39B66578EA</key>
+		<key>A122A59C4CADCB45B883BBBD475325E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>868BEEDBE4326F82BC91C53525C46A19</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BB58AC6D7CE35348B874113DF4C0EF45</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE1B3D5F5EECD96BA59F9B8ACACFE28F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C12CB9E0968B8CCF4C250B144E027D76</key>
+		<key>A4A8C599719D3FDA05F3D1D8CE4E4E43</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E740B53CEE4D240CBC33162A24B8609B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE5DEA07F836431FA66991FAF75059A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

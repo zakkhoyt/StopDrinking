@@ -13,6 +13,8 @@ class ZHHomeRedditTableViewCell: UITableViewCell  {
     
     
     @IBOutlet weak var postTextView: UITextView!
+    @IBOutlet weak var userLabel: UILabel!
+    
     var index: UInt = 0
     var post: RKLink? = nil{
         didSet{
@@ -37,7 +39,7 @@ class ZHHomeRedditTableViewCell: UITableViewCell  {
                 NSForegroundColorAttributeName : UIColor.whiteColor(),
                 NSFontAttributeName: UIFont.systemFontOfSize(22)]
             
-            let str1 = NSString(format: "%@\n", post!.title)
+            let str1: NSString = post!.title
             attrString.appendAttributedString(NSAttributedString(string: str1 as String))
             attrString.setAttributes(attr1, range: NSMakeRange(insertPoint, str1.length))
             insertPoint += str1.length
@@ -50,20 +52,23 @@ class ZHHomeRedditTableViewCell: UITableViewCell  {
 //            attrString.setAttributes(attr2, range: NSMakeRange(insertPoint, str2.length))
 //            insertPoint += str2.length
             
-            let attr3 = [NSParagraphStyleAttributeName : paragraph,
-                NSForegroundColorAttributeName : UIColor.lightGrayColor(),
-                NSFontAttributeName: UIFont.italicSystemFontOfSize(18)]
-            
-            let str3 = NSString(format: "\n-%@\n", post!.author)
-            attrString.appendAttributedString(NSAttributedString(string: str3 as String))
-            attrString.setAttributes(attr3, range: NSMakeRange(insertPoint, str3.length))
-            insertPoint += str3.length
+//            let attr3 = [NSParagraphStyleAttributeName : paragraph,
+//                NSForegroundColorAttributeName : UIColor.lightGrayColor(),
+//                NSFontAttributeName: UIFont.italicSystemFontOfSize(18)]
+//            
+//            let str3 = NSString(format: "\n\t-%@\n", post!.author)
+//            attrString.appendAttributedString(NSAttributedString(string: str3 as String))
+//            attrString.setAttributes(attr3, range: NSMakeRange(insertPoint, str3.length))
+//            insertPoint += str3.length
             
             postTextView.attributedText = attrString
             
 //            let size = postTextView.sizeThatFits(CGSizeMake(self.bounds.width, 100000))
 //            println("size: " + NSStringFromCGSize(size))
 //            
+            
+            userLabel.text = "-" + post!.author + "\t"
+            
             UIView.animateWithDuration(3.0, animations: { () -> Void in
                 self.layoutIfNeeded()
             })

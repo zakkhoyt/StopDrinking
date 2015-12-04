@@ -19,6 +19,7 @@ enum ZHHomeViewControllerTableViewSection: Int{
 class ZHHomeViewController: UIViewController {
     let SegueMainToIntro = "SegueMainToIntro"
     let SegueMainToRedditThread = "SegueMainToRedditThread"
+    var statusBarHidden: Bool = false
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -81,16 +82,16 @@ class ZHHomeViewController: UIViewController {
     
     // MARK: Private methods
     func reddit(){
+        MBProgressHUD.showHUDAddedTo(view, animated: true)
         RKClient.sharedClient().subredditWithName("stopdrinking", completion: { (subreddit, error) -> Void in
             let pagination = RKPagination()
             RKClient.sharedClient().linksInSubreddit(subreddit as! RKSubreddit, category: RKSubredditCategory.Top, pagination: pagination, completion: { (posts: [AnyObject]!, page: RKPagination!, error:NSError!) -> Void in
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
                 if error == nil {
-                    
                     if self.posts.count == 0 {
                         self.posts = posts as! [RKLink]
                         var indexPaths: [NSIndexPath] = []
                         for index in 0..<posts.count {
-//                            let post = posts[index] as! RKLink
                             let indexPath = NSIndexPath(forRow: index, inSection: ZHHomeViewControllerTableViewSection.Reddit.rawValue)
                             indexPaths.append(indexPath)
                         }
@@ -144,7 +145,39 @@ extension ZHHomeViewController: UITableViewDataSource {
 
 extension ZHHomeViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let post = posts[indexPath.row]
-        performSegueWithIdentifier(SegueMainToRedditThread, sender: post)
+        if indexPath.section == ZHHomeViewControllerTableViewSection.Reddit.rawValue {
+            let post = posts[indexPath.row]
+            performSegueWithIdentifier(SegueMainToRedditThread, sender: post)            
+        }
+    }
+}
+
+
+// This extension hides/shows the navigation bar and status bar as the user scrolls
+extension ZHHomeViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < view.bounds.size.height / 2.0 {
+            showNavBar()
+        } else {
+            hideNavBar()
+        }
+    }
+    
+    func showNavBar() {
+        if statusBarHidden == false {
+            return
+        }
+        statusBarHidden = false
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    func hideNavBar() {
+        if statusBarHidden == true {
+            return
+        }
+        statusBarHidden = true
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }

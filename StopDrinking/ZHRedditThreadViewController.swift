@@ -20,9 +20,12 @@ class ZHRedditThreadViewController: UIViewController {
     @IBOutlet weak var treeView: RATreeView!
     var post: RKLink? = nil
     var comments: [RKComment]? = nil
+    var statusBarHidden: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.darkGrayColor()
         
         UIApplication.sharedApplication().statusBarHidden = false
         treeView.rowsCollapsingAnimation = RATreeViewRowAnimationTop
@@ -35,18 +38,22 @@ class ZHRedditThreadViewController: UIViewController {
         treeView.backgroundColor = UIColor.darkGrayColor()
         treeView.separatorColor = UIColor.darkGrayColor()
         
+//        navigationItem.title = "Thread"
+        
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         RKClient.sharedClient().commentsForLink(post, completion: { (comments, pagination, error) -> Void in
             if error == nil {
-                for index in 0..<comments.count {
-                    let comment = comments[index] as! RKComment
-                    print("\(index): comment.replics \(comment.replies.count)")
-                }
                 self.comments = comments as? [RKComment]
                 self.treeView.reloadData()
             }
             MBProgressHUD.hideHUDForView(self.view, animated: true)
         })
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @IBAction func doneButtonAction(sender: AnyObject) {
@@ -57,12 +64,6 @@ class ZHRedditThreadViewController: UIViewController {
 
 }
 
-
-extension ZHRedditThreadViewController: UIScrollViewDelegate {
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        print(__FUNCTION__)
-    }
-}
 
 extension ZHRedditThreadViewController: RATreeViewDataSource{
     
@@ -95,8 +96,15 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
             }
         }
         
-        let comment = item as! RKComment
-        return comment.replies.count
+        if item is RKLink {
+
+        } else if item is RKComment {
+            let comment = item as! RKComment
+            return comment.replies.count
+        }
+        
+        return 0
+
     }
     
     func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
@@ -116,38 +124,74 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
 
 extension ZHRedditThreadViewController: RATreeViewDelegate {
     
-//    func treeView(treeView: RATreeView!, editingStyleForRowForItem item: AnyObject!) -> UITableViewCellEditingStyle {
-//        return .None
-//    }
-//    
-//    
     
     func treeView(treeView: RATreeView!, willExpandRowForItem item: AnyObject!) {
-//        treeView.alwaysBounceHorizontal = false
-//        treeView.scrollEnabled = false
-        let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
-        cell.expanded = true
+        if item is RKLink {
+            
+        } else if item is RKComment {
+            let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
+            cell.expanded = true
+//            treeView.scrollToNearestSelectedRowAtScrollPosition(RATreeViewScrollPositionTop, animated: true)
+////            treeView.scrollToRowForItem(item, atScrollPosition: RATreeViewScrollPositionTop, animated: true)
+        }
     }
     
     func treeView(treeView: RATreeView!, willCollapseRowForItem item: AnyObject!) {
-//        treeView.alwaysBounceHorizontal = false
-//        treeView.scrollEnabled = false
+        if item is RKLink {
+            
+        } else if item is RKComment {
+            let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
+            cell.expanded = false
+        }
 
-        let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
-        cell.expanded = false
     }
-    
-    
-    func treeView(treeView: RATreeView!, didCollapseRowForItem item: AnyObject!) {
-//        treeView.alwaysBounceHorizontal = true
-//        treeView.scrollEnabled = true
+
+    func treeView(treeView: RATreeView!, didExpandRowForItem item: AnyObject!) {
+        if item is RKLink {
+            
+        } else if item is RKComment {
+
+        }
         
     }
+
     
-    func treeView(treeView: RATreeView!, didExpandRowForItem item: AnyObject!) {
-//        treeView.alwaysBounceHorizontal = true
-//        treeView.scrollEnabled = true
-
+    func treeView(treeView: RATreeView!, didCollapseRowForItem item: AnyObject!) {
+        if item is RKLink {
+            
+        } else if item is RKComment {
+////            treeView.scrollToRowForItem(item, atScrollPosition: RATreeViewScrollPositionTop, animated: true)
+//            treeView.scrollToNearestSelectedRowAtScrollPosition(RATreeViewScrollPositionTop, animated: true)
+        }
     }
+    
 
+}
+
+// This extension hides/shows the navigation bar and status bar as the user scrolls
+extension ZHRedditThreadViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < view.bounds.size.height / 2.0 {
+            showNavBar()
+        } else {
+            hideNavBar()
+        }
+    }
+    
+    func showNavBar() {
+        if statusBarHidden == false {
+            return
+        }
+        statusBarHidden = false
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    func hideNavBar() {
+        if statusBarHidden == true {
+            return
+        }
+        statusBarHidden = true
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 }
