@@ -20,46 +20,31 @@ class ZHHomeViewController: UIViewController {
     let SegueMainToIntro = "SegueMainToIntro"
     let SegueMainToWeb = "SegueMainToWeb"
     let SegueMainToRedditThread = "SegueMainToRedditThread"
+    var category: RKSubredditCategory = .Hot
     var user: ZHUserModel? = nil
     var statusBarHidden: Bool = false
+    var pagination: RKPagination? = nil
+    var posts: [RKLink] = []
+    var isGettingNextPage: Bool = false
+    var refreshControl: UIRefreshControl? =  nil
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var categoryButton: UIButton!
     
-    var posts: [RKLink] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-        user = ZHUserDefaults.sharedInstance.currentUser()
-        if user == nil {
-            performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
-        } else {
-            if user?.notificationTime != nil {
-                ZHNotificationScheduler.scheduleNotifications()
-            }
-        }
-
-        reddit()
-
-        
-//        if RKClient.sharedClient().isSignedIn() == true {
-//            reddit()
-//        } else {
-////            signIntoReddit()
-//            print("TODO: Log into reddit with stored credentials")
-//        }
-        
+        categoryButton.setTitle("Hot", forState: UIControlState.Normal)
+        setupTableView()
+        setupUser()
+        resetReddit()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -69,7 +54,7 @@ class ZHHomeViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueMainToIntro {
             let vc = segue.destinationViewController as? ZHIntroViewController
@@ -80,7 +65,7 @@ class ZHHomeViewController: UIViewController {
                 
                 
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in
-                    self.tableView.reloadData() 
+                    self.tableView.reloadData()
                 })
             })
         } else if segue.identifier == SegueMainToRedditThread {
@@ -90,12 +75,146 @@ class ZHHomeViewController: UIViewController {
             let nc = segue.destinationViewController as! UINavigationController
             let vc = nc.viewControllers[0] as! ZHWebViewController
             vc.url = sender as? NSURL
-
+            
         }
     }
     
+    
+    
+    // MARK: Private methods
+    
+    func setupTableView() {
+        // Setup TableView
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // Add pull to refresh control
+        refreshControl = UIRefreshControl()
+        let attr = [NSForegroundColorAttributeName : UIColor.yellowColor()]
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attr)
+        refreshControl?.tintColor = UIColor.yellowColor()
+        refreshControl?.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl!)
+    }
+    
+    func setupUser() {
+        user = ZHUserDefaults.sharedInstance.currentUser()
+        if user == nil {
+            // Show setup screen
+            performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
+        } else {
+            // Schedule notifications
+            if user?.notificationTime != nil {
+                ZHNotificationScheduler.scheduleNotifications()
+            }
+            
+            // Update Badge
+            let days = Int((user?.daysSinceStartDate()!)!)
+            UIApplication.sharedApplication().applicationIconBadgeNumber = days
+        }
+    }
+    
+    func resetReddit() {
+        pagination = nil
+        posts = []
+        tableView.reloadData()
+        getNextPageOfPosts()
+    }
+    
+    
+    func getNextPageOfPosts(){
+        isGettingNextPage = true
+        MBProgressHUD.showHUDAddedTo(view, animated: true)
+        RKClient.sharedClient().subredditWithName("stopdrinking", completion: { (subreddit, error) -> Void in
+            if error != nil {
+                self.presentAlertDialogWithTitle("Could not get subreddit", errorAsMessage: error)
+            } else {
+                RKClient.sharedClient().linksInSubreddit(subreddit as! RKSubreddit, category: self.category, pagination: self.pagination, completion: { (posts: [AnyObject]!, newPagination: RKPagination!, error:NSError!) -> Void in
+                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                    
+                    if error != nil {
+                        self.presentAlertDialogWithTitle("Could not get posts", errorAsMessage: error)
+                    } else {
+                        self.pagination = newPagination
+                        let postsToAppend = posts as! [RKLink]
+                        if postsToAppend.count == 0 {
+                            self.tableView.reloadData()
+                        } else {
+                            let start = self.posts.count
+                            // Append so self.posts
+                            self.posts.appendContentsOf(postsToAppend)
+                            let end = self.posts.count
+                            
+                            print("posts.count: \(self.posts.count)")
+                            
+                            // Get index paths to insert
+                            var indexPaths: [NSIndexPath] = []
+                            
+                            for index in start ..< end {
+                                let indexPath = NSIndexPath(forRow: index, inSection: ZHHomeViewControllerTableViewSection.Reddit.rawValue)
+                                indexPaths.append(indexPath)
+                            }
+//                            self.tableView.beginUpdates()
+                            self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
+//                            self.tableView.endUpdates()
+//                            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.posts.count, inSection: ZHHomeViewControllerTableViewSection.Reddit.rawValue), atScrollPosition: .Bottom, animated: true)
+                        }
+                    }
+                    
+                    
+                    // Pause so we don't get a shit load of next pages
+                    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+                    dispatch_after(delayTime, dispatch_get_main_queue()) {
+                        self.isGettingNextPage = false
+                    }
+                })
+            }
+        })
+    }
+    
+    
     // MARK: IBActions
+    
+    func refreshControlAction(sender: UIRefreshControl) {
+        sender.endRefreshing()
+    }
+    
+    @IBAction func sortButtonTouchUpInside(sender: UIButton) {
+        let ac = UIAlertController(title: "Category", message: nil, preferredStyle: .Alert)
+        
+        ac.addAction(UIAlertAction(title: "Hot", style: .Default, handler: { (action) -> Void in
+            self.category = .Hot
+            self.categoryButton.setTitle("Hot", forState: UIControlState.Normal)
+            self.resetReddit()
+        }))
 
+        ac.addAction(UIAlertAction(title: "New", style: .Default, handler: { (action) -> Void in
+            self.category = .New
+            self.categoryButton.setTitle("New", forState: UIControlState.Normal)
+            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Rising", style: .Default, handler: { (action) -> Void in
+            self.category = .Rising
+            self.categoryButton.setTitle("Rising", forState: UIControlState.Normal)
+            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Controversial", style: .Default, handler: { (action) -> Void in
+            self.category = .Controversial
+            self.categoryButton.setTitle("Controversial", forState: UIControlState.Normal)
+            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Top", style: .Default, handler: { (action) -> Void in
+            self.category = .Top
+            self.categoryButton.setTitle("Top", forState: UIControlState.Normal)
+            self.resetReddit()
+        }))
+        
+        presentViewController(ac, animated: true, completion: nil)
+}
+    
     @IBAction func introButtonTouchUpInside(sender: AnyObject) {
         performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
     }
@@ -118,74 +237,6 @@ class ZHHomeViewController: UIViewController {
             
         }
     }
-    
-    
-    // MARK: Private methods
-    
-//    func signIntoReddit() {
-//        
-//        let user = ZHUserDefaults.sharedInstance.currentUser()
-//        if user == nil {
-//            return
-//        } else {
-//
-//            RKClient.sharedClient().signInWithUsername(user?.redditUsername, password: user?.redditPassword) { (error) -> Void in
-//                if error != nil {
-////                    self.errorLabel.text = error.localizedDescription + "\nTry again"
-////                    UIView.animateWithDuration(0.3, animations: { () -> Void in
-////                        self.errorLabel.alpha = 1.0
-////                        }, completion: { (animated) -> Void in
-////                            UIView.animateWithDuration(0.3, delay: 2, options: UIViewAnimationOptions.CurveLinear, animations: { () -> Void in
-////                                self.errorLabel.alpha = 0
-////                                }, completion: { (animated) -> Void in
-////                            })
-////                    })
-//                } else {
-////                    self.user?.redditUsername = user
-////                    self.user?.redditPassword = pass
-////                    self.user = self.user! // this triggers UI updates
-////                    
-////                    // Pause so the user can see that the sign in worked
-////                    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC)))
-////                    dispatch_after(delayTime, dispatch_get_main_queue()) {
-////                        if(self.nextHandler != nil){
-////                            self.nextHandler()
-////                        }
-////                    }
-//                    user?.redditAuthenticated = true
-//                }
-//                MBProgressHUD.hideHUDForView(self, animated: true)
-//            }
-//        }
-//    }
-    
-    
-    
-    func reddit(){
-        MBProgressHUD.showHUDAddedTo(view, animated: true)
-        RKClient.sharedClient().subredditWithName("stopdrinking", completion: { (subreddit, error) -> Void in
-            let pagination = RKPagination()
-            RKClient.sharedClient().linksInSubreddit(subreddit as! RKSubreddit, category: RKSubredditCategory.Hot, pagination: pagination, completion: { (posts: [AnyObject]!, page: RKPagination!, error:NSError!) -> Void in
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
-                if error == nil {
-                    if self.posts.count == 0 {
-                        self.posts = posts as! [RKLink]
-                        var indexPaths: [NSIndexPath] = []
-                        for index in 0..<posts.count {
-                            let indexPath = NSIndexPath(forRow: index, inSection: ZHHomeViewControllerTableViewSection.Reddit.rawValue)
-                            indexPaths.append(indexPath)
-                        }
-                        self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
-                    } else {
-                        self.tableView.reloadData()
-                    }
-                } else {
-                    print("could not get subreddit links")
-                }
-            })
-        })
-    }
-
 }
 
 extension ZHHomeViewController: UITableViewDataSource {
@@ -196,9 +247,9 @@ extension ZHHomeViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case ZHHomeViewControllerTableViewSection.Status.rawValue:
-                return 1
+            return 1
         case ZHHomeViewControllerTableViewSection.Reddit.rawValue:
-                return posts.count
+            return posts.count
         default:
             return 0
         }
@@ -226,7 +277,7 @@ extension ZHHomeViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == ZHHomeViewControllerTableViewSection.Reddit.rawValue {
             let post = posts[indexPath.row]
-            performSegueWithIdentifier(SegueMainToRedditThread, sender: post)            
+            performSegueWithIdentifier(SegueMainToRedditThread, sender: post)
         }
     }
 }
@@ -240,6 +291,13 @@ extension ZHHomeViewController: UIScrollViewDelegate {
             showNavBar()
         } else {
             hideNavBar()
+        }
+        
+        
+        if scrollView.contentSize.height == 0 || self.isGettingNextPage {
+            return;
+        } else if scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.bounds.size.height {
+            getNextPageOfPosts()
         }
     }
     

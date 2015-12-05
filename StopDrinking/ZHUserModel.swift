@@ -18,6 +18,7 @@ class ZHUserModel: NSObject {
     var redditPassword: String? = nil
     var notificationTime: NSDate? = nil
     var redditAuthenticated: Bool = false;
+        
     
     override init() {
         super.init()

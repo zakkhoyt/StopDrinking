@@ -45,7 +45,7 @@ class ZHNotificationScheduler: NSObject {
             print("alert: " + notification.alertBody!)
             print("inspect notification")
         }
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 99
+        
     }
     
     class func unscheduleNotifications() {

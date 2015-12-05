@@ -87,7 +87,7 @@ class ZHIntroViewController: UIViewController {
     }
     
     @IBAction func closeBarButtonAction(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        self.introCompleteHandler(user: self.user!)
     }
     
 }

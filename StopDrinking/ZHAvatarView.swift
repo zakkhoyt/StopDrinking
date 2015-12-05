@@ -14,7 +14,7 @@ class ZHAvatarView: UIView {
     @IBOutlet weak var countLabel: UILabel!
     var user: ZHUserModel? = nil {
         didSet{
-//            configureView()
+            configureView()
         }
     }
     
@@ -27,14 +27,14 @@ class ZHAvatarView: UIView {
     }
     
     func configureView() {
-//        // Image
-//        let image = imageForDaysQuit()
-//        if let i = image {
-//            let im = i
-//            shapeImageView.image = im
-//        } else {
-//            print("no image returned for days quit")
-//        }
+        // Image
+        let image = imageForDaysQuit()
+        if let i = image {
+            let im = i
+            shapeImageView.image = im
+        } else {
+            print("no image returned for days quit")
+        }
         
         
         // label
@@ -63,13 +63,13 @@ class ZHAvatarView: UIView {
         
         if let days = days {
             if days >= 0 && days <= 6 {
-                return "\(days)"
+                return "\(days)d"
             } else if days >= 7 && days <= 30 {
-                return "\(days / 7)"
+                return "\(days / 7)w"
             } else if days >= 31 && days <= 364 {
-                return "\(days / 31)"
+                return "\(days / 31)m"
             } else if days >= 365 && days <= UInt(UINT32_MAX) {
-                return "\(days / 365)"
+                return "\(days / 365)y"
             }
         }
         

@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="371" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e5m-LE-clh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="371" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e5m-LE-clh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="249"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zaB-Nc-4JP" id="KCN-HL-Awd">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="248.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your last drink was on ______" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-rz-U9u">
@@ -102,19 +102,9 @@
                                         <rect key="frame" x="0.0" y="341" width="600" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bqm-fE-yTp" id="gGX-TB-SSm">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="134.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HH-1x-vv6">
-                                                    <rect key="frame" x="8" y="0.0" width="584" height="112"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
-                                                </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIK-IQ-hQC">
                                                     <rect key="frame" x="8" y="112" width="584" height="14.5"/>
                                                     <animations/>
@@ -122,22 +112,54 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXK-Q4-xNR">
+                                                    <rect key="frame" x="8" y="8" width="41.5" height="19.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5R-AR-rO1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="8us-Ac-jgh"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="m9y-wh-8S7"/>
+                                                    </constraints>
+                                                </view>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HH-1x-vv6">
+                                                    <rect key="frame" x="57" y="0.0" width="534.5" height="112"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                                                </textView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="1HH-1x-vv6" firstAttribute="top" secondItem="gGX-TB-SSm" secondAttribute="topMargin" constant="-8" id="1gV-nF-UpG"/>
+                                                <constraint firstItem="i5R-AR-rO1" firstAttribute="top" secondItem="gGX-TB-SSm" secondAttribute="top" id="CFC-lN-fOt"/>
+                                                <constraint firstItem="RIK-IQ-hQC" firstAttribute="top" secondItem="1HH-1x-vv6" secondAttribute="bottom" id="EYk-1t-IOc"/>
+                                                <constraint firstItem="1HH-1x-vv6" firstAttribute="trailing" secondItem="gGX-TB-SSm" secondAttribute="trailingMargin" id="FyG-Yn-IA4"/>
+                                                <constraint firstItem="1HH-1x-vv6" firstAttribute="top" secondItem="gGX-TB-SSm" secondAttribute="topMargin" constant="-8" id="Il8-8K-nUf"/>
+                                                <constraint firstItem="1HH-1x-vv6" firstAttribute="leading" secondItem="tXK-Q4-xNR" secondAttribute="trailing" constant="8" id="IuK-cw-rj0"/>
                                                 <constraint firstItem="RIK-IQ-hQC" firstAttribute="leading" secondItem="gGX-TB-SSm" secondAttribute="leadingMargin" id="JYt-5r-fHe"/>
-                                                <constraint firstItem="1HH-1x-vv6" firstAttribute="leading" secondItem="gGX-TB-SSm" secondAttribute="leadingMargin" id="g9t-mv-09A"/>
+                                                <constraint firstAttribute="trailing" secondItem="i5R-AR-rO1" secondAttribute="trailing" id="WVR-4N-Nv4"/>
+                                                <constraint firstItem="tXK-Q4-xNR" firstAttribute="leading" secondItem="gGX-TB-SSm" secondAttribute="leadingMargin" id="cQm-lJ-YhJ"/>
                                                 <constraint firstItem="RIK-IQ-hQC" firstAttribute="bottom" secondItem="gGX-TB-SSm" secondAttribute="bottomMargin" id="jFT-zh-bH4"/>
-                                                <constraint firstItem="RIK-IQ-hQC" firstAttribute="top" secondItem="1HH-1x-vv6" secondAttribute="bottom" id="qIP-JI-DnF"/>
-                                                <constraint firstItem="1HH-1x-vv6" firstAttribute="trailing" secondItem="gGX-TB-SSm" secondAttribute="trailingMargin" id="wlv-1a-Y7o"/>
+                                                <constraint firstItem="tXK-Q4-xNR" firstAttribute="top" secondItem="gGX-TB-SSm" secondAttribute="topMargin" id="m0H-iR-ASz"/>
+                                                <constraint firstItem="i5R-AR-rO1" firstAttribute="leading" secondItem="gGX-TB-SSm" secondAttribute="leading" id="r2N-Zy-oxe"/>
                                                 <constraint firstItem="RIK-IQ-hQC" firstAttribute="trailing" secondItem="gGX-TB-SSm" secondAttribute="trailingMargin" id="wyy-mc-ogl"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="indexLabel" destination="tXK-Q4-xNR" id="tb4-ob-Xfs"/>
                                             <outlet property="postTextView" destination="1HH-1x-vv6" id="OLG-Mz-RZw"/>
                                             <outlet property="userLabel" destination="RIK-IQ-hQC" id="6km-W9-h2F"/>
                                         </connections>
@@ -159,11 +181,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aAj-0p-dfg">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Get Help" id="XQd-vh-uXV">
                             <connections>
                                 <action selector="helpBarButtonAction:" destination="zvb-od-Acy" id="4oF-D1-CKd"/>
                             </connections>
                         </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uh9-9l-B7a">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <state key="normal" title="Category"/>
+                            <connections>
+                                <action selector="sortButtonTouchUpInside:" destination="zvb-od-Acy" eventType="touchUpInside" id="sjL-sE-EPF"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="w2K-SP-pap">
                             <connections>
                                 <action selector="introButtonTouchUpInside:" destination="zvb-od-Acy" id="cBm-Jn-Ydj"/>
@@ -171,6 +203,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoryButton" destination="uh9-9l-B7a" id="6cX-8z-dPg"/>
                         <outlet property="tableView" destination="e5m-LE-clh" id="mSG-RY-13f"/>
                         <segue destination="l6w-Zc-hKA" kind="presentation" identifier="SegueMainToIntro" id="LFh-PP-nUk"/>
                         <segue destination="yss-QP-ICL" kind="show" identifier="SegueMainToRedditThread" id="gDg-fY-B55"/>

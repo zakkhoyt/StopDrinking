@@ -63,6 +63,16 @@
 		C69FC73C1C10F04400A3E3E0 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73B1C10F04400A3E3E0 /* todo.txt */; };
 		C69FC7401C10F05600A3E3E0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73E1C10F05600A3E3E0 /* Podfile */; };
 		C69FC7411C10F05600A3E3E0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C69FC73F1C10F05600A3E3E0 /* README.md */; };
+		C6CA9A8D1C12446A00F21544 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A7C1C12446A00F21544 /* NSDate+Utilities.m */; };
+		C6CA9A8E1C12446A00F21544 /* NSDate+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A7E1C12446A00F21544 /* NSDate+ZH.m */; };
+		C6CA9A8F1C12446A00F21544 /* NSError+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A801C12446A00F21544 /* NSError+ZH.m */; };
+		C6CA9A901C12446A00F21544 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A821C12446A00F21544 /* NSTimer+Blocks.m */; };
+		C6CA9A911C12446A00F21544 /* PHAsset+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A841C12446A00F21544 /* PHAsset+Utility.m */; };
+		C6CA9A921C12446A00F21544 /* UIColor+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A861C12446A00F21544 /* UIColor+ZH.m */; };
+		C6CA9A931C12446A00F21544 /* UIFont+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A881C12446A00F21544 /* UIFont+ZH.m */; };
+		C6CA9A941C12446A00F21544 /* UIView+RenderToImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A8A1C12446A00F21544 /* UIView+RenderToImage.m */; };
+		C6CA9A951C12446A00F21544 /* UIViewController+AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A8C1C12446A00F21544 /* UIViewController+AlertController.m */; };
+		C6CA9A9A1C1244A800F21544 /* ZHLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A991C1244A800F21544 /* ZHLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +178,25 @@
 		C69FC73B1C10F04400A3E3E0 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
 		C69FC73E1C10F05600A3E3E0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		C69FC73F1C10F05600A3E3E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C6CA9A7B1C12446A00F21544 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		C6CA9A7C1C12446A00F21544 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		C6CA9A7D1C12446A00F21544 /* NSDate+ZH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZH.h"; sourceTree = "<group>"; };
+		C6CA9A7E1C12446A00F21544 /* NSDate+ZH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZH.m"; sourceTree = "<group>"; };
+		C6CA9A7F1C12446A00F21544 /* NSError+ZH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+ZH.h"; sourceTree = "<group>"; };
+		C6CA9A801C12446A00F21544 /* NSError+ZH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+ZH.m"; sourceTree = "<group>"; };
+		C6CA9A811C12446A00F21544 /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		C6CA9A821C12446A00F21544 /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		C6CA9A831C12446A00F21544 /* PHAsset+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PHAsset+Utility.h"; sourceTree = "<group>"; };
+		C6CA9A841C12446A00F21544 /* PHAsset+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PHAsset+Utility.m"; sourceTree = "<group>"; };
+		C6CA9A851C12446A00F21544 /* UIColor+ZH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZH.h"; sourceTree = "<group>"; };
+		C6CA9A861C12446A00F21544 /* UIColor+ZH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZH.m"; sourceTree = "<group>"; };
+		C6CA9A871C12446A00F21544 /* UIFont+ZH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+ZH.h"; sourceTree = "<group>"; };
+		C6CA9A881C12446A00F21544 /* UIFont+ZH.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+ZH.m"; sourceTree = "<group>"; };
+		C6CA9A891C12446A00F21544 /* UIView+RenderToImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RenderToImage.h"; sourceTree = "<group>"; };
+		C6CA9A8A1C12446A00F21544 /* UIView+RenderToImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RenderToImage.m"; sourceTree = "<group>"; };
+		C6CA9A8B1C12446A00F21544 /* UIViewController+AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AlertController.h"; sourceTree = "<group>"; };
+		C6CA9A8C1C12446A00F21544 /* UIViewController+AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AlertController.m"; sourceTree = "<group>"; };
+		C6CA9A991C1244A800F21544 /* ZHLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +269,7 @@
 		C635D78F1C0EEA9B00616D3A /* StopDrinking */ = {
 			isa = PBXGroup;
 			children = (
+				C6CA9A7A1C12444400F21544 /* Categories */,
 				C66623EF1C11364000652B42 /* StopDrinking.entitlements */,
 				C635D8001C0FF4BD00616D3A /* Controllers */,
 				C635D7F61C0FD17F00616D3A /* Model */,
@@ -356,6 +386,7 @@
 		C635D8001C0FF4BD00616D3A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C6CA9A991C1244A800F21544 /* ZHLog.swift */,
 				C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */,
 				C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */,
 				C66623F81C11649300652B42 /* ZHMarkdownParser.swift */,
@@ -432,6 +463,31 @@
 				C69FC73B1C10F04400A3E3E0 /* todo.txt */,
 			);
 			name = Documents;
+			sourceTree = "<group>";
+		};
+		C6CA9A7A1C12444400F21544 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C6CA9A7B1C12446A00F21544 /* NSDate+Utilities.h */,
+				C6CA9A7C1C12446A00F21544 /* NSDate+Utilities.m */,
+				C6CA9A7D1C12446A00F21544 /* NSDate+ZH.h */,
+				C6CA9A7E1C12446A00F21544 /* NSDate+ZH.m */,
+				C6CA9A7F1C12446A00F21544 /* NSError+ZH.h */,
+				C6CA9A801C12446A00F21544 /* NSError+ZH.m */,
+				C6CA9A811C12446A00F21544 /* NSTimer+Blocks.h */,
+				C6CA9A821C12446A00F21544 /* NSTimer+Blocks.m */,
+				C6CA9A831C12446A00F21544 /* PHAsset+Utility.h */,
+				C6CA9A841C12446A00F21544 /* PHAsset+Utility.m */,
+				C6CA9A851C12446A00F21544 /* UIColor+ZH.h */,
+				C6CA9A861C12446A00F21544 /* UIColor+ZH.m */,
+				C6CA9A871C12446A00F21544 /* UIFont+ZH.h */,
+				C6CA9A881C12446A00F21544 /* UIFont+ZH.m */,
+				C6CA9A891C12446A00F21544 /* UIView+RenderToImage.h */,
+				C6CA9A8A1C12446A00F21544 /* UIView+RenderToImage.m */,
+				C6CA9A8B1C12446A00F21544 /* UIViewController+AlertController.h */,
+				C6CA9A8C1C12446A00F21544 /* UIViewController+AlertController.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		CEC67ADF13500CC01298F9F0 /* Frameworks */ = {
@@ -675,8 +731,13 @@
 				C635D7C61C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.swift in Sources */,
 				C635D7EF1C0FBB6500616D3A /* ZHHomeViewController.swift in Sources */,
 				C66623F71C114A2400652B42 /* ZHNotificationScheduler.swift in Sources */,
+				C6CA9A921C12446A00F21544 /* UIColor+ZH.m in Sources */,
 				C635D7EB1C0FB31700616D3A /* ZHIntroCollectionViewCell.swift in Sources */,
 				C635D7DC1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.swift in Sources */,
+				C6CA9A9A1C1244A800F21544 /* ZHLog.swift in Sources */,
+				C6CA9A931C12446A00F21544 /* UIFont+ZH.m in Sources */,
+				C6CA9A8F1C12446A00F21544 /* NSError+ZH.m in Sources */,
+				C6CA9A8D1C12446A00F21544 /* NSDate+Utilities.m in Sources */,
 				C635D7D01C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.swift in Sources */,
 				C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */,
 				C69FC7391C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift in Sources */,
@@ -685,12 +746,17 @@
 				C635D7E81C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.swift in Sources */,
 				C635D7E01C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.swift in Sources */,
 				C69FC73A1C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift in Sources */,
+				C6CA9A951C12446A00F21544 /* UIViewController+AlertController.m in Sources */,
+				C6CA9A8E1C12446A00F21544 /* NSDate+ZH.m in Sources */,
+				C6CA9A941C12446A00F21544 /* UIView+RenderToImage.m in Sources */,
 				C635D7E41C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.swift in Sources */,
 				C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */,
 				C635D7D81C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */,
 				C635D7BF1C0EEB6900616D3A /* ZHIntroViewController.swift in Sources */,
+				C6CA9A901C12446A00F21544 /* NSTimer+Blocks.m in Sources */,
 				C635D8041C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift in Sources */,
 				C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */,
+				C6CA9A911C12446A00F21544 /* PHAsset+Utility.m in Sources */,
 				C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */,
 				C69FC7411C10F05600A3E3E0 /* README.md in Sources */,
 				C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */,

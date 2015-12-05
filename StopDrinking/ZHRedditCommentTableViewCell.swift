@@ -19,6 +19,7 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var arrowButton: UIButton!
     
+    @IBOutlet weak var toolbarHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var indentConstrint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var arrowConstraint: NSLayoutConstraint!
@@ -44,13 +45,14 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     
     var level: Int = 0{
         didSet{
-            indentConstrint.constant = CGFloat(level) * 16
+            indentConstrint.constant = 8 + CGFloat(level) * 16
 //            arrowConstraint.constant = 30 + CGFloat(level-2) * 16
         }
     }
     
     var comment: RKComment? = nil {
         didSet{
+
             renderCellContents()
         }
     }
@@ -115,13 +117,36 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        toolbarHeightConstraint.constant = 0
+        layer.masksToBounds = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: "tap:")
+        addGestureRecognizer(tap)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func tap(sender: UITapGestureRecognizer!) {
+        if toolbarHeightConstraint.constant == 0 {
+            toolbarHeightConstraint.constant = 40
+            
+        } else {
+            toolbarHeightConstraint.constant = 0
+        }
+        
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.layoutIfNeeded()
+        }
+        
+        //        UIView.animateWithDuration(0.3) { () -> Void in
+        //            self.bounds = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height - 44)
+        //            self.layoutIfNeeded()
+        //        }
+        
     }
 }
 

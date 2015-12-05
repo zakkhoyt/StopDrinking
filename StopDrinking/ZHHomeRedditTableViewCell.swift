@@ -14,8 +14,13 @@ class ZHHomeRedditTableViewCell: UITableViewCell  {
     
     @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var indexLabel: UILabel!
     
-    var index: UInt = 0
+    var index: UInt = 0 {
+        didSet {
+            indexLabel.text = "\(index + 1)"
+        }
+    }
     var post: RKLink? = nil{
         didSet{
             postTextView.text = post!.title
