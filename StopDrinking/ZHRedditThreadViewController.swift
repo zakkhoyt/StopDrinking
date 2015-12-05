@@ -85,9 +85,10 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
             return cell
             
         } else if item.isKindOfClass(RKLink) {
-            let cell = NSBundle.mainBundle().loadNibNamed("ZHRedditPostDetailsTableViewCell", owner: self, options: nil)[0] as? ZHRedditPostDetailsTableViewCell
+//            let cell = NSBundle.mainBundle().loadNibNamed("ZHRedditPostDetailsTableViewCell", owner: self, options: nil)[0] as? ZHRedditPostDetailsTableViewCell
+            let cell = ZHRedditThreadTableViewCell.cellFromNib()
             if let post = item as! RKLink? {
-                cell?.post = post
+                cell.post = post
             }
             return cell
             

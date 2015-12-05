@@ -84,6 +84,8 @@ class ZHHomeViewController: UIViewController {
     // MARK: Private methods
     
     func setupTableView() {
+        
+
         // Setup TableView
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -263,7 +265,7 @@ extension ZHHomeViewController: UITableViewDataSource {
             cell?.user = user
             return cell!
         case ZHHomeViewControllerTableViewSection.Reddit.rawValue:
-            let cell = tableView.dequeueReusableCellWithIdentifier("ZHHomeRedditTableViewCell") as! ZHHomeRedditTableViewCell
+            let cell = ZHRedditThreadTableViewCell.cellFromNib()
             cell.post = posts[indexPath.row]
             cell.index = UInt(indexPath.row)
             return cell

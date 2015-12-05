@@ -39,7 +39,6 @@
 		C635D7F51C0FD17C00616D3A /* ZHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */; };
 		C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */; };
 		C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8011C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift */; };
-		C635D8041C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8031C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift */; };
 		C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8071C10076800616D3A /* ZHAvatarView.swift */; };
 		C635D80B1C100AFF00616D3A /* ZHAvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */; };
 		C635D8121C1013F900616D3A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C635D8111C1013F900616D3A /* NotificationCenter.framework */; };
@@ -57,9 +56,7 @@
 		C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */; };
 		C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */; };
 		C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */; };
-		C69FC7361C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FC7341C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib */; };
 		C69FC7391C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */; };
-		C69FC73A1C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7381C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift */; };
 		C69FC73C1C10F04400A3E3E0 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73B1C10F04400A3E3E0 /* todo.txt */; };
 		C69FC7401C10F05600A3E3E0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73E1C10F05600A3E3E0 /* Podfile */; };
 		C69FC7411C10F05600A3E3E0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C69FC73F1C10F05600A3E3E0 /* README.md */; };
@@ -73,6 +70,8 @@
 		C6CA9A941C12446A00F21544 /* UIView+RenderToImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A8A1C12446A00F21544 /* UIView+RenderToImage.m */; };
 		C6CA9A951C12446A00F21544 /* UIViewController+AlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A8C1C12446A00F21544 /* UIViewController+AlertController.m */; };
 		C6CA9A9A1C1244A800F21544 /* ZHLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A991C1244A800F21544 /* ZHLog.swift */; };
+		C6CA9A9F1C13956500F21544 /* ZHRedditThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A9E1C13956500F21544 /* ZHRedditThreadTableViewCell.swift */; };
+		C6CA9AA11C13957200F21544 /* ZHRedditThreadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AA01C13957200F21544 /* ZHRedditThreadTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,7 +154,6 @@
 		C635D7F71C0FD88B00616D3A /* StopDrinking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StopDrinking-Bridging-Header.h"; sourceTree = "<group>"; };
 		C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHUserDefaults.swift; sourceTree = "<group>"; };
 		C635D8011C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHomeSummaryTableViewCell.swift; sourceTree = "<group>"; };
-		C635D8031C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHomeRedditTableViewCell.swift; sourceTree = "<group>"; };
 		C635D8071C10076800616D3A /* ZHAvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHAvatarView.swift; sourceTree = "<group>"; };
 		C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHAvatarView.xib; sourceTree = "<group>"; };
 		C635D8101C1013F900616D3A /* StopDrinkingToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StopDrinkingToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,9 +170,7 @@
 		C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reddit.storyboard; sourceTree = "<group>"; };
 		C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditThreadViewController.swift; sourceTree = "<group>"; };
 		C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditCommentTableViewCell.xib; sourceTree = "<group>"; };
-		C69FC7341C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditPostDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditCommentTableViewCell.swift; sourceTree = "<group>"; };
-		C69FC7381C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditPostDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		C69FC73B1C10F04400A3E3E0 /* todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo.txt; sourceTree = "<group>"; };
 		C69FC73E1C10F05600A3E3E0 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		C69FC73F1C10F05600A3E3E0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -197,6 +193,8 @@
 		C6CA9A8B1C12446A00F21544 /* UIViewController+AlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AlertController.h"; sourceTree = "<group>"; };
 		C6CA9A8C1C12446A00F21544 /* UIViewController+AlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AlertController.m"; sourceTree = "<group>"; };
 		C6CA9A991C1244A800F21544 /* ZHLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHLog.swift; sourceTree = "<group>"; };
+		C6CA9A9E1C13956500F21544 /* ZHRedditThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditThreadTableViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AA01C13957200F21544 /* ZHRedditThreadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditThreadTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,7 +396,6 @@
 			isa = PBXGroup;
 			children = (
 				C635D8011C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift */,
-				C635D8031C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -422,8 +419,8 @@
 				C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */,
 				C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */,
 				C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */,
-				C69FC7381C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift */,
-				C69FC7341C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib */,
+				C6CA9A9E1C13956500F21544 /* ZHRedditThreadTableViewCell.swift */,
+				C6CA9AA01C13957200F21544 /* ZHRedditThreadTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -640,9 +637,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C69FC7361C10E42600A3E3E0 /* ZHRedditPostDetailsTableViewCell.xib in Resources */,
 				C635D7D91C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.xib in Resources */,
 				C69FC73C1C10F04400A3E3E0 /* todo.txt in Resources */,
+				C6CA9AA11C13957200F21544 /* ZHRedditThreadTableViewCell.xib in Resources */,
 				C635D7CD1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.xib in Resources */,
 				C635D7DD1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib in Resources */,
 				C635D7E91C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.xib in Resources */,
@@ -729,6 +726,7 @@
 				C66623E71C1131E500652B42 /* ZHWebViewController.swift in Sources */,
 				C635D7F51C0FD17C00616D3A /* ZHUserModel.swift in Sources */,
 				C635D7C61C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.swift in Sources */,
+				C6CA9A9F1C13956500F21544 /* ZHRedditThreadTableViewCell.swift in Sources */,
 				C635D7EF1C0FBB6500616D3A /* ZHHomeViewController.swift in Sources */,
 				C66623F71C114A2400652B42 /* ZHNotificationScheduler.swift in Sources */,
 				C6CA9A921C12446A00F21544 /* UIColor+ZH.m in Sources */,
@@ -745,7 +743,6 @@
 				C635D7D41C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.swift in Sources */,
 				C635D7E81C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.swift in Sources */,
 				C635D7E01C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.swift in Sources */,
-				C69FC73A1C10E47100A3E3E0 /* ZHRedditPostDetailsTableViewCell.swift in Sources */,
 				C6CA9A951C12446A00F21544 /* UIViewController+AlertController.m in Sources */,
 				C6CA9A8E1C12446A00F21544 /* NSDate+ZH.m in Sources */,
 				C6CA9A941C12446A00F21544 /* UIView+RenderToImage.m in Sources */,
@@ -754,7 +751,6 @@
 				C635D7D81C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */,
 				C635D7BF1C0EEB6900616D3A /* ZHIntroViewController.swift in Sources */,
 				C6CA9A901C12446A00F21544 /* NSTimer+Blocks.m in Sources */,
-				C635D8041C0FFE8F00616D3A /* ZHHomeRedditTableViewCell.swift in Sources */,
 				C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */,
 				C6CA9A911C12446A00F21544 /* PHAsset+Utility.m in Sources */,
 				C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */,
