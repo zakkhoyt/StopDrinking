@@ -61,64 +61,10 @@
                             <constraint firstAttribute="height" constant="1" id="srt-dg-7KY"/>
                         </constraints>
                     </view>
-                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LiS-qS-FRx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
-                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iW8-za-d1A">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipR-mA-C2H">
-                                    <rect key="frame" x="8" y="0.0" width="140" height="40"/>
-                                    <animations/>
-                                    <state key="normal" title="..."/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7U-1f-X5L">
-                                    <rect key="frame" x="156" y="0.0" width="140" height="40"/>
-                                    <animations/>
-                                    <state key="normal" title="Reply"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWs-SW-fP4">
-                                    <rect key="frame" x="304" y="0.0" width="140" height="40"/>
-                                    <animations/>
-                                    <state key="normal" title="Upvote"/>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Gr-UT-YVE">
-                                    <rect key="frame" x="452" y="0.0" width="140" height="40"/>
-                                    <animations/>
-                                    <state key="normal" title="Downvote"/>
-                                </button>
-                            </subviews>
-                            <animations/>
-                            <constraints>
-                                <constraint firstItem="X7U-1f-X5L" firstAttribute="leading" secondItem="ipR-mA-C2H" secondAttribute="trailing" constant="8" id="6Gh-Gu-XaZ"/>
-                                <constraint firstAttribute="bottom" secondItem="3Gr-UT-YVE" secondAttribute="bottom" constant="4" id="A3n-03-PPe"/>
-                                <constraint firstAttribute="bottom" secondItem="ipR-mA-C2H" secondAttribute="bottom" constant="4" id="AK3-t8-3RD"/>
-                                <constraint firstItem="3Gr-UT-YVE" firstAttribute="width" secondItem="ipR-mA-C2H" secondAttribute="width" id="JWy-66-m0H"/>
-                                <constraint firstItem="VWs-SW-fP4" firstAttribute="width" secondItem="ipR-mA-C2H" secondAttribute="width" id="L9A-hr-eNd"/>
-                                <constraint firstItem="ipR-mA-C2H" firstAttribute="top" secondItem="iW8-za-d1A" secondAttribute="top" id="NV5-Bd-BOs"/>
-                                <constraint firstItem="ipR-mA-C2H" firstAttribute="leading" secondItem="iW8-za-d1A" secondAttribute="leading" constant="8" id="WHy-RP-PF5"/>
-                                <constraint firstItem="X7U-1f-X5L" firstAttribute="top" secondItem="iW8-za-d1A" secondAttribute="top" id="XDa-qK-MaO"/>
-                                <constraint firstAttribute="bottom" secondItem="VWs-SW-fP4" secondAttribute="bottom" constant="4" id="XMz-To-mBA"/>
-                                <constraint firstItem="3Gr-UT-YVE" firstAttribute="leading" secondItem="VWs-SW-fP4" secondAttribute="trailing" constant="8" id="bSl-0H-ZGc"/>
-                                <constraint firstAttribute="bottom" secondItem="X7U-1f-X5L" secondAttribute="bottom" constant="4" id="fbb-vr-jM7"/>
-                                <constraint firstAttribute="trailing" secondItem="3Gr-UT-YVE" secondAttribute="trailing" constant="8" id="gra-tx-927"/>
-                                <constraint firstItem="VWs-SW-fP4" firstAttribute="top" secondItem="iW8-za-d1A" secondAttribute="top" id="mZt-QP-A9b"/>
-                                <constraint firstItem="X7U-1f-X5L" firstAttribute="width" secondItem="ipR-mA-C2H" secondAttribute="width" id="wTB-PU-8gz"/>
-                                <constraint firstItem="3Gr-UT-YVE" firstAttribute="top" secondItem="iW8-za-d1A" secondAttribute="top" id="wn4-Wb-lRd"/>
-                                <constraint firstItem="VWs-SW-fP4" firstAttribute="leading" secondItem="X7U-1f-X5L" secondAttribute="trailing" constant="8" id="zgI-kt-DOv"/>
-                            </constraints>
-                        </view>
-                        <animations/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="aQ1-MH-BD3"/>
-                        </constraints>
-                        <blurEffect style="dark"/>
-                    </visualEffectView>
                 </subviews>
                 <animations/>
                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="LiS-qS-FRx" secondAttribute="trailing" id="0MC-PZ-25c"/>
                     <constraint firstItem="jBe-Bc-gSc" firstAttribute="leading" secondItem="Azf-Uu-O6e" secondAttribute="leading" id="BC5-U7-Ci2"/>
                     <constraint firstItem="tWH-ED-9Rh" firstAttribute="leading" secondItem="R3n-El-AcX" secondAttribute="trailing" constant="3" id="KkD-DC-S8i"/>
                     <constraint firstAttribute="bottom" secondItem="eSh-wJ-APh" secondAttribute="bottom" id="Kv2-Wl-bnn"/>
@@ -127,11 +73,9 @@
                     <constraint firstItem="eSh-wJ-APh" firstAttribute="top" secondItem="R3n-El-AcX" secondAttribute="bottom" constant="1" id="Sy8-Ui-mhl"/>
                     <constraint firstItem="tWH-ED-9Rh" firstAttribute="centerY" secondItem="R3n-El-AcX" secondAttribute="centerY" id="bLX-TG-FQc"/>
                     <constraint firstItem="R3n-El-AcX" firstAttribute="leading" secondItem="Azf-Uu-O6e" secondAttribute="leading" constant="8" id="eSm-2B-Xlf"/>
-                    <constraint firstItem="LiS-qS-FRx" firstAttribute="leading" secondItem="Azf-Uu-O6e" secondAttribute="leading" id="gNN-Wp-Bxr"/>
                     <constraint firstItem="R3n-El-AcX" firstAttribute="top" secondItem="Azf-Uu-O6e" secondAttribute="top" constant="8" id="lK5-Tt-Iys"/>
                     <constraint firstAttribute="trailing" secondItem="eSh-wJ-APh" secondAttribute="trailing" constant="8" id="lYf-KE-eq0"/>
                     <constraint firstAttribute="trailing" secondItem="jBe-Bc-gSc" secondAttribute="trailing" id="n3q-96-f7J"/>
-                    <constraint firstItem="LiS-qS-FRx" firstAttribute="top" secondItem="Azf-Uu-O6e" secondAttribute="top" id="pCo-oJ-rqm"/>
                     <constraint firstItem="eSh-wJ-APh" firstAttribute="leading" secondItem="R3n-El-AcX" secondAttribute="leading" id="uK7-Yh-Rfm"/>
                     <constraint firstItem="Hvn-Lu-4Ct" firstAttribute="leading" secondItem="tWH-ED-9Rh" secondAttribute="trailing" constant="7.5" id="uue-2n-eLb"/>
                     <constraint firstItem="Hvn-Lu-4Ct" firstAttribute="centerY" secondItem="tWH-ED-9Rh" secondAttribute="centerY" id="vdq-9H-at6"/>
@@ -142,7 +86,6 @@
                 <outlet property="arrowButton" destination="R3n-El-AcX" id="IrU-Z4-m96"/>
                 <outlet property="commentTextView" destination="eSh-wJ-APh" id="MVh-Jf-tCJ"/>
                 <outlet property="indentConstrint" destination="eSm-2B-Xlf" id="Ysl-PB-Nne"/>
-                <outlet property="toolbarHeightConstraint" destination="aQ1-MH-BD3" id="dns-qe-RDw"/>
                 <outlet property="userLabel" destination="tWH-ED-9Rh" id="HoO-Bf-4du"/>
                 <outlet property="votesLabel" destination="Hvn-Lu-4Ct" id="uEY-3L-7H3"/>
             </connections>

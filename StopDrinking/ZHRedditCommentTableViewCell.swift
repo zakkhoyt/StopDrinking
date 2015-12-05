@@ -19,23 +19,9 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var arrowButton: UIButton!
     
-    @IBOutlet weak var toolbarHeightConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var indentConstrint: NSLayoutConstraint!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var arrowConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var webView: UIWebView!
-    
-//    override var selected: Bool {
-//        didSet {
-////            print("selected: " + selected ? "true" : "false")
-//            if selected == true {
-//                print("selected")
-//            } else {
-//                print("deselected")
-//            }
-//        }
-//    }
     
     var expanded: Bool = false {
         didSet{
@@ -46,7 +32,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     var level: Int = 0{
         didSet{
             indentConstrint.constant = 8 + CGFloat(level) * 16
-//            arrowConstraint.constant = 30 + CGFloat(level-2) * 16
         }
     }
     
@@ -55,15 +40,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
 
             renderCellContents()
         }
-    }
-    
-    
-    @IBAction func upvoteButtonTouchUpInside(sender: AnyObject) {
-        print("TODO: upvote")
-    }
-    
-    @IBAction func downvoteButtonTouchUpInside(sender: AnyObject) {
-        print("TODO: downvote")
     }
     
 
@@ -117,11 +93,8 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        toolbarHeightConstraint.constant = 0
         layer.masksToBounds = true
         
-        let tap = UITapGestureRecognizer(target: self, action: "tap:")
-        addGestureRecognizer(tap)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -130,24 +103,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func tap(sender: UITapGestureRecognizer!) {
-        if toolbarHeightConstraint.constant == 0 {
-            toolbarHeightConstraint.constant = 40
-            
-        } else {
-            toolbarHeightConstraint.constant = 0
-        }
-        
-        UIView.animateWithDuration(0.3) { () -> Void in
-            self.layoutIfNeeded()
-        }
-        
-        //        UIView.animateWithDuration(0.3) { () -> Void in
-        //            self.bounds = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height - 44)
-        //            self.layoutIfNeeded()
-        //        }
-        
-    }
 }
 
 
