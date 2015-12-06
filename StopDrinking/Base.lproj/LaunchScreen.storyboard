@@ -18,21 +18,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Drinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfW-Lt-Gxh">
-                                <rect key="frame" x="221" y="283" width="157.5" height="32.5"/>
+                                <rect key="frame" x="222" y="36.5" width="157.5" height="32.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by /r/stopdrinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcZ-LH-kNd">
-                                <rect key="frame" x="230" y="323" width="141.5" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcZ-LH-kNd">
+                                <rect key="frame" x="268" y="77.5" width="64.5" height="13.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open source for the community" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcY-kP-KOl">
-                                <rect key="frame" x="217" y="344" width="166" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="/r/stopdrinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcY-kP-KOl">
+                                <rect key="frame" x="213" y="97.5" width="175" height="14"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopDrinking_320" translatesAutoresizingMaskIntoConstraints="NO" id="aU1-y8-6zC">
+                                <rect key="frame" x="140" y="140" width="320" height="320"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="eNw-EW-1M8"/>
+                                    <constraint firstAttribute="height" constant="320" id="ji7-Y4-j6c"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RedditKit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06p-in-4kO">
+                                <rect key="frame" x="276" y="118.5" width="48.5" height="13.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mya-rB-8EJ">
+                                <rect key="frame" x="265" y="468" width="69" height="14"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Written by Zakk Hoyt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M75-eA-gPa">
+                                <rect key="frame" x="245" y="488.5" width="111" height="13.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,12 +71,20 @@
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lcY-kP-KOl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Kko-se-1BS"/>
-                            <constraint firstItem="RcZ-LH-kNd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Qdj-Rf-ncK"/>
-                            <constraint firstItem="AfW-Lt-Gxh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZOZ-Nw-19w"/>
-                            <constraint firstItem="AfW-Lt-Gxh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gi7-mw-4Qg"/>
-                            <constraint firstItem="lcY-kP-KOl" firstAttribute="top" secondItem="RcZ-LH-kNd" secondAttribute="bottom" constant="7.5" id="kCt-5R-jHj"/>
-                            <constraint firstItem="RcZ-LH-kNd" firstAttribute="top" secondItem="AfW-Lt-Gxh" secondAttribute="bottom" constant="7.5" id="vZ3-zF-d8r"/>
+                            <constraint firstItem="RcZ-LH-kNd" firstAttribute="top" secondItem="AfW-Lt-Gxh" secondAttribute="bottom" constant="8.5" id="0eg-bn-8Pg"/>
+                            <constraint firstItem="mya-rB-8EJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Bdn-TD-7Sm"/>
+                            <constraint firstItem="aU1-y8-6zC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MA1-fz-hrg"/>
+                            <constraint firstItem="lcY-kP-KOl" firstAttribute="top" secondItem="RcZ-LH-kNd" secondAttribute="bottom" constant="6.5" id="RJv-mZ-X3a"/>
+                            <constraint firstItem="lcY-kP-KOl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="W2x-ux-Aaq"/>
+                            <constraint firstItem="M75-eA-gPa" firstAttribute="top" secondItem="mya-rB-8EJ" secondAttribute="bottom" constant="6.5" id="abr-X6-G7I"/>
+                            <constraint firstItem="mya-rB-8EJ" firstAttribute="top" secondItem="aU1-y8-6zC" secondAttribute="bottom" constant="8" id="duo-Nv-PMg"/>
+                            <constraint firstItem="aU1-y8-6zC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hA6-d3-VM2"/>
+                            <constraint firstItem="AfW-Lt-Gxh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hRv-wa-eu3"/>
+                            <constraint firstItem="aU1-y8-6zC" firstAttribute="top" secondItem="06p-in-4kO" secondAttribute="bottom" constant="8" id="o3r-Mo-igV"/>
+                            <constraint firstItem="06p-in-4kO" firstAttribute="top" secondItem="lcY-kP-KOl" secondAttribute="bottom" constant="7.5" id="q2b-Fm-exA"/>
+                            <constraint firstItem="RcZ-LH-kNd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="q9q-9j-fqo"/>
+                            <constraint firstItem="M75-eA-gPa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uSx-vl-hD1"/>
+                            <constraint firstItem="06p-in-4kO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xIp-b2-emN"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -57,4 +94,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="StopDrinking_320" width="320" height="320"/>
+    </resources>
 </document>
