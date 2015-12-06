@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sVV-SM-NN2">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reddit Thread View Controller-->
+        <scene sceneID="Id1-RX-LVn">
+            <objects>
+                <viewController id="sVV-SM-NN2" customClass="ZHRedditThreadViewController" customModule="StopDrinking" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rld-UY-bcw"/>
+                        <viewControllerLayoutGuide type="bottom" id="nBJ-xW-uHQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aFU-Bs-Mxl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKB-V0-UJu" customClass="RATreeView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nBJ-xW-uHQ" firstAttribute="top" secondItem="eKB-V0-UJu" secondAttribute="bottom" id="RsH-kT-h1A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eKB-V0-UJu" secondAttribute="trailing" constant="-20" id="S3a-Sm-rHL"/>
+                            <constraint firstItem="eKB-V0-UJu" firstAttribute="top" secondItem="aFU-Bs-Mxl" secondAttribute="topMargin" id="vdA-sa-SIq"/>
+                            <constraint firstItem="eKB-V0-UJu" firstAttribute="leading" secondItem="aFU-Bs-Mxl" secondAttribute="leadingMargin" constant="-20" id="zRr-U8-bT7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="treeView" destination="eKB-V0-UJu" id="iDP-8H-29m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mN3-Tw-tvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="463"/>
+        </scene>
+    </scenes>
+</document>

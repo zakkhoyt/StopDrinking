@@ -16,24 +16,26 @@ class ZHIntroViewController: UIViewController {
     var introCompleteHandler:((user: ZHUserModel)->Void)!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var closeBarButton: UIBarButtonItem!
 
+    @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var navItem: UINavigationItem!
+    
     @IBOutlet weak var pageControl: UIPageControl!
     
-    @IBOutlet var introWelcomeView: UIView!
-    @IBOutlet var introStartDateView: UIView!
-    @IBOutlet var introDrinksPerDayView: UIView!
-    @IBOutlet var introMoneyPerDayView: UIView!
-    @IBOutlet var introCaloriesPerDrinkView: UIView!
-    @IBOutlet var introTodayView: UIView!
-    @IBOutlet var introBadgeView: UIView!
-    @IBOutlet var introRedditView: UIView!
-    @IBOutlet var introDoneView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        user = ZHUserModel()
-        user?.firstName = "Zakkus"
+        // See if there is a user in userdefaults
+        let storedUser = ZHUserDefaults.sharedInstance.currentUser()
+        if let storedUser = storedUser {
+            user = storedUser
+            navItem.leftBarButtonItem = closeBarButton
+        } else {
+            user = ZHUserModel()
+            navItem.leftBarButtonItem = nil
+        }
 
         let nib0 = UINib(nibName: "ZHIntroWelcomeCollectionViewCell", bundle: NSBundle.mainBundle())
         collectionView.registerNib(nib0, forCellWithReuseIdentifier: "ZHIntroWelcomeCollectionViewCell")
@@ -53,10 +55,12 @@ class ZHIntroViewController: UIViewController {
         collectionView.registerNib(nib7, forCellWithReuseIdentifier: "ZHIntroRedditCollectionViewCell")
         let nib8 = UINib(nibName: "ZHIntroDoneCollectionViewCell", bundle: NSBundle.mainBundle())
         collectionView.registerNib(nib8, forCellWithReuseIdentifier: "ZHIntroDoneCollectionViewCell")
+        let nib9 = UINib(nibName: "ZHIntroNotificationsCollectionViewCell", bundle: NSBundle.mainBundle())
+        collectionView.registerNib(nib9, forCellWithReuseIdentifier: "ZHIntroNotificationsCollectionViewCell")
 
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -83,15 +87,20 @@ class ZHIntroViewController: UIViewController {
     @IBAction func next(sender: AnyObject) {
         scrollToNextPage()
     }
+    
+    @IBAction func closeBarButtonAction(sender: AnyObject) {
+        self.introCompleteHandler(user: self.user!)
+    }
+    
 }
 
-//extension ZHIntroViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        let page = round(scrollView.contentOffset.x / scrollView.bounds.size.width)
-////        let page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
-//        pageControl.currentPage = Int(page)
-//    }
-//}
+extension ZHIntroViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let page = round(scrollView.contentOffset.x / scrollView.bounds.size.width)
+//        let page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
+        pageControl.currentPage = Int(page)
+    }
+}
 
 extension ZHIntroViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -151,7 +160,7 @@ extension ZHIntroViewController: UICollectionViewDataSource {
             })
             return cell!
         case 7:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroRedditCollectionViewCell", forIndexPath: indexPath) as? ZHIntroRedditCollectionViewCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroNotificationsCollectionViewCell", forIndexPath: indexPath) as? ZHIntroNotificationsCollectionViewCell
             cell?.user = user
             cell?.nextHandler = ({ () -> Void in
                 self.scrollToNextPage()
@@ -177,3 +186,14 @@ extension ZHIntroViewController: UICollectionViewDelegateFlowLayout {
         return collectionView.frame.size
     }
 }
+
+extension ZHIntroViewController: UIBarPositioningDelegate {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached
+    }
+}
+
+
+
+
+

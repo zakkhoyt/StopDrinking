@@ -8,46 +8,46 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZHIntroBadgeCollectionViewCell" id="gTV-IL-0wX" customClass="ZHIntroBadgeCollectionViewCell" customModule="StopDrinking" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="342" height="338"/>
+            <rect key="frame" x="0.0" y="0.0" width="342" height="469"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="342" height="338"/>
+                <rect key="frame" x="0.0" y="0.0" width="342" height="469"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rt-lj-ZqD">
-                        <rect key="frame" x="0.0" y="0.0" width="342" height="338"/>
+                        <rect key="frame" x="0.0" y="0.0" width="342" height="469"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badge" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEQ-uN-Mqx">
-                                <rect key="frame" x="8" y="8" width="326" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See how many days have gone by looking at the app's badge." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEQ-uN-Mqx">
+                                <rect key="frame" x="20" y="8" width="302" height="41"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXQ-3M-fDP">
-                                <rect key="frame" x="155" y="300" width="32" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXQ-3M-fDP">
+                                <rect key="frame" x="155" y="431" width="32" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bha-AD-PUr"/>
                                 </connections>
                             </button>
-                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="badge" translatesAutoresizingMaskIntoConstraints="NO" id="P7A-4c-zEs">
-                                <rect key="frame" x="0.0" y="36" width="342" height="255.5"/>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="200" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="P7A-4c-zEs">
+                                <rect key="frame" x="0.0" y="56" width="342" height="366.5"/>
                                 <animations/>
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dEQ-uN-Mqx" firstAttribute="leading" secondItem="6Rt-lj-ZqD" secondAttribute="leading" constant="8" id="4BD-RP-ntd"/>
+                            <constraint firstItem="dEQ-uN-Mqx" firstAttribute="leading" secondItem="6Rt-lj-ZqD" secondAttribute="leading" constant="20" id="4BD-RP-ntd"/>
                             <constraint firstItem="dEQ-uN-Mqx" firstAttribute="top" secondItem="6Rt-lj-ZqD" secondAttribute="top" constant="8" id="Dej-jv-ANb"/>
-                            <constraint firstAttribute="bottom" secondItem="QXQ-3M-fDP" secondAttribute="bottom" constant="8" id="FMF-vN-YqE"/>
-                            <constraint firstAttribute="trailing" secondItem="dEQ-uN-Mqx" secondAttribute="trailing" constant="8" id="LvA-SX-fI2"/>
-                            <constraint firstItem="QXQ-3M-fDP" firstAttribute="top" secondItem="P7A-4c-zEs" secondAttribute="bottom" constant="8" id="PWc-91-kMc"/>
-                            <constraint firstItem="P7A-4c-zEs" firstAttribute="leading" secondItem="6Rt-lj-ZqD" secondAttribute="leading" id="Vs8-E5-B1H"/>
-                            <constraint firstItem="P7A-4c-zEs" firstAttribute="top" secondItem="dEQ-uN-Mqx" secondAttribute="bottom" constant="8" id="mMY-cT-klg"/>
-                            <constraint firstItem="QXQ-3M-fDP" firstAttribute="centerX" secondItem="6Rt-lj-ZqD" secondAttribute="centerX" id="ucs-0H-Bw5"/>
-                            <constraint firstAttribute="trailing" secondItem="P7A-4c-zEs" secondAttribute="trailing" id="xkN-f5-gKb"/>
+                            <constraint firstAttribute="trailing" secondItem="P7A-4c-zEs" secondAttribute="trailing" id="Hd6-nw-yfB"/>
+                            <constraint firstAttribute="trailing" secondItem="dEQ-uN-Mqx" secondAttribute="trailing" constant="20" id="LvA-SX-fI2"/>
+                            <constraint firstItem="P7A-4c-zEs" firstAttribute="top" secondItem="dEQ-uN-Mqx" secondAttribute="bottom" constant="7.5" id="hYG-le-PN9"/>
+                            <constraint firstItem="QXQ-3M-fDP" firstAttribute="centerX" secondItem="6Rt-lj-ZqD" secondAttribute="centerX" id="iJF-e1-qdD"/>
+                            <constraint firstAttribute="bottom" secondItem="QXQ-3M-fDP" secondAttribute="bottom" constant="8" id="n4u-1r-vV3"/>
+                            <constraint firstItem="P7A-4c-zEs" firstAttribute="leading" secondItem="6Rt-lj-ZqD" secondAttribute="leading" id="qY4-Wr-eJT"/>
+                            <constraint firstItem="QXQ-3M-fDP" firstAttribute="top" secondItem="P7A-4c-zEs" secondAttribute="bottom" constant="8" id="xk1-AN-REx"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -61,14 +61,12 @@
                 <constraint firstAttribute="bottom" secondItem="6Rt-lj-ZqD" secondAttribute="bottom" id="h8k-Nm-XZz"/>
                 <constraint firstItem="6Rt-lj-ZqD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xmQ-fJ-75e"/>
             </constraints>
-            <size key="customSize" width="342" height="338"/>
+            <size key="customSize" width="342" height="469"/>
             <connections>
+                <outlet property="imageView" destination="P7A-4c-zEs" id="sJX-Dn-4W5"/>
                 <outlet property="nextButton" destination="QXQ-3M-fDP" id="BM1-Am-gds"/>
             </connections>
-            <point key="canvasLocation" x="123" y="567"/>
+            <point key="canvasLocation" x="123" y="632.5"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="badge" width="680" height="205"/>
-    </resources>
 </document>

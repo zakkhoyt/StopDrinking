@@ -13,6 +13,22 @@ class ZHIntroDrinksPerDayCollectionViewCell: ZHIntroCollectionViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
+    override var user: ZHUserModel? {
+        didSet {
+            if user?.drinksPerDay == nil {
+                stepper.value = 0
+                nextButton.enabled = false
+                updateLabel(0)
+            } else {
+                stepper.value = Double((user?.drinksPerDay)!)
+                nextButton.enabled = true
+                updateLabel((user?.drinksPerDay)!)
+            }
+            
+        }
+    }
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         if user?.drinksPerDay == nil {

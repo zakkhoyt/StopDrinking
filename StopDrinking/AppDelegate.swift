@@ -44,6 +44,80 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func setupAppearance() {
+        
+        
+        
+//        // UIView (this is what controls the color of the back button arrow)
+//        [[UIView appearance] setTintColor:[UIColor zhTintColor]];
+//        //    [[UIView appearanceWhenContainedIn:[UINavigationBar class], nil] setTintColor:[UIColor zhBackgroundColor]];
+//        [[UIView appearanceWhenContainedInInstancesOfClasses:@[[UINavigationBar class]]] setTintColor:[UIColor zhBackgroundColor]];
+//        
+//        // UILabel
+//        [[UILabel appearance] setTextColor:[UIColor zhGreenColor]];
+//        
+//        // Navigation bar
+//        NSDictionary *navBarAttributes = @{NSForegroundColorAttributeName : [UIColor zhBackgroundColor]};
+//        [[UINavigationBar appearance] setTitleTextAttributes:navBarAttributes];
+//        [[UINavigationBar appearance] setBarTintColor:[UIColor zhTintColor]];
+//        [[UINavigationBar appearance] setTintColor:[UIColor zhBackgroundColor]];
+//        // The nav bar back button
+//        [[UIBarButtonItem appearance] setTitleTextAttributes:navBarAttributes forState:UIControlStateNormal];
+//        
+//        // Tabbar
+//        [[UITabBar appearance] setBarTintColor:[UIColor zhTintColor]];
+//        [[UITabBar appearance] setTintColor:[UIColor zhBackgroundColor]];
+//        
+//        // TabbarItem
+//        NSDictionary *tabBarAttributes = @{NSForegroundColorAttributeName : [UIColor zhBackgroundColor]};
+//        [[UITabBarItem appearance] setTitleTextAttributes:tabBarAttributes forState:UIControlStateNormal];
+//        
+//        // Segmented control
+//        NSDictionary *segmentAttributes = @{NSForegroundColorAttributeName : [UIColor zhTintColor],
+//            NSStrokeColorAttributeName : [UIColor zhBackgroundColor]};
+//        [[UISegmentedControl appearance] setTitleTextAttributes:segmentAttributes forState:UIControlStateNormal];
+//        
+//        // Toolbar
+//        [[UIToolbar appearance] setBarTintColor:[UIColor zhBackgroundColor]];
+//        [[UIToolbar appearance] setTintColor:[UIColor zhTintColor]];
+//        
+//        // Text controls
+//        [[UITextView appearance] setTextColor:[UIColor zhDarkTextColor]];
+//        [[UITextView appearance] setBackgroundColor:[UIColor zhBackgroundColor]];
+//        
+//        [[UITextField appearance] setTextColor:[UIColor zhDarkTextColor]];
+//        [[UITextField appearance] setBackgroundColor:[UIColor zhBackgroundColor]];
+//        
+//        [[UITableView appearance] setBackgroundColor:[UIColor zhBackgroundColor]];
+//        [[UITableViewCell appearance] setBackgroundColor:[UIColor zhBackgroundColor]];
+//        
+//        [[UICollectionView appearance] setBackgroundColor:[UIColor zhBackgroundColor]];
+//        [[UICollectionViewCell appearance]setBackgroundColor:[UIColor zhBackgroundColor]];
+//        
+//        [[UIButton appearance] setTintColor:[UIColor zhTintColor]];
+//        [[UIButton appearance] setTitleColor:[UIColor zhTintColor] forState:UIControlStateNormal];
+//        
+//        [[UISearchBar appearance] setTintColor:[UIColor zhTintColor]];
+    
+        
+//        let zhBackgroundColor = UIColor.darkGrayColor()
+//        let zhTintColor = UIColor.yellowColor()
+//        let zhTextColor = UIColor.whiteColor()
+//        
+//        UIView.appearance().tintColor = zhTintColor
+////        UIView.appearanceWhenContainedInInstancesOfClasses([UINavigationBar]).tintColor = zhBackgroundColor
+//        
+//        UILabel.appearance().textColor = zhTextColor
+//        
+//        let navBarAttr = [NSForegroundColorAttributeName: zhBackgroundColor]
+//        UINavigationBar.appearance().titleTextAttributes = navBarAttr
+//        UINavigationBar.appearance().barTintColor = zhTintColor
+//        UINavigationBar.appearance().tintColor = zhBackgroundColor
+//        
+////        UIBarButtonItem.appearance().titleTextAttributesForState(UIControlState.Normal) = navBarAttr
+        
+        
+
+        
         let attr = [NSForegroundColorAttributeName: UIColor.yellowColor()]
         UINavigationBar.appearance().titleTextAttributes = attr
         UINavigationBar.appearance().barTintColor = UIColor.darkGrayColor()
@@ -53,6 +127,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIToolbar.appearance().barTintColor = UIColor.darkGrayColor()
         UIToolbar.appearance().tintColor = UIColor.yellowColor()
         
+//        UIView.appearance().backgroundColor = UIColor.darkGrayColor()
+        UITableViewCell.appearance().backgroundColor = UIColor.darkGrayColor()
+        UITableView.appearance().backgroundColor = UIColor.darkGrayColor()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

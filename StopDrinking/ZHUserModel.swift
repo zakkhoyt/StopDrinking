@@ -16,14 +16,15 @@ class ZHUserModel: NSObject {
     var caloriesPerDrink: UInt? = nil
     var redditUsername: String? = nil
     var redditPassword: String? = nil
-    
-    var firstName: String? = nil
+    var notificationTime: NSDate? = nil
+    var redditAuthenticated: Bool = false;
+        
     
     override init() {
         super.init()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    @objc required init?(coder aDecoder: NSCoder) {
         super.init()
         startDate = aDecoder.decodeObjectForKey("startDate") as? NSDate
         drinksPerDay = aDecoder.decodeObjectForKey("drinksPerDay") as? UInt
@@ -31,7 +32,7 @@ class ZHUserModel: NSObject {
         caloriesPerDrink = aDecoder.decodeObjectForKey("caloriesPerDrink") as? UInt
         redditUsername = aDecoder.decodeObjectForKey("redditUsername") as? String
         redditPassword = aDecoder.decodeObjectForKey("redditPassword") as? String
-        firstName = aDecoder.decodeObjectForKey("firstName") as? String
+        notificationTime = aDecoder.decodeObjectForKey("notificationTime") as? NSDate
     }
     
 
@@ -45,24 +46,38 @@ class ZHUserModel: NSObject {
         }
     }
 
-    
 
-    func summary() -> String {
-        if let fn = firstName {
-            return "Here is a summary for you, " + fn
+    func stringForDaysQuitWithOffset(offset: UInt) -> String{
+        let days = daysSinceStartDate()
+        
+        if let days = days {
+            return "\(days + offset) since your last drink. (" + stringForStartDate() + ")"
         } else {
-            return "Here is a summary for you"
+            return ""
         }
+        
     }
     
     func stringForDaysQuit() -> String{
         let days = daysSinceStartDate()
         
         if let days = days {
-            return "\(days) without a drink"
+            return "\(days) since your last drink. (" + stringForStartDate() + ")"
         } else {
             return ""
         }
+    }
+    
+    func stringForStartDate() -> String {
+        if let startDate = startDate {
+            let formatString = "MMMM dd, YYYY"
+            let formatter = NSDateFormatter()
+            formatter.timeZone = NSTimeZone.localTimeZone()
+            formatter.dateFormat = formatString
+            let dateString = formatter.stringFromDate(startDate)
+            return dateString
+        }
+        return ""
     }
     
     func stringForDrinksMissed() -> String {
@@ -70,7 +85,7 @@ class ZHUserModel: NSObject {
         if let days = days {
             if let drinksPerDay = drinksPerDay {
                 let drinks = drinksPerDay * days
-                return "Passed on \(drinks)"
+                return "You've passed on \(drinks) drinks"
             }
         }
         return ""
@@ -81,7 +96,7 @@ class ZHUserModel: NSObject {
         if let days = days {
             if let moneyPerDay = moneyPerDay {
                 let money = moneyPerDay * days
-                return "Saved $\(money)"
+                return "You've saved $\(money)"
             }
         }
         return ""
@@ -93,7 +108,8 @@ class ZHUserModel: NSObject {
             if let caloriesPerDrink = caloriesPerDrink {
                 if let drinksPerDay = drinksPerDay {
                     let calories = days * drinksPerDay * caloriesPerDrink
-                    return "Not consumed $\(calories)"
+                    let fat = calories / 3500
+                    return "You've skipped drinking \(calories) Calories or \(fat) lbs of fat"
                 }
             }
         }
@@ -134,18 +150,18 @@ class ZHUserModel: NSObject {
 extension ZHUserModel: NSSecureCoding {
     
     
-    func encodeWithCoder(aCoder: NSCoder) {
+    @objc func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(startDate, forKey: "startDate")
         aCoder.encodeObject(drinksPerDay, forKey: "drinksPerDay")
         aCoder.encodeObject(moneyPerDay, forKey: "moneyPerDay")
         aCoder.encodeObject(caloriesPerDrink, forKey: "caloriesPerDrink")
         aCoder.encodeObject(redditUsername, forKey: "redditUsername")
         aCoder.encodeObject(redditPassword, forKey: "redditPassword")
-        aCoder.encodeObject(firstName, forKey: "firstName")
+        aCoder.encodeObject(notificationTime, forKey: "notificationTime")
     }
     
     
-    static func supportsSecureCoding() -> Bool {
+    @objc static func supportsSecureCoding() -> Bool {
         return true;
     }
 

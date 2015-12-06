@@ -10,9 +10,11 @@ import UIKit
 
 class ZHIntroBadgeCollectionViewCell: ZHIntroCollectionViewCell {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        imageView.image = UIImage(named: "badge")
     }
-
+    
 }

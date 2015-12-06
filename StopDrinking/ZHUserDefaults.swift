@@ -10,14 +10,18 @@ import UIKit
 
 class ZHUserDefaults: NSObject {
 
-    class func setCurrentUser(user: ZHUserModel) {
+    static let sharedInstance = ZHUserDefaults()
+    
+    var groupDefaults = NSUserDefaults(suiteName: "group.com.vaporwarewolf.StopDrinking")
+    
+    func setCurrentUser(user: ZHUserModel) {
         let data = NSKeyedArchiver.archivedDataWithRootObject(user)
-        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "currentUser")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        groupDefaults?.setObject(data, forKey: "currentUser")
+        groupDefaults?.synchronize()
     }
     
-    class func currentUser() -> ZHUserModel? {
-        let data = NSUserDefaults.standardUserDefaults().objectForKey("currentUser") as? NSData
+    func currentUser() -> ZHUserModel? {
+        let data = groupDefaults?.objectForKey("currentUser") as? NSData
         if data == nil {
             return nil
         }

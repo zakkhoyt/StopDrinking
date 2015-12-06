@@ -16,18 +16,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYK-Ki-D0c">
                         <rect key="frame" x="0.0" y="0.0" width="281" height="574"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of last drink" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owm-IB-czl">
-                                <rect key="frame" x="8" y="8" width="265" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When did you have your last drink?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owm-IB-czl">
+                                <rect key="frame" x="20" y="8" width="241" height="41"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEZ-XJ-cM0" customClass="RSDFDatePickerView">
-                                <rect key="frame" x="0.0" y="36.5" width="281" height="491.5"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5N-AD-Wtb">
                                 <rect key="frame" x="124" y="536" width="32" height="30"/>
                                 <animations/>
@@ -36,16 +31,21 @@
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="zMV-Ie-pr6"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEZ-XJ-cM0" customClass="RSDFDatePickerView">
+                                <rect key="frame" x="0.0" y="57" width="281" height="470.5"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="KEZ-XJ-cM0" secondAttribute="trailing" id="EP7-mj-Y0M"/>
                             <constraint firstItem="KEZ-XJ-cM0" firstAttribute="top" secondItem="owm-IB-czl" secondAttribute="bottom" constant="8" id="Nrj-yr-81k"/>
                             <constraint firstItem="s5N-AD-Wtb" firstAttribute="centerX" secondItem="TYK-Ki-D0c" secondAttribute="centerX" id="RTQ-KZ-Wm0"/>
-                            <constraint firstItem="owm-IB-czl" firstAttribute="leading" secondItem="TYK-Ki-D0c" secondAttribute="leading" constant="8" id="cU2-8m-TLB"/>
+                            <constraint firstItem="owm-IB-czl" firstAttribute="leading" secondItem="TYK-Ki-D0c" secondAttribute="leading" constant="20" id="cU2-8m-TLB"/>
                             <constraint firstItem="s5N-AD-Wtb" firstAttribute="top" secondItem="KEZ-XJ-cM0" secondAttribute="bottom" constant="8" id="gZv-CT-S7u"/>
-                            <constraint firstAttribute="trailing" secondItem="owm-IB-czl" secondAttribute="trailing" constant="8" id="ipF-ie-6b0"/>
+                            <constraint firstAttribute="trailing" secondItem="owm-IB-czl" secondAttribute="trailing" constant="20" id="ipF-ie-6b0"/>
                             <constraint firstItem="owm-IB-czl" firstAttribute="top" secondItem="TYK-Ki-D0c" secondAttribute="top" constant="8" id="oHU-8g-k0R"/>
                             <constraint firstAttribute="bottom" secondItem="s5N-AD-Wtb" secondAttribute="bottom" constant="8" id="vhE-CM-a67"/>
                             <constraint firstItem="KEZ-XJ-cM0" firstAttribute="leading" secondItem="TYK-Ki-D0c" secondAttribute="leading" id="wqG-o0-ot4"/>

@@ -13,6 +13,23 @@ class ZHIntroMoneyPerDayCollectionViewCell: ZHIntroCollectionViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
+    
+    override var user: ZHUserModel? {
+        didSet {
+            if user?.moneyPerDay == nil {
+                stepper.value = 0
+                nextButton.enabled = false
+                updateLabel(0)
+            } else {
+                stepper.value = Double((user?.moneyPerDay)!)
+                nextButton.enabled = true
+                updateLabel((user?.moneyPerDay)!)
+            }
+            
+        }
+    }
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         if user?.moneyPerDay == nil {

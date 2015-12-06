@@ -16,13 +16,76 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcZ-LH-kNd">
+                                <rect key="frame" x="268" y="384" width="64.5" height="13.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/r/stopdrinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcY-kP-KOl">
+                                <rect key="frame" x="262" y="404" width="77.5" height="13.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopDrinking_320" translatesAutoresizingMaskIntoConstraints="NO" id="aU1-y8-6zC">
+                                <rect key="frame" x="236" y="236" width="128" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="eNw-EW-1M8"/>
+                                    <constraint firstAttribute="height" constant="128" id="ji7-Y4-j6c"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RedditKit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06p-in-4kO">
+                                <rect key="frame" x="276" y="424" width="48.5" height="13.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mya-rB-8EJ">
+                                <rect key="frame" x="266" y="445" width="68.5" height="13.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Drinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfW-Lt-Gxh">
+                                <rect key="frame" x="222" y="183.5" width="157.5" height="32.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RcZ-LH-kNd" firstAttribute="top" secondItem="aU1-y8-6zC" secondAttribute="bottom" constant="20" id="47H-jd-Ogo"/>
+                            <constraint firstItem="lcY-kP-KOl" firstAttribute="top" secondItem="RcZ-LH-kNd" secondAttribute="bottom" constant="6.5" id="ACu-9D-YHV"/>
+                            <constraint firstItem="mya-rB-8EJ" firstAttribute="top" secondItem="06p-in-4kO" secondAttribute="bottom" constant="7.5" id="Aer-bW-fox"/>
+                            <constraint firstItem="AfW-Lt-Gxh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GFk-3p-Hyc"/>
+                            <constraint firstItem="lcY-kP-KOl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KeU-Qt-uQ0"/>
+                            <constraint firstItem="aU1-y8-6zC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MA1-fz-hrg"/>
+                            <constraint firstItem="06p-in-4kO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fkN-ZB-G8N"/>
+                            <constraint firstItem="aU1-y8-6zC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hA6-d3-VM2"/>
+                            <constraint firstItem="RcZ-LH-kNd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iN1-4V-Tr6"/>
+                            <constraint firstItem="mya-rB-8EJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="m5p-oJ-fJz"/>
+                            <constraint firstItem="aU1-y8-6zC" firstAttribute="top" secondItem="AfW-Lt-Gxh" secondAttribute="bottom" constant="20" id="ueU-gA-amr"/>
+                            <constraint firstItem="06p-in-4kO" firstAttribute="top" secondItem="lcY-kP-KOl" secondAttribute="bottom" constant="6.5" id="w8d-xQ-ZUd"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="StopDrinking_320" width="320" height="320"/>
+    </resources>
 </document>

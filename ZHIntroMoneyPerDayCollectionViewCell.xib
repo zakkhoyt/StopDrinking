@@ -16,11 +16,11 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utN-bQ-1Dr">
                         <rect key="frame" x="0.0" y="0.0" width="322" height="369"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money per day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-mD-hFE">
-                                <rect key="frame" x="8" y="8" width="306" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How much money did you spend daily?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjv-mD-hFE">
+                                <rect key="frame" x="20" y="8" width="282" height="41"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAw-iz-Zpc">
@@ -42,19 +42,19 @@
                                 <rect key="frame" x="156" y="265" width="10.5" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Wmj-Yr-31L" firstAttribute="top" secondItem="POI-hH-0hb" secondAttribute="bottom" constant="8" id="0nm-kl-xJS"/>
                             <constraint firstAttribute="bottom" secondItem="OAw-iz-Zpc" secondAttribute="bottom" constant="8" id="2Nq-pp-gaK"/>
                             <constraint firstItem="sjv-mD-hFE" firstAttribute="top" secondItem="utN-bQ-1Dr" secondAttribute="top" constant="8" id="4VA-Es-fqH"/>
                             <constraint firstItem="OAw-iz-Zpc" firstAttribute="centerX" secondItem="utN-bQ-1Dr" secondAttribute="centerX" id="57G-Wh-mAr"/>
-                            <constraint firstAttribute="trailing" secondItem="sjv-mD-hFE" secondAttribute="trailing" constant="8" id="JHp-ff-7pv"/>
-                            <constraint firstItem="sjv-mD-hFE" firstAttribute="leading" secondItem="utN-bQ-1Dr" secondAttribute="leading" constant="8" id="O7q-47-W41"/>
+                            <constraint firstAttribute="trailing" secondItem="sjv-mD-hFE" secondAttribute="trailing" constant="20" id="JHp-ff-7pv"/>
+                            <constraint firstItem="sjv-mD-hFE" firstAttribute="leading" secondItem="utN-bQ-1Dr" secondAttribute="leading" constant="20" id="O7q-47-W41"/>
                             <constraint firstItem="Wmj-Yr-31L" firstAttribute="top" secondItem="POI-hH-0hb" secondAttribute="bottom" constant="8" id="On2-rV-znT"/>
                             <constraint firstItem="POI-hH-0hb" firstAttribute="centerX" secondItem="utN-bQ-1Dr" secondAttribute="centerX" id="aM7-hR-30T"/>
                             <constraint firstItem="OAw-iz-Zpc" firstAttribute="top" secondItem="Wmj-Yr-31L" secondAttribute="bottom" constant="8.5" id="gRM-Yb-9Xz"/>
