@@ -24,6 +24,12 @@
 //  .score
 //  .created
 
+//  Attributed text and taps:
+//  http://stackoverflow.com/questions/19332283/detecting-taps-on-attributed-text-in-a-uitextview-in-ios
+//
+
+
+
 
 import UIKit
 
@@ -78,7 +84,16 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         authorLabel.text = NSString(format: "%@", (model?.comment.author)!) as String
         scoreLabel.text = NSString(format: "+%lu", (model?.comment.score)!) as String
         ageLabel.text = model?.comment.created.stringRelativeTimeFromDate()
-        commentTextView.text = model?.comment.body
+
+        //        commentTextView.text = model?.comment.body
+        let parser = NSAttributedStringMarkdownParser()
+        let attrString = parser.attributedStringFromMarkdownString(model?.comment.body)
+//        let attr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+//        let fattrString = NSAttributedString(
+//        let mattrString = attrString.mutableCopy()
+//        mattrString
+        commentTextView.attributedText = attrString
+
         
         avatarContainerView.hidden = true
         

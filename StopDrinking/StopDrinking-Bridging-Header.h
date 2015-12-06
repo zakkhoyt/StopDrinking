@@ -17,3 +17,5 @@
 #import "UIView+RenderToImage.h"
 #import "UIViewController+AlertController.h"
 
+
+#import "NSAttributedStringMarkdownParser.h"
