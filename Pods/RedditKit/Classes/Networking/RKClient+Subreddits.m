@@ -103,6 +103,16 @@
     }];
 }
 
+- (NSURLSessionDataTask *)subredditsByFullNames:(NSArray *)subredditFullNames completion:(RKArrayCompletionBlock)completion
+{
+	NSParameterAssert(subredditFullNames);
+	
+	NSString *subredditFullNamesString = [subredditFullNames componentsJoinedByString:@","];
+	NSDictionary *parameters = @{@"id": subredditFullNamesString};
+	
+	return [self listingTaskWithPath:@"api/info.json" parameters:parameters completion:completion];
+}
+
 - (NSURLSessionDataTask *)recommendedSubredditsForSubreddits:(NSArray *)subreddits completion:(RKArrayCompletionBlock)completion
 {
     NSParameterAssert(subreddits);
@@ -128,6 +138,56 @@
     }];
 }
 
+- (NSURLSessionDataTask *)randomSubredditWithCompletion:(RKObjectCompletionBlock)completion
+{
+    return [self getPath:@"r/random" parameters:nil completion:^(NSHTTPURLResponse *response, NSArray *responseObject, NSError *error) {
+        if (!completion)
+        {
+            return;
+        }
+        
+        if (error)
+        {
+            completion(nil, error);
+        }
+        else
+        {
+            NSURL *subredditURL = response.URL;
+            NSString *subredditName = [subredditURL lastPathComponent];
+            
+            [self subredditWithName:subredditName completion:completion];
+        }
+    }];
+}
+
+- (NSURLSessionDataTask *)randomNSFWSubredditWithCompletion:(RKObjectCompletionBlock)completion
+{
+	return [self getPath:@"r/randnsfw" parameters:nil completion:^(NSHTTPURLResponse *response, NSArray *responseObject, NSError *error) {
+		if (!completion)
+		{
+			return;
+		}
+
+		if (error)
+		{
+			completion(nil, error);
+		}
+		else
+		{
+			NSURL *subredditURL = response.URL;
+			NSString *subredditName = [subredditURL lastPathComponent];
+
+			[self subredditWithName:subredditName completion:completion];
+		}
+	}];
+}
+
+- (NSURLSessionDataTask  *)defaultSubredditsWithPagination:(RKPagination *)pagination completion:(RKListingCompletionBlock)completion
+{
+    
+    return [self listingTaskWithPath:@"subreddits/default.json" parameters:nil pagination:pagination completion:completion];
+    
+}
 #pragma mark - Subscribing
 
 - (NSURLSessionDataTask *)subscribeToSubreddit:(RKSubreddit *)subreddit completion:(RKCompletionBlock)completion

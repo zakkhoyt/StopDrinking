@@ -444,12 +444,12 @@
 		C635D8061C10007E00616D3A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				C635D7991C0EEA9B00616D3A /* LaunchScreen.storyboard */,
+				C6CA9AA21C13DD4200F21544 /* About.storyboard */,
 				C635D7941C0EEA9B00616D3A /* Intro.storyboard */,
+				C635D7991C0EEA9B00616D3A /* LaunchScreen.storyboard */,
 				C635D7EC1C0FBAB400616D3A /* Main.storyboard */,
 				C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */,
 				C66623E81C1131F400652B42 /* Web.storyboard */,
-				C6CA9AA21C13DD4200F21544 /* About.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";

@@ -74,6 +74,16 @@ typedef NS_ENUM(NSUInteger, RKDistinguishedStatus) {
 @property (nonatomic, assign, readonly) NSUInteger gilded;
 
 /**
+ Whether the comment has been archived.
+ */
+@property (nonatomic, assign, readonly, getter=isArchived) BOOL archived;
+
+/**
+ Whether the comment has been saved by the current user.
+ */
+@property (nonatomic, assign, readonly, getter=isSaved) BOOL saved;
+
+/**
  The identifier of the link to which this comment was posted.
  */
 @property (nonatomic, copy, readonly) NSString *linkID;
@@ -94,10 +104,21 @@ typedef NS_ENUM(NSUInteger, RKDistinguishedStatus) {
 @property (nonatomic, copy, readonly) NSString *parentID;
 
 /**
+ The score of the comment.
+ */
+@property (nonatomic, assign, readonly) NSInteger score;
+
+/**
  Whether the score of this comment is currently hidden.
  Some subreddits hide the scores of new comments for a short period of time, to prevent voting from being skewed via the bandwagon effect.
  */
 @property (nonatomic, assign, readonly) BOOL scoreHidden;
+
+/**
+ The controversiality of the comment.
+ This is currently an integer which is either 1 or 0, but may be expanded in the future.
+ */
+@property (nonatomic, assign, readonly) NSUInteger controversiality;
 
 /**
  The name of the subreddit to which this comment was posted.
@@ -125,5 +146,44 @@ typedef NS_ENUM(NSUInteger, RKDistinguishedStatus) {
  @return YES if both the author and body properties are set to "[deleted]".
  */
 - (BOOL)isDeleted;
+
+/**
+ Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+ 
+ The body text of the comment, as Markdown.
+ */
+@property (nonatomic, copy, readonly) NSString *submissionContentText;
+
+/**
+ Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+ 
+ The body text of the comment, as HTML.
+ */
+@property (nonatomic, copy, readonly) NSString *submissionContentHTML;
+
+/**
+ Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+ 
+ The identifier of the link to which this comment was posted.
+ */
+@property (nonatomic, copy, readonly) NSString *submissionLink;
+
+/**
+ Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+ 
+ The identifier of the comment's parent. It can be the link if it's a top-level comment. Otherwise
+ the parent can be a comment, if it's a reply.
+ */
+@property (nonatomic, copy, readonly) NSString *submissionParent;
+
+/**
+ The CSS class value for the author of the link.
+ */
+@property (nonatomic, copy, readonly) NSString *authorFlairClass;
+
+/**
+ The flair text value for the author of the link.
+ */
+@property (nonatomic, copy, readonly) NSString *authorFlairText;
 
 @end

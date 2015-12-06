@@ -44,6 +44,7 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     @IBOutlet weak var indentConstrint: NSLayoutConstraint!
     var avatarView: ZHAvatarView!
     
+//    @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var headerLayoutConstraint: NSLayoutConstraint!
     
     weak var treeView: RATreeView? = nil {
@@ -85,11 +86,64 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         scoreLabel.text = NSString(format: "+%lu", (model?.comment.score)!) as String
         ageLabel.text = model?.comment.created.stringRelativeTimeFromDate()
 
-        commentTextView.text = model?.comment.body
-//        let parser = NSAttributedStringMarkdownParser()
-//        let attrString = parser.attributedStringFromMarkdownString(model?.comment.body)
-//        commentTextView.attributedText = attrString
-
+//        commentTextView.text = model?.comment.body
+////        let parser = NSAttributedStringMarkdownParser()
+////        let attrString = parser.attributedStringFromMarkdownString(model?.comment.body)
+////        commentTextView.attributedText = attrString
+        
+////        let html = "<html>" + (model?.comment.bodyHTML)! +  "</html>"
+//        let html = "<html><body><h1><div>Hello, world!</div></h1></body></html>"
+//        webView.loadHTMLString(html, baseURL: nil)
+        
+        
+        
+        let encodedString = (model?.comment.bodyHTML)!
+        let encodedData = encodedString.dataUsingEncoding(NSUTF8StringEncoding)!
+        let attributedOptions: [String: AnyObject] = [
+            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+            NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
+        ]
+        let colorizeOptions: [String: AnyObject] = [
+            NSForegroundColorAttributeName: UIColor.whiteColor(),
+            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        ]
+//        let attributedString = NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil, error: nil)!
+        do {
+            let attributedString = try  NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+            let decodedHTMLString = attributedString.string // "<div class=\"md\"><p>🤔 Where is this money...? Where did I get it when I was drinking!?!</p> </div>"
+            
+            let decodedHTMLData = decodedHTMLString.dataUsingEncoding(NSUTF8StringEncoding)
+            let ats = try NSAttributedString(data: decodedHTMLData!, options: attributedOptions, documentAttributes: nil)
+            commentTextView.attributedText = ats
+            
+            // Fix font color
+//            NSRange range = (NSRange){0,[str length]};
+//            [str enumerateAttribute:NSFontAttributeName inRange:range options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id value, NSRange range, BOOL *stop) {
+//                UIFont* currentFont = value;
+//                UIFont *replacementFont = nil;
+//                
+//                if ([currentFont.fontName rangeOfString:@"bold" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+//                replacementFont = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:25.0f];
+//                } else {
+//                replacementFont = [UIFont fontWithName:@"HelveticaNeue-Thin" size:25.0f];
+//                }
+//                
+//                [str addAttribute:NSFontAttributeName value:replacementFont range:range];
+//                }];
+//            let range = NSMakeRange(0, ats.length)
+//            ats.enumerateAttribute(NSFontAttributeName, inRange: range, options: NSAttributedStringEnumerationLongestEffectiveRangeNotRequired, usingBlock: { (valud: AnyObject?, range: NSRange,  stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+//                
+//            })
+            
+            
+        } catch _ {
+            print("error encoding html string")
+        }
+        
+        
+        
+        
+            
         
         avatarContainerView.hidden = true
         
@@ -142,6 +196,7 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         avatarView.frame = avatarContainerView.bounds
         avatarContainerView.addSubview(avatarView!)
 
+
         
     }
 
@@ -163,3 +218,9 @@ extension ZHRedditCommentTableViewCell: UITextViewDelegate {
         return true
     }
 }
+
+//extension ZHRedditCommentTableViewCell: UIWebViewDelegate {
+//    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+//        return true
+//    }
+//}

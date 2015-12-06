@@ -39,7 +39,7 @@ signed in functions
 * What to display if can't connect?
 * Display errors
 * Reachability
-
+* Retain count cycles
 
 
 

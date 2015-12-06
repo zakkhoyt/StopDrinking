@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 
 #import "RKLink.h"
-#import "NSString+HTML.h"
+#import "NSString+RKHTML.h"
 #import "RKLinkEmbeddedMedia.h"
 
 @implementation RKLink
@@ -51,6 +51,7 @@
         @"hidden": @"data.hidden",
         @"NSFW": @"data.over_18",
         @"edited": @"data.edited",
+        @"archived": @"data.archived",
         @"upvoteRatio": @"data.upvote_ratio",
         @"gilded": @"data.gilded",
         @"thumbnailURL": @"data.thumbnail",
@@ -110,7 +111,7 @@
 {
     return [MTLValueTransformer transformerWithBlock:^(NSString *URL) {
         NSString *unescapedURL = [URL stringByUnescapingHTMLEntities];
-        return [NSURL URLWithString:unescapedURL];
+        return [NSURL URLWithString:[unescapedURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     }];
 }
 
@@ -127,7 +128,7 @@
 + (NSValueTransformer *)thumbnailURLJSONTransformer
 {
     return [MTLValueTransformer transformerWithBlock:^id(NSString *thumbnailURL) {
-        if ([thumbnailURL isEqualToString:@"self"])
+        if (![thumbnailURL isKindOfClass:[NSString class]] || [thumbnailURL isEqualToString:@"self"])
         {
             return nil;
         }

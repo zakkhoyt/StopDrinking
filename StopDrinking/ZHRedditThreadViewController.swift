@@ -27,11 +27,13 @@ class ZHRedditThreadCellModel {
 class ZHRedditThreadViewController: UIViewController {
 
     @IBOutlet weak var treeView: RATreeView!
+    @IBOutlet var sortBarButton: UIBarButtonItem!
     var post: RKLink? = nil
     var commentModels: [ZHRedditThreadCellModel]? = nil
     var statusBarHidden: Bool = false
     var pagination: RKPagination? = nil
-        var refreshControl: UIRefreshControl? =  nil
+    var refreshControl: UIRefreshControl? =  nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,7 @@ class ZHRedditThreadViewController: UIViewController {
         view.backgroundColor = UIColor.darkGrayColor()
         UIApplication.sharedApplication().statusBarHidden = false
         navigationItem.title = "Comments"
-        
+        navigationItem.rightBarButtonItem = sortBarButton
         setupTreeView()
         resetComments()
     }
@@ -94,23 +96,80 @@ class ZHRedditThreadViewController: UIViewController {
     
     func getNextPageOfComments() {
         MBProgressHUD.showHUDAddedTo(view, animated: true)
-        RKClient.sharedClient().commentsForLink(post, completion: { (comments, pagination, error) -> Void in
+        
+//        let ident = post
+//        RKClient.sharedClient().commentsForLinkWithIdentifier(ident, sort: .Top) { (comments, pagination, error) -> Void in
+//            
+//        }
+//        
+//        RKClient.sharedClient().moreComments(moreComments, forLink: post, sort: .RKCommentSortingMethodTop) { (<#[AnyObject]!#>, <#NSError!#>) -> Void in
+//
+//        }
+
+        //        RKClient  .sharedClient().commentsForLink(post, completion: { (comments, pagination, error) -> Void in
+        RKClient.sharedClient().commentsForLink(post) { (comments, error) -> Void in
             if error == nil {
                 for comment in comments {
-                    let model = ZHRedditThreadCellModel(comment: comment as! RKComment, expanded: false)
-                    self.commentModels?.append(model)
+                    if comment is RKComment {
+                        let model = ZHRedditThreadCellModel(comment: comment as! RKComment, expanded: false)
+                        self.commentModels?.append(model)
+                    } else if comment is RKMoreComments {
+                        assert(false, "Finally found a RKMoreComments")
+                    }
                 }
+                print("commentModels.count: \(self.commentModels?.count)")
                 self.treeView.reloadData()
             }
             MBProgressHUD.hideHUDForView(self.view, animated: true)
-        })
-
+        }
+    }
+    
+    
+    func getMoreComments() {
+//        RKClient.sharedClient().more
     }
     
     @IBAction func doneButtonAction(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: { () -> Void in
             
         })
+    }
+    
+    @IBAction func sortBarButtonAction(sender: AnyObject) {
+        let ac = UIAlertController(title: "Category", message: nil, preferredStyle: .Alert)
+        
+        ac.addAction(UIAlertAction(title: "Hot", style: .Default, handler: { (action) -> Void in
+//            self.category = .Hot
+//            self.categoryButton.setTitle("Hot", forState: UIControlState.Normal)
+//            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "New", style: .Default, handler: { (action) -> Void in
+//            self.category = .New
+//            self.categoryButton.setTitle("New", forState: UIControlState.Normal)
+//            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Rising", style: .Default, handler: { (action) -> Void in
+//            self.category = .Rising
+//            self.categoryButton.setTitle("Rising", forState: UIControlState.Normal)
+//            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Controversial", style: .Default, handler: { (action) -> Void in
+//            self.category = .Controversial
+//            self.categoryButton.setTitle("Controversial", forState: UIControlState.Normal)
+//            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Top", style: .Default, handler: { (action) -> Void in
+//            self.category = .Top
+//            self.categoryButton.setTitle("Top", forState: UIControlState.Normal)
+//            self.resetReddit()
+        }))
+        
+        presentViewController(ac, animated: true, completion: nil)
+
     }
     
     func refreshControlAction(sender: UIRefreshControl) {

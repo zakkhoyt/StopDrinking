@@ -441,7 +441,30 @@ NSString * RKStringFromDistinguishedStatus(RKDistinguishedStatus status)
     // This method is pretty dodgy at the moment. It passes the response's URL to the completion block if JSON parsing fails as expected.
     // The response URL will be set to the subreddit's stylesheet URL, since the API method redirects there.
     return [self getPath:path parameters:nil completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
-        if (error.code == 3840)
+        if (error)
+        {
+            completion(nil, error);
+        }
+        else
+        {
+            completion(response.URL, nil);
+        }
+    }];
+}
+
+- (NSURLSessionDataTask *)stylesheetURLForSubreddit:(RKSubreddit *)subreddit completion:(RKObjectCompletionBlock)completion
+{
+    return [self stylesheetURLForSubredditWithName:subreddit.name completion:completion];
+}
+
+- (NSURLSessionDataTask *)stylesheetURLForSubredditWithName:(NSString *)subredditName completion:(RKObjectCompletionBlock)completion
+{
+    NSParameterAssert(subredditName);
+
+    NSString *path = [NSString stringWithFormat:@"r/%@/stylesheet", subredditName];
+
+    return [self getPath:path parameters:nil completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+        if (response.URL)
         {
             completion(response.URL, nil);
         }

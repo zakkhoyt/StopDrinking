@@ -46,6 +46,9 @@ NSString * RKStringFromSubredditCategory(RKSubredditCategory category)
         case RKSubredditCategoryTop:
             return @"top";
             break;
+        case RKSubredditCategoryPromoted:
+            return @"ads";
+            break;
         default:
             return @"hot";
             break;
@@ -182,17 +185,17 @@ NSString * RKStringFromSubredditCategory(RKSubredditCategory category)
 
 #pragma mark - Submitting
 
-- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subreddit:(RKSubreddit *)subreddit URL:(NSURL *)URL captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKCompletionBlock)completion
+- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subreddit:(RKSubreddit *)subreddit URL:(NSURL *)URL captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKObjectCompletionBlock)completion
 {
     return [self submitLinkPostWithTitle:title subredditName:subreddit.name URL:URL captchaIdentifier:captchaIdentifier captchaValue:captchaValue completion:completion];
 }
 
-- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName URL:(NSURL *)URL captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKCompletionBlock)completion
+- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName URL:(NSURL *)URL captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKObjectCompletionBlock)completion
 {
     return [self submitLinkPostWithTitle:title subredditName:subredditName URL:URL resubmit:NO captchaIdentifier:captchaIdentifier captchaValue:captchaValue completion:completion];
 }
 
-- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName URL:(NSURL *)URL resubmit:(BOOL)resubmit captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKCompletionBlock)completion
+- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName URL:(NSURL *)URL resubmit:(BOOL)resubmit captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKObjectCompletionBlock)completion
 {
     NSParameterAssert(title);
     NSParameterAssert(subredditName);
@@ -210,15 +213,15 @@ NSString * RKStringFromSubredditCategory(RKSubredditCategory category)
     
     [parameters setObject:@"link" forKey:@"kind"];
     
-    return [self basicPostTaskWithPath:@"api/submit" parameters:parameters completion:completion];
+    return [self linkSubmissionTaskWithParameters:parameters completion:completion];
 }
 
-- (NSURLSessionDataTask *)submitSelfPostWithTitle:(NSString *)title subreddit:(RKSubreddit *)subreddit text:(NSString *)text captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKCompletionBlock)completion
+- (NSURLSessionDataTask *)submitSelfPostWithTitle:(NSString *)title subreddit:(RKSubreddit *)subreddit text:(NSString *)text captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKObjectCompletionBlock)completion
 {
     return [self submitSelfPostWithTitle:title subredditName:subreddit.name text:text captchaIdentifier:captchaIdentifier captchaValue:captchaValue completion:completion];
 }
 
-- (NSURLSessionDataTask *)submitSelfPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName text:(NSString *)text captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKCompletionBlock)completion
+- (NSURLSessionDataTask *)submitSelfPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName text:(NSString *)text captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKObjectCompletionBlock)completion
 {
     NSParameterAssert(title);
     NSParameterAssert(subredditName);
@@ -234,7 +237,19 @@ NSString * RKStringFromSubredditCategory(RKSubredditCategory category)
     
     [parameters setObject:@"self" forKey:@"kind"];
     
-    return [self basicPostTaskWithPath:@"api/submit" parameters:parameters completion:completion];
+    return [self linkSubmissionTaskWithParameters:parameters completion:completion];
+}
+
+- (NSURLSessionDataTask *)linkSubmissionTaskWithParameters:(NSDictionary *)parameters completion:(RKObjectCompletionBlock)completion
+{
+    return [self postPath:@"api/submit" parameters:parameters completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (completion)
+            {
+                completion([responseObject valueForKeyPath:@"json.data"], error);
+            }
+        });
+    }];
 }
 
 #pragma mark - Marking NSFW
@@ -269,7 +284,16 @@ NSString * RKStringFromSubredditCategory(RKSubredditCategory category)
 
 - (NSURLSessionDataTask *)hideLink:(RKLink *)link completion:(RKCompletionBlock)completion
 {
-    return [self hideLinkWithFullName:[link fullName] completion:completion];
+    return [self hideLinkWithFullName:[link fullName] completion:^(NSError *error) {
+        if (!error) {
+            RKLink *object = [RKLink modelWithDictionary:@{ @"hidden": @YES } error:nil];
+            [link mergeValueForKey:@"hidden" fromModel:object];
+        }
+        
+        if (completion) {
+            completion(error);
+        }
+    }];
 }
 
 - (NSURLSessionDataTask *)hideLinkWithFullName:(NSString *)fullName completion:(RKCompletionBlock)completion
@@ -282,7 +306,16 @@ NSString * RKStringFromSubredditCategory(RKSubredditCategory category)
 
 - (NSURLSessionDataTask *)unhideLink:(RKLink *)link completion:(RKCompletionBlock)completion
 {
-    return [self unhideLinkWithFullName:[link fullName] completion:completion];
+    return [self unhideLinkWithFullName:[link fullName] completion:^(NSError *error) {
+        if (!error) {
+            RKLink *object = [RKLink modelWithDictionary:@{ @"hidden": @NO } error:nil];
+            [link mergeValueForKey:@"hidden" fromModel:object];
+        }
+        
+        if (completion) {
+            completion(error);
+        }
+    }];
 }
 
 - (NSURLSessionDataTask *)unhideLinkWithFullName:(NSString *)fullName completion:(RKCompletionBlock)completion

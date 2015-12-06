@@ -4,7 +4,7 @@ RedditKit is a [reddit API](http://www.reddit.com/dev/api) wrapper, written in O
 
 ## Documention
 
-Documentation for RedditKit is [available on CocoaDocs](http://cocoadocs.org/docsets/RedditKit/1.2.0/).
+Documentation for RedditKit is [available on CocoaDocs](http://cocoadocs.org/docsets/RedditKit/1.3.0/).
 
 ## Installation
 
@@ -12,10 +12,10 @@ Documentation for RedditKit is [available on CocoaDocs](http://cocoadocs.org/doc
 
 Add this to your Podfile:
 
-	pod 'RedditKit', '~> 1.2'
+	pod 'RedditKit', '~> 1.3'
 
 Then run:
-	
+
 	pod install
 
 ### Submodules
@@ -121,6 +121,8 @@ NSURLSessionDataTask *task = [[RKClient sharedClient] frontPageLinksWithCompleti
 [task cancel];
 ```
 
+> When using RedditKit's APIs, it's important to remember that users who have reddit gold may have settings which affect the response from the server. For example, users who have disabled promoted links will see an empty array returned when retrieving links from the promoted category of a subreddit.
+
 ## Pagination
 
 Methods which are paginated can accept `RKPagination` objects.
@@ -128,6 +130,8 @@ Methods which are paginated can accept `RKPagination` objects.
 `RKPagination` lets you change the sorting of returned objects. For example, when fetching the top 25 links in a subreddit, setting the `subredditCategory` property changes whether you get the top 25 links right now or the top links overall.
 
 In addition to letting you change the pagination of your requests, RedditKit also gives you pagination information for any requests made. A request for links in a subreddit has a pagination object as an argument in its completion block.
+
+Due to the way reddit's API is structured, comments do not have support for pagination. Instead, comment listings will return `RKMoreComments` object which can then be used to retrieve the comments in question.
 
 > The [example project](Example/) implements pagination in a table view controller, loading new links when the user scrolls to the bottom.
 
@@ -155,7 +159,7 @@ How you manage the various `RKClient` instances is up to you. Probably with an `
 
 ## Configuration
 
-You can configure various aspects of RedditKit's operation, including its default API endpoint and user agent. Check out the `RKClient` header file for more.
+You can configure various aspects of RedditKit, including its default API endpoint and user agent. Check out the `RKClient` header file for more.
 
 **You should set your user agent to the name and version of your app, along with your reddit username. That way, if you ever have a buggy version of your app in the wild, the reddit admins will know who to contact.**
 
@@ -163,7 +167,7 @@ If you do not set one manually, the user agent will be provided by [AFNetworking
 
 ## Requirements
 
-RedditKit requires either iOS 7.0+ or Mac OS X 10.9+. Xcode 5 is required in order to run its test suite.
+RedditKit requires either iOS 7.0+ or Mac OS X 10.9+. Xcode 5 or greater is required in order to run its test suite.
 
 ARC is required. For projects that don't use ARC, you can set the `-fobjc-arc` compiler flag on the RedditKit source files.
 
@@ -175,6 +179,8 @@ ARC is required. For projects that don't use ARC, you can set the `-fobjc-arc` c
 ## Credits
 
 [SAMCategories](https://github.com/soffes/SAMCategories) by Sam Soffes is used for unescaping HTML entities in reddit link titles.
+
+Also, a big thanks to [all of the contributors](https://github.com/samsymons/RedditKit/graphs/contributors) to RedditKit.
 
 ## Need Help?
 

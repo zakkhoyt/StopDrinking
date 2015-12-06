@@ -26,6 +26,8 @@
 
 @implementation RKComment
 
+@dynamic score;
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     NSDictionary *keyPaths = @{
@@ -38,7 +40,23 @@
         @"scoreHidden": @"data.score_hidden",
         @"replies": @"data.replies",
         @"edited": @"data.edited",
-        @"linkID": @"data.link_id"
+        @"archived": @"data.archived",
+        @"saved": @"data.saved",
+        @"linkID": @"data.link_id",
+        @"gilded": @"data.gilded",
+        @"score": @"data.score",
+        @"controversiality": @"controversiality",
+        @"parentID": @"data.parent_id",
+        @"subreddit": @"data.subreddit",
+        @"subredditID": @"data.subreddit_id",
+		@"submissionContentText": @"data.contentText", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+		@"submissionContentHTML": @"data.contentHTML", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+		@"submissionLink": @"data.link", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+		@"submissionParent": @"data.parent", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+        //		@"totalReports": @"data.num_reports",          // not required for now.
+        //		@"distinguishedStatus": @"data.distinguished", // not required for now.
+        @"authorFlairClass": @"data.author_flair_css_class",
+        @"authorFlairText": @"data.author_flair_text"
     };
     
     return [[super JSONKeyPathsByPropertyKey] mtl_dictionaryByAddingEntriesFromDictionary:keyPaths];
@@ -46,14 +64,13 @@
 
 - (NSString *)description
 {
-    if (self.scoreHidden)
-    {
-        return [NSString stringWithFormat:@"<%@: %p, full name: %@, author: %@, score hidden>", NSStringFromClass([self class]), self, self.fullName, self.author];
-    }
-    else
-    {
-        return [NSString stringWithFormat:@"<%@: %p, full name: %@, author: %@, score: %li>", NSStringFromClass([self class]), self, self.fullName, self.author, (long)self.score];
-    }
+	// The following is just a way to show the content of a comment that represents either a "real" comment vs. a "submission" comment response received
+	// after calling the submitComment:onThingWithFullName:forLink:finished: API. I'm totally open to another approach if anyone has any suggestions
+	// and/or is familiar with what I'm talking about.
+	NSString *parentIDString = self.parentID ? @"parentID" : @"parent";
+	NSString *fullNameIDString = self.parentID ? @"fullName" : @"identifier";
+	
+	return [NSString stringWithFormat:@"<%@: %p, author: %@, %@: %@, %@: %@, replies: %lu>", NSStringFromClass([self class]), self, self.author, parentIDString, self.parentID ?: self.submissionParent, fullNameIDString, self.parentID ? self.fullName : self.identifier, (unsigned long)self.replies.count];
 }
 
 - (BOOL)isDeleted
@@ -75,23 +92,13 @@
         NSMutableArray *comments = [[NSMutableArray alloc] initWithCapacity:repliesData.count];
         
         for (NSDictionary *commentJSON in repliesData)
-        {
-            NSString *kind = commentJSON[@"kind"];
-            if (![kind isEqualToString:kRKObjectTypeComment])
-            {
-                continue;
-            }
-            
+        {   
             NSError *error = nil;
-            id model = [MTLJSONAdapter modelOfClass:[RKComment class] fromJSONDictionary:commentJSON error:&error];
+            id model = [RKObjectBuilder objectFromJSON:commentJSON];
             
             if (!error)
             {
                 [comments addObject:model];
-            }
-            else
-            {
-                NSLog(@"Failed to build comment reply: %@", error);
             }
         }
         
