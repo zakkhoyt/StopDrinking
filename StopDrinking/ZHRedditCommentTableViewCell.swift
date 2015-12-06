@@ -85,14 +85,10 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         scoreLabel.text = NSString(format: "+%lu", (model?.comment.score)!) as String
         ageLabel.text = model?.comment.created.stringRelativeTimeFromDate()
 
-        //        commentTextView.text = model?.comment.body
-        let parser = NSAttributedStringMarkdownParser()
-        let attrString = parser.attributedStringFromMarkdownString(model?.comment.body)
-//        let attr = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-//        let fattrString = NSAttributedString(
-//        let mattrString = attrString.mutableCopy()
-//        mattrString
-        commentTextView.attributedText = attrString
+        commentTextView.text = model?.comment.body
+//        let parser = NSAttributedStringMarkdownParser()
+//        let attrString = parser.attributedStringFromMarkdownString(model?.comment.body)
+//        commentTextView.attributedText = attrString
 
         
         avatarContainerView.hidden = true
@@ -154,6 +150,10 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        print("asdf")
+//    }
     
 }
 

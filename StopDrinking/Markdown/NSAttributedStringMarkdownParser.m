@@ -61,7 +61,8 @@ int markdownConsume(char* text, int token, yyscan_t scanner);
   if ((self = [super init])) {
     _headerFonts = [NSMutableDictionary dictionary];
 
-    self.paragraphFont = [UINSFont systemFontOfSize:12];
+//    self.paragraphFont = [UINSFont systemFontOfSize:112];
+      self.paragraphFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     self.boldFontName = [UINSFont boldSystemFontOfSize:12].fontName;
     self.italicFontName = @"Helvetica-Oblique";
     self.boldItalicFontName = @"Helvetica-BoldOblique";
@@ -238,7 +239,8 @@ int markdownConsume(char* text, int token, yyscan_t scanner);
 }
 
 - (NSDictionary *)attributesForFont:(UINSFont *)font {
-    return @{NSFontAttributeName: font};
+    return @{NSFontAttributeName: font,
+             NSForegroundColorAttributeName: [UIColor whiteColor]};
 }
 
 - (void)recurseOnString:(NSString *)string withFont:(UINSFont *)font {

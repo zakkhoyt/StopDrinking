@@ -65,13 +65,16 @@
                         <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Sat at my favorite restaurant, crying quietly at the table after ordering a drink and... " translatesAutoresizingMaskIntoConstraints="NO" id="paH-E5-sWU">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Sat at my favorite restaurant, crying quietly at the table after ordering a drink and... " translatesAutoresizingMaskIntoConstraints="NO" id="paH-E5-sWU">
                         <rect key="frame" x="8" y="39" width="637" height="364.5"/>
                         <animations/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="XNG-OV-0Iw"/>
+                        </connections>
                     </textView>
                 </subviews>
                 <animations/>
