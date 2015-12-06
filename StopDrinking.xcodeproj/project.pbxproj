@@ -15,25 +15,6 @@
 		C635D7A61C0EEA9B00616D3A /* StopDrinkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7A51C0EEA9B00616D3A /* StopDrinkingTests.swift */; };
 		C635D7B11C0EEA9B00616D3A /* StopDrinkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7B01C0EEA9B00616D3A /* StopDrinkingUITests.swift */; };
 		C635D7BF1C0EEB6900616D3A /* ZHIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7BE1C0EEB6900616D3A /* ZHIntroViewController.swift */; };
-		C635D7C61C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7C41C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.swift */; };
-		C635D7C71C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D7C51C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.xib */; };
-		C635D7CC1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7CA1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.swift */; };
-		C635D7CD1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D7CB1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.xib */; };
-		C635D7D01C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7CE1C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.swift */; };
-		C635D7D11C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D7CF1C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.xib */; };
-		C635D7D41C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7D21C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.swift */; };
-		C635D7D51C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D7D31C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.xib */; };
-		C635D7D81C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7D61C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.swift */; };
-		C635D7D91C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D7D71C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.xib */; };
-		C635D7DC1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7DA1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.swift */; };
-		C635D7DD1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D7DB1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib */; };
-		C635D7E01C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7DE1C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.swift */; };
-		C635D7E11C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D7DF1C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.xib */; };
-		C635D7E41C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7E21C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.swift */; };
-		C635D7E51C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D7E31C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.xib */; };
-		C635D7E81C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7E61C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.swift */; };
-		C635D7E91C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D7E71C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.xib */; };
-		C635D7EB1C0FB31700616D3A /* ZHIntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7EA1C0FB31700616D3A /* ZHIntroCollectionViewCell.swift */; };
 		C635D7ED1C0FBAB400616D3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D7EC1C0FBAB400616D3A /* Main.storyboard */; };
 		C635D7EF1C0FBB6500616D3A /* ZHHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7EE1C0FBB6500616D3A /* ZHHomeViewController.swift */; };
 		C635D7F51C0FD17C00616D3A /* ZHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */; };
@@ -75,8 +56,27 @@
 		C6CA9AA31C13DD4200F21544 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AA21C13DD4200F21544 /* About.storyboard */; };
 		C6CA9AA51C13DD5400F21544 /* ZHAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AA41C13DD5400F21544 /* ZHAboutViewController.swift */; };
 		C6CA9AA81C13E48800F21544 /* scratch.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AA71C13E48800F21544 /* scratch.txt */; };
-		C6CA9AAB1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AA91C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.swift */; };
-		C6CA9AAC1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AAA1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.xib */; };
+		C6CA9ABE1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AAD1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.swift */; };
+		C6CA9ABF1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AAE1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.xib */; };
+		C6CA9AC01C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AAF1C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.swift */; };
+		C6CA9AC11C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AB01C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.xib */; };
+		C6CA9AC21C141A6200F21544 /* ZHIntroDoneCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AB11C141A6200F21544 /* ZHIntroDoneCollectionViewCell.xib */; };
+		C6CA9AC31C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AB21C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.swift */; };
+		C6CA9AC41C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AB31C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.xib */; };
+		C6CA9AC51C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AB41C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.swift */; };
+		C6CA9AC61C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AB51C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.xib */; };
+		C6CA9AC71C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AB61C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.swift */; };
+		C6CA9AC81C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AB71C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.xib */; };
+		C6CA9AC91C141A6200F21544 /* ZHIntroRedditCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AB81C141A6200F21544 /* ZHIntroRedditCollectionViewCell.swift */; };
+		C6CA9ACA1C141A6200F21544 /* ZHIntroRedditCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AB91C141A6200F21544 /* ZHIntroRedditCollectionViewCell.xib */; };
+		C6CA9ACB1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9ABA1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.swift */; };
+		C6CA9ACC1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9ABB1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.xib */; };
+		C6CA9ACD1C141A6200F21544 /* ZHIntroTodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9ABC1C141A6200F21544 /* ZHIntroTodayCollectionViewCell.xib */; };
+		C6CA9ACE1C141A6200F21544 /* ZHIntroWelcomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9ABD1C141A6200F21544 /* ZHIntroWelcomeCollectionViewCell.xib */; };
+		C6CA9AD31C141AAE00F21544 /* ZHIntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9ACF1C141AAE00F21544 /* ZHIntroCollectionViewCell.swift */; };
+		C6CA9AD41C141AAE00F21544 /* ZHIntroDoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AD01C141AAE00F21544 /* ZHIntroDoneCollectionViewCell.swift */; };
+		C6CA9AD51C141AAE00F21544 /* ZHIntroTodayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AD11C141AAE00F21544 /* ZHIntroTodayCollectionViewCell.swift */; };
+		C6CA9AD61C141AAE00F21544 /* ZHIntroWelcomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AD21C141AAE00F21544 /* ZHIntroWelcomeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,25 +134,6 @@
 		C635D7B01C0EEA9B00616D3A /* StopDrinkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDrinkingUITests.swift; sourceTree = "<group>"; };
 		C635D7B21C0EEA9B00616D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C635D7BE1C0EEB6900616D3A /* ZHIntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroViewController.swift; sourceTree = "<group>"; };
-		C635D7C41C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroStartDateCollectionViewCell.swift; sourceTree = "<group>"; };
-		C635D7C51C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroStartDateCollectionViewCell.xib; sourceTree = "<group>"; };
-		C635D7CA1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroWelcomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		C635D7CB1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroWelcomeCollectionViewCell.xib; sourceTree = "<group>"; };
-		C635D7CE1C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroDrinksPerDayCollectionViewCell.swift; sourceTree = "<group>"; };
-		C635D7CF1C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroDrinksPerDayCollectionViewCell.xib; sourceTree = "<group>"; };
-		C635D7D21C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroMoneyPerDayCollectionViewCell.swift; sourceTree = "<group>"; };
-		C635D7D31C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroMoneyPerDayCollectionViewCell.xib; sourceTree = "<group>"; };
-		C635D7D61C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroCaloriesPerDayCollectionViewCell.swift; sourceTree = "<group>"; };
-		C635D7D71C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroCaloriesPerDayCollectionViewCell.xib; sourceTree = "<group>"; };
-		C635D7DA1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroTodayCollectionViewCell.swift; sourceTree = "<group>"; };
-		C635D7DB1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroTodayCollectionViewCell.xib; sourceTree = "<group>"; };
-		C635D7DE1C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroBadgeCollectionViewCell.swift; sourceTree = "<group>"; };
-		C635D7DF1C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroBadgeCollectionViewCell.xib; sourceTree = "<group>"; };
-		C635D7E21C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroRedditCollectionViewCell.swift; sourceTree = "<group>"; };
-		C635D7E31C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroRedditCollectionViewCell.xib; sourceTree = "<group>"; };
-		C635D7E61C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroDoneCollectionViewCell.swift; sourceTree = "<group>"; };
-		C635D7E71C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroDoneCollectionViewCell.xib; sourceTree = "<group>"; };
-		C635D7EA1C0FB31700616D3A /* ZHIntroCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroCollectionViewCell.swift; sourceTree = "<group>"; };
 		C635D7EC1C0FBAB400616D3A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C635D7EE1C0FBB6500616D3A /* ZHHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHHomeViewController.swift; sourceTree = "<group>"; };
 		C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHUserModel.swift; sourceTree = "<group>"; };
@@ -203,8 +184,27 @@
 		C6CA9AA21C13DD4200F21544 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		C6CA9AA41C13DD5400F21544 /* ZHAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHAboutViewController.swift; sourceTree = "<group>"; };
 		C6CA9AA71C13E48800F21544 /* scratch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scratch.txt; sourceTree = "<group>"; };
-		C6CA9AA91C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroNotificationsCollectionViewCell.swift; sourceTree = "<group>"; };
-		C6CA9AAA1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroNotificationsCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9AAD1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroBadgeCollectionViewCell.swift; path = StopDrinking/ZHIntroBadgeCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AAE1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHIntroBadgeCollectionViewCell.xib; path = StopDrinking/ZHIntroBadgeCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9AAF1C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroCaloriesPerDayCollectionViewCell.swift; path = StopDrinking/ZHIntroCaloriesPerDayCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AB01C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHIntroCaloriesPerDayCollectionViewCell.xib; path = StopDrinking/ZHIntroCaloriesPerDayCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9AB11C141A6200F21544 /* ZHIntroDoneCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHIntroDoneCollectionViewCell.xib; path = StopDrinking/ZHIntroDoneCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9AB21C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroDrinksPerDayCollectionViewCell.swift; path = StopDrinking/ZHIntroDrinksPerDayCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AB31C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHIntroDrinksPerDayCollectionViewCell.xib; path = StopDrinking/ZHIntroDrinksPerDayCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9AB41C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroMoneyPerDayCollectionViewCell.swift; path = StopDrinking/ZHIntroMoneyPerDayCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AB51C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHIntroMoneyPerDayCollectionViewCell.xib; path = StopDrinking/ZHIntroMoneyPerDayCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9AB61C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroNotificationsCollectionViewCell.swift; path = StopDrinking/ZHIntroNotificationsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AB71C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHIntroNotificationsCollectionViewCell.xib; path = StopDrinking/ZHIntroNotificationsCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9AB81C141A6200F21544 /* ZHIntroRedditCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroRedditCollectionViewCell.swift; path = StopDrinking/ZHIntroRedditCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AB91C141A6200F21544 /* ZHIntroRedditCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHIntroRedditCollectionViewCell.xib; path = StopDrinking/ZHIntroRedditCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9ABA1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroStartDateCollectionViewCell.swift; path = StopDrinking/ZHIntroStartDateCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9ABB1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHIntroStartDateCollectionViewCell.xib; path = StopDrinking/ZHIntroStartDateCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9ABC1C141A6200F21544 /* ZHIntroTodayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHIntroTodayCollectionViewCell.xib; path = StopDrinking/ZHIntroTodayCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9ABD1C141A6200F21544 /* ZHIntroWelcomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZHIntroWelcomeCollectionViewCell.xib; path = StopDrinking/ZHIntroWelcomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		C6CA9ACF1C141AAE00F21544 /* ZHIntroCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroCollectionViewCell.swift; path = StopDrinking/ZHIntroCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AD01C141AAE00F21544 /* ZHIntroDoneCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroDoneCollectionViewCell.swift; path = StopDrinking/ZHIntroDoneCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AD11C141AAE00F21544 /* ZHIntroTodayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroTodayCollectionViewCell.swift; path = StopDrinking/ZHIntroTodayCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AD21C141AAE00F21544 /* ZHIntroWelcomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZHIntroWelcomeCollectionViewCell.swift; path = StopDrinking/ZHIntroWelcomeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,27 +311,27 @@
 		C635D7C01C0FB22400616D3A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				C635D7EA1C0FB31700616D3A /* ZHIntroCollectionViewCell.swift */,
-				C635D7CA1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.swift */,
-				C635D7CB1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.xib */,
-				C635D7C41C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.swift */,
-				C635D7C51C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.xib */,
-				C635D7CE1C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.swift */,
-				C635D7CF1C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.xib */,
-				C635D7D21C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.swift */,
-				C635D7D31C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.xib */,
-				C635D7D61C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.swift */,
-				C635D7D71C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.xib */,
-				C635D7DA1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.swift */,
-				C635D7DB1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib */,
-				C635D7DE1C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.swift */,
-				C635D7DF1C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.xib */,
-				C6CA9AA91C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.swift */,
-				C6CA9AAA1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.xib */,
-				C635D7E21C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.swift */,
-				C635D7E31C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.xib */,
-				C635D7E61C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.swift */,
-				C635D7E71C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.xib */,
+				C6CA9AAD1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.swift */,
+				C6CA9AAE1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.xib */,
+				C6CA9AAF1C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.swift */,
+				C6CA9AB01C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.xib */,
+				C6CA9ACF1C141AAE00F21544 /* ZHIntroCollectionViewCell.swift */,
+				C6CA9AD01C141AAE00F21544 /* ZHIntroDoneCollectionViewCell.swift */,
+				C6CA9AB11C141A6200F21544 /* ZHIntroDoneCollectionViewCell.xib */,
+				C6CA9AB21C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.swift */,
+				C6CA9AB31C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.xib */,
+				C6CA9AB41C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.swift */,
+				C6CA9AB51C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.xib */,
+				C6CA9AB61C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.swift */,
+				C6CA9AB71C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.xib */,
+				C6CA9AB81C141A6200F21544 /* ZHIntroRedditCollectionViewCell.swift */,
+				C6CA9AB91C141A6200F21544 /* ZHIntroRedditCollectionViewCell.xib */,
+				C6CA9ABA1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.swift */,
+				C6CA9ABB1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.xib */,
+				C6CA9AD11C141AAE00F21544 /* ZHIntroTodayCollectionViewCell.swift */,
+				C6CA9ABC1C141A6200F21544 /* ZHIntroTodayCollectionViewCell.xib */,
+				C6CA9AD21C141AAE00F21544 /* ZHIntroWelcomeCollectionViewCell.swift */,
+				C6CA9ABD1C141A6200F21544 /* ZHIntroWelcomeCollectionViewCell.xib */,
 			);
 			name = Cells;
 			path = ..;
@@ -660,29 +660,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C635D7D91C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.xib in Resources */,
 				C69FC73C1C10F04400A3E3E0 /* todo.txt in Resources */,
+				C6CA9ACA1C141A6200F21544 /* ZHIntroRedditCollectionViewCell.xib in Resources */,
 				C6CA9AA11C13957200F21544 /* ZHRedditThreadTableViewCell.xib in Resources */,
-				C635D7CD1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.xib in Resources */,
-				C6CA9AAC1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.xib in Resources */,
-				C635D7DD1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib in Resources */,
-				C635D7E91C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.xib in Resources */,
+				C6CA9AC81C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.xib in Resources */,
+				C6CA9ACC1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.xib in Resources */,
 				C635D80B1C100AFF00616D3A /* ZHAvatarView.xib in Resources */,
+				C6CA9AC11C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.xib in Resources */,
 				C66623E91C1131F400652B42 /* Web.storyboard in Resources */,
 				C6CA9AA31C13DD4200F21544 /* About.storyboard in Resources */,
-				C635D7D11C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.xib in Resources */,
-				C635D7C71C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.xib in Resources */,
 				C69FC7401C10F05600A3E3E0 /* Podfile in Resources */,
-				C635D7E11C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.xib in Resources */,
+				C6CA9AC41C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.xib in Resources */,
+				C6CA9ACD1C141A6200F21544 /* ZHIntroTodayCollectionViewCell.xib in Resources */,
+				C6CA9AC21C141A6200F21544 /* ZHIntroDoneCollectionViewCell.xib in Resources */,
 				C635D7ED1C0FBAB400616D3A /* Main.storyboard in Resources */,
+				C6CA9ACE1C141A6200F21544 /* ZHIntroWelcomeCollectionViewCell.xib in Resources */,
 				C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */,
+				C6CA9AC61C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.xib in Resources */,
 				C635D79B1C0EEA9B00616D3A /* LaunchScreen.storyboard in Resources */,
 				C635D7981C0EEA9B00616D3A /* Assets.xcassets in Resources */,
-				C635D7D51C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.xib in Resources */,
-				C635D7E51C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.xib in Resources */,
 				C6CA9AA81C13E48800F21544 /* scratch.txt in Resources */,
 				C635D7961C0EEA9B00616D3A /* Intro.storyboard in Resources */,
 				C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */,
+				C6CA9ABF1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,37 +751,37 @@
 			files = (
 				C66623E71C1131E500652B42 /* ZHWebViewController.swift in Sources */,
 				C635D7F51C0FD17C00616D3A /* ZHUserModel.swift in Sources */,
-				C635D7C61C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.swift in Sources */,
+				C6CA9AD51C141AAE00F21544 /* ZHIntroTodayCollectionViewCell.swift in Sources */,
 				C6CA9A9F1C13956500F21544 /* ZHRedditThreadTableViewCell.swift in Sources */,
 				C635D7EF1C0FBB6500616D3A /* ZHHomeViewController.swift in Sources */,
+				C6CA9ACB1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.swift in Sources */,
 				C66623F71C114A2400652B42 /* ZHNotificationScheduler.swift in Sources */,
+				C6CA9AC51C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.swift in Sources */,
 				C6CA9A921C12446A00F21544 /* UIColor+ZH.m in Sources */,
-				C635D7EB1C0FB31700616D3A /* ZHIntroCollectionViewCell.swift in Sources */,
-				C635D7DC1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.swift in Sources */,
 				C6CA9A9A1C1244A800F21544 /* ZHLog.swift in Sources */,
 				C6CA9A931C12446A00F21544 /* UIFont+ZH.m in Sources */,
 				C6CA9A8F1C12446A00F21544 /* NSError+ZH.m in Sources */,
 				C6CA9A8D1C12446A00F21544 /* NSDate+Utilities.m in Sources */,
-				C635D7D01C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.swift in Sources */,
-				C6CA9AAB1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.swift in Sources */,
 				C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */,
+				C6CA9AC31C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.swift in Sources */,
 				C69FC7391C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift in Sources */,
-				C635D7CC1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.swift in Sources */,
-				C635D7D41C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.swift in Sources */,
-				C635D7E81C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.swift in Sources */,
-				C635D7E01C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.swift in Sources */,
+				C6CA9AC71C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.swift in Sources */,
 				C6CA9A951C12446A00F21544 /* UIViewController+AlertController.m in Sources */,
 				C6CA9A8E1C12446A00F21544 /* NSDate+ZH.m in Sources */,
+				C6CA9AD31C141AAE00F21544 /* ZHIntroCollectionViewCell.swift in Sources */,
 				C6CA9A941C12446A00F21544 /* UIView+RenderToImage.m in Sources */,
-				C635D7E41C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.swift in Sources */,
 				C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */,
-				C635D7D81C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */,
 				C635D7BF1C0EEB6900616D3A /* ZHIntroViewController.swift in Sources */,
+				C6CA9ABE1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.swift in Sources */,
+				C6CA9AC01C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */,
 				C6CA9AA51C13DD5400F21544 /* ZHAboutViewController.swift in Sources */,
+				C6CA9AD61C141AAE00F21544 /* ZHIntroWelcomeCollectionViewCell.swift in Sources */,
+				C6CA9AD41C141AAE00F21544 /* ZHIntroDoneCollectionViewCell.swift in Sources */,
 				C6CA9A901C12446A00F21544 /* NSTimer+Blocks.m in Sources */,
 				C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */,
 				C6CA9A911C12446A00F21544 /* PHAsset+Utility.m in Sources */,
 				C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */,
+				C6CA9AC91C141A6200F21544 /* ZHIntroRedditCollectionViewCell.swift in Sources */,
 				C69FC7411C10F05600A3E3E0 /* README.md in Sources */,
 				C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */,
 				C66623F91C11649300652B42 /* ZHMarkdownParser.swift in Sources */,
