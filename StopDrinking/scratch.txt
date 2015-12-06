@@ -1,0 +1,1 @@
+Welcome to StopDrinking. This app lets you know how far you have come since your last drink such as how many drinks you've skipped, how much money you've saved, and how many calories you've avoided. Just answer a few questions and _______.

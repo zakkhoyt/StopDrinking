@@ -55,6 +55,8 @@ class ZHIntroViewController: UIViewController {
         collectionView.registerNib(nib7, forCellWithReuseIdentifier: "ZHIntroRedditCollectionViewCell")
         let nib8 = UINib(nibName: "ZHIntroDoneCollectionViewCell", bundle: NSBundle.mainBundle())
         collectionView.registerNib(nib8, forCellWithReuseIdentifier: "ZHIntroDoneCollectionViewCell")
+        let nib9 = UINib(nibName: "ZHIntroNotificationsCollectionViewCell", bundle: NSBundle.mainBundle())
+        collectionView.registerNib(nib9, forCellWithReuseIdentifier: "ZHIntroNotificationsCollectionViewCell")
 
         // Do any additional setup after loading the view.
     }
@@ -102,7 +104,7 @@ extension ZHIntroViewController: UIScrollViewDelegate {
 
 extension ZHIntroViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return 9
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -158,6 +160,13 @@ extension ZHIntroViewController: UICollectionViewDataSource {
             })
             return cell!
         case 7:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroNotificationsCollectionViewCell", forIndexPath: indexPath) as? ZHIntroNotificationsCollectionViewCell
+            cell?.user = user
+            cell?.nextHandler = ({ () -> Void in
+                self.scrollToNextPage()
+            })
+            return cell!
+        case 8:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroDoneCollectionViewCell", forIndexPath: indexPath) as? ZHIntroDoneCollectionViewCell
             cell?.user = user
             cell?.nextHandler = ({ () -> Void in

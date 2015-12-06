@@ -51,18 +51,26 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
     var post: RKLink? = nil{
         didSet{
             postTextView.text = post!.title
-            userLabel.text = "-" + post!.author
+            
             ageLabel.text = post!.created.stringRelativeTimeFromDate()
             commentCountLabel.text = "\(post!.totalComments) comments"
             pointCountLabel.text = "\(post!.score) points"
             
-//            if let authorFlairText =  {
-                avatarView.configureForFlairClass(post!.authorFlairText)
-//            } else {
-//                avatarView.configureForFlairClass(authorFlairText)
-//            }
-            
-//            self.layoutIfNeeded()
+
+            if let authorFlairText = post!.authorFlairText {
+                hidden = false
+                let sub = authorFlairText.componentsSeparatedByString(" ")
+                if sub.count > 0 {
+                    let days = UInt(sub.first!)
+                    if let days = days {
+                        userLabel.text = "-" + post!.author + "\n\(days) days"
+                    }
+                }
+            } else {
+                userLabel.text = "-" + post!.author
+            }
+
+            avatarView.configureForFlairClass(post!.authorFlairText)
         }
     }
     

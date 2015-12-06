@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="245" height="299"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G9-0U-1V2">
-                                <rect key="frame" x="8" y="8" width="229" height="20.5"/>
+                                <rect key="frame" x="20" y="8" width="205" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,11 +31,11 @@
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qku-NQ-cvJ"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Led-hn-jHm">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Led-hn-jHm">
                                 <rect key="frame" x="8" y="36.5" width="229" height="216.5"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">Welcome to StopDrinking. This app lets you know how far you have come since your last drink such as how many drinks you've skipped, how much money you've saved, and how many calories you've avoided. Just answer a few questions and _______.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -47,10 +47,10 @@
                             <constraint firstItem="u1B-wx-Zgp" firstAttribute="top" secondItem="Led-hn-jHm" secondAttribute="bottom" constant="8" id="70A-pj-klP"/>
                             <constraint firstItem="1G9-0U-1V2" firstAttribute="top" secondItem="GQI-i9-wV1" secondAttribute="top" constant="8" id="DWy-vc-kB9"/>
                             <constraint firstItem="Led-hn-jHm" firstAttribute="leading" secondItem="GQI-i9-wV1" secondAttribute="leading" constant="8" id="Egv-1w-O9e"/>
-                            <constraint firstAttribute="trailing" secondItem="1G9-0U-1V2" secondAttribute="trailing" constant="8" id="H6E-Mi-vjC"/>
+                            <constraint firstAttribute="trailing" secondItem="1G9-0U-1V2" secondAttribute="trailing" constant="20" id="H6E-Mi-vjC"/>
                             <constraint firstItem="u1B-wx-Zgp" firstAttribute="centerX" secondItem="GQI-i9-wV1" secondAttribute="centerX" id="Ifb-I0-Phh"/>
                             <constraint firstItem="Led-hn-jHm" firstAttribute="top" secondItem="1G9-0U-1V2" secondAttribute="bottom" constant="8" id="RtI-7m-aTT"/>
-                            <constraint firstItem="1G9-0U-1V2" firstAttribute="leading" secondItem="GQI-i9-wV1" secondAttribute="leading" constant="8" id="ecq-dX-317"/>
+                            <constraint firstItem="1G9-0U-1V2" firstAttribute="leading" secondItem="GQI-i9-wV1" secondAttribute="leading" constant="20" id="ecq-dX-317"/>
                             <constraint firstAttribute="bottom" secondItem="u1B-wx-Zgp" secondAttribute="bottom" constant="8" id="mzh-tz-uv0"/>
                             <constraint firstAttribute="trailing" secondItem="Led-hn-jHm" secondAttribute="trailing" constant="8" id="yIu-uO-QgY"/>
                         </constraints>

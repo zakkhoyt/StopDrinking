@@ -16,38 +16,36 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNA-8q-ATo">
                         <rect key="frame" x="0.0" y="0.0" width="323" height="408"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories per drink" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPN-to-fkP">
-                                <rect key="frame" x="8" y="8" width="307" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many calories are in your favorite drink?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPN-to-fkP">
+                                <rect key="frame" x="20" y="8" width="283" height="41"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W40-op-jkP">
-                                <rect key="frame" x="145.5" y="370" width="32" height="30"/>
+                                <rect key="frame" x="145" y="370" width="32" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="1W4-rf-kp3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U8-kv-vh8">
-                                <rect key="frame" x="156.5" y="304" width="10.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U8-kv-vh8">
+                                <rect key="frame" x="8" y="304" width="307" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Mp-Bq-bgP">
-                                <rect key="frame" x="8" y="36" width="307" height="260"/>
+                                <rect key="frame" x="8" y="56" width="149.5" height="240"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Here are some guidelines to help. 
-
-Light Lager (12 oz)
-* Light Beer: 100 Calories
-* Regular beer: 150 Calories
-* Heavy beer: 200 Calories
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Light Lager (12 oz)
+* Light Beer: 100
+* Regular beer: 150
+* Heavy beer: 200
 * Malt Beverages: 250
 * Cider: 200 
 
@@ -56,19 +54,7 @@ Sprits (1 shot)
 * Whiskey: 100
 * Gin: 100
 * Rum: 100
-* Tequilla: 100
-
-Wine (5 oz)
-* Dark Red: 120
-* White: 110
-
-Mixers:
-* Juice: 125
-* Tonic: 80
-* Soda: 130
-
-Cocktails: Estimate by adding the above and adjusting for the "this guy tips well" size drinks. 
-</string>
+* Tequilla: 100</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -80,24 +66,46 @@ Cocktails: Estimate by adding the above and adjusting for the "this guy tips wel
                                     <action selector="stepperValueChanged:" destination="gTV-IL-0wX" eventType="valueChanged" id="xm8-Br-mTN"/>
                                 </connections>
                             </stepper>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Hm-AA-9YD">
+                                <rect key="frame" x="165.5" y="56" width="149.5" height="240"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Wine (5 oz)
+* Dark Red: 120
+* White: 110
+
+Mixers:
+* Juice: 125
+* Tonic: 80
+* Soda: 130</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3U8-kv-vh8" secondAttribute="trailing" constant="8" id="26G-A8-Zms"/>
                             <constraint firstItem="W40-op-jkP" firstAttribute="centerX" secondItem="vNA-8q-ATo" secondAttribute="centerX" id="28O-jB-it8"/>
-                            <constraint firstAttribute="trailing" secondItem="tPN-to-fkP" secondAttribute="trailing" constant="8" id="3EV-Ry-k5g"/>
+                            <constraint firstAttribute="trailing" secondItem="tPN-to-fkP" secondAttribute="trailing" constant="20" id="3EV-Ry-k5g"/>
                             <constraint firstItem="tPN-to-fkP" firstAttribute="top" secondItem="vNA-8q-ATo" secondAttribute="top" constant="8" id="97h-3w-CGE"/>
+                            <constraint firstItem="3U8-kv-vh8" firstAttribute="top" secondItem="0Mp-Bq-bgP" secondAttribute="bottom" constant="8" id="Kvg-hO-qSt"/>
+                            <constraint firstItem="3U8-kv-vh8" firstAttribute="top" secondItem="8Hm-AA-9YD" secondAttribute="bottom" constant="8" id="Lg8-bk-f4o"/>
                             <constraint firstItem="lvD-ey-5Qb" firstAttribute="centerX" secondItem="vNA-8q-ATo" secondAttribute="centerX" id="MxL-dF-Ftm"/>
+                            <constraint firstItem="8Hm-AA-9YD" firstAttribute="top" secondItem="tPN-to-fkP" secondAttribute="bottom" constant="7" id="Ok2-VY-vkQ"/>
                             <constraint firstAttribute="bottom" secondItem="W40-op-jkP" secondAttribute="bottom" constant="8" id="Rl2-7b-gO2"/>
+                            <constraint firstItem="8Hm-AA-9YD" firstAttribute="leading" secondItem="0Mp-Bq-bgP" secondAttribute="trailing" constant="8" id="S3o-pe-JSR"/>
+                            <constraint firstItem="8Hm-AA-9YD" firstAttribute="width" secondItem="0Mp-Bq-bgP" secondAttribute="width" id="SId-WX-XSZ"/>
+                            <constraint firstItem="0Mp-Bq-bgP" firstAttribute="leading" secondItem="vNA-8q-ATo" secondAttribute="leading" constant="8" id="UJq-0X-Q5p"/>
                             <constraint firstItem="lvD-ey-5Qb" firstAttribute="top" secondItem="3U8-kv-vh8" secondAttribute="bottom" constant="8" id="WgU-IY-PJT"/>
-                            <constraint firstItem="3U8-kv-vh8" firstAttribute="top" secondItem="0Mp-Bq-bgP" secondAttribute="bottom" constant="8" id="cKS-HL-lyZ"/>
-                            <constraint firstItem="0Mp-Bq-bgP" firstAttribute="top" secondItem="tPN-to-fkP" secondAttribute="bottom" constant="7.5" id="eND-a7-GFl"/>
                             <constraint firstItem="W40-op-jkP" firstAttribute="top" secondItem="lvD-ey-5Qb" secondAttribute="bottom" constant="8.5" id="fFy-wU-J6A"/>
                             <constraint firstItem="3U8-kv-vh8" firstAttribute="centerX" secondItem="vNA-8q-ATo" secondAttribute="centerX" id="gFF-Aj-DUr"/>
-                            <constraint firstItem="0Mp-Bq-bgP" firstAttribute="leading" secondItem="vNA-8q-ATo" secondAttribute="leading" constant="8" id="gwc-Az-7r5"/>
+                            <constraint firstItem="3U8-kv-vh8" firstAttribute="leading" secondItem="vNA-8q-ATo" secondAttribute="leading" constant="8" id="gY0-w1-5n2"/>
+                            <constraint firstItem="0Mp-Bq-bgP" firstAttribute="top" secondItem="tPN-to-fkP" secondAttribute="bottom" constant="7" id="ien-St-Rsb"/>
+                            <constraint firstAttribute="trailing" secondItem="8Hm-AA-9YD" secondAttribute="trailing" constant="8" id="w4I-ZC-vgj"/>
                             <constraint firstItem="lvD-ey-5Qb" firstAttribute="top" secondItem="3U8-kv-vh8" secondAttribute="bottom" constant="8" id="x9u-6m-0GU"/>
-                            <constraint firstItem="tPN-to-fkP" firstAttribute="leading" secondItem="vNA-8q-ATo" secondAttribute="leading" constant="8" id="xoz-Pq-X4x"/>
-                            <constraint firstAttribute="trailing" secondItem="0Mp-Bq-bgP" secondAttribute="trailing" constant="8" id="zc4-22-CjV"/>
+                            <constraint firstItem="tPN-to-fkP" firstAttribute="leading" secondItem="vNA-8q-ATo" secondAttribute="leading" constant="20" id="xoz-Pq-X4x"/>
                         </constraints>
                     </view>
                 </subviews>

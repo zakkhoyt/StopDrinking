@@ -23,7 +23,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="User" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWH-ED-9Rh">
-                        <rect key="frame" x="570" y="16" width="29" height="16"/>
+                        <rect key="frame" x="600" y="16" width="29" height="16"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,7 +36,7 @@
                             <constraint firstAttribute="height" constant="30" id="56b-j5-gzT"/>
                             <constraint firstAttribute="width" constant="30" id="AjJ-nv-uv0"/>
                         </constraints>
-                        <state key="normal" backgroundImage="arrow"/>
+                        <state key="normal" backgroundImage="plus"/>
                         <connections>
                             <action selector="expandButtonTouchUpInside:" destination="soh-w6-T2x" eventType="touchUpInside" id="iKu-af-Tzq"/>
                         </connections>
@@ -50,12 +50,12 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-4W-c7o">
-                        <rect key="frame" x="607" y="9" width="30" height="30"/>
+                        <rect key="frame" x="637" y="9" width="0.0" height="30"/>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="5NA-ln-F2c"/>
-                            <constraint firstAttribute="width" constant="30" id="6CP-sD-qIP"/>
+                            <constraint firstAttribute="width" id="6CP-sD-qIP"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3n-1f-l6E">
@@ -66,7 +66,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Sat at my favorite restaurant, crying quietly at the table after ordering a drink and... " translatesAutoresizingMaskIntoConstraints="NO" id="paH-E5-sWU">
-                        <rect key="frame" x="8" y="46" width="637" height="357.5"/>
+                        <rect key="frame" x="8" y="39" width="637" height="364.5"/>
                         <animations/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -87,7 +87,7 @@
                     <constraint firstItem="vdg-4W-c7o" firstAttribute="leading" secondItem="tWH-ED-9Rh" secondAttribute="trailing" constant="8" id="QnK-g7-gDS"/>
                     <constraint firstAttribute="trailing" secondItem="paH-E5-sWU" secondAttribute="trailing" id="RU2-Os-tS5"/>
                     <constraint firstItem="R3n-El-AcX" firstAttribute="leading" secondItem="Azf-Uu-O6e" secondAttribute="leadingMargin" id="Txk-sa-bRn"/>
-                    <constraint firstItem="paH-E5-sWU" firstAttribute="top" secondItem="R3n-El-AcX" secondAttribute="bottom" constant="7" id="YYH-7t-TEu"/>
+                    <constraint firstItem="paH-E5-sWU" firstAttribute="top" secondItem="R3n-El-AcX" secondAttribute="bottom" id="YYH-7t-TEu"/>
                     <constraint firstAttribute="trailingMargin" secondItem="jBe-Bc-gSc" secondAttribute="trailing" constant="-8" id="Zh0-dG-n2H"/>
                     <constraint firstItem="R3n-El-AcX" firstAttribute="top" secondItem="jBe-Bc-gSc" secondAttribute="bottom" constant="8" id="cyc-2Z-66K"/>
                     <constraint firstItem="Hvn-Lu-4Ct" firstAttribute="centerY" secondItem="R3n-El-AcX" secondAttribute="centerY" id="oP2-Hg-qXV"/>
@@ -111,6 +111,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="arrow" width="512" height="512"/>
+        <image name="plus" width="44" height="44"/>
     </resources>
 </document>

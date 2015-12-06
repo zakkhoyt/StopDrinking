@@ -208,6 +208,7 @@
                         <segue destination="l6w-Zc-hKA" kind="presentation" identifier="SegueMainToIntro" id="LFh-PP-nUk"/>
                         <segue destination="yss-QP-ICL" kind="show" identifier="SegueMainToRedditThread" id="gDg-fY-B55"/>
                         <segue destination="kPh-9Q-4jY" kind="show" identifier="SegueMainToWeb" id="ZpU-Wp-yJz"/>
+                        <segue destination="wQO-zE-ICe" kind="presentation" identifier="SegueMainToAbout" id="pzz-pf-rfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65j-Rt-g8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,13 +223,21 @@
             </objects>
             <point key="canvasLocation" x="1579.5" y="464"/>
         </scene>
+        <!--About-->
+        <scene sceneID="ENP-Jw-0jh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="About" id="wQO-zE-ICe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILE-2l-46L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1567.5" y="161"/>
+        </scene>
         <!--Web-->
         <scene sceneID="aIk-h2-fvA">
             <objects>
                 <viewControllerPlaceholder storyboardName="Web" id="kPh-9Q-4jY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQc-1o-g4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584.5" y="204"/>
+            <point key="canvasLocation" x="1572.5" y="269"/>
         </scene>
         <!--Intro-->
         <scene sceneID="EMq-Di-w2t">
@@ -236,7 +245,7 @@
                 <viewControllerPlaceholder storyboardName="Intro" id="l6w-Zc-hKA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTv-wW-USy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527.5" y="361"/>
+            <point key="canvasLocation" x="1573.5" y="361"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ld3-pf-1yz">

@@ -14,6 +14,15 @@ enum ZHRedditThreadViewControllerSection: Int {
 }
 
 
+class ZHRedditThreadCellModel {
+    var comment: RKComment
+    var expanded: Bool
+    init(comment: RKComment, expanded: Bool){
+        self.comment = comment
+        self.expanded = expanded
+    }
+}
+
 
 class ZHRedditThreadViewController: UIViewController {
 
@@ -56,8 +65,8 @@ class ZHRedditThreadViewController: UIViewController {
         
         treeView.rowsCollapsingAnimation = RATreeViewRowAnimationTop
         treeView.rowsExpandingAnimation = RATreeViewRowAnimationTop
-        treeView.expandsChildRowsWhenRowExpands = true
-        treeView.collapsesChildRowsWhenRowCollapses = true
+        treeView.expandsChildRowsWhenRowExpands = false
+        treeView.collapsesChildRowsWhenRowCollapses = false
         treeView.dataSource = self;
         treeView.delegate = self;
         treeView.separatorStyle = RATreeViewCellSeparatorStyleNone
@@ -223,13 +232,13 @@ extension ZHRedditThreadViewController: RATreeViewDelegate {
 
 // This extension hides/shows the navigation bar and status bar as the user scrolls
 extension ZHRedditThreadViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < view.bounds.size.height / 2.0 {
-            showNavBar()
-        } else {
-            hideNavBar()
-        }
-    }
+//    func scrollViewDidScroll(scrollView: UIScrollView) {
+//        if scrollView.contentOffset.y < view.bounds.size.height / 2.0 {
+//            showNavBar()
+//        } else {
+//            hideNavBar()
+//        }
+//    }
     
     func showNavBar() {
         if statusBarHidden == false {

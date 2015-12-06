@@ -75,7 +75,7 @@ extension ZHIntroStartDateCollectionViewCell: RSDFDatePickerViewDataSource{
     }
     
     func datePickerView(view: RSDFDatePickerView!, markImageForDate date: NSDate!) -> UIImage! {
-        return UIImage(named: "stop")
+        return UIImage(named: "StopDrinking_32")
     }
     
 

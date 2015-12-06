@@ -72,6 +72,11 @@
 		C6CA9A9A1C1244A800F21544 /* ZHLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A991C1244A800F21544 /* ZHLog.swift */; };
 		C6CA9A9F1C13956500F21544 /* ZHRedditThreadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A9E1C13956500F21544 /* ZHRedditThreadTableViewCell.swift */; };
 		C6CA9AA11C13957200F21544 /* ZHRedditThreadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AA01C13957200F21544 /* ZHRedditThreadTableViewCell.xib */; };
+		C6CA9AA31C13DD4200F21544 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AA21C13DD4200F21544 /* About.storyboard */; };
+		C6CA9AA51C13DD5400F21544 /* ZHAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AA41C13DD5400F21544 /* ZHAboutViewController.swift */; };
+		C6CA9AA81C13E48800F21544 /* scratch.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AA71C13E48800F21544 /* scratch.txt */; };
+		C6CA9AAB1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9AA91C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.swift */; };
+		C6CA9AAC1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6CA9AAA1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +200,11 @@
 		C6CA9A991C1244A800F21544 /* ZHLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHLog.swift; sourceTree = "<group>"; };
 		C6CA9A9E1C13956500F21544 /* ZHRedditThreadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditThreadTableViewCell.swift; sourceTree = "<group>"; };
 		C6CA9AA01C13957200F21544 /* ZHRedditThreadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditThreadTableViewCell.xib; sourceTree = "<group>"; };
+		C6CA9AA21C13DD4200F21544 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		C6CA9AA41C13DD5400F21544 /* ZHAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHAboutViewController.swift; sourceTree = "<group>"; };
+		C6CA9AA71C13E48800F21544 /* scratch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scratch.txt; sourceTree = "<group>"; };
+		C6CA9AA91C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHIntroNotificationsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C6CA9AAA1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHIntroNotificationsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,14 +278,14 @@
 			isa = PBXGroup;
 			children = (
 				C6CA9A7A1C12444400F21544 /* Categories */,
-				C66623EF1C11364000652B42 /* StopDrinking.entitlements */,
 				C635D8001C0FF4BD00616D3A /* Controllers */,
+				C69FC73D1C10F04800A3E3E0 /* Documents */,
 				C635D7F61C0FD17F00616D3A /* Model */,
+				C66623EF1C11364000652B42 /* StopDrinking.entitlements */,
 				C635D7F31C0FBDC900616D3A /* SupporingFiles */,
 				C635D7F21C0FBDBD00616D3A /* UserInterface */,
-				C635D7F11C0FBDB500616D3A /* ViewControllers */,
 				C635D8091C10076C00616D3A /* View */,
-				C69FC73D1C10F04800A3E3E0 /* Documents */,
+				C635D7F11C0FBDB500616D3A /* ViewControllers */,
 			);
 			path = StopDrinking;
 			sourceTree = "<group>";
@@ -316,6 +326,8 @@
 				C635D7DB1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib */,
 				C635D7DE1C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.swift */,
 				C635D7DF1C0FB2EE00616D3A /* ZHIntroBadgeCollectionViewCell.xib */,
+				C6CA9AA91C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.swift */,
+				C6CA9AAA1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.xib */,
 				C635D7E21C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.swift */,
 				C635D7E31C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.xib */,
 				C635D7E61C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.swift */,
@@ -346,10 +358,11 @@
 		C635D7F11C0FBDB500616D3A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C635D7C11C0FB23C00616D3A /* Intro */,
+				C6CA9AA61C13DD5A00F21544 /* About */,
 				C635D7F01C0FBDB100616D3A /* Home */,
-				C66623EA1C11320C00652B42 /* Web */,
+				C635D7C11C0FB23C00616D3A /* Intro */,
 				C69FC7321C10E37C00A3E3E0 /* RedditThread */,
+				C66623EA1C11320C00652B42 /* Web */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -408,6 +421,7 @@
 				C635D7EC1C0FBAB400616D3A /* Main.storyboard */,
 				C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */,
 				C66623E81C1131F400652B42 /* Web.storyboard */,
+				C6CA9AA21C13DD4200F21544 /* About.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -458,6 +472,7 @@
 				C69FC73E1C10F05600A3E3E0 /* Podfile */,
 				C69FC73F1C10F05600A3E3E0 /* README.md */,
 				C69FC73B1C10F04400A3E3E0 /* todo.txt */,
+				C6CA9AA71C13E48800F21544 /* scratch.txt */,
 			);
 			name = Documents;
 			sourceTree = "<group>";
@@ -485,6 +500,14 @@
 				C6CA9A8C1C12446A00F21544 /* UIViewController+AlertController.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		C6CA9AA61C13DD5A00F21544 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				C6CA9AA41C13DD5400F21544 /* ZHAboutViewController.swift */,
+			);
+			name = About;
 			sourceTree = "<group>";
 		};
 		CEC67ADF13500CC01298F9F0 /* Frameworks */ = {
@@ -641,10 +664,12 @@
 				C69FC73C1C10F04400A3E3E0 /* todo.txt in Resources */,
 				C6CA9AA11C13957200F21544 /* ZHRedditThreadTableViewCell.xib in Resources */,
 				C635D7CD1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.xib in Resources */,
+				C6CA9AAC1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.xib in Resources */,
 				C635D7DD1C0FB2CE00616D3A /* ZHIntroTodayCollectionViewCell.xib in Resources */,
 				C635D7E91C0FB30D00616D3A /* ZHIntroDoneCollectionViewCell.xib in Resources */,
 				C635D80B1C100AFF00616D3A /* ZHAvatarView.xib in Resources */,
 				C66623E91C1131F400652B42 /* Web.storyboard in Resources */,
+				C6CA9AA31C13DD4200F21544 /* About.storyboard in Resources */,
 				C635D7D11C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.xib in Resources */,
 				C635D7C71C0FB27500616D3A /* ZHIntroStartDateCollectionViewCell.xib in Resources */,
 				C69FC7401C10F05600A3E3E0 /* Podfile in Resources */,
@@ -655,6 +680,7 @@
 				C635D7981C0EEA9B00616D3A /* Assets.xcassets in Resources */,
 				C635D7D51C0FB2B500616D3A /* ZHIntroMoneyPerDayCollectionViewCell.xib in Resources */,
 				C635D7E51C0FB2FE00616D3A /* ZHIntroRedditCollectionViewCell.xib in Resources */,
+				C6CA9AA81C13E48800F21544 /* scratch.txt in Resources */,
 				C635D7961C0EEA9B00616D3A /* Intro.storyboard in Resources */,
 				C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */,
 			);
@@ -737,6 +763,7 @@
 				C6CA9A8F1C12446A00F21544 /* NSError+ZH.m in Sources */,
 				C6CA9A8D1C12446A00F21544 /* NSDate+Utilities.m in Sources */,
 				C635D7D01C0FB2A700616D3A /* ZHIntroDrinksPerDayCollectionViewCell.swift in Sources */,
+				C6CA9AAB1C13E6BB00F21544 /* ZHIntroNotificationsCollectionViewCell.swift in Sources */,
 				C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */,
 				C69FC7391C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift in Sources */,
 				C635D7CC1C0FB29600616D3A /* ZHIntroWelcomeCollectionViewCell.swift in Sources */,
@@ -750,6 +777,7 @@
 				C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */,
 				C635D7D81C0FB2C300616D3A /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */,
 				C635D7BF1C0EEB6900616D3A /* ZHIntroViewController.swift in Sources */,
+				C6CA9AA51C13DD5400F21544 /* ZHAboutViewController.swift in Sources */,
 				C6CA9A901C12446A00F21544 /* NSTimer+Blocks.m in Sources */,
 				C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */,
 				C6CA9A911C12446A00F21544 /* PHAsset+Utility.m in Sources */,

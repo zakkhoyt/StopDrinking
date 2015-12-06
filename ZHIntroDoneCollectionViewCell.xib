@@ -16,8 +16,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXh-0x-5ap">
                         <rect key="frame" x="0.0" y="0.0" width="372" height="434"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's begin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIk-nQ-EVt">
-                                <rect key="frame" x="8" y="8" width="356" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIk-nQ-EVt">
+                                <rect key="frame" x="20" y="8" width="332" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,11 +31,10 @@
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="XqQ-4u-4B3"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V3l-Yt-KTI">
-                                <rect key="frame" x="8" y="36.5" width="356" height="351.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="You've finished the setup wizard. You can revisit these screens any time by tapping the Settings button. One day at a time!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="V3l-Yt-KTI">
+                                <rect key="frame" x="8" y="36" width="356" height="352"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -49,8 +48,8 @@
                             <constraint firstItem="mgf-Qp-3WX" firstAttribute="top" secondItem="V3l-Yt-KTI" secondAttribute="bottom" constant="8" id="LVE-rn-m2Z"/>
                             <constraint firstAttribute="trailing" secondItem="V3l-Yt-KTI" secondAttribute="trailing" constant="8" id="SsB-iz-ZNt"/>
                             <constraint firstItem="mgf-Qp-3WX" firstAttribute="centerX" secondItem="qXh-0x-5ap" secondAttribute="centerX" id="WVn-7T-07Y"/>
-                            <constraint firstAttribute="trailing" secondItem="LIk-nQ-EVt" secondAttribute="trailing" constant="8" id="ZDV-yY-45X"/>
-                            <constraint firstItem="LIk-nQ-EVt" firstAttribute="leading" secondItem="qXh-0x-5ap" secondAttribute="leading" constant="8" id="fQF-RS-UR3"/>
+                            <constraint firstAttribute="trailing" secondItem="LIk-nQ-EVt" secondAttribute="trailing" constant="20" id="ZDV-yY-45X"/>
+                            <constraint firstItem="LIk-nQ-EVt" firstAttribute="leading" secondItem="qXh-0x-5ap" secondAttribute="leading" constant="20" id="fQF-RS-UR3"/>
                             <constraint firstItem="V3l-Yt-KTI" firstAttribute="top" secondItem="LIk-nQ-EVt" secondAttribute="bottom" constant="8" id="gQA-Qv-u79"/>
                             <constraint firstItem="V3l-Yt-KTI" firstAttribute="leading" secondItem="qXh-0x-5ap" secondAttribute="leading" constant="8" id="pVe-MU-LLj"/>
                         </constraints>

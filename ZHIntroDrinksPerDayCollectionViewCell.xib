@@ -16,8 +16,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDw-2v-xNh">
                         <rect key="frame" x="0.0" y="0.0" width="284" height="538"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drinks per Day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-1q-gF8">
-                                <rect key="frame" x="8" y="8" width="268" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many drinks did you consume each day?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-1q-gF8">
+                                <rect key="frame" x="20" y="8" width="244" height="41"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,8 +52,8 @@
                             <constraint firstItem="H7z-kZ-gRD" firstAttribute="top" secondItem="ZUc-aA-zff" secondAttribute="bottom" constant="8.5" id="2P5-EF-VPe"/>
                             <constraint firstAttribute="bottom" secondItem="H7z-kZ-gRD" secondAttribute="bottom" constant="8" id="6TH-XL-sgh"/>
                             <constraint firstItem="ZUc-aA-zff" firstAttribute="centerX" secondItem="GDw-2v-xNh" secondAttribute="centerX" id="9qF-Xn-iEE"/>
-                            <constraint firstItem="mbg-1q-gF8" firstAttribute="leading" secondItem="GDw-2v-xNh" secondAttribute="leading" constant="8" id="D9Q-Ah-968"/>
-                            <constraint firstAttribute="trailing" secondItem="mbg-1q-gF8" secondAttribute="trailing" constant="8" id="Efr-Ca-8zh"/>
+                            <constraint firstItem="mbg-1q-gF8" firstAttribute="leading" secondItem="GDw-2v-xNh" secondAttribute="leading" constant="20" id="D9Q-Ah-968"/>
+                            <constraint firstAttribute="trailing" secondItem="mbg-1q-gF8" secondAttribute="trailing" constant="20" id="Efr-Ca-8zh"/>
                             <constraint firstItem="H7z-kZ-gRD" firstAttribute="centerX" secondItem="GDw-2v-xNh" secondAttribute="centerX" id="LSQ-Je-zHp"/>
                             <constraint firstItem="ZUc-aA-zff" firstAttribute="top" secondItem="HEg-Ba-Cds" secondAttribute="bottom" constant="8" id="eIa-JB-pdn"/>
                             <constraint firstItem="HEg-Ba-Cds" firstAttribute="centerX" secondItem="GDw-2v-xNh" secondAttribute="centerX" id="h4I-4u-DGO"/>

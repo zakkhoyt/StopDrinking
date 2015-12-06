@@ -116,9 +116,9 @@ class ZHAvatarView: UIView {
     
     func imageForDaysQuit(days: UInt) -> UIImage? {
         if days >= 0 && days <= 30 {
-            return UIImage(named: "Circle")
+            return UIImage(named: "circle")
         } else if days >= 31 {
-            return UIImage(named: "Star")
+            return UIImage(named: "star")
         }
         return nil
     }

@@ -19,6 +19,7 @@ enum ZHHomeViewControllerTableViewSection: Int{
 class ZHHomeViewController: UIViewController {
     let SegueMainToIntro = "SegueMainToIntro"
     let SegueMainToWeb = "SegueMainToWeb"
+    let SegueMainToAbout = "SegueMainToAbout"
     let SegueMainToRedditThread = "SegueMainToRedditThread"
     var category: RKSubredditCategory = .Hot
     var user: ZHUserModel? = nil
@@ -30,10 +31,6 @@ class ZHHomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var categoryButton: UIButton!
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -224,7 +221,25 @@ class ZHHomeViewController: UIViewController {
 }
     
     @IBAction func introButtonTouchUpInside(sender: AnyObject) {
-        performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
+        
+        let ac = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+
+        ac.addAction(UIAlertAction(title: "Your settings", style: .Default, handler: { (action) -> Void in
+            self.performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
+        }))
+
+        ac.addAction(UIAlertAction(title: "About this app", style: .Default, handler: { (action) -> Void in
+            self.performSegueWithIdentifier(self.SegueMainToAbout, sender: nil)
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
+
+        }))
+
+        
+        presentViewController(ac, animated: true, completion: nil)
+        
+        
     }
     
     @IBAction func helpBarButtonAction(sender: AnyObject) {
@@ -295,11 +310,11 @@ extension ZHHomeViewController: UITableViewDelegate {
 extension ZHHomeViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.contentOffset.y < view.bounds.size.height / 2.0 {
-            showNavBar()
-        } else {
-            hideNavBar()
-        }
+//        if scrollView.contentOffset.y < view.bounds.size.height / 2.0 {
+//            showNavBar()
+//        } else {
+//            hideNavBar()
+//        }
         
         
         if scrollView.contentSize.height == 0 || self.isGettingNextPage {

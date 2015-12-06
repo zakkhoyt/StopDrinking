@@ -83,6 +83,20 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         
         avatarContainerView.hidden = true
         
+        
+        if let treeView = treeView {
+            let item = treeView.itemForCell(self)
+            if treeView.isCellForItemExpanded(item) == true {
+//            if treeView.isCellExpanded(self) == true {
+
+                self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
+                self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+            } else {
+                self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
+                self.expandButton.transform = CGAffineTransformIdentity
+            }
+        }
+
 ////        avatarView.configureForFlairClass(post!.authorFlairText)
 //        RKClient.sharedClient().userWithUsername(comment!.author) { (user, error) -> Void in
 //            if let user = user as? RKUser {
@@ -98,11 +112,21 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
             if treeView.isCellExpanded(self) == true {
                 let item = treeView.itemForCell(self)
                 treeView.collapseRowForItem(item)
-                self.expandButton.transform = CGAffineTransformIdentity
+
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+
+                    self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
+                    self.expandButton.transform = CGAffineTransformIdentity
+                })
             } else {
                 let item = treeView.itemForCell(self)
                 treeView.expandRowForItem(item)
-                self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+                
+                UIView.animateWithDuration(0.3, animations: { () -> Void in
+                    self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
+                    self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+                })
+
             }
         }
     }
