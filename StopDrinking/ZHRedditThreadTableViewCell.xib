@@ -15,6 +15,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="614" height="340.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fa-Qj-iIj">
+                        <rect key="frame" x="515" y="302" width="38.5" height="14.5"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPK-FG-OJa">
                         <rect key="frame" x="8" y="134.5" width="20.5" height="19.5"/>
                         <animations/>
@@ -30,14 +37,6 @@
                             <constraint firstAttribute="height" constant="1" id="srv-rJ-MIE"/>
                         </constraints>
                     </view>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" editable="NO" text="Sat at my favorite restaurant, crying quietly at the table after ordering a drink and... " translatesAutoresizingMaskIntoConstraints="NO" id="73Q-mF-Heu">
-                        <rect key="frame" x="36" y="1" width="569.5" height="287"/>
-                        <animations/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
-                    </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="3 hours ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRE-zq-pfb">
                         <rect key="frame" x="8" y="318" width="67.5" height="14.5"/>
                         <animations/>
@@ -68,13 +67,14 @@
                             <constraint firstAttribute="width" constant="44" id="xhy-L5-XKj"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fa-Qj-iIj">
-                        <rect key="frame" x="515" y="302" width="38.5" height="14.5"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" editable="NO" text="Sat at my favorite restaurant, crying quietly at the table after ordering a drink and... " translatesAutoresizingMaskIntoConstraints="NO" id="73Q-mF-Heu">
+                        <rect key="frame" x="36" y="1" width="569.5" height="287"/>
                         <animations/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                    </textView>
                 </subviews>
                 <animations/>
                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>

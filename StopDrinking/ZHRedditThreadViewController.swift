@@ -21,14 +21,39 @@ class ZHRedditThreadViewController: UIViewController {
     var post: RKLink? = nil
     var comments: [RKComment]? = nil
     var statusBarHidden: Bool = false
+    var pagination: RKPagination? = nil
+        var refreshControl: UIRefreshControl? =  nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.darkGrayColor()
-        
-
         UIApplication.sharedApplication().statusBarHidden = false
+        navigationItem.title = "Comments"
+        
+        setupTreeView()
+        resetComments()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    // MARK: Private methods
+    
+    func setupTreeView() {
+        
+        // Add pull to refresh control
+        refreshControl = UIRefreshControl()
+        let attr = [NSForegroundColorAttributeName : UIColor.yellowColor()]
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attr)
+        refreshControl?.tintColor = UIColor.yellowColor()
+        refreshControl?.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+        treeView.scrollView.addSubview(refreshControl!)
+
+        
         treeView.rowsCollapsingAnimation = RATreeViewRowAnimationTop
         treeView.rowsExpandingAnimation = RATreeViewRowAnimationTop
         treeView.expandsChildRowsWhenRowExpands = true
@@ -38,9 +63,27 @@ class ZHRedditThreadViewController: UIViewController {
         treeView.separatorStyle = RATreeViewCellSeparatorStyleNone
         treeView.backgroundColor = UIColor.darkGrayColor()
         treeView.separatorColor = UIColor.darkGrayColor()
+
         
-        navigationItem.title = "Comments"
+//        let nib = NSBundle.mainBundle().loadNibNamed("ZHRedditThreadTableViewCell", owner: self, options: nil).first as? UINib
+//        tableView.registerNib(nib, forCellReuseIdentifier: "ZHRedditThreadTableViewCell")
+//        
+//        // Setup TableView
+//        tableView.estimatedRowHeight = 100
+//        tableView.rowHeight = UITableViewAutomaticDimension
         
+    }
+
+    
+    func resetComments() {
+        pagination = nil
+        comments = []
+        treeView.reloadData()
+        getNextPageOfComments()
+    }
+
+    
+    func getNextPageOfComments() {
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         RKClient.sharedClient().commentsForLink(post, completion: { (comments, pagination, error) -> Void in
             if error == nil {
@@ -49,12 +92,7 @@ class ZHRedditThreadViewController: UIViewController {
             }
             MBProgressHUD.hideHUDForView(self.view, animated: true)
         })
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+
     }
     
     @IBAction func doneButtonAction(sender: AnyObject) {
@@ -62,6 +100,12 @@ class ZHRedditThreadViewController: UIViewController {
             
         })
     }
+    
+    func refreshControlAction(sender: UIRefreshControl) {
+        sender.endRefreshing()
+        resetComments()
+    }
+
 
 }
 
@@ -71,22 +115,15 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
     func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
         if item.isKindOfClass(RKComment) {
             let cell = NSBundle.mainBundle().loadNibNamed("ZHRedditCommentTableViewCell", owner: self, options: nil)[0] as? ZHRedditCommentTableViewCell
-            cell?.expandButtonHandler = ({ (expand: Bool) -> Void in
-                if expand == true {
-                    treeView.expandRowForItem(item, expandChildren: true, withRowAnimation: RATreeViewRowAnimationTop)
-                } else {
-                    treeView.collapseRowForItem(item, collapseChildren: true, withRowAnimation: RATreeViewRowAnimationTop)
-                }
-            })
-            
+            // TODO: Write a setting with all 3 parameters since they need to go in that order
+            cell?.treeView = treeView
+            cell?.level = treeView.levelForCellForItem(item)
             if let comment = item as! RKComment? {
                 cell?.comment = comment
             }
-            cell?.level = treeView.levelForCellForItem(item)
             return cell
             
         } else if item.isKindOfClass(RKLink) {
-//            let cell = NSBundle.mainBundle().loadNibNamed("ZHRedditPostDetailsTableViewCell", owner: self, options: nil)[0] as? ZHRedditPostDetailsTableViewCell
             let cell = ZHRedditThreadTableViewCell.cellFromNib()
             if let post = item as! RKLink? {
                 cell.post = post

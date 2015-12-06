@@ -299,11 +299,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
-            timestampString = "471048217.41782"
+            timestampString = "471059711.385438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "textView(_:shouldInteractWithURL:inRange:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -315,11 +315,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHHomeViewController.swift"
-            timestampString = "471051430.63734"
+            timestampString = "471057342.605176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,28 +330,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
-            timestampString = "471048217.41782"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "ZHRedditCommentTableViewCell"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHHomeViewController.swift"
-            timestampString = "471051430.63734"
+            timestampString = "471057342.605176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>

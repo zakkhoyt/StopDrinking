@@ -28,19 +28,23 @@
 import UIKit
 
 class ZHRedditCommentTableViewCell: UITableViewCell {
-
-    var expandButtonHandler:((expand: Bool)->Void)!
     
+    @IBOutlet weak var expandButton: UIButton!
     @IBOutlet weak var commentTextView: UITextView!
-    @IBOutlet weak var votesLabel: UILabel!
-    @IBOutlet weak var userLabel: UILabel!
-
-
-    @IBOutlet weak var arrowButton: UIButton!
-    
-
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var avatarContainerView: UIView!
     @IBOutlet weak var indentConstrint: NSLayoutConstraint!
+    var avatarView: ZHAvatarView!
     
+    @IBOutlet weak var headerLayoutConstraint: NSLayoutConstraint!
+    
+    weak var treeView: RATreeView? = nil {
+        didSet{
+            
+        }
+    }
     
     var expanded: Bool = false {
         didSet{
@@ -50,7 +54,7 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     
     var level: Int = 0{
         didSet{
-            indentConstrint.constant = 8 + CGFloat(level) * 16
+            indentConstrint.constant = CGFloat(level) * 16
         }
     }
     
@@ -61,26 +65,45 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         }
     }
     
+    func renderCellContents() {
+        
+        
+        if comment?.replies.count > 0 {
+            expandButton.hidden = false
+            headerLayoutConstraint.constant = 0
+        } else {
+            expandButton.hidden = true
+            headerLayoutConstraint.constant = -22
+        }
+        
+        authorLabel.text = NSString(format: "%@", comment!.author) as String
+        scoreLabel.text = NSString(format: "+%lu", comment!.score) as String
+        ageLabel.text = comment?.created.stringRelativeTimeFromDate()
+        commentTextView.text = comment?.body
+        
+        avatarContainerView.hidden = true
+        
+////        avatarView.configureForFlairClass(post!.authorFlairText)
+//        RKClient.sharedClient().userWithUsername(comment!.author) { (user, error) -> Void in
+//            if let user = user as? RKUser {
+//                print("got user now what?")
+//            }
+//        }
+    }
+    
+    
 
-    @IBAction func test(sender: AnyObject) {
-        if expandButtonHandler != nil {
-            expanded = !expanded
-            
-            if expanded == false {
-                // point arrow to the right
-                UIView .animateWithDuration(0.3, animations: { () -> Void in
-                    self.arrowButton.transform = CGAffineTransformIdentity
-                })
-
+    @IBAction func expandButtonTouchUpInside(sender: AnyObject) {
+        if let treeView = treeView {
+            if treeView.isCellExpanded(self) == true {
+                let item = treeView.itemForCell(self)
+                treeView.collapseRowForItem(item)
+                self.expandButton.transform = CGAffineTransformIdentity
             } else {
-                // point arrow down
-                UIView .animateWithDuration(0.3, animations: { () -> Void in
-                    self.arrowButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-                })
+                let item = treeView.itemForCell(self)
+                treeView.expandRowForItem(item)
+                self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
             }
-            
-            
-            expandButtonHandler(expand: expanded)
         }
     }
 
@@ -97,24 +120,16 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     //            print("uh oh!")
     //        }
 
-    func renderCellContents() {
-        commentTextView.text = comment?.body
 
-        if comment?.replies.count > 0 {
-            arrowButton.hidden = false
-        } else {
-            arrowButton.hidden = true
-        }
-        
-        
-        userLabel.text = NSString(format: "%@", comment!.author) as String
-        votesLabel.text = NSString(format: "+%lu", comment!.score) as String
-    }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.masksToBounds = true
+        
+        avatarView = NSBundle.mainBundle().loadNibNamed("ZHAvatarView", owner: self, options: nil).first as? ZHAvatarView
+        avatarView.frame = avatarContainerView.bounds
+        avatarContainerView.addSubview(avatarView!)
+
         
     }
 

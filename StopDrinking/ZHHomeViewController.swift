@@ -184,6 +184,7 @@ class ZHHomeViewController: UIViewController {
     
     func refreshControlAction(sender: UIRefreshControl) {
         sender.endRefreshing()
+        resetReddit()
     }
     
     @IBAction func sortButtonTouchUpInside(sender: UIButton) {
