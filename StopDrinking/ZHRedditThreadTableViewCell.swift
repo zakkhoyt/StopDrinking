@@ -56,9 +56,11 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
             commentCountLabel.text = "\(post!.totalComments) comments"
             pointCountLabel.text = "\(post!.score) points"
             
-            if let flairClass = post!.authorFlairClass {
-                avatarView.configureForFlairClass(flairClass)
-            }
+//            if let authorFlairText =  {
+                avatarView.configureForFlairClass(post!.authorFlairText)
+//            } else {
+//                avatarView.configureForFlairClass(authorFlairText)
+//            }
             
 //            self.layoutIfNeeded()
         }
