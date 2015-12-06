@@ -57,10 +57,9 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
             indentConstrint.constant = CGFloat(level) * 16
         }
     }
-    
-    var comment: RKComment? = nil {
-        didSet{
 
+    var model: ZHRedditThreadCellModel? = nil {
+        didSet {
             renderCellContents()
         }
     }
@@ -68,7 +67,7 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     func renderCellContents() {
         
         
-        if comment?.replies.count > 0 {
+        if model?.comment.replies.count > 0 {
             expandButton.hidden = false
             headerLayoutConstraint.constant = 0
         } else {
@@ -76,75 +75,53 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
             headerLayoutConstraint.constant = -22
         }
         
-        authorLabel.text = NSString(format: "%@", comment!.author) as String
-        scoreLabel.text = NSString(format: "+%lu", comment!.score) as String
-        ageLabel.text = comment?.created.stringRelativeTimeFromDate()
-        commentTextView.text = comment?.body
+        authorLabel.text = NSString(format: "%@", (model?.comment.author)!) as String
+        scoreLabel.text = NSString(format: "+%lu", (model?.comment.score)!) as String
+        ageLabel.text = model?.comment.created.stringRelativeTimeFromDate()
+        commentTextView.text = model?.comment.body
         
         avatarContainerView.hidden = true
         
-        
-        if let treeView = treeView {
-            let item = treeView.itemForCell(self)
-            if treeView.isCellForItemExpanded(item) == true {
-//            if treeView.isCellExpanded(self) == true {
-
-                self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
-                self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-            } else {
-                self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
-                self.expandButton.transform = CGAffineTransformIdentity
-            }
+        if model?.expanded == false {
+            self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
+            self.expandButton.transform = CGAffineTransformIdentity
+        } else {
+            self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
+            self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
         }
 
-////        avatarView.configureForFlairClass(post!.authorFlairText)
-//        RKClient.sharedClient().userWithUsername(comment!.author) { (user, error) -> Void in
-//            if let user = user as? RKUser {
-//                print("got user now what?")
-//            }
-//        }
     }
     
     
 
     @IBAction func expandButtonTouchUpInside(sender: AnyObject) {
-        if let treeView = treeView {
-            if treeView.isCellExpanded(self) == true {
-                let item = treeView.itemForCell(self)
-                treeView.collapseRowForItem(item)
+        
+        if model?.expanded == false {
+            model?.expanded = true
+            
+            let item = treeView!.itemForCell(self)
+            treeView!.expandRowForItem(item)
+            
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
+                self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+            })
+        
+        } else {
+            model?.expanded = false
+            
+            let item = treeView!.itemForCell(self)
+            treeView!.collapseRowForItem(item)
+            
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
+                self.expandButton.transform = CGAffineTransformIdentity
+            })
 
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
-
-                    self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
-                    self.expandButton.transform = CGAffineTransformIdentity
-                })
-            } else {
-                let item = treeView.itemForCell(self)
-                treeView.expandRowForItem(item)
-                
-                UIView.animateWithDuration(0.3, animations: { () -> Void in
-                    self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
-                    self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-                })
-
-            }
         }
     }
 
     
-    
-    //        let parser = ZHMarkdownParser(string: (comment?.body)!)
-    //        let html = parser.HTML
-    //        let data = html.dataUsingEncoding(NSUTF8StringEncoding)
-    //        let options = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-    //        do {
-    //            let attrString = try NSAttributedString(data: data!, options: options, documentAttributes: nil)
-    //            commentTextView.attributedText = attrString
-    //        } catch _ {
-    //            print("uh oh!")
-    //        }
-
-
     
     override func awakeFromNib() {
         super.awakeFromNib()

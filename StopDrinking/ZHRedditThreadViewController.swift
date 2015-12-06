@@ -28,7 +28,7 @@ class ZHRedditThreadViewController: UIViewController {
 
     @IBOutlet weak var treeView: RATreeView!
     var post: RKLink? = nil
-    var comments: [RKComment]? = nil
+    var commentModels: [ZHRedditThreadCellModel]? = nil
     var statusBarHidden: Bool = false
     var pagination: RKPagination? = nil
         var refreshControl: UIRefreshControl? =  nil
@@ -86,7 +86,7 @@ class ZHRedditThreadViewController: UIViewController {
     
     func resetComments() {
         pagination = nil
-        comments = []
+        commentModels = []
         treeView.reloadData()
         getNextPageOfComments()
     }
@@ -96,7 +96,10 @@ class ZHRedditThreadViewController: UIViewController {
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         RKClient.sharedClient().commentsForLink(post, completion: { (comments, pagination, error) -> Void in
             if error == nil {
-                self.comments = comments as? [RKComment]
+                for comment in comments {
+                    let model = ZHRedditThreadCellModel(comment: comment as! RKComment, expanded: false)
+                    self.commentModels?.append(model)
+                }
                 self.treeView.reloadData()
             }
             MBProgressHUD.hideHUDForView(self.view, animated: true)
@@ -114,49 +117,50 @@ class ZHRedditThreadViewController: UIViewController {
         sender.endRefreshing()
         resetComments()
     }
-
-
 }
 
 
 extension ZHRedditThreadViewController: RATreeViewDataSource{
     
     func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
-        if item.isKindOfClass(RKComment) {
-            let cell = NSBundle.mainBundle().loadNibNamed("ZHRedditCommentTableViewCell", owner: self, options: nil)[0] as? ZHRedditCommentTableViewCell
-            // TODO: Write a setting with all 3 parameters since they need to go in that order
-            cell?.treeView = treeView
-            cell?.level = treeView.levelForCellForItem(item)
-            if let comment = item as! RKComment? {
-                cell?.comment = comment
-            }
-            return cell
-            
-        } else if item.isKindOfClass(RKLink) {
+        if item is RKLink {
             let cell = ZHRedditThreadTableViewCell.cellFromNib()
             if let post = item as! RKLink? {
                 cell.post = post
             }
             return cell
+        } else if item is ZHRedditThreadCellModel {
+            let cell = NSBundle.mainBundle().loadNibNamed("ZHRedditCommentTableViewCell", owner: self, options: nil)[0] as? ZHRedditCommentTableViewCell
+            
+            // TODO: Write a setting with all 3 parameters since they need to go in that order
+            cell?.treeView = treeView
+            cell?.level = treeView.levelForCellForItem(item)
+            let model = item as! ZHRedditThreadCellModel
+            cell?.model = model
+            
+            return cell
+        } else if item is RKComment {
             
         }
+        assert(false, "bad default case here")
         return UITableViewCell()
     }
     
     func treeView(treeView: RATreeView!, numberOfChildrenOfItem item: AnyObject!) -> Int {
+        // Base case
         if item == nil {
-            if let c = comments {
-                return c.count + 1
+            if let commentModels = commentModels {
+                return commentModels.count + 1
             } else {
                 return 1
             }
         }
         
         if item is RKLink {
-
-        } else if item is RKComment {
-            let comment = item as! RKComment
-            return comment.replies.count
+            return 0
+        } else if item is ZHRedditThreadCellModel {
+            let commentModel = item as! ZHRedditThreadCellModel
+            return commentModel.comment.replies.count
         }
         
         return 0
@@ -168,12 +172,13 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
             if index == ZHRedditThreadViewControllerSection.Post.rawValue {
                 return post
             } else {
-                return comments![index-1]
+                return commentModels![index-1]
             }
         } else {
-
-            let comment = item as! RKComment?
-            return comment!.replies[index]
+            let commentModel = item as! ZHRedditThreadCellModel
+            let comment = commentModel.comment.replies[index] as! RKComment
+            let nextCommentModel = ZHRedditThreadCellModel(comment: comment, expanded: false)
+            return nextCommentModel
         }
     }
 }
