@@ -5,6 +5,25 @@
 //  Created by Zakk Hoyt on 3/24/15.
 //  Copyright (c) 2015 Zakk Hoyt. All rights reserved.
 //
+// // ** RKVotable
+//  .upvotes
+//  .downvotes
+//  .score
+//  .upvoted
+//  .downvoted
+//  .voted
+//
+// ** RKCreated
+//  .created
+//
+// ** Display these
+//  .Author "kilayo"
+//  .body | .bodyHTML
+//  .gilded 1
+//  .replies.count - number of subcomments
+//  .score
+//  .created
+
 
 import UIKit
 
@@ -64,20 +83,22 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
             expandButtonHandler(expand: expanded)
         }
     }
+
     
+    
+    //        let parser = ZHMarkdownParser(string: (comment?.body)!)
+    //        let html = parser.HTML
+    //        let data = html.dataUsingEncoding(NSUTF8StringEncoding)
+    //        let options = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+    //        do {
+    //            let attrString = try NSAttributedString(data: data!, options: options, documentAttributes: nil)
+    //            commentTextView.attributedText = attrString
+    //        } catch _ {
+    //            print("uh oh!")
+    //        }
+
     func renderCellContents() {
         commentTextView.text = comment?.body
-        
-//        let parser = ZHMarkdownParser(string: (comment?.body)!)
-//        let html = parser.HTML
-//        let data = html.dataUsingEncoding(NSUTF8StringEncoding)
-//        let options = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
-//        do {
-//            let attrString = try NSAttributedString(data: data!, options: options, documentAttributes: nil)
-//            commentTextView.attributedText = attrString
-//        } catch _ {
-//            print("uh oh!")
-//        }
 
         if comment?.replies.count > 0 {
             arrowButton.hidden = false

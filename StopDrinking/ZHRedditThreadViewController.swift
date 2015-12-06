@@ -27,6 +27,7 @@ class ZHRedditThreadViewController: UIViewController {
         
         view.backgroundColor = UIColor.darkGrayColor()
         
+
         UIApplication.sharedApplication().statusBarHidden = false
         treeView.rowsCollapsingAnimation = RATreeViewRowAnimationTop
         treeView.rowsExpandingAnimation = RATreeViewRowAnimationTop
@@ -38,7 +39,7 @@ class ZHRedditThreadViewController: UIViewController {
         treeView.backgroundColor = UIColor.darkGrayColor()
         treeView.separatorColor = UIColor.darkGrayColor()
         
-//        navigationItem.title = "Thread"
+        navigationItem.title = "Comments"
         
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         RKClient.sharedClient().commentsForLink(post, completion: { (comments, pagination, error) -> Void in

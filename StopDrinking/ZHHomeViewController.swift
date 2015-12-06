@@ -33,6 +33,8 @@ class ZHHomeViewController: UIViewController {
     
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryButton.setTitle("Hot", forState: UIControlState.Normal)
@@ -86,6 +88,9 @@ class ZHHomeViewController: UIViewController {
     func setupTableView() {
         
 
+        let nib = NSBundle.mainBundle().loadNibNamed("ZHRedditThreadTableViewCell", owner: self, options: nil).first as? UINib
+        tableView.registerNib(nib, forCellReuseIdentifier: "ZHRedditThreadTableViewCell")
+        
         // Setup TableView
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension

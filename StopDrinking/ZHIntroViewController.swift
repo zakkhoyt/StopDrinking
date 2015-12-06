@@ -102,7 +102,7 @@ extension ZHIntroViewController: UIScrollViewDelegate {
 
 extension ZHIntroViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 8
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -158,14 +158,6 @@ extension ZHIntroViewController: UICollectionViewDataSource {
             })
             return cell!
         case 7:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroRedditCollectionViewCell", forIndexPath: indexPath) as? ZHIntroRedditCollectionViewCell
-            cell?.user = user
-            cell?.viewController = self
-            cell?.nextHandler = ({ () -> Void in
-                self.scrollToNextPage()
-            })
-            return cell!
-        case 8:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroDoneCollectionViewCell", forIndexPath: indexPath) as? ZHIntroDoneCollectionViewCell
             cell?.user = user
             cell?.nextHandler = ({ () -> Void in

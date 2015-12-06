@@ -26,6 +26,18 @@ class ZHAvatarView: UIView {
         configureView()
     }
     
+    func configureForFlairClass(flairClass: String) {
+        if flairClass.containsString("days") {
+            shapeImageView.image = UIImage(named: "Circle")
+        } else if flairClass.containsString("week") {
+            shapeImageView.image = UIImage(named: "Circle")
+        } else if flairClass.containsString("month") {
+            shapeImageView.image = UIImage(named: "Star")
+        } else if flairClass.containsString("year") {
+            shapeImageView.image = UIImage(named: "Star")
+        }
+    }
+    
     func configureView() {
         // Image
         let image = imageForDaysQuit()
