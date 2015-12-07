@@ -10,7 +10,7 @@
 
 @implementation ZHStringFormatter
 
-+(NSAttributedString*)formattedStringForString:(NSString*)bodyHTML {
++(NSAttributedString*)bodyHTMLToAttributedString:(NSString*)bodyHTML {
     
     // Convert to actual HTML source
     NSString *decodedHTMLString = [ZHStringFormatter decodeHTMLString:bodyHTML];
@@ -54,12 +54,13 @@
     return attrStrig;
 }
 
-// Converts from:
+#pragma mark Private methods
+
+// Converts from a string like such:
 // "&lt;div class=\"md\"&gt;&lt;p&gt;What a great idea! I look forward to the contributions. &lt;/p&gt;\n&lt;/div&gt;"
-// to:
+// to actual HTML string
 // <div class="md"><p>What a great idea! I look forward to the contributions. </p> </div>
 +(NSString*)decodeHTMLString:(NSString*)encodedHTMLString{
-    
     NSData *bodyHTMLData = [encodedHTMLString dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *attributes = @{
                                  NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,

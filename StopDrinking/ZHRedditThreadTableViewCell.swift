@@ -56,7 +56,8 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
             commentCountLabel.text = "\(post!.totalComments) comments"
             pointCountLabel.text = "\(post!.score) points"
             
-
+            // TODO: .selfTextHTML
+            
             if let authorFlairText = post!.authorFlairText {
                 hidden = false
                 let sub = authorFlairText.componentsSeparatedByString(" ")

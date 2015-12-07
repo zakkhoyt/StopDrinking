@@ -10,5 +10,5 @@
 
 @interface ZHStringFormatter : NSObject
 
-+(NSAttributedString*)formattedStringForString:(NSString*)bodyHTML;
++(NSAttributedString*)bodyHTMLToAttributedString:(NSString*)bodyHTML;
 @end

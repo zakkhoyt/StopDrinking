@@ -267,11 +267,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHNotificationScheduler.swift"
-            timestampString = "470897778.139399"
+            timestampString = "471158331.763403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "scheduleNotifications()"
             landmarkType = "5">
          </BreakpointContent>
@@ -299,11 +299,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
-            timestampString = "471140572.098989"
+            timestampString = "471158331.763403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "textView(_:shouldInteractWithURL:inRange:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -315,11 +315,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHHomeViewController.swift"
-            timestampString = "471064913.620493"
+            timestampString = "471158884.960111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -331,11 +331,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHHomeViewController.swift"
-            timestampString = "471064913.620493"
+            timestampString = "471158331.763403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -347,11 +347,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadTableViewCell.swift"
-            timestampString = "471067818.487327"
+            timestampString = "471157380.185215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "ZHRedditThreadTableViewCell"
             landmarkType = "3">
          </BreakpointContent>
@@ -491,23 +491,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "471131748.913241"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
-            landmarkName = "treeView(_:numberOfChildrenOfItem:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "471131748.913241"
+            timestampString = "471158884.960111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
@@ -522,12 +506,28 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
-            timestampString = "471140572.098989"
+            filePath = "StopDrinking/ZHRedditThreadViewController.swift"
+            timestampString = "471158884.960111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "treeView(_:numberOfChildrenOfItem:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
+            timestampString = "471158331.763403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "expandButtonTouchUpInside(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -539,11 +539,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "471131748.913241"
+            timestampString = "471158884.960111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "treeView(_:child:ofItem:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -555,11 +555,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "471131748.913241"
+            timestampString = "471158884.960111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "treeView(_:numberOfChildrenOfItem:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -571,11 +571,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "471131748.913241"
+            timestampString = "471158884.960111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "treeView(_:child:ofItem:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -587,11 +587,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "471131748.913241"
+            timestampString = "471158884.960111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "treeView(_:numberOfChildrenOfItem:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -603,11 +603,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "471131748.913241"
+            timestampString = "471158884.960111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "treeView(_:cellForItem:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -619,11 +619,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "471131729.500465"
+            timestampString = "471158884.960111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "getNextPageOfComments()"
             landmarkType = "5">
          </BreakpointContent>
@@ -635,11 +635,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "471131730.420201"
+            timestampString = "471158884.960111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "getNextPageOfComments()"
             landmarkType = "5">
          </BreakpointContent>
@@ -656,7 +656,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "+formattedStringForString:"
+            landmarkName = "+bodyHTMLToAttributedString:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -704,7 +704,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "+formattedStringForString:"
+            landmarkName = "+bodyHTMLToAttributedString:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -720,7 +720,23 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "+formattedStringForString:"
+            landmarkName = "+bodyHTMLToAttributedString:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
+            timestampString = "471158331.763403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "renderCellContents()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

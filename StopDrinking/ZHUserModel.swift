@@ -51,7 +51,7 @@ class ZHUserModel: NSObject {
         let days = daysSinceStartDate()
         
         if let days = days {
-            return "\(days + offset) since your last drink. (" + stringForStartDate() + ")"
+            return "\(days + offset) days since your last drink. (" + stringForStartDate() + ")"
         } else {
             return ""
         }
@@ -62,7 +62,7 @@ class ZHUserModel: NSObject {
         let days = daysSinceStartDate()
         
         if let days = days {
-            return "\(days) since your last drink. (" + stringForStartDate() + ")"
+            return "\(days) days since your last drink. (" + stringForStartDate() + ")"
         } else {
             return ""
         }

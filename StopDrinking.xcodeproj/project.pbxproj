@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		471C12A8D8E611E94345972F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B51889755BA23C663064996 /* libPods.a */; };
 		C60AB6AD1C14FDE200A0358C /* ZHStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */; };
-		C62691C21C14263E006BC0BD /* fmemopen.c in Sources */ = {isa = PBXBuildFile; fileRef = C62691BA1C14263E006BC0BD /* fmemopen.c */; };
-		C62691C31C14263E006BC0BD /* MarkdownTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = C62691BC1C14263E006BC0BD /* MarkdownTokenizer.m */; };
-		C62691C41C14263E006BC0BD /* MarkdownTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = C62691BE1C14263E006BC0BD /* MarkdownTokens.m */; };
-		C62691C51C14263E006BC0BD /* NSAttributedStringMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C62691C11C14263E006BC0BD /* NSAttributedStringMarkdownParser.m */; };
+		C60AB6AF1C154DCB00A0358C /* ZHReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */; };
 		C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7901C0EEA9B00616D3A /* AppDelegate.swift */; };
 		C635D7961C0EEA9B00616D3A /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D7941C0EEA9B00616D3A /* Intro.storyboard */; };
 		C635D7981C0EEA9B00616D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C635D7971C0EEA9B00616D3A /* Assets.xcassets */; };
@@ -45,7 +42,6 @@
 		C69FC7391C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */; };
 		C69FC73C1C10F04400A3E3E0 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73B1C10F04400A3E3E0 /* todo.txt */; };
 		C69FC7401C10F05600A3E3E0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73E1C10F05600A3E3E0 /* Podfile */; };
-		C69FC7411C10F05600A3E3E0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C69FC73F1C10F05600A3E3E0 /* README.md */; };
 		C6CA9A8D1C12446A00F21544 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A7C1C12446A00F21544 /* NSDate+Utilities.m */; };
 		C6CA9A8E1C12446A00F21544 /* NSDate+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A7E1C12446A00F21544 /* NSDate+ZH.m */; };
 		C6CA9A8F1C12446A00F21544 /* NSError+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A801C12446A00F21544 /* NSError+ZH.m */; };
@@ -128,14 +124,7 @@
 		6354EC00E9788532900F38AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C60AB6AB1C14FDE200A0358C /* ZHStringFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHStringFormatter.h; sourceTree = "<group>"; };
 		C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHStringFormatter.m; sourceTree = "<group>"; };
-		C62691BA1C14263E006BC0BD /* fmemopen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fmemopen.c; sourceTree = "<group>"; };
-		C62691BB1C14263E006BC0BD /* fmemopen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmemopen.h; sourceTree = "<group>"; };
-		C62691BC1C14263E006BC0BD /* MarkdownTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkdownTokenizer.m; sourceTree = "<group>"; };
-		C62691BD1C14263E006BC0BD /* MarkdownTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkdownTokens.h; sourceTree = "<group>"; };
-		C62691BE1C14263E006BC0BD /* MarkdownTokens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkdownTokens.m; sourceTree = "<group>"; };
-		C62691BF1C14263E006BC0BD /* NimbusMarkdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NimbusMarkdown.h; sourceTree = "<group>"; };
-		C62691C01C14263E006BC0BD /* NSAttributedStringMarkdownParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAttributedStringMarkdownParser.h; sourceTree = "<group>"; };
-		C62691C11C14263E006BC0BD /* NSAttributedStringMarkdownParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAttributedStringMarkdownParser.m; sourceTree = "<group>"; };
+		C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHReachability.swift; sourceTree = "<group>"; };
 		C635D78D1C0EEA9B00616D3A /* StopDrinking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopDrinking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C635D7901C0EEA9B00616D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C635D7951C0EEA9B00616D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Intro.storyboard; sourceTree = "<group>"; };
@@ -265,21 +254,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C62691B91C14263E006BC0BD /* Markdown */ = {
-			isa = PBXGroup;
-			children = (
-				C62691BA1C14263E006BC0BD /* fmemopen.c */,
-				C62691BB1C14263E006BC0BD /* fmemopen.h */,
-				C62691BC1C14263E006BC0BD /* MarkdownTokenizer.m */,
-				C62691BD1C14263E006BC0BD /* MarkdownTokens.h */,
-				C62691BE1C14263E006BC0BD /* MarkdownTokens.m */,
-				C62691BF1C14263E006BC0BD /* NimbusMarkdown.h */,
-				C62691C01C14263E006BC0BD /* NSAttributedStringMarkdownParser.h */,
-				C62691C11C14263E006BC0BD /* NSAttributedStringMarkdownParser.m */,
-			);
-			path = Markdown;
-			sourceTree = "<group>";
-		};
 		C635D7841C0EEA9B00616D3A = {
 			isa = PBXGroup;
 			children = (
@@ -310,7 +284,6 @@
 				C6CA9A7A1C12444400F21544 /* Categories */,
 				C635D8001C0FF4BD00616D3A /* Controllers */,
 				C69FC73D1C10F04800A3E3E0 /* Documents */,
-				C62691B91C14263E006BC0BD /* Markdown */,
 				C635D7F61C0FD17F00616D3A /* Model */,
 				C66623EF1C11364000652B42 /* StopDrinking.entitlements */,
 				C635D7F31C0FBDC900616D3A /* SupporingFiles */,
@@ -434,6 +407,7 @@
 				C66623F81C11649300652B42 /* ZHMarkdownParser.swift */,
 				C60AB6AB1C14FDE200A0358C /* ZHStringFormatter.h */,
 				C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */,
+				C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -792,18 +766,14 @@
 				C6CA9AC51C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.swift in Sources */,
 				C6CA9A921C12446A00F21544 /* UIColor+ZH.m in Sources */,
 				C6CA9A9A1C1244A800F21544 /* ZHLog.swift in Sources */,
-				C62691C31C14263E006BC0BD /* MarkdownTokenizer.m in Sources */,
 				C6CA9A931C12446A00F21544 /* UIFont+ZH.m in Sources */,
 				C6CA9A8F1C12446A00F21544 /* NSError+ZH.m in Sources */,
 				C6CA9A8D1C12446A00F21544 /* NSDate+Utilities.m in Sources */,
 				C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */,
-				C62691C21C14263E006BC0BD /* fmemopen.c in Sources */,
 				C6CA9AC31C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.swift in Sources */,
-				C62691C51C14263E006BC0BD /* NSAttributedStringMarkdownParser.m in Sources */,
 				C69FC7391C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift in Sources */,
 				C6CA9AC71C141A6200F21544 /* ZHIntroNotificationsCollectionViewCell.swift in Sources */,
 				C6CA9A951C12446A00F21544 /* UIViewController+AlertController.m in Sources */,
-				C62691C41C14263E006BC0BD /* MarkdownTokens.m in Sources */,
 				C6CA9A8E1C12446A00F21544 /* NSDate+ZH.m in Sources */,
 				C6CA9AD31C141AAE00F21544 /* ZHIntroCollectionViewCell.swift in Sources */,
 				C6CA9A941C12446A00F21544 /* UIView+RenderToImage.m in Sources */,
@@ -814,13 +784,13 @@
 				C6CA9AC01C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */,
 				C6CA9AA51C13DD5400F21544 /* ZHAboutViewController.swift in Sources */,
 				C6CA9AD61C141AAE00F21544 /* ZHIntroWelcomeCollectionViewCell.swift in Sources */,
+				C60AB6AF1C154DCB00A0358C /* ZHReachability.swift in Sources */,
 				C6CA9AD41C141AAE00F21544 /* ZHIntroDoneCollectionViewCell.swift in Sources */,
 				C6CA9A901C12446A00F21544 /* NSTimer+Blocks.m in Sources */,
 				C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */,
 				C6CA9A911C12446A00F21544 /* PHAsset+Utility.m in Sources */,
 				C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */,
 				C6CA9AC91C141A6200F21544 /* ZHIntroRedditCollectionViewCell.swift in Sources */,
-				C69FC7411C10F05600A3E3E0 /* README.md in Sources */,
 				C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */,
 				C66623F91C11649300652B42 /* ZHMarkdownParser.swift in Sources */,
 			);

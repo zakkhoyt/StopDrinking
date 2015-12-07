@@ -23,7 +23,7 @@ class ZHHomeViewController: UIViewController {
     let SegueMainToRedditThread = "SegueMainToRedditThread"
     var category: RKSubredditCategory = .Hot
     var user: ZHUserModel? = nil
-    var statusBarHidden: Bool = false
+
     var pagination: RKPagination? = nil
     var posts: [RKLink] = []
     var isGettingNextPage: Bool = false
@@ -84,7 +84,7 @@ class ZHHomeViewController: UIViewController {
     
     func setupTableView() {
         
-
+        
         let nib = NSBundle.mainBundle().loadNibNamed("ZHRedditThreadTableViewCell", owner: self, options: nil).first as? UINib
         tableView.registerNib(nib, forCellReuseIdentifier: "ZHRedditThreadTableViewCell")
         
@@ -127,53 +127,59 @@ class ZHHomeViewController: UIViewController {
     
     
     func getNextPageOfPosts(){
-        isGettingNextPage = true
-        MBProgressHUD.showHUDAddedTo(view, animated: true)
-        RKClient.sharedClient().subredditWithName("stopdrinking", completion: { (subreddit, error) -> Void in
-            if error != nil {
-                self.presentAlertDialogWithTitle("Could not get subreddit", errorAsMessage: error)
-            } else {
-                RKClient.sharedClient().linksInSubreddit(subreddit as! RKSubreddit, category: self.category, pagination: self.pagination, completion: { (posts: [AnyObject]!, newPagination: RKPagination!, error:NSError!) -> Void in
-                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                    
-                    if error != nil {
-                        self.presentAlertDialogWithTitle("Could not get posts", errorAsMessage: error)
-                    } else {
-                        self.pagination = newPagination
-                        let postsToAppend = posts as! [RKLink]
-                        if postsToAppend.count == 0 {
-                            self.tableView.reloadData()
+        
+        if ZHReachability.isConnectedToNetwork() == false {
+            self.presentAlertDialogWithMessage("Please check your internet connection and try again")
+        } else {
+            
+            isGettingNextPage = true
+            MBProgressHUD.showHUDAddedTo(view, animated: true)
+            RKClient.sharedClient().subredditWithName("stopdrinking", completion: { (subreddit, error) -> Void in
+                if error != nil {
+                    self.presentAlertDialogWithTitle("Could not get subreddit", errorAsMessage: error)
+                } else {
+                    RKClient.sharedClient().linksInSubreddit(subreddit as! RKSubreddit, category: self.category, pagination: self.pagination, completion: { (posts: [AnyObject]!, newPagination: RKPagination!, error:NSError!) -> Void in
+                        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                        
+                        if error != nil {
+                            self.presentAlertDialogWithTitle("Could not get posts. Try again later", errorAsMessage: error)
                         } else {
-                            let start = self.posts.count
-                            // Append so self.posts
-                            self.posts.appendContentsOf(postsToAppend)
-                            let end = self.posts.count
-                            
-                            print("posts.count: \(self.posts.count)")
-                            
-                            // Get index paths to insert
-                            var indexPaths: [NSIndexPath] = []
-                            
-                            for index in start ..< end {
-                                let indexPath = NSIndexPath(forRow: index, inSection: ZHHomeViewControllerTableViewSection.Reddit.rawValue)
-                                indexPaths.append(indexPath)
+                            self.pagination = newPagination
+                            let postsToAppend = posts as! [RKLink]
+                            if postsToAppend.count == 0 {
+                                self.tableView.reloadData()
+                            } else {
+                                let start = self.posts.count
+                                // Append so self.posts
+                                self.posts.appendContentsOf(postsToAppend)
+                                let end = self.posts.count
+                                
+                                print("posts.count: \(self.posts.count)")
+                                
+                                // Get index paths to insert
+                                var indexPaths: [NSIndexPath] = []
+                                
+                                for index in start ..< end {
+                                    let indexPath = NSIndexPath(forRow: index, inSection: ZHHomeViewControllerTableViewSection.Reddit.rawValue)
+                                    indexPaths.append(indexPath)
+                                }
+                                //                            self.tableView.beginUpdates()
+                                self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
+                                //                            self.tableView.endUpdates()
+                                //                            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.posts.count, inSection: ZHHomeViewControllerTableViewSection.Reddit.rawValue), atScrollPosition: .Bottom, animated: true)
                             }
-//                            self.tableView.beginUpdates()
-                            self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Automatic)
-//                            self.tableView.endUpdates()
-//                            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.posts.count, inSection: ZHHomeViewControllerTableViewSection.Reddit.rawValue), atScrollPosition: .Bottom, animated: true)
                         }
-                    }
-                    
-                    
-                    // Pause so we don't get a shit load of next pages
-                    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-                    dispatch_after(delayTime, dispatch_get_main_queue()) {
-                        self.isGettingNextPage = false
-                    }
-                })
-            }
-        })
+                        
+                        
+                        // Pause so we don't get a shit load of next pages
+                        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
+                        dispatch_after(delayTime, dispatch_get_main_queue()) {
+                            self.isGettingNextPage = false
+                        }
+                    })
+                }
+            })
+        }
     }
     
     
@@ -192,7 +198,7 @@ class ZHHomeViewController: UIViewController {
             self.categoryButton.setTitle("Hot", forState: UIControlState.Normal)
             self.resetReddit()
         }))
-
+        
         ac.addAction(UIAlertAction(title: "New", style: .Default, handler: { (action) -> Void in
             self.category = .New
             self.categoryButton.setTitle("New", forState: UIControlState.Normal)
@@ -218,24 +224,24 @@ class ZHHomeViewController: UIViewController {
         }))
         
         presentViewController(ac, animated: true, completion: nil)
-}
+    }
     
     @IBAction func introButtonTouchUpInside(sender: AnyObject) {
         
         let ac = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-
+        
         ac.addAction(UIAlertAction(title: "Your settings", style: .Default, handler: { (action) -> Void in
             self.performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
         }))
-
+        
         ac.addAction(UIAlertAction(title: "About this app", style: .Default, handler: { (action) -> Void in
             self.performSegueWithIdentifier(self.SegueMainToAbout, sender: nil)
         }))
         
         ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
-
+            
         }))
-
+        
         
         presentViewController(ac, animated: true, completion: nil)
         
@@ -308,36 +314,11 @@ extension ZHHomeViewController: UITableViewDelegate {
 
 // This extension hides/shows the navigation bar and status bar as the user scrolls
 extension ZHHomeViewController: UIScrollViewDelegate {
-    
     func scrollViewDidScroll(scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y < view.bounds.size.height / 2.0 {
-//            showNavBar()
-//        } else {
-//            hideNavBar()
-//        }
-        
-        
         if scrollView.contentSize.height == 0 || self.isGettingNextPage {
             return;
         } else if scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.bounds.size.height {
             getNextPageOfPosts()
         }
-    }
-    
-    func showNavBar() {
-        if statusBarHidden == false {
-            return
-        }
-        statusBarHidden = false
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    func hideNavBar() {
-        if statusBarHidden == true {
-            return
-        }
-        statusBarHidden = true
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
-        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
