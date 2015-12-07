@@ -25,9 +25,29 @@
 //* What to display if can't connect?
 //* Display errors
 //* Reachability
+---------- End
+
+-------------- About ITC submit error
+// OS X Build number issue
+https://georgegarside.com/blog/ios/submit-apps-built-beta-xcode/
+// Original Value:
+<string>15A278b</string>nj
+// Replace with build number listed here:
+https://en.wikipedia.org/wiki/OS_X_El_Capitan
+15C47a
 
 
 
+As mentioned in the post, make sure you've disabled System Integrity Protection, then open it with an editor such as TextMate. You'll need administrator privileges to make changes to the file.
+https://georgegarside.com/blog/osx/package-incompatible-installer/
+
+
+Boot into the Recovery HD by restarting whilst holding ⌘R.
+Open Terminal (from the Utilities menu).
+Run the following command in Terminal:
+csrutil disable
+Restart.
 
 
 
+---------- End
