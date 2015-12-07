@@ -24,15 +24,30 @@ class ZHUserModel: NSObject {
         super.init()
     }
     
-    @objc required init?(coder aDecoder: NSCoder) {
+    
+    // When accessing object in app extensions, they can't seem to unarchive using NSSecureCoding
+    // so we'll just encode it to a dictionary which is easily read
+    init(dictionary: Dictionary<String, AnyObject>){
         super.init()
-        startDate = aDecoder.decodeObjectForKey("startDate") as? NSDate
-        drinksPerDay = aDecoder.decodeObjectForKey("drinksPerDay") as? UInt
-        moneyPerDay = aDecoder.decodeObjectForKey("moneyPerDay") as? UInt
-        caloriesPerDrink = aDecoder.decodeObjectForKey("caloriesPerDrink") as? UInt
-        redditUsername = aDecoder.decodeObjectForKey("redditUsername") as? String
-        redditPassword = aDecoder.decodeObjectForKey("redditPassword") as? String
-        notificationTime = aDecoder.decodeObjectForKey("notificationTime") as? NSDate
+        startDate = dictionary["startDate"] as? NSDate
+        drinksPerDay = dictionary["drinksPerDay"] as? UInt
+        moneyPerDay = dictionary["moneyPerDay"] as? UInt
+        caloriesPerDrink = dictionary["caloriesPerDrink"] as? UInt
+        redditUsername = dictionary["redditUsername"] as? String
+        redditPassword = dictionary["redditPassword"] as? String
+        notificationTime = dictionary["notificationTime"] as? NSDate
+    }
+    
+    func dictionaryRepresentation() -> Dictionary<String, AnyObject> {
+        var dictionary = Dictionary<String, AnyObject>()
+        dictionary["startDate"] = startDate
+        dictionary["drinksPerDay"] = drinksPerDay
+        dictionary["moneyPerDay"] = moneyPerDay
+        dictionary["caloriesPerDrink"] = caloriesPerDrink
+        dictionary["redditUsername"] = redditUsername
+        dictionary["redditPassword"] = redditPassword
+        dictionary["notificationTime"] = notificationTime
+        return dictionary
     }
     
 
@@ -144,27 +159,5 @@ class ZHUserModel: NSObject {
     func getCaloriesSaved() -> UInt {
         return 0
     }
-    
-}
-
-extension ZHUserModel: NSSecureCoding {
-    
-    
-    @objc func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(startDate, forKey: "startDate")
-        aCoder.encodeObject(drinksPerDay, forKey: "drinksPerDay")
-        aCoder.encodeObject(moneyPerDay, forKey: "moneyPerDay")
-        aCoder.encodeObject(caloriesPerDrink, forKey: "caloriesPerDrink")
-        aCoder.encodeObject(redditUsername, forKey: "redditUsername")
-        aCoder.encodeObject(redditPassword, forKey: "redditPassword")
-        aCoder.encodeObject(notificationTime, forKey: "notificationTime")
-    }
-    
-    
-    @objc static func supportsSecureCoding() -> Bool {
-        return true;
-    }
-
-    
     
 }

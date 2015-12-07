@@ -15,18 +15,21 @@ class ZHUserDefaults: NSObject {
     var groupDefaults = NSUserDefaults(suiteName: "group.com.vaporwarewolf.StopDrinking")
     
     func setCurrentUser(user: ZHUserModel) {
-        let data = NSKeyedArchiver.archivedDataWithRootObject(user)
-        groupDefaults?.setObject(data, forKey: "currentUser")
+        let dictionary = user.dictionaryRepresentation()
+        groupDefaults?.setObject(dictionary, forKey: "currentUser")
         groupDefaults?.synchronize()
+
     }
     
     func currentUser() -> ZHUserModel? {
-        let data = groupDefaults?.objectForKey("currentUser") as? NSData
-        if data == nil {
+        let dictionary = groupDefaults?.objectForKey("currentUser") as? Dictionary<String, AnyObject>
+        if let dictionary = dictionary {
+            let user = ZHUserModel(dictionary: dictionary)
+            return user
+        } else {
             return nil
         }
-        let user = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as? ZHUserModel
-        return user
+
     }
     
 }

@@ -10,6 +10,7 @@
 		471C12A8D8E611E94345972F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B51889755BA23C663064996 /* libPods.a */; };
 		C60AB6AD1C14FDE200A0358C /* ZHStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */; };
 		C60AB6AF1C154DCB00A0358C /* ZHReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */; };
+		C60AB6B01C155A4700A0358C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C635D7971C0EEA9B00616D3A /* Assets.xcassets */; };
 		C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7901C0EEA9B00616D3A /* AppDelegate.swift */; };
 		C635D7961C0EEA9B00616D3A /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D7941C0EEA9B00616D3A /* Intro.storyboard */; };
 		C635D7981C0EEA9B00616D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C635D7971C0EEA9B00616D3A /* Assets.xcassets */; };
@@ -25,7 +26,7 @@
 		C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8071C10076800616D3A /* ZHAvatarView.swift */; };
 		C635D80B1C100AFF00616D3A /* ZHAvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */; };
 		C635D8121C1013F900616D3A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C635D8111C1013F900616D3A /* NotificationCenter.framework */; };
-		C635D8151C1013F900616D3A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8141C1013F900616D3A /* TodayViewController.swift */; };
+		C635D8151C1013F900616D3A /* ZHTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8141C1013F900616D3A /* ZHTodayViewController.swift */; };
 		C635D8181C1013F900616D3A /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D8161C1013F900616D3A /* Today.storyboard */; };
 		C635D81C1C1013F900616D3A /* StopDrinkingToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C635D8101C1013F900616D3A /* StopDrinkingToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C66623E71C1131E500652B42 /* ZHWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66623E61C1131E500652B42 /* ZHWebViewController.swift */; };
@@ -35,7 +36,6 @@
 		C66623ED1C11348700652B42 /* ZHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */; };
 		C66623EE1C11348D00652B42 /* ZHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */; };
 		C66623F71C114A2400652B42 /* ZHNotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */; };
-		C66623F91C11649300652B42 /* ZHMarkdownParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66623F81C11649300652B42 /* ZHMarkdownParser.swift */; };
 		C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */; };
 		C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */; };
 		C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */; };
@@ -148,7 +148,7 @@
 		C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHAvatarView.xib; sourceTree = "<group>"; };
 		C635D8101C1013F900616D3A /* StopDrinkingToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StopDrinkingToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C635D8111C1013F900616D3A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		C635D8141C1013F900616D3A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C635D8141C1013F900616D3A /* ZHTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHTodayViewController.swift; sourceTree = "<group>"; };
 		C635D8171C1013F900616D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Today.storyboard; sourceTree = "<group>"; };
 		C635D8191C1013F900616D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C635D8211C10151A00616D3A /* StopDrinkingToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinkingToday.entitlements; sourceTree = "<group>"; };
@@ -156,7 +156,6 @@
 		C66623E81C1131F400652B42 /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
 		C66623EF1C11364000652B42 /* StopDrinking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinking.entitlements; sourceTree = "<group>"; };
 		C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNotificationScheduler.swift; sourceTree = "<group>"; };
-		C66623F81C11649300652B42 /* ZHMarkdownParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHMarkdownParser.swift; sourceTree = "<group>"; };
 		C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reddit.storyboard; sourceTree = "<group>"; };
 		C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditThreadViewController.swift; sourceTree = "<group>"; };
 		C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditCommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -282,7 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CA9A7A1C12444400F21544 /* Categories */,
-				C635D8001C0FF4BD00616D3A /* Controllers */,
+				C635D8001C0FF4BD00616D3A /* Utilities */,
 				C69FC73D1C10F04800A3E3E0 /* Documents */,
 				C635D7F61C0FD17F00616D3A /* Model */,
 				C66623EF1C11364000652B42 /* StopDrinking.entitlements */,
@@ -398,18 +397,17 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		C635D8001C0FF4BD00616D3A /* Controllers */ = {
+		C635D8001C0FF4BD00616D3A /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				C6CA9A991C1244A800F21544 /* ZHLog.swift */,
 				C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */,
 				C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */,
-				C66623F81C11649300652B42 /* ZHMarkdownParser.swift */,
 				C60AB6AB1C14FDE200A0358C /* ZHStringFormatter.h */,
 				C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */,
 				C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */,
 			);
-			name = Controllers;
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		C635D8051C0FFEF700616D3A /* Cell */ = {
@@ -450,7 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				C635D8211C10151A00616D3A /* StopDrinkingToday.entitlements */,
-				C635D8141C1013F900616D3A /* TodayViewController.swift */,
+				C635D8141C1013F900616D3A /* ZHTodayViewController.swift */,
 				C635D8161C1013F900616D3A /* Today.storyboard */,
 				C635D8191C1013F900616D3A /* Info.plist */,
 			);
@@ -712,6 +710,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C635D8181C1013F900616D3A /* Today.storyboard in Resources */,
+				C60AB6B01C155A4700A0358C /* Assets.xcassets in Resources */,
 				C66623EC1C11348200652B42 /* ZHAvatarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -792,7 +791,6 @@
 				C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */,
 				C6CA9AC91C141A6200F21544 /* ZHIntroRedditCollectionViewCell.swift in Sources */,
 				C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */,
-				C66623F91C11649300652B42 /* ZHMarkdownParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,7 +815,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C66623EE1C11348D00652B42 /* ZHUserDefaults.swift in Sources */,
-				C635D8151C1013F900616D3A /* TodayViewController.swift in Sources */,
+				C635D8151C1013F900616D3A /* ZHTodayViewController.swift in Sources */,
 				C66623ED1C11348700652B42 /* ZHUserModel.swift in Sources */,
 				C66623EB1C11348200652B42 /* ZHAvatarView.swift in Sources */,
 			);
@@ -1049,7 +1047,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = StopDrinkingToday/StopDrinkingToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1066,7 +1063,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = StopDrinkingToday/StopDrinkingToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

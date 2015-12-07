@@ -61,8 +61,6 @@ class ZHHomeViewController: UIViewController {
                 self.user = user
                 ZHUserDefaults.sharedInstance.setCurrentUser(user)
                 
-                
-                
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in
                     self.tableView.reloadData()
                 })

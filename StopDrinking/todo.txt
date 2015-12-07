@@ -18,8 +18,8 @@
 //* Can't tap links from a comment (Treeview issue)
 //* What to display if can't connect?
 //* Display errors
-* Reachability
-* Retain count cycles
+//* Reachability
+* Retain count cycles // [unowned self] in
 
 
 
