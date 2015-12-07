@@ -21,14 +21,45 @@
 // THE SOFTWARE.
 
 #import "AFHTTPSessionManager.h"
+
 #import "RKCompletionBlocks.h"
 #import "RKPagination.h"
+#import "RKOAuthCredential.h"
+
+typedef NS_OPTIONS(NSUInteger, RKOAuthScope) {
+    RKOAuthScopeAccount             = 1 << 1,
+    RKOAuthScopeCreddits            = 1 << 2,
+    RKOAuthScopeEdit                = 1 << 3,
+    RKOAuthScopeFlair               = 1 << 4,
+    RKOAuthScopeHistory             = 1 << 5,
+    RKOAuthScopeIdentity            = 1 << 6,
+    RKOAuthScopeManageLiveThreads   = 1 << 7,
+    RKOAuthScopeModerationConfig    = 1 << 8,
+    RKOAuthScopeModerationFlair     = 1 << 9,
+    RKOAuthScopeModerationLog       = 1 << 10,
+    RKOAuthScopeModerationOthers    = 1 << 11,
+    RKOAuthScopeModerationPosts     = 1 << 12,
+    RKOAuthScopeModerationSelf      = 1 << 13,
+    RKOAuthScopeModerationWiki      = 1 << 14,
+    RKOAuthScopeSubreddits          = 1 << 15,
+    RKOAuthScopePrivateMessages     = 1 << 16,
+    RKOAuthScopeRead                = 1 << 17,
+    RKOAuthScopeReport              = 1 << 18,
+    RKOAuthScopeSave                = 1 << 19,
+    RKOAuthScopeSubmit              = 1 << 20,
+    RKOAuthScopeSubscribe           = 1 << 21,
+    RKOAuthScopeVote                = 1 << 22,
+    RKOAuthScopeEditWikis           = 1 << 23,
+    RKOAuthScopeReadWikis           = 1 << 24
+};
 
 extern NSString * const RKClientErrorDomain;
 
 @class RKUser;
 
 @interface RKClient : AFHTTPSessionManager
+
+#pragma mark - Properties
 
 /**
  The currently signed in user.
@@ -71,6 +102,14 @@ extern NSString * const RKClientErrorDomain;
  */
 @property (nonatomic, strong) NSString *userAgent;
 
+#pragma mark - OAuth Properties
+
+@property (nonatomic, strong) RKOAuthCredential *authorizationCredential;
+
+@property (nonatomic, assign) RKOAuthScope authorizationScope;
+
+#pragma mark - Methods
+
 + (instancetype)sharedClient;
 
 /**
@@ -79,9 +118,9 @@ extern NSString * const RKClientErrorDomain;
 + (NSURL *)APIBaseURL;
 
 /**
- The URL to base HTTPS requests on. Override this in an RKClient subclass to change the base HTTPS URL.
+ The URL to base OAuth requests on. Override this in an RKClient subclass to change the base OAuth URL.
  */
-+ (NSURL *)APIBaseHTTPSURL;
++ (NSURL *)APIBaseOAuthURL;
 
 /**
  Signs into reddit.
@@ -95,6 +134,14 @@ extern NSString * const RKClientErrorDomain;
 - (NSURLSessionDataTask *)signInWithUsername:(NSString *)username password:(NSString *)password completion:(RKCompletionBlock)completion;
 
 /**
+ Specifies your OAuth client identifier and redirect URI when authenticating with OAuth.
+ 
+ @param clientIdentifier Your applications client identifier.
+ @param password Your applications redirect URI.
+ */
+- (void)authenticateWithClientIdentifier:(NSString *)clientIdentifier redirectURI:(NSURL *)redirectURI;
+
+/**
  Updates the current user. This is useful for getting updated karma totals, or checking whether they have unread private messages.
  
  @param completion The block to be executed upon completion of the request.
@@ -102,11 +149,18 @@ extern NSString * const RKClientErrorDomain;
 - (void)updateCurrentUserWithCompletion:(RKCompletionBlock)completion;
 
 /**
- Whether or not there is a user currently signed in.
+ Whether or not there is a user currently authenticated via their username and password.
  
  @note This returns YES if there is an existing modhash value, but cannot guarantee its validity.
  */
-- (BOOL)isSignedIn;
+- (BOOL)isAuthenticated;
+
+/**
+ Whether or not there is a user currently signed in via OAuth.
+ 
+ @note This returns YES if there is an existing authorization code value, but cannot guarantee its validity.
+ */
+- (BOOL)isAuthenticatedWithOAuth;
 
 /**
  Signs the current user out.

@@ -21,6 +21,8 @@
 // THE SOFTWARE.
 
 #import "RKClient.h"
+
+#import "RKAccessToken.h"
 #import "RKUser.h"
 #import "RKResponseSerializer.h"
 
@@ -60,13 +62,13 @@ NSString * const RKClientErrorDomain = @"RKClientErrorDomain";
 
 - (NSString *)description
 {
-    if (self.isSignedIn)
+    if ([self isAuthenticated])
     {
         return [NSString stringWithFormat:@"<%@: %p, username: %@>", NSStringFromClass([self class]), self, self.currentUser.username];
     }
     else
     {
-        return [NSString stringWithFormat:@"<%@: %p, not signed in>", NSStringFromClass([self class]), self];
+        return [NSString stringWithFormat:@"<%@: %p>", NSStringFromClass([self class]), self];
     }
 }
 
@@ -74,12 +76,12 @@ NSString * const RKClientErrorDomain = @"RKClientErrorDomain";
 
 + (NSURL *)APIBaseURL
 {
-    return [NSURL URLWithString:@"http://www.reddit.com/"];
+    return [NSURL URLWithString:@"https://www.reddit.com/"];
 }
 
-+ (NSURL *)APIBaseHTTPSURL
++ (NSURL *)APIBaseOAuthURL
 {
-    return [NSURL URLWithString:@"https://ssl.reddit.com/"];
+    return [NSURL URLWithString:@"https://oauth.reddit.com/"];
 }
 
 #pragma mark - Authentication
@@ -91,7 +93,7 @@ NSString * const RKClientErrorDomain = @"RKClientErrorDomain";
     
     NSDictionary *parameters = @{@"user": username, @"passwd": password, @"api_type": @"json"};
     
-    NSURL *baseURL = [[self class] APIBaseHTTPSURL];
+    NSURL *baseURL = [[self class] APIBaseURL];
     NSString *URLString = [[NSURL URLWithString:@"api/login" relativeToURL:baseURL] absoluteString];
     
     NSError *serializerError;
@@ -140,6 +142,15 @@ NSString * const RKClientErrorDomain = @"RKClientErrorDomain";
     return authenticationTask;
 }
 
+- (void)authenticateWithClientIdentifier:(NSString *)clientIdentifier redirectURI:(NSURL *)redirectURI
+{
+    RKOAuthCredential *credential = [[RKOAuthCredential alloc] init];
+    credential.clientIdentifier = clientIdentifier;
+    credential.redirectURI = redirectURI;
+
+    self.authorizationCredential = credential;
+}
+
 - (void)updateCurrentUserWithCompletion:(RKCompletionBlock)completion
 {
     __weak __typeof(self)weakSelf = self;
@@ -156,9 +167,14 @@ NSString * const RKClientErrorDomain = @"RKClientErrorDomain";
     }];
 }
 
-- (BOOL)isSignedIn
+- (BOOL)isAuthenticated
 {
-    return self.modhash != nil && self.sessionIdentifier != nil;
+    return (self.modhash != nil && self.sessionIdentifier != nil);
+}
+
+- (BOOL)isAuthenticatedWithOAuth
+{
+    return (self.authorizationCredential.accessToken != nil);
 }
 
 - (void)signOut
@@ -166,6 +182,7 @@ NSString * const RKClientErrorDomain = @"RKClientErrorDomain";
     self.currentUser = nil;
     self.modhash = nil;
     self.sessionIdentifier = nil;
+    self.authorizationCredential = nil;
     
     NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     NSArray *cookies = [storage cookies];
@@ -179,6 +196,8 @@ NSString * const RKClientErrorDomain = @"RKClientErrorDomain";
         }
     }
 }
+
+#pragma mark - Properties
 
 - (void)setModhash:(NSString *)modhash
 {
@@ -198,6 +217,21 @@ NSString * const RKClientErrorDomain = @"RKClientErrorDomain";
 {
     _userAgent = [userAgent copy];
     [[self requestSerializer] setValue:_userAgent forHTTPHeaderField:@"User-Agent"];
+}
+
+- (void)setAuthorizationCredential:(RKOAuthCredential *)authorizationCredential
+{
+    _authorizationCredential = authorizationCredential;
+
+    [[self requestSerializer] setValue:nil forHTTPHeaderField:@"Cookie"];
+    [[self requestSerializer] setAuthorizationHeaderFieldWithUsername:authorizationCredential.clientIdentifier password:@""];
+
+    if (authorizationCredential.accessToken.accessToken) {
+        NSLog(@"Setting authorization code: %@ and refresh token: %@", authorizationCredential.accessToken.accessToken, authorizationCredential.accessToken.refreshToken);
+
+        NSString *value = [[NSString alloc] initWithFormat:@"bearer %@", authorizationCredential.accessToken.accessToken];
+        [[self requestSerializer] setValue:value forHTTPHeaderField:@"Authorization"];
+    }
 }
 
 @end

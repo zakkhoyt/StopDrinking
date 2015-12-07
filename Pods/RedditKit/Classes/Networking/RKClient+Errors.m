@@ -25,6 +25,7 @@
 @implementation RKClient (Errors)
 
 const NSInteger RKClientErrorAuthenticationFailed = 1;
+const NSInteger RKClientErrorInvalidOAuthScope = 2;
 
 const NSInteger RKClientErrorInvalidCaptcha = 201;
 const NSInteger RKClientErrorInvalidCSSClassName = 202;
@@ -138,103 +139,121 @@ const NSInteger RKClientErrorTimedOut = 504;
 
 + (NSError *)authenticationRequiredError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Authentication required", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"This method requires you to be signed in.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Authentication required" failureReason:@"This method requires you to be signed in."];
+    return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorAuthenticationFailed userInfo:userInfo];
+}
+
++ (NSError *)invalidOAuthRequestError
+{
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid OAuth request" failureReason:@"Ensure that you are not attempting to re-use old codes - they are one time use."];
+    return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorAuthenticationFailed userInfo:userInfo];
+}
+
++ (NSError *)invalidOAuthGrantError
+{
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid OAuth grant" failureReason:@"Ensure that you are not attempting to re-use old codes - they are one time use."];
+    return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorAuthenticationFailed userInfo:userInfo];
+}
+
++ (NSError *)invalidOAuthScopeError
+{
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid OAuth scope" failureReason:@"Your current authorization token does not have a valid scope."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorAuthenticationFailed userInfo:userInfo];
 }
 
 + (NSError *)invalidCaptchaError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Invalid CAPTCHA", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"The CAPTCHA value or identifier you provided was invalid.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid CAPTCHA" failureReason:@"The CAPTCHA value or identifier you provided was invalid."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorInvalidCaptcha userInfo:userInfo];
 }
 
 + (NSError *)invalidCSSClassNameError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Invalid CSS class name", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"A CSS name you provided contained invalid characters.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid CSS class name" failureReason:@"A CSS name you provided contained invalid characters."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorInvalidCSSClassName userInfo:userInfo];
 }
 
 + (NSError *)invalidCredentialsError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Invalid credentials", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"Your username or password were incorrect.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid credentials" failureReason:@"Your username or password were incorrect."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorInvalidCredentials userInfo:userInfo];
 }
 
 + (NSError *)linkAlreadySubmittedError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Link already submitted", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"This link has already been submitted to this subreddit.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Link already submitted" failureReason:@"This link has already been submitted to this subreddit."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorLinkAlreadySubmitted userInfo:userInfo];
 }
 
 + (NSError *)rateLimitedError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Rate limited", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"You have exceeded reddit's rate limit.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Rate limited" failureReason:@"You have exceeded reddit's rate limit."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorRateLimited userInfo:userInfo];
 }
 
 + (NSError *)tooManyFlairClassNamesError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Too many flair class names", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"You have passed in too many flair class names", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Too many flair class names" failureReason:@"You have passed in too many flair class names"];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorTooManyFlairClassNames userInfo:userInfo];
 }
 
 + (NSError *)invalidSubredditError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"That subreddit does not exist", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"You have entered an invalid subreddit name", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"That subreddit does not exist" failureReason:@"You have entered an invalid subreddit name"];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorInvalidSubreddit userInfo:userInfo];
 }
 
 + (NSError *)archivedError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"This object has been archived", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"The object you tried to interact with has been archived.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"This object has been archived" failureReason:@"The object you tried to interact with has been archived."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorArchived userInfo:userInfo];
 }
 
 + (NSError *)invalidMultiredditNameError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Invalid multireddit name", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"The name provided for the multireddit was invalid.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid multireddit name" failureReason:@"The name provided for the multireddit was invalid."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorInvalidMultiredditName userInfo:userInfo];
 }
 
 + (NSError *)permissionDeniedError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Permission denied", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"You don't have permission to access this resource.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Permission denied" failureReason:@"You don't have permission to access this resource."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorPermissionDenied userInfo:userInfo];
 }
 
 + (NSError *)conflictError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Conflict", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"Your attempt to create a resource caused a conflict.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Conflict" failureReason:@"Your attempt to create a resource caused a conflict."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorConflict userInfo:userInfo];
 }
 
 + (NSError *)notFoundError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Not found", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"This content could not be found.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Not found" failureReason:@"This content could not be found."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorNotFound userInfo:userInfo];
 }
 
 + (NSError *)internalServerError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Internal server error", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"The reddit servers suffered an internal server error.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Internal server error" failureReason:@"The reddit servers suffered an internal server error."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorInternalServerError userInfo:userInfo];
 }
 
 + (NSError *)badGatewayError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Bad gateway", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"Bad gateway.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Bad gateway" failureReason:@"Bad gateway."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorBadGateway userInfo:userInfo];
 }
 
 + (NSError *)serviceUnavailableError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Service unavailable", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"The reddit servers are unavailable.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Service unavailable" failureReason:@"The reddit servers are unavailable."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorServiceUnavailable userInfo:userInfo];
 }
 
 + (NSError *)timedOutError
 {
-    NSDictionary *userInfo = [RKClient userInfoWithDescription:NSLocalizedStringFromTable(@"Timed out", @"RedditKit", nil) failureReason:NSLocalizedStringFromTable(@"The reddit servers timed out.", @"RedditKit", nil)];
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Timed out" failureReason:@"The reddit servers timed out."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorTimedOut userInfo:userInfo];
 }
 
@@ -248,7 +267,7 @@ const NSInteger RKClientErrorTimedOut = 504;
 
 + (NSDictionary *)userInfoWithDescription:(NSString *)description failureReason:(NSString *)failureReason
 {
-    return @{ NSLocalizedDescriptionKey:description, NSLocalizedFailureReasonErrorKey:failureReason };
+    return @{NSLocalizedDescriptionKey: NSLocalizedString(description, @""), NSLocalizedFailureReasonErrorKey: NSLocalizedString(failureReason, @"") };
 }
 
 @end

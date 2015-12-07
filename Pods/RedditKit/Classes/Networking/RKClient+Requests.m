@@ -22,6 +22,7 @@
 
 #import "RKClient+Requests.h"
 #import "RKClient+Errors.h"
+#import "RKClient+OAuth.h"
 #import "RKPagination.h"
 #import "RKObjectBuilder.h"
 
@@ -31,7 +32,7 @@
 {
     NSParameterAssert(path);
     
-    if (![self isSignedIn])
+    if (![self isAuthenticated])
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (completion)
@@ -57,7 +58,7 @@
 {
 	NSParameterAssert(path);
 	
-	if (![self isSignedIn])
+	if (![self isAuthenticated])
 	{
 		dispatch_async(dispatch_get_main_queue(), ^{
 			if (completion)
@@ -79,6 +80,12 @@
 			if (responseObject)
 			{
 				dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+					NSDictionary *response = responseObject;
+					if ([responseObject isKindOfClass:[NSArray class]])
+					{
+						response = [responseObject lastObject];
+					}
+					
 					NSArray *dataThingsResponseObjects = [self objectsFromDataThingsListingResponse:responseObject];
 					
 					dispatch_async(dispatch_get_main_queue(), ^{
@@ -424,7 +431,8 @@
     NSMutableDictionary *alteredParameters = [parameters mutableCopy];
     [alteredParameters setObject:@"json" forKey:@"api_type"];
     
-    NSString *URLString = [[NSURL URLWithString:path relativeToURL:self.baseURL] absoluteString];
+    NSURL *URL = [self isAuthenticatedWithOAuth] ? [[self class] APIBaseOAuthURL] : [[self class] APIBaseURL];
+    NSString *URLString = [[NSURL URLWithString:path relativeToURL:URL] absoluteString];
     NSError *serializerError;
     NSURLRequest *request = [[self requestSerializer] requestWithMethod:method URLString:URLString parameters:[alteredParameters copy] error:&serializerError];
     
@@ -434,6 +442,16 @@
     }
     
     NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if ([responseObject isKindOfClass:[NSDictionary class]] && [[responseObject objectForKey:@"error"] integerValue] == 401) {
+            NSLog(@"Access token expired. Fetching new token.");
+            
+            [self refreshAccessTokenWithCompletion:^(id object, NSError *error) {
+                [self taskWithMethod:method path:path parameters:parameters completion:completion];
+            }];
+            
+            return;
+        }
+        
         NSDictionary *headers = [((NSHTTPURLResponse *)response) allHeaderFields];
         
         self.rateLimitedRequestsUsed = [[headers objectForKey:@"x-ratelimit-remaining"] intValue];

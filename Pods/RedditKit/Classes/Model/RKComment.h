@@ -176,14 +176,5 @@ typedef NS_ENUM(NSUInteger, RKDistinguishedStatus) {
  */
 @property (nonatomic, copy, readonly) NSString *submissionParent;
 
-/**
- The CSS class value for the author of the link.
- */
-@property (nonatomic, copy, readonly) NSString *authorFlairClass;
-
-/**
- The flair text value for the author of the link.
- */
-@property (nonatomic, copy, readonly) NSString *authorFlairText;
 
 @end
