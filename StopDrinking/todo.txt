@@ -1,11 +1,16 @@
 
 
-
-
-
-
-
 --------- v1 release
+* Intro
+    * Hide scroll bar
+    * Restructure
+    * Update text
+* TextView tint color mismsatch between main and reddit
+* Disable detection in place of Markup
+* Disable asserts
+* Default expanded/collapsed
+* Finish all markup cases
+
 * Notifications work and are right
 * Retain count cycles // [unowned self] in
 * Continue deep threads
