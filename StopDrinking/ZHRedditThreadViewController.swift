@@ -41,7 +41,9 @@ class ZHRedditThreadViewController: UIViewController {
         view.backgroundColor = UIColor.darkGrayColor()
         UIApplication.sharedApplication().statusBarHidden = false
         navigationItem.title = "Comments"
-        navigationItem.rightBarButtonItem = sortBarButton
+//        navigationItem.rightBarButtonItem = sortBarButton
+        
+        
         setupTreeView()
         resetComments()
     }
@@ -62,6 +64,8 @@ class ZHRedditThreadViewController: UIViewController {
         refreshControl?.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
         treeView.scrollView.addSubview(refreshControl!)
         
+        let nib = UINib(nibName: "ZHRedditCommentTableViewCell", bundle: NSBundle.mainBundle())
+        treeView.registerNib(nib, forCellReuseIdentifier: "ZHRedditCommentTableViewCell")
         
         treeView.rowsCollapsingAnimation = RATreeViewRowAnimationTop
         treeView.rowsExpandingAnimation = RATreeViewRowAnimationTop
@@ -72,14 +76,6 @@ class ZHRedditThreadViewController: UIViewController {
         treeView.separatorStyle = RATreeViewCellSeparatorStyleNone
         treeView.backgroundColor = UIColor.darkGrayColor()
         treeView.separatorColor = UIColor.darkGrayColor()
-        
-        
-        //        let nib = NSBundle.mainBundle().loadNibNamed("ZHRedditThreadTableViewCell", owner: self, options: nil).first as? UINib
-        //        tableView.registerNib(nib, forCellReuseIdentifier: "ZHRedditThreadTableViewCell")
-        //
-        //        // Setup TableView
-        //        tableView.estimatedRowHeight = 100
-        //        tableView.rowHeight = UITableViewAutomaticDimension
         
     }
     
@@ -182,8 +178,9 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
             }
             return cell
         } else if item is ZHRedditThreadCellModel {
-            let cell = NSBundle.mainBundle().loadNibNamed("ZHRedditCommentTableViewCell", owner: self, options: nil)[0] as? ZHRedditCommentTableViewCell
+//            let cell = NSBundle.mainBundle().loadNibNamed("ZHRedditCommentTableViewCell", owner: self, options: nil)[0] as? ZHRedditCommentTableViewCell
             
+            let cell = treeView.dequeueReusableCellWithIdentifier("ZHRedditCommentTableViewCell") as? ZHRedditCommentTableViewCell
             // TODO: Write a setting with all 3 parameters since they need to go in that order
             cell?.treeView = treeView
             cell?.level = treeView.levelForCellForItem(item)

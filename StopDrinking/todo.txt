@@ -7,11 +7,17 @@
 
 --------- v1 release
 * Notifications work and are right
-//* About page
+* Retain count cycles // [unowned self] in
 * Continue deep threads
-* Local extension works
 * Art for app
     * Gifs and picture
+* ITC
+    * Write text
+    * Capture images
+
+
+//* About page
+//* Local extension works
 //* About page
 //* Expand arrows after scrolling
 //* Markdown
@@ -19,12 +25,9 @@
 //* What to display if can't connect?
 //* Display errors
 //* Reachability
-* Retain count cycles // [unowned self] in
 
 
 
-* ITC
-    * Write text
-    * Capture images
+
 
 

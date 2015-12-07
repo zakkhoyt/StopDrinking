@@ -43,7 +43,7 @@
             UIFont *headlineFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
             UIFont *replacementFont = [UIFont fontWithName:currentFont.fontName size:headlineFont.pointSize];
             [attrStrig addAttribute:NSFontAttributeName value:replacementFont range:range];
-            [attrStrig addAttribute:NSForegroundColorAttributeName value:[UIColor cyanColor] range:range];
+            [attrStrig addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:range];
             [attrStrig addAttribute:NSBackgroundColorAttributeName value:[UIColor whiteColor] range:range];
         } else {
             replacementFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
