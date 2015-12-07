@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		471C12A8D8E611E94345972F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B51889755BA23C663064996 /* libPods.a */; };
+		C60AB6AD1C14FDE200A0358C /* ZHStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */; };
 		C62691C21C14263E006BC0BD /* fmemopen.c in Sources */ = {isa = PBXBuildFile; fileRef = C62691BA1C14263E006BC0BD /* fmemopen.c */; };
 		C62691C31C14263E006BC0BD /* MarkdownTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = C62691BC1C14263E006BC0BD /* MarkdownTokenizer.m */; };
 		C62691C41C14263E006BC0BD /* MarkdownTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = C62691BE1C14263E006BC0BD /* MarkdownTokens.m */; };
@@ -125,6 +126,8 @@
 		1B51889755BA23C663064996 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		622398508FF14172E3212991 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6354EC00E9788532900F38AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C60AB6AB1C14FDE200A0358C /* ZHStringFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHStringFormatter.h; sourceTree = "<group>"; };
+		C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHStringFormatter.m; sourceTree = "<group>"; };
 		C62691BA1C14263E006BC0BD /* fmemopen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fmemopen.c; sourceTree = "<group>"; };
 		C62691BB1C14263E006BC0BD /* fmemopen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmemopen.h; sourceTree = "<group>"; };
 		C62691BC1C14263E006BC0BD /* MarkdownTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkdownTokenizer.m; sourceTree = "<group>"; };
@@ -429,6 +432,8 @@
 				C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */,
 				C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */,
 				C66623F81C11649300652B42 /* ZHMarkdownParser.swift */,
+				C60AB6AB1C14FDE200A0358C /* ZHStringFormatter.h */,
+				C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -803,6 +808,7 @@
 				C6CA9AD31C141AAE00F21544 /* ZHIntroCollectionViewCell.swift in Sources */,
 				C6CA9A941C12446A00F21544 /* UIView+RenderToImage.m in Sources */,
 				C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */,
+				C60AB6AD1C14FDE200A0358C /* ZHStringFormatter.m in Sources */,
 				C635D7BF1C0EEB6900616D3A /* ZHIntroViewController.swift in Sources */,
 				C6CA9ABE1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.swift in Sources */,
 				C6CA9AC01C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */,

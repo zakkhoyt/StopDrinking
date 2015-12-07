@@ -299,11 +299,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
-            timestampString = "471136143.319883"
+            timestampString = "471140572.098989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "textView(_:shouldInteractWithURL:inRange:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -523,11 +523,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
-            timestampString = "471136143.319883"
+            timestampString = "471140572.098989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "expandButtonTouchUpInside(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -650,13 +650,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
-            timestampString = "471133274.403644"
+            filePath = "StopDrinking/ZHStringFormatter.m"
+            timestampString = "471141260.568247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "renderCellContents()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "+formattedStringForString:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[ZHStringFormatter formattedStringForString:]"
+                  moduleName = "StopDrinking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zakkhoyt/Code/repositories/vwwGithub/StopDrinking/StopDrinking/ZHStringFormatter.m"
+                  timestampString = "471140682.486991"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "524">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__46+[ZHStringFormatter formattedStringForString:]_block_invoke"
+                  moduleName = "StopDrinking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zakkhoyt/Code/repositories/vwwGithub/StopDrinking/StopDrinking/ZHStringFormatter.m"
+                  timestampString = "471140682.487272"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "59">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StopDrinking/ZHStringFormatter.m"
+            timestampString = "471141260.568247"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "+formattedStringForString:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -666,13 +714,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
-            timestampString = "471135442.018349"
+            filePath = "StopDrinking/ZHStringFormatter.m"
+            timestampString = "471141260.568247"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "renderCellContents()"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "+formattedStringForString:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

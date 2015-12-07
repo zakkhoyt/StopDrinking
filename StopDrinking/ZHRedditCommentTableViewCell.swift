@@ -86,59 +86,71 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         scoreLabel.text = NSString(format: "+%lu", (model?.comment.score)!) as String
         ageLabel.text = model?.comment.created.stringRelativeTimeFromDate()
 
-//        commentTextView.text = model?.comment.body
-////        let parser = NSAttributedStringMarkdownParser()
-////        let attrString = parser.attributedStringFromMarkdownString(model?.comment.body)
-////        commentTextView.attributedText = attrString
         
-////        let html = "<html>" + (model?.comment.bodyHTML)! +  "</html>"
-//        let html = "<html><body><h1><div>Hello, world!</div></h1></body></html>"
-//        webView.loadHTMLString(html, baseURL: nil)
-        
-        
-        
-        let encodedString = (model?.comment.bodyHTML)!
-        let encodedData = encodedString.dataUsingEncoding(NSUTF8StringEncoding)!
-        let attributedOptions: [String: AnyObject] = [
-            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-            NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
-        ]
-        let colorizeOptions: [String: AnyObject] = [
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-        ]
-//        let attributedString = NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil, error: nil)!
-        do {
-            let attributedString = try  NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-            let decodedHTMLString = attributedString.string // "<div class=\"md\"><p>🤔 Where is this money...? Where did I get it when I was drinking!?!</p> </div>"
-            
-            let decodedHTMLData = decodedHTMLString.dataUsingEncoding(NSUTF8StringEncoding)
-            let ats = try NSAttributedString(data: decodedHTMLData!, options: attributedOptions, documentAttributes: nil)
-            commentTextView.attributedText = ats
-            
-            // Fix font color
-//            NSRange range = (NSRange){0,[str length]};
-//            [str enumerateAttribute:NSFontAttributeName inRange:range options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id value, NSRange range, BOOL *stop) {
-//                UIFont* currentFont = value;
-//                UIFont *replacementFont = nil;
-//                
-//                if ([currentFont.fontName rangeOfString:@"bold" options:NSCaseInsensitiveSearch].location != NSNotFound) {
-//                replacementFont = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:25.0f];
-//                } else {
-//                replacementFont = [UIFont fontWithName:@"HelveticaNeue-Thin" size:25.0f];
-//                }
-//                
-//                [str addAttribute:NSFontAttributeName value:replacementFont range:range];
-//                }];
-//            let range = NSMakeRange(0, ats.length)
-//            ats.enumerateAttribute(NSFontAttributeName, inRange: range, options: NSAttributedStringEnumerationLongestEffectiveRangeNotRequired, usingBlock: { (valud: AnyObject?, range: NSRange,  stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-//                
-//            })
-            
-            
-        } catch _ {
-            print("error encoding html string")
+        let decodedHTML = ZHStringFormatter.formattedStringForString(model?.comment.bodyHTML)
+        if decodedHTML.string.rangeOfString("that would be a nice feature") != nil{
+            print("exists")
+            let waste = ZHStringFormatter.formattedStringForString(model?.comment.bodyHTML)
         }
+//        if decodedHTML.string.rangeOfString("that would be a nice feature") != NSNotFound {
+//            print("")
+//        }
+        commentTextView.attributedText = decodedHTML
+////        commentTextView.text = model?.comment.body
+//////        let parser = NSAttributedStringMarkdownParser()
+//////        let attrString = parser.attributedStringFromMarkdownString(model?.comment.body)
+//////        commentTextView.attributedText = attrString
+//        
+//////        let html = "<html>" + (model?.comment.bodyHTML)! +  "</html>"
+////        let html = "<html><body><h1><div>Hello, world!</div></h1></body></html>"
+////        webView.loadHTMLString(html, baseURL: nil)
+//        
+//        
+//        
+//        let encodedString = (model?.comment.bodyHTML)!
+//        let encodedData = encodedString.dataUsingEncoding(NSUTF8StringEncoding)!
+//        let attributedOptions: [String: AnyObject] = [
+//            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+//            NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
+//        ]
+//        let colorizeOptions: [String: AnyObject] = [
+//            NSForegroundColorAttributeName: UIColor.whiteColor(),
+//            NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+//        ]
+////        let attributedString = NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil, error: nil)!
+//        do {
+//            let attributedString = try  NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+//            let decodedHTMLString = attributedString.string // "<div class=\"md\"><p>🤔 Where is this money...? Where did I get it when I was drinking!?!</p> </div>"
+//            
+//            let decodedHTMLData = decodedHTMLString.dataUsingEncoding(NSUTF8StringEncoding)
+//            let ats = try NSAttributedString(data: decodedHTMLData!, options: attributedOptions, documentAttributes: nil)
+//            commentTextView.attributedText = ats
+//            
+//            // Fix font color
+////            NSRange range = (NSRange){0,[str length]};
+////            [str enumerateAttribute:NSFontAttributeName inRange:range options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired usingBlock:^(id value, NSRange range, BOOL *stop) {
+////                UIFont* currentFont = value;
+////                UIFont *replacementFont = nil;
+////                
+////                if ([currentFont.fontName rangeOfString:@"bold" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+////                replacementFont = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:25.0f];
+////                } else {
+////                replacementFont = [UIFont fontWithName:@"HelveticaNeue-Thin" size:25.0f];
+////                }
+////                
+////                [str addAttribute:NSFontAttributeName value:replacementFont range:range];
+////                }];
+////            let range = NSMakeRange(0, ats.length)
+////            ats.enumerateAttribute(NSFontAttributeName, inRange: range, options: NSAttributedStringEnumerationLongestEffectiveRangeNotRequired, usingBlock: { (valud: AnyObject?, range: NSRange,  stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+////                
+//////            })
+////            ats.enumerateAttributesInRange(range, options: NSAttributedStringEnumerationOptions. , usingBlock: { (values:[String : AnyObject], range: NSRange, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
+////
+////            })
+//            
+//        } catch _ {
+//            print("error encoding html string")
+//        }
         
         
         
