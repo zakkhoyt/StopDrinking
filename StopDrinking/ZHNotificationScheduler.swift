@@ -33,6 +33,8 @@ class ZHNotificationScheduler: NSObject {
             let futureDate = dateForDaysFromNow(day, user: user!)
             notification.fireDate = futureDate
             
+            notification.alertTitle = "Your progress"
+            
             let alertBody = user?.stringForDaysQuitWithOffset(UInt(day))
             notification.alertBody = alertBody
             

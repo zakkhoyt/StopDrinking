@@ -34,10 +34,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sortBarButton" destination="3hC-jk-GIn" id="XNc-5I-snE"/>
                         <outlet property="treeView" destination="eKB-V0-UJu" id="iDP-8H-29m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mN3-Tw-tvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="Sort" id="3hC-jk-GIn">
+                    <connections>
+                        <action selector="sortBarButtonAction:" destination="sVV-SM-NN2" id="7qJ-8g-U1N"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="140" y="463"/>
         </scene>

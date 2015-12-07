@@ -5,26 +5,6 @@
 
 
 
-
-local notifications
-
-tree scrolling problem
-
-today
-
-badge
-
-make gifs
-
-
-pagination
-
-signed in functions
-
-
-
-
-
 --------- v1 release
 * Notifications work and are right
 //* About page
@@ -32,14 +12,14 @@ signed in functions
 * Local extension works
 * Art for app
     * Gifs and picture
-* About page
-* Expand arrows after scrolling
-* Markdown
-* Can't tap links from a comment (Treeview issue)
-* What to display if can't connect?
-* Display errors
+//* About page
+//* Expand arrows after scrolling
+//* Markdown
+//* Can't tap links from a comment (Treeview issue)
+//* What to display if can't connect?
+//* Display errors
 * Reachability
-
+* Retain count cycles
 
 
 

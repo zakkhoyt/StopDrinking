@@ -28,7 +28,8 @@ typedef NS_ENUM(NSUInteger, RKSubredditCategory) {
 	RKSubredditCategoryNew,
 	RKSubredditCategoryRising,
 	RKSubredditCategoryControversial,
-	RKSubredditCategoryTop
+	RKSubredditCategoryTop,
+    RKSubredditCategoryPromoted
 };
 
 extern NSString * RKStringFromSubredditCategory(RKSubredditCategory category);
@@ -194,11 +195,11 @@ extern NSString * RKStringFromSubredditCategory(RKSubredditCategory category);
  @param URL The URL to submit.
  @param captchaIdentifier The optional identifier of the CAPTCHA you are submitting with this post.
  @param captchaValue The optional value of the CAPTCHA you are submitting with this post.
- @param completion An optional block to be executed upon request completion. Its only argument is any error that occurred.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: a dictionary containing `id`, `name` and `url` keys (with their values related to the newly submitted URL), any error that occurred.
  
  @note This does not resubmit the link if it already exists.
  */
-- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subreddit:(RKSubreddit *)subreddit URL:(NSURL *)URL captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKCompletionBlock)completion;
+- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subreddit:(RKSubreddit *)subreddit URL:(NSURL *)URL captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKObjectCompletionBlock)completion;
 
 /**
  Submits a link post.
@@ -208,11 +209,11 @@ extern NSString * RKStringFromSubredditCategory(RKSubredditCategory category);
  @param URL The URL to submit.
  @param captchaIdentifier The optional identifier of the CAPTCHA you are submitting with this post.
  @param captchaValue The optional value of the CAPTCHA you are submitting with this post.
- @param completion An optional block to be executed upon request completion. Its only argument is any error that occurred.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: a dictionary containing `id`, `name` and `url` keys (with their values related to the newly submitted URL), any error that occurred.
  
  @note This does not resubmit the link if it already exists.
  */
-- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName URL:(NSURL *)URL captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKCompletionBlock)completion;
+- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName URL:(NSURL *)URL captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKObjectCompletionBlock)completion;
 
 /**
  Submits a link post.
@@ -223,9 +224,9 @@ extern NSString * RKStringFromSubredditCategory(RKSubredditCategory category);
  @param resubmit Whether to resubmit the link if it already exists.
  @param captchaIdentifier The optional identifier of the CAPTCHA you are submitting with this post.
  @param captchaValue The optional value of the CAPTCHA you are submitting with this post.
- @param completion An optional block to be executed upon request completion. Its only argument is any error that occurred.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: a dictionary containing `id`, `name` and `url` keys (with their values related to the newly submitted URL), any error that occurred.
  */
-- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName URL:(NSURL *)URL resubmit:(BOOL)resubmit captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKCompletionBlock)completion;
+- (NSURLSessionDataTask *)submitLinkPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName URL:(NSURL *)URL resubmit:(BOOL)resubmit captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKObjectCompletionBlock)completion;
 
 /**
  Submits a self post.
@@ -235,9 +236,9 @@ extern NSString * RKStringFromSubredditCategory(RKSubredditCategory category);
  @param text The text to submit.
  @param captchaIdentifier The optional identifier of the CAPTCHA you are submitting with this post.
  @param captchaValue The optional value of the CAPTCHA you are submitting with this post.
- @param completion An optional block to be executed upon request completion. Its only argument is any error that occurred.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: a dictionary containing `id`, `name` and `url` keys (with their values related to the newly submitted URL), any error that occurred.
  */
-- (NSURLSessionDataTask *)submitSelfPostWithTitle:(NSString *)title subreddit:(RKSubreddit *)subreddit text:(NSString *)text captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKCompletionBlock)completion;
+- (NSURLSessionDataTask *)submitSelfPostWithTitle:(NSString *)title subreddit:(RKSubreddit *)subreddit text:(NSString *)text captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKObjectCompletionBlock)completion;
 
 /**
  Submits a self post.
@@ -247,9 +248,9 @@ extern NSString * RKStringFromSubredditCategory(RKSubredditCategory category);
  @param text The text to submit.
  @param captchaIdentifier The optional identifier of the CAPTCHA you are submitting with this post.
  @param captchaValue The optional value of the CAPTCHA you are submitting with this post.
- @param completion An optional block to be executed upon request completion. Its only argument is any error that occurred.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: a dictionary containing `id`, `name` and `url` keys (with their values related to the newly submitted URL), any error that occurred.
  */
-- (NSURLSessionDataTask *)submitSelfPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName text:(NSString *)text captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKCompletionBlock)completion;
+- (NSURLSessionDataTask *)submitSelfPostWithTitle:(NSString *)title subredditName:(NSString *)subredditName text:(NSString *)text captchaIdentifier:(NSString *)captchaIdentifier captchaValue:(NSString *)captchaValue completion:(RKObjectCompletionBlock)completion;
 
 #pragma mark - Marking NSFW
 

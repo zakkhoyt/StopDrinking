@@ -28,6 +28,8 @@
 #import "RKSubreddit.h"
 #import "RKPagination.h"
 
+#import "RKClient+OAuth.h"
+
 NSString * RKStringFromUserContentCategory(RKUserContentCategory category)
 {
     switch (category)
@@ -87,11 +89,12 @@ NSString * RKStringFromSubscribedSubredditCategory(RKSubscribedSubredditCategory
 
 - (NSURLSessionDataTask *)currentUserWithCompletion:(RKObjectCompletionBlock)completion
 {
-    return [self getPath:@"api/me.json" parameters:nil completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+    return [self getPath:@"api/v1/me.json" parameters:nil completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
         if (responseObject)
         {
-            RKUser *account = [RKObjectBuilder objectFromJSON:responseObject];
-            
+            // RKUser *account = [RKObjectBuilder objectFromJSON:responseObject];
+            RKUser *account = [MTLJSONAdapter modelOfClass:[RKUser class] fromJSONDictionary:responseObject error:nil];
+
             if (completion)
             {
                 completion(account, nil);
@@ -124,6 +127,59 @@ NSString * RKStringFromSubscribedSubredditCategory(RKSubscribedSubredditCategory
         [weakSelf signOut];
         
         completion(error);
+    }];
+}
+
+- (NSURLSessionDataTask *)blockedUsersWithCompletion:(RKArrayCompletionBlock)completion
+{
+    return [self getPath:@"prefs/blocked.json" parameters:nil completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+
+        if (responseObject)
+        {
+            completion(responseObject, nil);
+        }
+        else
+        {
+            completion(nil, error);
+        }
+    }];
+}
+
+- (NSURLSessionDataTask *)trophiesForCurrentUserWithCompletion:(RKArrayCompletionBlock)completion
+{
+    return [self getPath:@"api/v1/me/trophies.json" parameters:nil completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+
+        if (responseObject)
+        {
+            NSMutableArray *trophies = [[NSMutableArray alloc] initWithCapacity:[responseObject count]];
+            NSArray *trophyJSON = [responseObject valueForKeyPath:@"data.trophies"];
+
+            for (NSDictionary *trophy in trophyJSON)
+            {
+                [trophies addObject:[RKObjectBuilder objectFromJSON:trophy]];
+            }
+
+            completion([trophies copy], nil);
+        }
+        else
+        {
+            completion(nil, error);
+        }
+    }];
+}
+
+- (NSURLSessionDataTask *)karmaForCurrentUserWithCompletion:(RKArrayCompletionBlock)completion
+{
+    return [self getPath:@"api/v1/me/karma.json" parameters:nil completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+
+        if (responseObject)
+        {
+            completion(responseObject, nil);
+        }
+        else
+        {
+            completion(nil, error);
+        }
     }];
 }
 

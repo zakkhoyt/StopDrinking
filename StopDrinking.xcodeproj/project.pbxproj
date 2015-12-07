@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		471C12A8D8E611E94345972F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B51889755BA23C663064996 /* libPods.a */; };
+		C60AB6AD1C14FDE200A0358C /* ZHStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */; };
+		C60AB6AF1C154DCB00A0358C /* ZHReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */; };
 		C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7901C0EEA9B00616D3A /* AppDelegate.swift */; };
 		C635D7961C0EEA9B00616D3A /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D7941C0EEA9B00616D3A /* Intro.storyboard */; };
 		C635D7981C0EEA9B00616D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C635D7971C0EEA9B00616D3A /* Assets.xcassets */; };
@@ -40,7 +42,6 @@
 		C69FC7391C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */; };
 		C69FC73C1C10F04400A3E3E0 /* todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73B1C10F04400A3E3E0 /* todo.txt */; };
 		C69FC7401C10F05600A3E3E0 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C69FC73E1C10F05600A3E3E0 /* Podfile */; };
-		C69FC7411C10F05600A3E3E0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C69FC73F1C10F05600A3E3E0 /* README.md */; };
 		C6CA9A8D1C12446A00F21544 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A7C1C12446A00F21544 /* NSDate+Utilities.m */; };
 		C6CA9A8E1C12446A00F21544 /* NSDate+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A7E1C12446A00F21544 /* NSDate+ZH.m */; };
 		C6CA9A8F1C12446A00F21544 /* NSError+ZH.m in Sources */ = {isa = PBXBuildFile; fileRef = C6CA9A801C12446A00F21544 /* NSError+ZH.m */; };
@@ -121,6 +122,9 @@
 		1B51889755BA23C663064996 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		622398508FF14172E3212991 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6354EC00E9788532900F38AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C60AB6AB1C14FDE200A0358C /* ZHStringFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHStringFormatter.h; sourceTree = "<group>"; };
+		C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHStringFormatter.m; sourceTree = "<group>"; };
+		C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHReachability.swift; sourceTree = "<group>"; };
 		C635D78D1C0EEA9B00616D3A /* StopDrinking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopDrinking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C635D7901C0EEA9B00616D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C635D7951C0EEA9B00616D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Intro.storyboard; sourceTree = "<group>"; };
@@ -401,6 +405,9 @@
 				C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */,
 				C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */,
 				C66623F81C11649300652B42 /* ZHMarkdownParser.swift */,
+				C60AB6AB1C14FDE200A0358C /* ZHStringFormatter.h */,
+				C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */,
+				C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -416,12 +423,12 @@
 		C635D8061C10007E00616D3A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				C635D7991C0EEA9B00616D3A /* LaunchScreen.storyboard */,
+				C6CA9AA21C13DD4200F21544 /* About.storyboard */,
 				C635D7941C0EEA9B00616D3A /* Intro.storyboard */,
+				C635D7991C0EEA9B00616D3A /* LaunchScreen.storyboard */,
 				C635D7EC1C0FBAB400616D3A /* Main.storyboard */,
 				C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */,
 				C66623E81C1131F400652B42 /* Web.storyboard */,
-				C6CA9AA21C13DD4200F21544 /* About.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -771,18 +778,19 @@
 				C6CA9AD31C141AAE00F21544 /* ZHIntroCollectionViewCell.swift in Sources */,
 				C6CA9A941C12446A00F21544 /* UIView+RenderToImage.m in Sources */,
 				C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */,
+				C60AB6AD1C14FDE200A0358C /* ZHStringFormatter.m in Sources */,
 				C635D7BF1C0EEB6900616D3A /* ZHIntroViewController.swift in Sources */,
 				C6CA9ABE1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.swift in Sources */,
 				C6CA9AC01C141A6200F21544 /* ZHIntroCaloriesPerDayCollectionViewCell.swift in Sources */,
 				C6CA9AA51C13DD5400F21544 /* ZHAboutViewController.swift in Sources */,
 				C6CA9AD61C141AAE00F21544 /* ZHIntroWelcomeCollectionViewCell.swift in Sources */,
+				C60AB6AF1C154DCB00A0358C /* ZHReachability.swift in Sources */,
 				C6CA9AD41C141AAE00F21544 /* ZHIntroDoneCollectionViewCell.swift in Sources */,
 				C6CA9A901C12446A00F21544 /* NSTimer+Blocks.m in Sources */,
 				C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */,
 				C6CA9A911C12446A00F21544 /* PHAsset+Utility.m in Sources */,
 				C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */,
 				C6CA9AC91C141A6200F21544 /* ZHIntroRedditCollectionViewCell.swift in Sources */,
-				C69FC7411C10F05600A3E3E0 /* README.md in Sources */,
 				C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */,
 				C66623F91C11649300652B42 /* ZHMarkdownParser.swift in Sources */,
 			);

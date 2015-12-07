@@ -1,10 +1,10 @@
-# RedditKit [![Build Status](https://travis-ci.org/samsymons/RedditKit.svg?branch=master)](https://travis-ci.org/samsymons/RedditKit)
+# RedditKit 2.0 beta 1 [![Build Status](https://travis-ci.org/samsymons/RedditKit.svg?branch=2.0)](https://travis-ci.org/samsymons/RedditKit)
 
 RedditKit is a [reddit API](http://www.reddit.com/dev/api) wrapper, written in Objective-C.
 
-## Documention
+## Documentation
 
-Documentation for RedditKit is [available on CocoaDocs](http://cocoadocs.org/docsets/RedditKit/1.2.0/).
+Documentation for RedditKit is [available on CocoaDocs](http://cocoadocs.org/docsets/RedditKit/1.3.0/).
 
 ## Installation
 
@@ -12,10 +12,10 @@ Documentation for RedditKit is [available on CocoaDocs](http://cocoadocs.org/doc
 
 Add this to your Podfile:
 
-	pod 'RedditKit', '~> 1.2'
+	pod 'RedditKit', '~> 1.3'
 
 Then run:
-	
+
 	pod install
 
 ### Submodules
@@ -39,14 +39,7 @@ Once you have everything set up, you may need to restart Xcode to have it pick u
 
 RedditKit is structured around the `RKClient` class. This class manages authentication for a single reddit account and performs HTTP requests on that user's behalf. `RKClient` can be used as a singleton with its `sharedClient` class method, or as a standalone object.
 
-```obj-c
-[[RKClient sharedClient] signInWithUsername:@"name" password:@"password" completion:^(NSError *error) {
-    if (!error)
-    {
-        NSLog(@"Successfully signed in!");
-    }
-}];
-```
+RedditKit's primary method of authentication is via OAuth. To learn how to use OAuth in your apps, check out the OAuth section below.
 
 Once you're signed in, `RKClient` will keep track of any necessary authentication state. You can then call methods which require authentication, such as getting the subreddits you are subscribed to.
 
@@ -79,6 +72,24 @@ RKLink *link = [[self links] firstObject];
 ```
 
 > RedditKit doesn't have any built-in rate limiting. reddit's API rules require that you make no more than 30 requests per minute and try to avoid requesting the same page more than once every 30 seconds. You can read up on the API rules [on their wiki page](https://github.com/reddit/reddit/wiki/API).
+
+## OAuth
+
+RedditKit 2.0 supports authentication via OAuth. To begin, call `authenticateWithClientIdentifier:redirectURI:` on an instance of `RKClient`. Once you have given RedditKit your client identifier and redirect URI,  you will need to obtain a URL to present to the user, allowing them to sign in their account and grant your app access.
+
+```
+RKOAuthScope scope = RKOAuthScopeSubreddits|RKOAuthScopeRead;
+NSURL *authenticationURL = [[RKClient sharedClient] authenticationURLWithScope:scope redirectURI:@"redditkit://oauth"];
+```
+
+This URL uses a redirect URI to pass data back to your app. Here, you have two options:
+
+1. Present the URL in Safari and await a callback
+2. Present the URL inside `UIWebView` and capture the redirect via its delegate methods
+
+The second option provides a better user experience, and is how the RedditKit demo application does it.
+
+The next step is to retrieve the temporary OAuth code from Reddit, via the URL they have redirected. You can handle this step by calling `handleRedirectURI:` on an instance of `RKClient`. Finally, you can call `retrieveAccessTokenWithCompletion:` which will fetch the access token and save it for future requests. 
 
 ## More Examples
 
@@ -121,6 +132,8 @@ NSURLSessionDataTask *task = [[RKClient sharedClient] frontPageLinksWithCompleti
 [task cancel];
 ```
 
+> When using RedditKit's APIs, it's important to remember that users who have reddit gold may have settings which affect the response from the server. For example, users who have disabled promoted links will see an empty array returned when retrieving links from the promoted category of a subreddit.
+
 ## Pagination
 
 Methods which are paginated can accept `RKPagination` objects.
@@ -128,6 +141,8 @@ Methods which are paginated can accept `RKPagination` objects.
 `RKPagination` lets you change the sorting of returned objects. For example, when fetching the top 25 links in a subreddit, setting the `subredditCategory` property changes whether you get the top 25 links right now or the top links overall.
 
 In addition to letting you change the pagination of your requests, RedditKit also gives you pagination information for any requests made. A request for links in a subreddit has a pagination object as an argument in its completion block.
+
+Due to the way reddit's API is structured, comments do not have support for pagination. Instead, comment listings will return `RKMoreComments` object which can then be used to retrieve the comments in question.
 
 > The [example project](Example/) implements pagination in a table view controller, loading new links when the user scrolls to the bottom.
 
@@ -155,7 +170,7 @@ How you manage the various `RKClient` instances is up to you. Probably with an `
 
 ## Configuration
 
-You can configure various aspects of RedditKit's operation, including its default API endpoint and user agent. Check out the `RKClient` header file for more.
+You can configure various aspects of RedditKit, including its default API endpoint and user agent. Check out the `RKClient` header file for more.
 
 **You should set your user agent to the name and version of your app, along with your reddit username. That way, if you ever have a buggy version of your app in the wild, the reddit admins will know who to contact.**
 
@@ -163,7 +178,7 @@ If you do not set one manually, the user agent will be provided by [AFNetworking
 
 ## Requirements
 
-RedditKit requires either iOS 7.0+ or Mac OS X 10.9+. Xcode 5 is required in order to run its test suite.
+RedditKit requires either iOS 7.0+ or Mac OS X 10.9+. Xcode 5 or greater is required in order to run its test suite.
 
 ARC is required. For projects that don't use ARC, you can set the `-fobjc-arc` compiler flag on the RedditKit source files.
 
@@ -175,6 +190,8 @@ ARC is required. For projects that don't use ARC, you can set the `-fobjc-arc` c
 ## Credits
 
 [SAMCategories](https://github.com/soffes/SAMCategories) by Sam Soffes is used for unescaping HTML entities in reddit link titles.
+
+Also, a big thanks to [all of the contributors](https://github.com/samsymons/RedditKit/graphs/contributors) to RedditKit.
 
 ## Need Help?
 

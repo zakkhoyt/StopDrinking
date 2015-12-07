@@ -25,6 +25,7 @@
 @interface RKClient (Errors)
 
 extern const NSInteger RKClientErrorAuthenticationFailed;
+extern const NSInteger RKClientErrorInvalidOAuthScope;
 
 extern const NSInteger RKClientErrorInvalidCaptcha;
 extern const NSInteger RKClientErrorInvalidCSSClassName;
@@ -33,6 +34,7 @@ extern const NSInteger RKClientErrorRateLimited;
 extern const NSInteger RKClientErrorTooManyFlairClassNames;
 extern const NSInteger RKClientErrorArchived;
 extern const NSInteger RKClientErrorInvalidSubreddit;
+extern const NSInteger RKClientErrorLinkAlreadySubmitted;
 
 extern const NSInteger RKClientErrorInvalidMultiredditName;
 extern const NSInteger RKClientErrorPermissionDenied;
@@ -57,6 +59,18 @@ extern const NSInteger RKClientErrorTimedOut;
  */
 + (NSError *)authenticationRequiredError;
 
++ (NSError *)invalidOAuthRequestError;
+
+/**
+ Returns an error that occurs when retrieving the OAuth access token fails because of an invalid grant.
+ */
++ (NSError *)invalidOAuthGrantError;
+
+/**
+ Returns an error that occurs when the current client does not have the appropriate OAuth privileges.
+ */
++ (NSError *)invalidOAuthScopeError;
+
 /**
  Returns an error that occurs when the user filled out a CAPTCHA incorrectly, or provided an invalid CAPTCHA identifier.
  */
@@ -76,6 +90,11 @@ extern const NSInteger RKClientErrorTimedOut;
  Returns an error that occurs when you provide an invalid subreddit name.
  */
 + (NSError *)invalidSubredditError;
+
+/**
+ Returns an error that occurs when you try to submit a link which has already been submitted.
+ */
++ (NSError *)linkAlreadySubmittedError;
 
 /**
  Returns an error that occurs when the user is rate limited.

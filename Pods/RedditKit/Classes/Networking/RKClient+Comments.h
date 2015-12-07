@@ -22,18 +22,7 @@
 
 #import "RKClient.h"
 
-typedef NS_ENUM(NSUInteger, RKCommentSort) {
-        RKCommentSortTop = 1,
-        RKCommentSortHot,
-        RKCommentSortNew,
-        RKCommentSortControversial,
-        RKCommentSortOld,
-        RKCommentSortBest
-};
-
-extern NSString * RKStringFromCommentSort(RKCommentSort sort);
-
-@class RKLink, RKComment, RKMessage;
+@class RKLink, RKComment, RKMoreComments, RKMessage;
 
 @interface RKClient (Comments)
 
@@ -44,59 +33,92 @@ extern NSString * RKStringFromCommentSort(RKCommentSort sort);
  
  @param commentText The body of the comment, as Markdown.
  @param link The link on which to comment.
- @param completion An optional block to be executed upon request completion. Its only argument is any error that occurred.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: a bare-bones RKComment response representing the actual comment that was submitted, and any error that occurred.
  @return The NSURLSessionDataTask for the request.
  */
-- (NSURLSessionDataTask *)submitComment:(NSString *)commentText onLink:(RKLink *)link completion:(RKCompletionBlock)completion;
+- (NSURLSessionDataTask *)submitComment:(NSString *)commentText onLink:(RKLink *)link completion:(RKObjectCompletionBlock)completion;
 
 /**
  Submit a comment as a reply to another comment.
  
  @param commentText The body of the comment, as Markdown.
  @param comment The comment.
- @param completion An optional block to be executed upon request completion. Its only argument is any error that occurred.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: a bare-bones RKComment response representing the actual comment that was submitted, and any error that occurred.
  @return The NSURLSessionDataTask for the request.
  */
-- (NSURLSessionDataTask *)submitComment:(NSString *)commentText asReplyToComment:(RKComment *)comment completion:(RKCompletionBlock)completion;
+- (NSURLSessionDataTask *)submitComment:(NSString *)commentText asReplyToComment:(RKComment *)comment completion:(RKObjectCompletionBlock)completion;
 
 /**
  Submit a comment on a link or ocmment.
  
  @param commentText The body of the comment, as Markdown.
  @param fullName The full name of the link or comment.
- @param completion An optional block to be executed upon request completion. Its only argument is any error that occurred.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: a bare-bones RKComment response representing the actual comment that was submitted, and any error that occurred.
  @return The NSURLSessionDataTask for the request.
  */
-- (NSURLSessionDataTask *)submitComment:(NSString *)commentText onThingWithFullName:(NSString *)fullName completion:(RKCompletionBlock)completion;
+- (NSURLSessionDataTask *)submitComment:(NSString *)commentText onThingWithFullName:(NSString *)fullName completion:(RKObjectCompletionBlock)completion;
 
 #pragma mark - Getting Comments
 
 /**
- Gets any comments on a link.
+ Gets any comments on a link. Defaults to RKCommentSortTop sort order.
  
  @param link The link.
- @param completion An optional block to be executed upon request completion. It takes three arguments: an array of RKComments, an RKPagination object, and any error that occurred.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: an array of RKComments and any error that occurred.
  @return The NSURLSessionDataTask for the request.
  */
-- (NSURLSessionDataTask *)commentsForLink:(RKLink *)link completion:(RKListingCompletionBlock)completion;
+- (NSURLSessionDataTask *)commentsForLink:(RKLink *)link completion:(RKArrayCompletionBlock)completion;
 
 /**
- Gets any comments on a link.
+ Gets any comments on a link. Defaults to RKCommentSortTop sort order.
  
  @param linkIdentifier The identifier of the link.
- @param completion An optional block to be executed upon request completion. It takes three arguments: an array of RKComments, an RKPagination object, and any error that occurred.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: an array of RKComments and any error that occurred.
  @return The NSURLSessionDataTask for the request.
  */
-- (NSURLSessionDataTask *)commentsForLinkWithIdentifier:(NSString *)linkIdentifier completion:(RKListingCompletionBlock)completion;
+- (NSURLSessionDataTask *)commentsForLinkWithIdentifier:(NSString *)linkIdentifier completion:(RKArrayCompletionBlock)completion;
 
 /**
- Gets any comments on a link with specified sort.
+ Gets any comments on a link with specified sort and limit.
  
  @param linkIdentifier The identifier of the link.
- @param sort The sort option from which to fetch comments. Defaults to RKCommentSortTop
- @param completion An optional block to be executed upon request completion. It takes three arguments: an array of RKComments, an RKPagination object, and any error that occurred.
+ @param sort The sort option from which to fetch comments.
+ @param limit Maximum number of comments to be retrieved in a single request.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: an array of RKComments and any error that occurred.
  @return The NSURLSessionDataTask for the request.
  */
-- (NSURLSessionDataTask *)commentsForLinkWithIdentifier:(NSString *)linkIdentifier sort:(RKCommentSort)sort completion:(RKListingCompletionBlock)completion;
+- (NSURLSessionDataTask *)commentsForLinkWithIdentifier:(NSString *)linkIdentifier sort:(RKCommentSortingMethod)sort limit:(NSInteger)limit completion:(RKArrayCompletionBlock)completion;
+
+/**
+ Gets the context for a given comment.
+ 
+ @param context The depth of the context. e.g., if this value is set to two, the API will return comments two levels up.
+ @param comment The comment for which to fetch context.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: an array of RKComments and any error that occurred.
+ @return The NSURLSessionDataTask for the request.
+ */
+- (NSURLSessionDataTask *)context:(NSUInteger)context forComment:(RKComment *)comment completion:(RKArrayCompletionBlock)completion;
+
+/**
+ Gets the context for a given comment.
+ 
+ @param context The depth of the context. e.g., if this value is set to two, the API will return comments two levels up.
+ @param commentIdentifier The identifier of the comment for which to fetch context.
+ @param linkIdentifier The identifier of the link to which the comment was posted.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: an array of RKComments and any error that occurred.
+ @return The NSURLSessionDataTask for the request.
+ */
+- (NSURLSessionDataTask *)context:(NSUInteger)context forCommentWithIdentifier:(NSString *)commentIdentifier linkIdentifier:(NSString *)linkIdentifier completion:(RKArrayCompletionBlock)completion;
+
+/**
+ Gets "more" comments on a link with specified sort and limit.
+ 
+ @param moreComments RKMoreComments object containing an array of children comments referenced by identifer (e.g. ce40nud).
+ @param link The link.
+ @param sort The sort option from which to fetch comments.
+ @param completion An optional block to be executed upon request completion. It takes two arguments: an array of RKComments and any error that occurred.
+ @return The NSURLSessionDataTask for the request.
+ */
+- (NSURLSessionDataTask *)moreComments:(RKMoreComments *)moreComments forLink:(RKLink *)link sort:(RKCommentSortingMethod)sort completion:(RKArrayCompletionBlock)completion;
 
 @end

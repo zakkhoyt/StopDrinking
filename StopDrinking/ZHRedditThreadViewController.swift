@@ -25,13 +25,15 @@ class ZHRedditThreadCellModel {
 
 
 class ZHRedditThreadViewController: UIViewController {
-
+    
     @IBOutlet weak var treeView: RATreeView!
+    @IBOutlet var sortBarButton: UIBarButtonItem!
     var post: RKLink? = nil
     var commentModels: [ZHRedditThreadCellModel]? = nil
     var statusBarHidden: Bool = false
     var pagination: RKPagination? = nil
-        var refreshControl: UIRefreshControl? =  nil
+    var refreshControl: UIRefreshControl? =  nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +41,13 @@ class ZHRedditThreadViewController: UIViewController {
         view.backgroundColor = UIColor.darkGrayColor()
         UIApplication.sharedApplication().statusBarHidden = false
         navigationItem.title = "Comments"
-        
+        navigationItem.rightBarButtonItem = sortBarButton
         setupTreeView()
         resetComments()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+    override func prefersStatusBarHidden() -> Bool {
+        return statusBarHidden
     }
     
     // MARK: Private methods
@@ -61,7 +61,7 @@ class ZHRedditThreadViewController: UIViewController {
         refreshControl?.tintColor = UIColor.yellowColor()
         refreshControl?.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
         treeView.scrollView.addSubview(refreshControl!)
-
+        
         
         treeView.rowsCollapsingAnimation = RATreeViewRowAnimationTop
         treeView.rowsExpandingAnimation = RATreeViewRowAnimationTop
@@ -72,17 +72,17 @@ class ZHRedditThreadViewController: UIViewController {
         treeView.separatorStyle = RATreeViewCellSeparatorStyleNone
         treeView.backgroundColor = UIColor.darkGrayColor()
         treeView.separatorColor = UIColor.darkGrayColor()
-
         
-//        let nib = NSBundle.mainBundle().loadNibNamed("ZHRedditThreadTableViewCell", owner: self, options: nil).first as? UINib
-//        tableView.registerNib(nib, forCellReuseIdentifier: "ZHRedditThreadTableViewCell")
-//        
-//        // Setup TableView
-//        tableView.estimatedRowHeight = 100
-//        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        //        let nib = NSBundle.mainBundle().loadNibNamed("ZHRedditThreadTableViewCell", owner: self, options: nil).first as? UINib
+        //        tableView.registerNib(nib, forCellReuseIdentifier: "ZHRedditThreadTableViewCell")
+        //
+        //        // Setup TableView
+        //        tableView.estimatedRowHeight = 100
+        //        tableView.rowHeight = UITableViewAutomaticDimension
         
     }
-
+    
     
     func resetComments() {
         pagination = nil
@@ -90,27 +90,79 @@ class ZHRedditThreadViewController: UIViewController {
         treeView.reloadData()
         getNextPageOfComments()
     }
-
+    
     
     func getNextPageOfComments() {
-        MBProgressHUD.showHUDAddedTo(view, animated: true)
-        RKClient.sharedClient().commentsForLink(post, completion: { (comments, pagination, error) -> Void in
-            if error == nil {
-                for comment in comments {
-                    let model = ZHRedditThreadCellModel(comment: comment as! RKComment, expanded: false)
-                    self.commentModels?.append(model)
+        if ZHReachability.isConnectedToNetwork() == false {
+            self.presentAlertDialogWithMessage("Please check your internet connection and try again")
+        } else {
+            MBProgressHUD.showHUDAddedTo(view, animated: true)
+            RKClient.sharedClient().commentsForLink(post) { (comments, error) -> Void in
+                if error != nil {
+                    self.presentAlertDialogWithTitle("Could not get comments. Try again later", errorAsMessage: error)
+                }  else {
+                    for comment in comments {
+                        if comment is RKComment {
+                            let model = ZHRedditThreadCellModel(comment: comment as! RKComment, expanded: false)
+                            self.commentModels?.append(model)
+                        } else if comment is RKMoreComments {
+                            assert(false, "Finally found a RKMoreComments")
+                        }
+                    }
+                    print("commentModels.count: \(self.commentModels?.count)")
+                    self.treeView.reloadData()
                 }
-                self.treeView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             }
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-        })
-
+        }
+    }
+    
+    
+    func getMoreComments() {
+        //        RKClient.sharedClient().more
     }
     
     @IBAction func doneButtonAction(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: { () -> Void in
             
         })
+    }
+    
+    @IBAction func sortBarButtonAction(sender: AnyObject) {
+        let ac = UIAlertController(title: "Category", message: nil, preferredStyle: .Alert)
+        
+        ac.addAction(UIAlertAction(title: "Hot", style: .Default, handler: { (action) -> Void in
+            //            self.category = .Hot
+            //            self.categoryButton.setTitle("Hot", forState: UIControlState.Normal)
+            //            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "New", style: .Default, handler: { (action) -> Void in
+            //            self.category = .New
+            //            self.categoryButton.setTitle("New", forState: UIControlState.Normal)
+            //            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Rising", style: .Default, handler: { (action) -> Void in
+            //            self.category = .Rising
+            //            self.categoryButton.setTitle("Rising", forState: UIControlState.Normal)
+            //            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Controversial", style: .Default, handler: { (action) -> Void in
+            //            self.category = .Controversial
+            //            self.categoryButton.setTitle("Controversial", forState: UIControlState.Normal)
+            //            self.resetReddit()
+        }))
+        
+        ac.addAction(UIAlertAction(title: "Top", style: .Default, handler: { (action) -> Void in
+            //            self.category = .Top
+            //            self.categoryButton.setTitle("Top", forState: UIControlState.Normal)
+            //            self.resetReddit()
+        }))
+        
+        presentViewController(ac, animated: true, completion: nil)
+        
     }
     
     func refreshControlAction(sender: UIRefreshControl) {
@@ -164,7 +216,7 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
         }
         
         return 0
-
+        
     }
     
     func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
@@ -191,74 +243,5 @@ extension ZHRedditThreadViewController: RATreeViewDelegate {
     func treeView(treeView: RATreeView!, shouldExpandRowForItem item: AnyObject!) -> Bool {
         return false
     }
-    
-//    func treeView(treeView: RATreeView!, willExpandRowForItem item: AnyObject!) {
-//        if item is RKLink {
-//            
-//        } else if item is RKComment {
-//            let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
-//            cell.expanded = true
-////            treeView.scrollToNearestSelectedRowAtScrollPosition(RATreeViewScrollPositionTop, animated: true)
-//////            treeView.scrollToRowForItem(item, atScrollPosition: RATreeViewScrollPositionTop, animated: true)
-//        }
-//    }
-//    
-//    func treeView(treeView: RATreeView!, willCollapseRowForItem item: AnyObject!) {
-//        if item is RKLink {
-//            
-//        } else if item is RKComment {
-//            let cell = treeView.cellForItem(item) as! ZHRedditCommentTableViewCell
-//            cell.expanded = false
-//        }
-//
-//    }
-//
-//    func treeView(treeView: RATreeView!, didExpandRowForItem item: AnyObject!) {
-//        if item is RKLink {
-//            
-//        } else if item is RKComment {
-//
-//        }
-//        
-//    }
-//
-//    
-//    func treeView(treeView: RATreeView!, didCollapseRowForItem item: AnyObject!) {
-//        if item is RKLink {
-//            
-//        } else if item is RKComment {
-//////            treeView.scrollToRowForItem(item, atScrollPosition: RATreeViewScrollPositionTop, animated: true)
-////            treeView.scrollToNearestSelectedRowAtScrollPosition(RATreeViewScrollPositionTop, animated: true)
-//        }
-//    }
-//    
-
 }
 
-// This extension hides/shows the navigation bar and status bar as the user scrolls
-extension ZHRedditThreadViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        if scrollView.contentOffset.y < view.bounds.size.height / 2.0 {
-//            showNavBar()
-//        } else {
-//            hideNavBar()
-//        }
-//    }
-    
-    func showNavBar() {
-        if statusBarHidden == false {
-            return
-        }
-        statusBarHidden = false
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    func hideNavBar() {
-        if statusBarHidden == true {
-            return
-        }
-        statusBarHidden = true
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
-        navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-}

@@ -24,6 +24,12 @@
 //  .score
 //  .created
 
+//  Attributed text and taps:
+//  http://stackoverflow.com/questions/19332283/detecting-taps-on-attributed-text-in-a-uitextview-in-ios
+//
+
+
+
 
 import UIKit
 
@@ -78,8 +84,14 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         authorLabel.text = NSString(format: "%@", (model?.comment.author)!) as String
         scoreLabel.text = NSString(format: "+%lu", (model?.comment.score)!) as String
         ageLabel.text = model?.comment.created.stringRelativeTimeFromDate()
-        commentTextView.text = model?.comment.body
+
         
+        let decodedHTML = ZHStringFormatter.bodyHTMLToAttributedString(model?.comment.bodyHTML)
+//        if decodedHTML.string.rangeOfString("that would be a nice feature") != nil{
+//            let waste = ZHStringFormatter.formattedStringForString(model?.comment.bodyHTML)
+//            print("waste: " + waste )
+//        }
+        commentTextView.attributedText = decodedHTML
         avatarContainerView.hidden = true
         
         if model?.expanded == false {
@@ -131,6 +143,7 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         avatarView.frame = avatarContainerView.bounds
         avatarContainerView.addSubview(avatarView!)
 
+
         
     }
 
@@ -140,6 +153,10 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        print("asdf")
+//    }
+    
 }
 
 
@@ -148,3 +165,9 @@ extension ZHRedditCommentTableViewCell: UITextViewDelegate {
         return true
     }
 }
+
+//extension ZHRedditCommentTableViewCell: UIWebViewDelegate {
+//    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+//        return true
+//    }
+//}

@@ -22,6 +22,7 @@
 
 #import "RKClient+Requests.h"
 #import "RKClient+Errors.h"
+#import "RKClient+OAuth.h"
 #import "RKPagination.h"
 #import "RKObjectBuilder.h"
 
@@ -31,7 +32,7 @@
 {
     NSParameterAssert(path);
     
-    if (![self isSignedIn])
+    if (![self isAuthenticated])
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (completion)
@@ -50,6 +51,124 @@
                 completion(error);
             }
         });
+    }];
+}
+
+- (NSURLSessionDataTask *)postSubmitCommentOrEditUserTextTaskWithPath:(NSString *)path parameters:(NSDictionary *)parameters completion:(RKObjectCompletionBlock)completion
+{
+	NSParameterAssert(path);
+	
+	if (![self isAuthenticated])
+	{
+		dispatch_async(dispatch_get_main_queue(), ^{
+			if (completion)
+			{
+				completion(nil, [RKClient authenticationRequiredError]);
+			}
+		});
+		
+		return nil;
+	}
+	
+	return [self postPath:path parameters:parameters completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			if (!completion)
+			{
+				return;
+			}
+			
+			if (responseObject)
+			{
+				dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+					NSDictionary *response = responseObject;
+					if ([responseObject isKindOfClass:[NSArray class]])
+					{
+						response = [responseObject lastObject];
+					}
+					
+					NSArray *dataThingsResponseObjects = [self objectsFromDataThingsListingResponse:responseObject];
+					
+					dispatch_async(dispatch_get_main_queue(), ^{
+						completion([dataThingsResponseObjects firstObject], nil);
+					});
+				});
+			}
+			else
+			{
+				completion(nil, error);
+			}
+		});
+	}];
+}
+
+- (NSURLSessionDataTask *)postMoreCommentsListingTaskWithPath:(NSString *)path parameters:(NSDictionary *)parameters completion:(RKArrayCompletionBlock)completion
+{
+    NSParameterAssert(path);
+    
+    NSMutableDictionary *taskParameters = [NSMutableDictionary dictionary];
+    [taskParameters addEntriesFromDictionary:parameters];
+    
+    return [self postPath:path parameters:parameters completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!completion)
+            {
+                return;
+            }
+            
+            if (responseObject)
+            {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    NSDictionary *response = responseObject;
+                    if ([responseObject isKindOfClass:[NSArray class]])
+                    {
+                        response = [responseObject lastObject];
+                    }
+                    
+                    NSArray *commentsAndMoreComments = [self objectsFromDataThingsListingResponse:response];
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        completion(commentsAndMoreComments, nil);
+                    });
+                });
+            }
+            else
+            {
+                completion(nil, error);
+            }
+        });
+    }];
+}
+
+- (NSURLSessionDataTask *)listingTaskWithPath:(NSString *)path parameters:(NSDictionary *)parameters completion:(RKArrayCompletionBlock)completion
+{
+    NSParameterAssert(path);
+    
+    return [self fullListingWithPath:path parameters:parameters pagination:nil completion:^(id responseObject, NSError *error) {
+        if (!completion)
+        {
+            return;
+        }
+        
+        if (responseObject)
+        {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSDictionary *response = responseObject;
+                if ([responseObject isKindOfClass:[NSArray class]])
+                {
+                    response = [responseObject lastObject];
+                }
+                
+                NSArray *objects = [self objectsFromListingResponse:response];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(objects, nil);
+				});
+            });
+        }
+        else
+        {
+            completion(nil, error);
+        }
     }];
 }
 
@@ -96,6 +215,67 @@
     [taskParameters addEntriesFromDictionary:[pagination dictionaryValue]];
     
     return [self getPath:path parameters:taskParameters completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
+        if (!completion)
+        {
+            return;
+        }
+        
+        if (responseObject)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(responseObject, nil);
+            });
+        }
+        else
+        {
+            completion(nil, error);
+        }
+    }];
+}
+
+- (NSURLSessionDataTask *)postListingTaskWithPath:(NSString *)path parameters:(NSDictionary *)parameters pagination:(RKPagination *)pagination completion:(RKListingCompletionBlock)completion
+{
+    NSParameterAssert(path);
+    
+    return [self fullPostListingWithPath:path parameters:parameters pagination:pagination completion:^(id responseObject, NSError *error) {
+        if (!completion)
+        {
+            return;
+        }
+        
+        if (responseObject)
+        {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSDictionary *response = responseObject;
+                if ([responseObject isKindOfClass:[NSArray class]])
+                {
+                    response = [responseObject lastObject];
+                }
+                
+                NSArray *links = [self namesFromListingResponse:response];
+                RKPagination *pagination = [RKPagination paginationFromListingResponse:response];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(links, pagination, nil);
+                });
+            });
+        }
+        else
+        {
+            completion(nil, nil, error);
+        }
+    }];
+}
+
+- (NSURLSessionDataTask *)fullPostListingWithPath:(NSString *)path parameters:(NSDictionary *)parameters pagination:(RKPagination *)pagination completion:(RKObjectCompletionBlock)completion
+{
+    NSParameterAssert(path);
+    
+    NSMutableDictionary *taskParameters = [NSMutableDictionary dictionary];
+    [taskParameters addEntriesFromDictionary:parameters];
+    [taskParameters addEntriesFromDictionary:[pagination dictionaryValue]];
+    
+    return [self postPath:path parameters:taskParameters completion:^(NSHTTPURLResponse *response, id responseObject, NSError *error) {
         if (!completion)
         {
             return;
@@ -178,6 +358,44 @@
     return [objects copy];
 }
 
+- (NSArray *)objectsFromDataThingsListingResponse:(NSDictionary *)listingResponse
+{
+    NSParameterAssert(listingResponse);
+    
+    NSArray *objectsAsJSON = listingResponse[@"json"][@"data"][@"things"];
+    NSMutableArray *objects = [[NSMutableArray alloc] initWithCapacity:[objectsAsJSON count]];
+    
+    for (NSDictionary *objectJSON in objectsAsJSON)
+    {
+        id object = [RKObjectBuilder objectFromJSON:objectJSON];
+        
+        if (object)
+        {
+            [objects addObject:object];
+        }
+    }
+    
+    return [objects copy];
+}
+
+- (NSArray *)namesFromListingResponse:(NSDictionary *)listingResponse
+{
+    NSParameterAssert(listingResponse);
+    
+    NSArray *objectsAsJSON = listingResponse[@"names"];
+    NSMutableArray *objects = [[NSMutableArray alloc] initWithCapacity:[objectsAsJSON count]];
+    
+    for (id object in objectsAsJSON)
+    {
+        if (object)
+        {
+            [objects addObject:object];
+        }
+    }
+    
+    return [objects copy];
+}
+
 #pragma mark - Request Helpers
 
 - (NSString *)stringFromBoolean:(BOOL)boolean
@@ -213,7 +431,8 @@
     NSMutableDictionary *alteredParameters = [parameters mutableCopy];
     [alteredParameters setObject:@"json" forKey:@"api_type"];
     
-    NSString *URLString = [[NSURL URLWithString:path relativeToURL:self.baseURL] absoluteString];
+    NSURL *URL = [self isAuthenticatedWithOAuth] ? [[self class] APIBaseOAuthURL] : [[self class] APIBaseURL];
+    NSString *URLString = [[NSURL URLWithString:path relativeToURL:URL] absoluteString];
     NSError *serializerError;
     NSURLRequest *request = [[self requestSerializer] requestWithMethod:method URLString:URLString parameters:[alteredParameters copy] error:&serializerError];
     
@@ -223,6 +442,16 @@
     }
     
     NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        if ([responseObject isKindOfClass:[NSDictionary class]] && [[responseObject objectForKey:@"error"] integerValue] == 401) {
+            NSLog(@"Access token expired. Fetching new token.");
+            
+            [self refreshAccessTokenWithCompletion:^(id object, NSError *error) {
+                [self taskWithMethod:method path:path parameters:parameters completion:completion];
+            }];
+            
+            return;
+        }
+        
         NSDictionary *headers = [((NSHTTPURLResponse *)response) allHeaderFields];
         
         self.rateLimitedRequestsUsed = [[headers objectForKey:@"x-ratelimit-remaining"] intValue];

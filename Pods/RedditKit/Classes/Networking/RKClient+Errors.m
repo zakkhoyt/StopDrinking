@@ -25,6 +25,7 @@
 @implementation RKClient (Errors)
 
 const NSInteger RKClientErrorAuthenticationFailed = 1;
+const NSInteger RKClientErrorInvalidOAuthScope = 2;
 
 const NSInteger RKClientErrorInvalidCaptcha = 201;
 const NSInteger RKClientErrorInvalidCSSClassName = 202;
@@ -33,6 +34,7 @@ const NSInteger RKClientErrorRateLimited = 204;
 const NSInteger RKClientErrorTooManyFlairClassNames = 205;
 const NSInteger RKClientErrorArchived = 206;
 const NSInteger RKClientErrorInvalidSubreddit = 207;
+const NSInteger RKClientErrorLinkAlreadySubmitted = 208;
 
 const NSInteger RKClientErrorInvalidMultiredditName = 401;
 const NSInteger RKClientErrorPermissionDenied = 402;
@@ -64,6 +66,7 @@ const NSInteger RKClientErrorTimedOut = 504;
             if ([RKClient string:responseString containsSubstring:@"TOO_OLD"]) return [RKClient archivedError];
             if ([RKClient string:responseString containsSubstring:@"TOO_MUCH_FLAIR_CSS"]) return [RKClient tooManyFlairClassNamesError];
             if ([RKClient string:responseString containsSubstring:@"SUBREDDIT_NOEXIST"]) return [RKClient invalidSubredditError];
+            if ([RKClient string:responseString containsSubstring:@"ALREADY_SUB"]) return [RKClient linkAlreadySubmittedError];
             
             break;
         case 400:
@@ -140,6 +143,24 @@ const NSInteger RKClientErrorTimedOut = 504;
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorAuthenticationFailed userInfo:userInfo];
 }
 
++ (NSError *)invalidOAuthRequestError
+{
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid OAuth request" failureReason:@"Ensure that you are not attempting to re-use old codes - they are one time use."];
+    return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorAuthenticationFailed userInfo:userInfo];
+}
+
++ (NSError *)invalidOAuthGrantError
+{
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid OAuth grant" failureReason:@"Ensure that you are not attempting to re-use old codes - they are one time use."];
+    return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorAuthenticationFailed userInfo:userInfo];
+}
+
++ (NSError *)invalidOAuthScopeError
+{
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid OAuth scope" failureReason:@"Your current authorization token does not have a valid scope."];
+    return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorAuthenticationFailed userInfo:userInfo];
+}
+
 + (NSError *)invalidCaptchaError
 {
     NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid CAPTCHA" failureReason:@"The CAPTCHA value or identifier you provided was invalid."];
@@ -156,6 +177,12 @@ const NSInteger RKClientErrorTimedOut = 504;
 {
     NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Invalid credentials" failureReason:@"Your username or password were incorrect."];
     return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorInvalidCredentials userInfo:userInfo];
+}
+
++ (NSError *)linkAlreadySubmittedError
+{
+    NSDictionary *userInfo = [RKClient userInfoWithDescription:@"Link already submitted" failureReason:@"This link has already been submitted to this subreddit."];
+    return [NSError errorWithDomain:RKClientErrorDomain code:RKClientErrorLinkAlreadySubmitted userInfo:userInfo];
 }
 
 + (NSError *)rateLimitedError
