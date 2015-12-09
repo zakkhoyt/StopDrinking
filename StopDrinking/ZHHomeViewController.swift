@@ -189,7 +189,7 @@ class ZHHomeViewController: UIViewController {
     }
     
     @IBAction func sortButtonTouchUpInside(sender: UIButton) {
-        let ac = UIAlertController(title: "Category", message: nil, preferredStyle: .Alert)
+        let ac = UIAlertController(title: "Category", message: nil, preferredStyle: .ActionSheet)
         
         ac.addAction(UIAlertAction(title: "Hot", style: .Default, handler: { (action) -> Void in
             self.category = .Hot
@@ -220,7 +220,11 @@ class ZHHomeViewController: UIViewController {
             self.categoryButton.setTitle("Top", forState: UIControlState.Normal)
             self.resetReddit()
         }))
+
         
+        ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
+        }))
+
         presentViewController(ac, animated: true, completion: nil)
     }
     
