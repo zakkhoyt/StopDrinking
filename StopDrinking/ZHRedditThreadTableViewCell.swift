@@ -50,36 +50,27 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
     }
     var post: RKLink? = nil{
         didSet{
+            // Create attributed string for the title. Possibly appending selfText
+            let title = post!.title
+            let titleAttr = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+                NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)
+            ]
+            let attrTitle = NSAttributedString(string: title, attributes: titleAttr)
+
             if showDetails == true {
-                let title = post!.title
                 let decodedSelfText = ZHStringFormatter.bodyHTMLToAttributedString(post!.selfTextHTML)
-                
                 let attrText = NSMutableAttributedString()
-                
-                let titleAttr = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-                    NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)
-                ]
-                let attrTitle = NSAttributedString(string: title, attributes: titleAttr)
                 attrText.appendAttributedString(attrTitle)
                 attrText.appendAttributedString(NSAttributedString(string: "\n\n"))
                 attrText.appendAttributedString(decodedSelfText)
                 postTextView.attributedText = attrText
             } else {
-                let title = post!.title
-                let titleAttr = [NSForegroundColorAttributeName: UIColor.whiteColor(),
-                    NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)
-                ]
-                let attrTitle = NSAttributedString(string: title, attributes: titleAttr)
                 postTextView.attributedText = attrTitle
             }
 
-            
-            
             ageLabel.text = post!.created.stringRelativeTimeFromDate()
             commentCountLabel.text = "\(post!.totalComments) comments"
             pointCountLabel.text = "\(post!.score) points"
-            
-            // TODO: .selfTextHTML
             
             if let authorFlairText = post!.authorFlairText {
                 hidden = false
