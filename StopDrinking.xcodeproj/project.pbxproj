@@ -283,12 +283,12 @@
 			isa = PBXGroup;
 			children = (
 				C6CA9A7A1C12444400F21544 /* Categories */,
-				C635D8001C0FF4BD00616D3A /* Utilities */,
 				C69FC73D1C10F04800A3E3E0 /* Documents */,
 				C635D7F61C0FD17F00616D3A /* Model */,
 				C66623EF1C11364000652B42 /* StopDrinking.entitlements */,
 				C635D7F31C0FBDC900616D3A /* SupporingFiles */,
 				C635D7F21C0FBDBD00616D3A /* UserInterface */,
+				C635D8001C0FF4BD00616D3A /* Utilities */,
 				C635D8091C10076C00616D3A /* View */,
 				C635D7F11C0FBDB500616D3A /* ViewControllers */,
 			);

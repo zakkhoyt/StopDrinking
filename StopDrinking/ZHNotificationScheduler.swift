@@ -38,8 +38,11 @@ class ZHNotificationScheduler: NSObject {
             let alertBody = user?.stringForDaysQuitWithOffset(UInt(day))
             notification.alertBody = alertBody
             
-            let daysSinceStartDate = user?.daysSinceStartDate()!
-            notification.applicationIconBadgeNumber = Int(daysSinceStartDate!)
+            if let daysSinceStartDate = user?.daysSinceStartDate()!{
+                let badgeCount = Int(daysSinceStartDate) + Int(day)
+                notification.applicationIconBadgeNumber = Int(badgeCount)
+            }
+            
             
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
 
