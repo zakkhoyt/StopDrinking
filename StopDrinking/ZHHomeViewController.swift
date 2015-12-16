@@ -14,13 +14,13 @@ enum ZHHomeViewControllerTableViewSection: Int{
     case Reddit = 1
 }
 
+let SegueMainToIntro = "SegueMainToIntro"
+let SegueMainToWeb = "SegueMainToWeb"
+let SegueMainToAbout = "SegueMainToAbout"
+let SegueMainToRedditThread = "SegueMainToRedditThread"
 
 
 class ZHHomeViewController: UIViewController {
-    let SegueMainToIntro = "SegueMainToIntro"
-    let SegueMainToWeb = "SegueMainToWeb"
-    let SegueMainToAbout = "SegueMainToAbout"
-    let SegueMainToRedditThread = "SegueMainToRedditThread"
     var category: RKSubredditCategory = .Hot
     var user: ZHUserModel? = nil
 
@@ -103,7 +103,7 @@ class ZHHomeViewController: UIViewController {
         user = ZHUserDefaults.sharedInstance.currentUser()
         if user == nil {
             // Show setup screen
-            performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
+            performSegueWithIdentifier(SegueMainToIntro, sender: nil)
         } else {
             // Schedule notifications
             if user?.notificationTime != nil {
@@ -233,11 +233,11 @@ class ZHHomeViewController: UIViewController {
         let ac = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
         
         ac.addAction(UIAlertAction(title: "Your settings", style: .Default, handler: { (action) -> Void in
-            self.performSegueWithIdentifier(self.SegueMainToIntro, sender: nil)
+            self.performSegueWithIdentifier(SegueMainToIntro, sender: nil)
         }))
         
         ac.addAction(UIAlertAction(title: "About this app", style: .Default, handler: { (action) -> Void in
-            self.performSegueWithIdentifier(self.SegueMainToAbout, sender: nil)
+            self.performSegueWithIdentifier(SegueMainToAbout, sender: nil)
         }))
         
         ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action) -> Void in
@@ -254,12 +254,12 @@ class ZHHomeViewController: UIViewController {
         let ac = UIAlertController(title: "Chat with someone", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         ac.addAction(UIAlertAction(title: "/r/stopdrinking main chat", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             let url = NSURL(string: "https://kiwiirc.com/client/irc.snoonet.org/stopdrinking/")
-            self.performSegueWithIdentifier(self.SegueMainToWeb, sender: url)
+            self.performSegueWithIdentifier(SegueMainToWeb, sender: url)
         }))
         
         ac.addAction(UIAlertAction(title: "/r/stopdrinking alternate chat", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             let url = NSURL(string: "http://client00.chat.mibbit.com/?server=irc.snoonet.org&channel=%23stopdrinking")
-            self.performSegueWithIdentifier(self.SegueMainToWeb, sender: url)
+            self.performSegueWithIdentifier(SegueMainToWeb, sender: url)
         }))
         
         ac.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:nil))

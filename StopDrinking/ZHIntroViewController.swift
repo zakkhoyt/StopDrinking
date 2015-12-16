@@ -8,12 +8,10 @@
 
 import UIKit
 
-
-
+let SegueIntroToMain = "SegueIntroToMain"
+let SegueSettingsToCaloriesPerDrink = "SegueSettingsToCaloriesPerDrink"
 
 class ZHIntroViewController: UIViewController {
-    let SegueIntroToMain = "SegueIntroToMain"
-    let SegueSettingsToCaloriesPerDrink = "SegueSettingsToCaloriesPerDrink"
     
     var user: ZHUserModel? = nil
     var introCompleteHandler:((user: ZHUserModel)->Void)!
@@ -68,17 +66,6 @@ class ZHIntroViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func scrollToNextPage() {
         var x = collectionView.contentOffset.x
@@ -148,7 +135,7 @@ extension ZHIntroViewController: UICollectionViewDataSource {
                 self.scrollToNextPage()
             })
             cell?.helpHandler = ({ () -> Void in
-                self.performSegueWithIdentifier(self.SegueSettingsToCaloriesPerDrink, sender: nil)
+                self.performSegueWithIdentifier(SegueSettingsToCaloriesPerDrink, sender: nil)
             })
             return cell!
         case 5:
