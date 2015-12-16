@@ -174,11 +174,11 @@ extension ZHRedditThreadViewController: RATreeViewDataSource{
         if item is RKLink {
             let cell = ZHRedditThreadTableViewCell.cellFromNib()
             if let post = item as! RKLink? {
+                cell.showDetails = true
                 cell.post = post
             }
             return cell
         } else if item is ZHRedditThreadCellModel {
-//            let cell = NSBundle.mainBundle().loadNibNamed("ZHRedditCommentTableViewCell", owner: self, options: nil)[0] as? ZHRedditCommentTableViewCell
             
             let cell = treeView.dequeueReusableCellWithIdentifier("ZHRedditCommentTableViewCell") as? ZHRedditCommentTableViewCell
             // TODO: Write a setting with all 3 parameters since they need to go in that order

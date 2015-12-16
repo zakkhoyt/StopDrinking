@@ -295,6 +295,7 @@ extension ZHHomeViewController: UITableViewDataSource {
             return cell!
         case ZHHomeViewControllerTableViewSection.Reddit.rawValue:
             let cell = ZHRedditThreadTableViewCell.cellFromNib()
+            cell.showDetails = false
             cell.post = posts[indexPath.row]
             cell.index = UInt(indexPath.row)
             return cell

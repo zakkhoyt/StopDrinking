@@ -40,17 +40,40 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
     @IBOutlet weak var commentCountLabel: UILabel!
     @IBOutlet weak var pointCountLabel: UILabel!
     @IBOutlet weak var avatarContainerView: UIView!
+    var showDetails = false
     var avatarView: ZHAvatarView!
     
     var index: UInt = 0 {
         didSet {
             indexLabel.text = "\(index + 1)"
-//            self.layoutIfNeeded()
         }
     }
     var post: RKLink? = nil{
         didSet{
-            postTextView.text = post!.title
+            if showDetails == true {
+                let title = post!.title
+                let decodedSelfText = ZHStringFormatter.bodyHTMLToAttributedString(post!.selfTextHTML)
+                
+                let attrText = NSMutableAttributedString()
+                
+                let titleAttr = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+                    NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)
+                ]
+                let attrTitle = NSAttributedString(string: title, attributes: titleAttr)
+                attrText.appendAttributedString(attrTitle)
+                attrText.appendAttributedString(NSAttributedString(string: "\n\n"))
+                attrText.appendAttributedString(decodedSelfText)
+                postTextView.attributedText = attrText
+            } else {
+                let title = post!.title
+                let titleAttr = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+                    NSFontAttributeName : UIFont.preferredFontForTextStyle(UIFontTextStyleTitle2)
+                ]
+                let attrTitle = NSAttributedString(string: title, attributes: titleAttr)
+                postTextView.attributedText = attrTitle
+            }
+
+            
             
             ageLabel.text = post!.created.stringRelativeTimeFromDate()
             commentCountLabel.text = "\(post!.totalComments) comments"
@@ -77,7 +100,8 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        indexLabel.text = "-"
+        indexLabel.text = ""
+        
         
         avatarView = NSBundle.mainBundle().loadNibNamed("ZHAvatarView", owner: self, options: nil).first as? ZHAvatarView
         avatarView.frame = avatarContainerView.bounds
