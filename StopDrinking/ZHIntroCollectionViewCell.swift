@@ -11,8 +11,10 @@ import UIKit
 class ZHIntroCollectionViewCell: UICollectionViewCell {
     var user: ZHUserModel? = nil
     var nextHandler:(()->Void)!
+    var helpHandler:(()->Void)!
  
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var helpButton: UIButton!
     
     @IBAction func nextButtonTouchUpInside(sender: AnyObject) {
         if nextHandler != nil {
@@ -20,4 +22,9 @@ class ZHIntroCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    @IBAction func helpButtonTouchUpInside(sender: AnyObject) {
+        if helpHandler != nil {
+            helpHandler()
+        }
+    }
 }

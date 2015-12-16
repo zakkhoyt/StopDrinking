@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -18,39 +18,34 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many drinks did you consume each day?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-1q-gF8">
                                 <rect key="frame" x="20" y="8" width="244" height="41"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7z-kZ-gRD">
                                 <rect key="frame" x="126" y="500" width="32" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="aYk-ep-jfu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="44" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEg-Ba-Cds">
-                                <rect key="frame" x="131.5" y="434" width="21.5" height="20.5"/>
-                                <animations/>
+                                <rect key="frame" x="131" y="226" width="21.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-aA-zff">
-                                <rect key="frame" x="95" y="462" width="94" height="29"/>
-                                <animations/>
+                                <rect key="frame" x="95" y="254" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperValueChanged:" destination="gTV-IL-0wX" eventType="valueChanged" id="3zA-5I-m2D"/>
                                 </connections>
                             </stepper>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="H7z-kZ-gRD" firstAttribute="top" secondItem="ZUc-aA-zff" secondAttribute="bottom" constant="8.5" id="2P5-EF-VPe"/>
                             <constraint firstAttribute="bottom" secondItem="H7z-kZ-gRD" secondAttribute="bottom" constant="8" id="6TH-XL-sgh"/>
+                            <constraint firstItem="ZUc-aA-zff" firstAttribute="centerY" secondItem="GDw-2v-xNh" secondAttribute="centerY" id="8WU-J9-SZl"/>
                             <constraint firstItem="ZUc-aA-zff" firstAttribute="centerX" secondItem="GDw-2v-xNh" secondAttribute="centerX" id="9qF-Xn-iEE"/>
                             <constraint firstItem="mbg-1q-gF8" firstAttribute="leading" secondItem="GDw-2v-xNh" secondAttribute="leading" constant="20" id="D9Q-Ah-968"/>
                             <constraint firstAttribute="trailing" secondItem="mbg-1q-gF8" secondAttribute="trailing" constant="20" id="Efr-Ca-8zh"/>
@@ -61,10 +56,8 @@
                         </constraints>
                     </view>
                 </subviews>
-                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <animations/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="GDw-2v-xNh" secondAttribute="bottom" id="5dt-aU-dxf"/>
                 <constraint firstItem="GDw-2v-xNh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IrX-7V-8xy"/>

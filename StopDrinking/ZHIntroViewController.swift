@@ -10,8 +10,11 @@ import UIKit
 
 
 
+
 class ZHIntroViewController: UIViewController {
     let SegueIntroToMain = "SegueIntroToMain"
+    let SegueSettingsToCaloriesPerDrink = "SegueSettingsToCaloriesPerDrink"
+    
     var user: ZHUserModel? = nil
     var introCompleteHandler:((user: ZHUserModel)->Void)!
     
@@ -104,7 +107,7 @@ extension ZHIntroViewController: UIScrollViewDelegate {
 
 extension ZHIntroViewController: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 8
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -144,6 +147,9 @@ extension ZHIntroViewController: UICollectionViewDataSource {
             cell?.nextHandler = ({ () -> Void in
                 self.scrollToNextPage()
             })
+            cell?.helpHandler = ({ () -> Void in
+                self.performSegueWithIdentifier(self.SegueSettingsToCaloriesPerDrink, sender: nil)
+            })
             return cell!
         case 5:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroTodayCollectionViewCell", forIndexPath: indexPath) as? ZHIntroTodayCollectionViewCell
@@ -153,20 +159,13 @@ extension ZHIntroViewController: UICollectionViewDataSource {
             })
             return cell!
         case 6:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroBadgeCollectionViewCell", forIndexPath: indexPath) as? ZHIntroBadgeCollectionViewCell
-            cell?.user = user
-            cell?.nextHandler = ({ () -> Void in
-                self.scrollToNextPage()
-            })
-            return cell!
-        case 7:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroNotificationsCollectionViewCell", forIndexPath: indexPath) as? ZHIntroNotificationsCollectionViewCell
             cell?.user = user
             cell?.nextHandler = ({ () -> Void in
                 self.scrollToNextPage()
             })
             return cell!
-        case 8:
+        case 7:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroDoneCollectionViewCell", forIndexPath: indexPath) as? ZHIntroDoneCollectionViewCell
             cell?.user = user
             cell?.nextHandler = ({ () -> Void in

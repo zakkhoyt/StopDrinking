@@ -88,7 +88,7 @@
 }
 
 +(UIColor*)zhTintColor{
-    return [UIColor orangeColor];
+    return [UIColor yellowColor];
 }
 +(UIColor*)zhAlternateTintColor{
     return [UIColor purpleColor];

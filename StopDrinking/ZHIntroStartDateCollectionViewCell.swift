@@ -39,6 +39,7 @@ class ZHIntroStartDateCollectionViewCell: ZHIntroCollectionViewCell {
         super.awakeFromNib()
         datePickerView.dataSource = self
         datePickerView.delegate = self
+        datePickerView.tintColor = UIColor.zhTintColor()
         datePickerView.backgroundColor = UIColor.darkGrayColor()
         
     }
@@ -87,6 +88,9 @@ extension ZHIntroStartDateCollectionViewCell: RSDFDatePickerViewDelegate{
     func datePickerView(view: RSDFDatePickerView!, didSelectDate date: NSDate!) {
         print("selected date: " + date.description)
         user?.startDate = date
+        datePickerView.selectDate(user?.startDate)
+        datePickerView.scrollToToday(true)
+//        datePickerView.scrollToDate(date, animated: true)
         nextButton.enabled = true
     }
 

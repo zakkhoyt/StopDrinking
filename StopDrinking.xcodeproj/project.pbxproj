@@ -29,6 +29,7 @@
 		C635D8151C1013F900616D3A /* ZHTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8141C1013F900616D3A /* ZHTodayViewController.swift */; };
 		C635D8181C1013F900616D3A /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D8161C1013F900616D3A /* Today.storyboard */; };
 		C635D81C1C1013F900616D3A /* StopDrinkingToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C635D8101C1013F900616D3A /* StopDrinkingToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C65CA6311C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65CA6301C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift */; };
 		C66623E71C1131E500652B42 /* ZHWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66623E61C1131E500652B42 /* ZHWebViewController.swift */; };
 		C66623E91C1131F400652B42 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66623E81C1131F400652B42 /* Web.storyboard */; };
 		C66623EB1C11348200652B42 /* ZHAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8071C10076800616D3A /* ZHAvatarView.swift */; };
@@ -152,6 +153,7 @@
 		C635D8171C1013F900616D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Today.storyboard; sourceTree = "<group>"; };
 		C635D8191C1013F900616D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C635D8211C10151A00616D3A /* StopDrinkingToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinkingToday.entitlements; sourceTree = "<group>"; };
+		C65CA6301C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHCaloriesPerDrinkTableViewController.swift; sourceTree = "<group>"; };
 		C66623E61C1131E500652B42 /* ZHWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHWebViewController.swift; sourceTree = "<group>"; };
 		C66623E81C1131F400652B42 /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
 		C66623EF1C11364000652B42 /* StopDrinking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinking.entitlements; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				C6CA9AA61C13DD5A00F21544 /* About */,
+				C65CA6321C221CE900908257 /* CaloriesPerDrink */,
 				C635D7F01C0FBDB100616D3A /* Home */,
 				C635D7C11C0FB23C00616D3A /* Intro */,
 				C69FC7321C10E37C00A3E3E0 /* RedditThread */,
@@ -453,6 +456,14 @@
 				C635D8191C1013F900616D3A /* Info.plist */,
 			);
 			path = StopDrinkingToday;
+			sourceTree = "<group>";
+		};
+		C65CA6321C221CE900908257 /* CaloriesPerDrink */ = {
+			isa = PBXGroup;
+			children = (
+				C65CA6301C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift */,
+			);
+			name = CaloriesPerDrink;
 			sourceTree = "<group>";
 		};
 		C66623EA1C11320C00652B42 /* Web */ = {
@@ -776,6 +787,7 @@
 				C6CA9A8E1C12446A00F21544 /* NSDate+ZH.m in Sources */,
 				C6CA9AD31C141AAE00F21544 /* ZHIntroCollectionViewCell.swift in Sources */,
 				C6CA9A941C12446A00F21544 /* UIView+RenderToImage.m in Sources */,
+				C65CA6311C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift in Sources */,
 				C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */,
 				C60AB6AD1C14FDE200A0358C /* ZHStringFormatter.m in Sources */,
 				C635D7BF1C0EEB6900616D3A /* ZHIntroViewController.swift in Sources */,

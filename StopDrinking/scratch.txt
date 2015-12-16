@@ -1,1 +1,26 @@
 Welcome to StopDrinking. This app lets you know how far you have come since your last drink such as how many drinks you've skipped, how much money you've saved, and how many calories you've avoided. Just answer a few questions and _______.
+
+
+
+Light Lager (12 oz)
+* Light Beer: 100
+* Regular beer: 150
+* Heavy beer: 200
+* Malt Beverages: 250
+* Cider: 200
+
+Sprits (1 shot)
+* Vodka: 100
+* Whiskey: 100
+* Gin: 100
+* Rum: 100
+* Tequilla: 100
+
+Wine (5 oz)
+* Dark Red: 120
+* White: 110
+
+Mixers:
+* Juice: 125
+* Tonic: 80
+* Soda: 130
