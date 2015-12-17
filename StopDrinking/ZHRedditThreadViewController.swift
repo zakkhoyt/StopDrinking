@@ -126,6 +126,7 @@ class ZHRedditThreadViewController: UIViewController {
     
     @IBAction func sortBarButtonAction(sender: AnyObject) {
         let ac = UIAlertController(title: "Category", message: nil, preferredStyle: .Alert)
+        ac.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         
         ac.addAction(UIAlertAction(title: "Hot", style: .Default, handler: { (action) -> Void in
             //            self.category = .Hot

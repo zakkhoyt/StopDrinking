@@ -59,6 +59,8 @@ class ZHIntroRedditCollectionViewCell: ZHIntroCollectionViewCell {
     @IBAction func signInButtonTouchUpInside(sender: AnyObject) {
         
         let ac = UIAlertController(title: "Enter Password", message: "You have selected to enter your passwod.", preferredStyle: UIAlertControllerStyle.Alert)
+        ac.popoverPresentationController?.sourceView = sender as? UIButton
+        ac.popoverPresentationController?.sourceRect = sender.bounds
         ac.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         ac.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
 

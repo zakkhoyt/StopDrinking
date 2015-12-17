@@ -58,8 +58,8 @@ class ZHHomeViewController: UIViewController {
         if segue.identifier == SegueMainToIntro {
             let vc = segue.destinationViewController as? ZHIntroViewController
             vc?.introCompleteHandler = ({ (user: ZHUserModel) -> Void in
-                self.user = user
                 ZHUserDefaults.sharedInstance.setCurrentUser(user)
+                self.setupUser()
                 
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in
                     self.tableView.reloadData()
@@ -190,7 +190,8 @@ class ZHHomeViewController: UIViewController {
     
     @IBAction func sortButtonTouchUpInside(sender: UIButton) {
         let ac = UIAlertController(title: "Category", message: nil, preferredStyle: .ActionSheet)
-        
+        ac.popoverPresentationController?.sourceView = sender
+        ac.popoverPresentationController?.sourceRect = sender.bounds
         ac.addAction(UIAlertAction(title: "Hot", style: .Default, handler: { (action) -> Void in
             self.category = .Hot
             self.categoryButton.setTitle("Hot", forState: UIControlState.Normal)
@@ -231,7 +232,7 @@ class ZHHomeViewController: UIViewController {
     @IBAction func introButtonTouchUpInside(sender: AnyObject) {
         
         let ac = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-        
+        ac.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         ac.addAction(UIAlertAction(title: "Your settings", style: .Default, handler: { (action) -> Void in
             self.performSegueWithIdentifier(SegueMainToIntro, sender: nil)
         }))
@@ -252,6 +253,7 @@ class ZHHomeViewController: UIViewController {
     
     @IBAction func helpBarButtonAction(sender: AnyObject) {
         let ac = UIAlertController(title: "Chat with someone", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        ac.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         ac.addAction(UIAlertAction(title: "/r/stopdrinking main chat", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             let url = NSURL(string: "https://kiwiirc.com/client/irc.snoonet.org/stopdrinking/")
             self.performSegueWithIdentifier(SegueMainToWeb, sender: url)

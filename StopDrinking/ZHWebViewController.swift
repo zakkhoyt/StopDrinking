@@ -33,6 +33,7 @@ class ZHWebViewController: UIViewController {
     @IBAction func doneButtonAction(sender: AnyObject) {
         
         let ac = UIAlertController(title: "Are you sure?", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        ac.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         ac.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
                 

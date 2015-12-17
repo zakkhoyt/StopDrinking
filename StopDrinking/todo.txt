@@ -56,3 +56,12 @@ Restart.
 
 
 ---------- End
+* Update text/copy
+* iPad crash
+* Badge count
+* Post Indent
+//* Initial notifications permission prompt
+
+
+
+
