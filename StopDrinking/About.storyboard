@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="noN-31-Mw4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="noN-31-Mw4">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -13,7 +12,6 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="elG-K2-ibj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="kfe-qn-jvo">
@@ -27,20 +25,17 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stop Drinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdB-G3-buH">
                                                     <rect key="frame" x="221" y="0.0" width="157.5" height="43.5"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="GdB-G3-buH" firstAttribute="centerX" secondItem="edw-wN-Tcd" secondAttribute="centerX" id="iCZ-H8-C4R"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GdB-G3-buH" secondAttribute="bottom" constant="-8" id="isu-Oi-bDU"/>
                                                 <constraint firstItem="GdB-G3-buH" firstAttribute="top" secondItem="edw-wN-Tcd" secondAttribute="topMargin" constant="-8" id="kch-MY-Vbq"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="rGq-2p-OrQ">
@@ -52,27 +47,23 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzh-YM-cUM">
                                                     <rect key="frame" x="268" y="8" width="64.5" height="13.5"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/r/stopdrinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybN-s7-A4D">
                                                     <rect key="frame" x="262" y="27.5" width="77.5" height="13.5"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RedditKit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDg-X9-CgI">
                                                     <rect key="frame" x="276" y="48" width="48.5" height="13.5"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="ybN-s7-A4D" firstAttribute="centerX" secondItem="B6e-bi-sVQ" secondAttribute="centerX" id="6UM-cP-i2Q"/>
                                                 <constraint firstItem="hDg-X9-CgI" firstAttribute="top" secondItem="ybN-s7-A4D" secondAttribute="bottom" constant="7.5" id="Gqb-RB-Wto"/>
@@ -83,7 +74,6 @@
                                                 <constraint firstItem="fzh-YM-cUM" firstAttribute="centerX" secondItem="B6e-bi-sVQ" secondAttribute="centerX" id="s4u-hx-rTj"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="128" id="FRz-5Q-JWt">
@@ -95,21 +85,18 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StopDrinking_128" translatesAutoresizingMaskIntoConstraints="NO" id="Ata-NV-4Gk">
                                                     <rect key="frame" x="236" y="0.0" width="128" height="128"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="128" id="0Wp-q1-wrs"/>
                                                         <constraint firstAttribute="height" constant="128" id="2vI-wB-UzT"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Ata-NV-4Gk" secondAttribute="bottom" constant="0.5" id="VuY-Lz-Q6c"/>
                                                 <constraint firstItem="Ata-NV-4Gk" firstAttribute="centerX" secondItem="pA9-zn-AL8" secondAttribute="centerX" id="YdC-9J-eTG"/>
                                                 <constraint firstItem="Ata-NV-4Gk" firstAttribute="top" secondItem="pA9-zn-AL8" secondAttribute="top" id="rsQ-1q-SH7"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="po8-II-XqF">
@@ -121,7 +108,6 @@
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oCh-ic-jD2">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
-                                                    <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <string key="text">Open Source: https://github.com/zakkhoyt/StopDrinking
 Contributions welcome. Art, pull requests, and text are all welcome.
@@ -132,7 +118,6 @@ Contributions welcome. Art, pull requests, and text are all welcome.
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                                 </textView>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="oCh-ic-jD2" firstAttribute="top" secondItem="pk9-p2-hiK" secondAttribute="top" id="3IS-c9-Zll"/>
                                                 <constraint firstItem="oCh-ic-jD2" firstAttribute="leading" secondItem="pk9-p2-hiK" secondAttribute="leading" id="Kid-NO-4Ov"/>
@@ -140,27 +125,28 @@ Contributions welcome. Art, pull requests, and text are all welcome.
                                                 <constraint firstAttribute="trailing" secondItem="oCh-ic-jD2" secondAttribute="trailing" id="e1v-sT-HaL"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="u8Y-kj-3xp">
-                                        <rect key="frame" x="0.0" y="376" width="600" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="90" id="u8Y-kj-3xp">
+                                        <rect key="frame" x="0.0" y="376" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u8Y-kj-3xp" id="NTD-iq-yFL">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Coming soon..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BUV-Hw-Nac">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
-                                                    <animations/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BUV-Hw-Nac">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Coming soon:
+* Log into your reddit account
+* Post replies
+* Upvote/Downvote</string>
                                                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                                 </textView>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="BUV-Hw-Nac" secondAttribute="bottom" id="90j-xf-8nn"/>
                                                 <constraint firstAttribute="trailing" secondItem="BUV-Hw-Nac" secondAttribute="trailing" id="GVC-Z0-w1p"/>
@@ -168,7 +154,6 @@ Contributions welcome. Art, pull requests, and text are all welcome.
                                                 <constraint firstItem="BUV-Hw-Nac" firstAttribute="top" secondItem="NTD-iq-yFL" secondAttribute="top" id="nME-wX-jf8"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
@@ -199,7 +184,6 @@ Contributions welcome. Art, pull requests, and text are all welcome.
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="udw-M0-QRT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

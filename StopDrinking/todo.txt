@@ -65,3 +65,7 @@ Restart.
 
 
 
+Coming soon:
+* Log into your reddit account
+* Post replies
+* Upvote/Downvote
