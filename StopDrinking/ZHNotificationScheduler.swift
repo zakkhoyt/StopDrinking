@@ -48,7 +48,8 @@ class ZHNotificationScheduler: NSObject {
 
             print("fireDate: " + notification.fireDate!.description)
             print("alert: " + notification.alertBody!)
-            print("inspect notification")
+            print("badge: \(notification.applicationIconBadgeNumber)")
+            print("-------------------")
         }
         
     }
@@ -66,13 +67,10 @@ class ZHNotificationScheduler: NSObject {
         let comp = calendar.components(([.Hour, .Minute]), fromDate: user.notificationTime!)
         let hour = comp.hour
         let minute = comp.minute
-//        let day = comp.day
         
         let now = NSDate()
         let tomorrowComponents = NSDateComponents()
-        tomorrowComponents.day = daysfromNow;
-        
-        
+        tomorrowComponents.day = daysfromNow
         
         let tomorrow = calendar.dateByAddingComponents(tomorrowComponents, toDate: now, options: [])
         
