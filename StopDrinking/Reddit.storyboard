@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sVV-SM-NN2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,22 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKB-V0-UJu" customClass="RATreeView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rVA-28-53b">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="sVV-SM-NN2" id="oon-xA-Gse"/>
+                                    <outlet property="delegate" destination="sVV-SM-NN2" id="G2M-fG-ZxS"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nBJ-xW-uHQ" firstAttribute="top" secondItem="eKB-V0-UJu" secondAttribute="bottom" id="RsH-kT-h1A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eKB-V0-UJu" secondAttribute="trailing" constant="-20" id="S3a-Sm-rHL"/>
-                            <constraint firstItem="eKB-V0-UJu" firstAttribute="top" secondItem="aFU-Bs-Mxl" secondAttribute="topMargin" id="vdA-sa-SIq"/>
-                            <constraint firstItem="eKB-V0-UJu" firstAttribute="leading" secondItem="aFU-Bs-Mxl" secondAttribute="leadingMargin" constant="-20" id="zRr-U8-bT7"/>
+                            <constraint firstItem="rVA-28-53b" firstAttribute="top" secondItem="aFU-Bs-Mxl" secondAttribute="topMargin" id="aiu-fC-bGC"/>
+                            <constraint firstItem="rVA-28-53b" firstAttribute="leading" secondItem="aFU-Bs-Mxl" secondAttribute="leadingMargin" constant="-20" id="ctu-Pa-PsY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rVA-28-53b" secondAttribute="trailing" constant="-20" id="ia4-E8-3FB"/>
+                            <constraint firstItem="nBJ-xW-uHQ" firstAttribute="top" secondItem="rVA-28-53b" secondAttribute="bottom" id="kY0-2M-jdV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="sortBarButton" destination="3hC-jk-GIn" id="XNc-5I-snE"/>
-                        <outlet property="treeView" destination="eKB-V0-UJu" id="iDP-8H-29m"/>
+                        <outlet property="tableView" destination="rVA-28-53b" id="HTu-YW-31C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mN3-Tw-tvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
