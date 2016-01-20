@@ -299,11 +299,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "474969281.594959"
+            timestampString = "474972157.465834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "getNextPageOfComments()"
             landmarkType = "5">
          </BreakpointContent>
@@ -315,11 +315,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "474969281.594959"
+            timestampString = "474972157.465834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "getNextPageOfComments()"
             landmarkType = "5">
          </BreakpointContent>
@@ -491,11 +491,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "474969281.594959"
+            timestampString = "474972157.465834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "setupTreeView()"
             landmarkType = "5">
          </BreakpointContent>
@@ -619,11 +619,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "474969281.594959"
+            timestampString = "474972157.465834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287">
+            startingLineNumber = "362"
+            endingLineNumber = "362">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -633,11 +633,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditThreadViewController.swift"
-            timestampString = "474969281.594959"
+            timestampString = "474972157.465834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299">
+            startingLineNumber = "374"
+            endingLineNumber = "374">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -846,6 +846,22 @@
             endingLineNumber = "108"
             landmarkName = "-expandCellForTreeNode:expandChildren:withRowAnimation:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StopDrinking/ZHRedditThreadViewController.swift"
+            timestampString = "474972153.429453"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "ZHRedditThreadViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

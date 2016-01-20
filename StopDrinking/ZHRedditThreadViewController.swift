@@ -26,9 +26,20 @@ class ZHRedditThreadCellModel {
 
 class ZHRedditThreadViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+
+
+    @IBOutlet var treeModel: TreeTable!
+    @IBOutlet weak var treeView: UITableView!
+    var expandedItems = [NSIndexPath: Bool]()
+    
+    
+    
     @IBOutlet var sortBarButton: UIBarButtonItem!
-    var post: RKLink? = nil
+    var post: RKLink? = nil {
+        didSet {
+            print("set post")
+        }
+    }
     var commentModels: [ZHRedditThreadCellModel]? = nil
     var statusBarHidden: Bool = false
     var pagination: RKPagination? = nil
@@ -54,6 +65,7 @@ class ZHRedditThreadViewController: UIViewController {
     // MARK: Private methods
     
     func setupTreeView() {
+
         
         // Add pull to refresh control
         refreshControl = UIRefreshControl()
@@ -61,14 +73,14 @@ class ZHRedditThreadViewController: UIViewController {
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attr)
         refreshControl?.tintColor = UIColor.yellowColor()
         refreshControl?.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
-        treeView.scrollView.addSubview(refreshControl!)
+        treeView.addSubview(refreshControl!)
         
         let nib = UINib(nibName: "ZHRedditCommentTableViewCell", bundle: NSBundle.mainBundle())
-        tableView.registerNib(nib, forCellReuseIdentifier: "ZHRedditCommentTableViewCell")
-        tableView.estimatedRowHeight = 100;
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.backgroundColor = UIColor.darkGrayColor()
-        tableView.separatorColor = UIColor.darkGrayColor()
+        treeView.registerNib(nib, forCellReuseIdentifier: "ZHRedditCommentTableViewCell")
+        treeView.estimatedRowHeight = 100;
+        treeView.rowHeight = UITableViewAutomaticDimension
+        treeView.backgroundColor = UIColor.darkGrayColor()
+        treeView.separatorColor = UIColor.darkGrayColor()
         
     }
     
@@ -76,7 +88,7 @@ class ZHRedditThreadViewController: UIViewController {
     func resetComments() {
         pagination = nil
         commentModels = []
-        tableView.reloadData()
+        treeView.reloadData()
         getNextPageOfComments()
     }
     
@@ -99,7 +111,7 @@ class ZHRedditThreadViewController: UIViewController {
                         }
                     }
                     print("commentModels.count: \(self.commentModels?.count)")
-                    self.tableView.reloadData()
+                    self.treeView.reloadData()
                 }
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
             }
@@ -161,7 +173,36 @@ class ZHRedditThreadViewController: UIViewController {
     }
 }
 
-extension ZHRedditThreadViewController: UITableViewDataSource {
+extension ZHRedditThreadViewController: TreeTableDataSource {
+    
+    // These two are additional to UITableViewDataSource
+    func tableView(tableView: UITableView!, isCellExpanded indexPath: NSIndexPath!) -> Bool {
+
+//        let expanded = expandedItems[indexPath]
+//        if let expanded = expanded {
+//            return expanded
+//        } else {
+//            print("No entry for expandedItem")
+//            return false
+//        }
+        return false
+    }
+    
+    func tableView(tableView: UITableView!, numberOfSubCellsForCellAtIndexPath indexPath: NSIndexPath!) -> UInt {
+        switch(indexPath.section) {
+        case 0:
+            return 0
+        case 1:
+            return 1
+        default:
+            print("Invalid section")
+            return 0
+        }
+    }
+    
+    
+    
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
@@ -182,6 +223,7 @@ extension ZHRedditThreadViewController: UITableViewDataSource {
         }
     }
     
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -197,13 +239,13 @@ extension ZHRedditThreadViewController: UITableViewDataSource {
         case 1:
             
             let cell = tableView.dequeueReusableCellWithIdentifier("ZHRedditCommentTableViewCell") as? ZHRedditCommentTableViewCell
-            // TODO: Write a setting with all 3 parameters since they need to go in that order
-//            cell?.treeView = treeView
-//            cell?.level = treeView.levelForCellForItem(item)
-//            let model =
-//            cell?.model = model
-//            
-//            return cell
+            if let commentModels = commentModels{
+                let model = commentModels[indexPath.row]
+                cell?.model = model
+            } else {
+                print("no model for comment")
+            }
+            return cell!
 
             
         default:

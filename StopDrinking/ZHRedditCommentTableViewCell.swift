@@ -111,12 +111,12 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         if model?.expanded == false {
             model?.expanded = true
             
-            print("contentOffset: " + NSStringFromCGPoint((treeView?.scrollView.contentOffset)!))
-            
-            let item = treeView!.itemForCell(self)
-            treeView!.expandRowForItem(item)
-            
-            treeView?.scrollView.setContentOffset((treeView?.scrollView.contentOffset)!, animated: true)
+//            print("contentOffset: " + NSStringFromCGPoint((treeView?.scrollView.contentOffset)!))
+//            
+//            let item = treeView!.itemForCell(self)
+//            treeView!.expandRowForItem(item)
+//        
+//            treeView?.scrollView.setContentOffset((treeView?.scrollView.contentOffset)!, animated: true)
             
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
@@ -126,12 +126,12 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         } else {
             model?.expanded = false
           
-            print("contentOffset: " + NSStringFromCGPoint((treeView?.scrollView.contentOffset)!))
-            
-            let item = treeView!.itemForCell(self)
-            treeView!.collapseRowForItem(item)
-            
-            treeView?.scrollView.setContentOffset((treeView?.scrollView.contentOffset)!, animated: true)
+//            print("contentOffset: " + NSStringFromCGPoint((treeView?.scrollView.contentOffset)!))
+//            
+//            let item = treeView!.itemForCell(self)
+//            treeView!.collapseRowForItem(item)
+//            
+//            treeView?.scrollView.setContentOffset((treeView?.scrollView.contentOffset)!, animated: true)
             
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
