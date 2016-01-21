@@ -23,8 +23,11 @@
 
 import UIKit
 
-class ZHAvatarView: UIView {
+
+
+class ZHAvatarView: UIView, ZHNibDefinable {
     
+    @IBOutlet weak var view : UIView!
     @IBOutlet weak var shapeImageView: UIImageView!
     @IBOutlet weak var countLabel: UILabel!
     var user: ZHUserModel? = nil {
@@ -33,10 +36,33 @@ class ZHAvatarView: UIView {
         }
     }
     
-    override func awakeFromNib() {
-        backgroundColor = UIColor.clearColor()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        xibSetup()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        xibSetup()
+    }
+    
+    func xibSetup() {
+        view = loadViewFromXib()
+        view.frame = bounds
+        view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        backgroundColor = .clearColor()
+        addSubview(view)
+    }
+    
+    func loadViewFromXib() -> UIView {
+        let bundle = NSBundle(forClass: self.dynamicType)
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiateWithOwner(self, options: nil).first as! UIView
+        return view
+    }
+    
+
     override func layoutSubviews() {
         configureView()
     }
@@ -155,3 +181,6 @@ class ZHAvatarView: UIView {
     }
     
 }
+
+
+

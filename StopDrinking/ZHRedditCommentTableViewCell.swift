@@ -87,10 +87,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
 
         
         let decodedHTML = ZHStringFormatter.bodyHTMLToAttributedString(model?.comment.bodyHTML)
-//        if decodedHTML.string.rangeOfString("that would be a nice feature") != nil{
-//            let waste = ZHStringFormatter.formattedStringForString(model?.comment.bodyHTML)
-//            print("waste: " + waste )
-//        }
         commentTextView.attributedText = decodedHTML
         avatarContainerView.hidden = true
         
@@ -111,13 +107,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         if model?.expanded == false {
             model?.expanded = true
             
-//            print("contentOffset: " + NSStringFromCGPoint((treeView?.scrollView.contentOffset)!))
-//            
-//            let item = treeView!.itemForCell(self)
-//            treeView!.expandRowForItem(item)
-//        
-//            treeView?.scrollView.setContentOffset((treeView?.scrollView.contentOffset)!, animated: true)
-            
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
                 self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
@@ -125,14 +114,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         
         } else {
             model?.expanded = false
-          
-//            print("contentOffset: " + NSStringFromCGPoint((treeView?.scrollView.contentOffset)!))
-//            
-//            let item = treeView!.itemForCell(self)
-//            treeView!.collapseRowForItem(item)
-//            
-//            treeView?.scrollView.setContentOffset((treeView?.scrollView.contentOffset)!, animated: true)
-            
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
                 self.expandButton.transform = CGAffineTransformIdentity
@@ -161,10 +142,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        print("asdf")
-//    }
-    
 }
 
 
@@ -173,9 +150,3 @@ extension ZHRedditCommentTableViewCell: UITextViewDelegate {
         return true
     }
 }
-
-//extension ZHRedditCommentTableViewCell: UIWebViewDelegate {
-//    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-//        return true
-//    }
-//}

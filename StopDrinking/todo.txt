@@ -69,3 +69,18 @@ Coming soon:
 * Log into your reddit account
 * Post replies
 * Upvote/Downvote
+
+
+
+
+* Get tree view scrolling under control
+* Settings panel with cocoapods
+* nib containers
+* fix Today alignment
+* Reddit
+    * Allow upvoting and commenting
+    * Log in / sign up
+    * Allow replies
+* New online chat feature
+
+

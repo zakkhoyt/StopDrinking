@@ -11,7 +11,7 @@ import UIKit
 class ZHHomeSummaryTableViewCell: UITableViewCell {
 
     
-    @IBOutlet weak var avatarContainerView: ZHAvatarView!
+
     @IBOutlet var avatarView: ZHAvatarView!
 
     
@@ -30,18 +30,4 @@ class ZHHomeSummaryTableViewCell: UITableViewCell {
             caloriesMissedLabel.text = user?.stringForCaloriesMissed()
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        avatarView = NSBundle.mainBundle().loadNibNamed("ZHAvatarView", owner: self, options: nil).first as? ZHAvatarView
-        avatarView.frame = avatarContainerView.bounds
-        avatarContainerView.addSubview(avatarView!)
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

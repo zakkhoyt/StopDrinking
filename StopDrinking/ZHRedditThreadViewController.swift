@@ -288,6 +288,7 @@ extension ZHRedditThreadViewController: UITableViewDelegate {
         switch tableIndexPath.section {
 
         case 1:
+            
             if expanded {
                 expandedItems.removeObjectForKey(treeIndexPath)
                 tableView.collapse(treeIndexPath)
