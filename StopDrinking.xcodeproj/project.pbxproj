@@ -32,6 +32,7 @@
 		C63705D01C4F774900319316 /* TreeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C63705CF1C4F774900319316 /* TreeTable.m */; };
 		C63706621C515C8E00319316 /* ZHNibDefinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63706611C515C8E00319316 /* ZHNibDefinable.swift */; };
 		C63706641C515F0E00319316 /* ZHNibDefinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63706611C515C8E00319316 /* ZHNibDefinable.swift */; };
+		C63706661C5161BD00319316 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C63706651C5161BD00319316 /* Settings.bundle */; };
 		C65CA6311C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65CA6301C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift */; };
 		C66623E71C1131E500652B42 /* ZHWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66623E61C1131E500652B42 /* ZHWebViewController.swift */; };
 		C66623E91C1131F400652B42 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66623E81C1131F400652B42 /* Web.storyboard */; };
@@ -159,6 +160,7 @@
 		C63705CE1C4F774900319316 /* TreeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTable.h; sourceTree = "<group>"; };
 		C63705CF1C4F774900319316 /* TreeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeTable.m; sourceTree = "<group>"; };
 		C63706611C515C8E00319316 /* ZHNibDefinable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNibDefinable.swift; sourceTree = "<group>"; };
+		C63706651C5161BD00319316 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		C65CA6301C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHCaloriesPerDrinkTableViewController.swift; sourceTree = "<group>"; };
 		C66623E61C1131E500652B42 /* ZHWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHWebViewController.swift; sourceTree = "<group>"; };
 		C66623E81C1131F400652B42 /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				C6CA9A7A1C12444400F21544 /* Categories */,
 				C69FC73D1C10F04800A3E3E0 /* Documents */,
 				C635D7F61C0FD17F00616D3A /* Model */,
+				C63706671C5161C300319316 /* Settings */,
 				C66623EF1C11364000652B42 /* StopDrinking.entitlements */,
 				C635D7F31C0FBDC900616D3A /* SupporingFiles */,
 				C635D7F21C0FBDBD00616D3A /* UserInterface */,
@@ -463,6 +466,15 @@
 				C635D8191C1013F900616D3A /* Info.plist */,
 			);
 			path = StopDrinkingToday;
+			sourceTree = "<group>";
+		};
+		C63706671C5161C300319316 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C63706651C5161BD00319316 /* Settings.bundle */,
+			);
+			name = Settings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C65CA6321C221CE900908257 /* CaloriesPerDrink */ = {
@@ -701,6 +713,7 @@
 				C635D7ED1C0FBAB400616D3A /* Main.storyboard in Resources */,
 				C6CA9ACE1C141A6200F21544 /* ZHIntroWelcomeCollectionViewCell.xib in Resources */,
 				C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */,
+				C63706661C5161BD00319316 /* Settings.bundle in Resources */,
 				C6CA9AC61C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.xib in Resources */,
 				C635D79B1C0EEA9B00616D3A /* LaunchScreen.storyboard in Resources */,
 				C635D7981C0EEA9B00616D3A /* Assets.xcassets in Resources */,
