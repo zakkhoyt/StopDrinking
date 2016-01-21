@@ -10,24 +10,14 @@ import UIKit
 
 class ZHHomeSummaryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var summaryView: ZHSummaryView!
     
-
-    @IBOutlet var avatarView: ZHAvatarView!
-
     
-    @IBOutlet weak var daysQuitLabel: UILabel!
-    @IBOutlet weak var drinksMissedLabel: UILabel!
-    @IBOutlet weak var moneyMissedLabel: UILabel!
-    @IBOutlet weak var caloriesMissedLabel: UILabel!
-
     var user: ZHUserModel? = nil {
         didSet {
-            avatarView.user = user
-            let daysQuit = user?.stringForDaysQuit()
-            daysQuitLabel.text = daysQuit
-            drinksMissedLabel.text = user?.stringForDrinksMissed()
-            moneyMissedLabel.text = user?.stringForMoneyMissed()
-            caloriesMissedLabel.text = user?.stringForCaloriesMissed()
+            if let user = user {
+                summaryView.user = user
+            }
         }
     }
 }

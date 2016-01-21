@@ -107,7 +107,7 @@ class ZHRedditThreadViewController: UIViewController {
                             let model = ZHRedditThreadCellModel(comment: comment as! RKComment, expanded: false)
                             self.commentModels?.append(model)
                         } else if comment is RKMoreComments {
-                            assert(false, "Finally found a RKMoreComments")
+                            //assert(false, "Finally found a RKMoreComments")
                         }
                     }
                     print("commentModels.count: \(self.commentModels?.count)")
@@ -289,12 +289,16 @@ extension ZHRedditThreadViewController: UITableViewDelegate {
 
         case 1:
             
+            let cell = tableView.cellForRowAtIndexPath(tableIndexPath) as? ZHRedditCommentTableViewCell
+            
             if expanded {
                 expandedItems.removeObjectForKey(treeIndexPath)
                 tableView.collapse(treeIndexPath)
+                cell?.animateCollapse()
             } else {
                 expandedItems[treeIndexPath] = true
                 tableView.expand(treeIndexPath)
+                cell?.animateExpand()
             }
             
         default:

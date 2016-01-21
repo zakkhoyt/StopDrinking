@@ -94,6 +94,7 @@
             <connections>
                 <outlet property="ageLabel" destination="FRE-zq-pfb" id="v9j-Ve-ZZn"/>
                 <outlet property="avatarView" destination="grW-8A-m8u" id="NNk-jw-yB9"/>
+                <outlet property="borderView" destination="PW1-eY-HPE" id="utK-lf-2bf"/>
                 <outlet property="commentCountLabel" destination="GW9-yp-akF" id="EZA-uZ-s02"/>
                 <outlet property="indexLabel" destination="XPK-FG-OJa" id="8Rn-r6-W4B"/>
                 <outlet property="pointCountLabel" destination="e8G-3X-Nay" id="eAN-CB-qaE"/>

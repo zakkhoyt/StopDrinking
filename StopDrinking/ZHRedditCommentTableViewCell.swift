@@ -66,7 +66,7 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     var model: ZHRedditThreadCellModel? = nil {
         didSet {
             print("inspect")
-            if let model = model {
+            if let _ = model {
                 renderCellContents()
             }
         }
@@ -104,28 +104,22 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     
     
 
-    @IBAction func expandButtonTouchUpInside(sender: AnyObject) {
+    func animateExpand() {
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
+            self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
+        })
         
-        if model?.expanded == false {
-            model?.expanded = true
-            
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
-                self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
-                self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-            })
+    }
+    
+    func animateCollapse() {
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
+            self.expandButton.transform = CGAffineTransformIdentity
+        })
         
-        } else {
-            model?.expanded = false
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
-                self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
-                self.expandButton.transform = CGAffineTransformIdentity
-            })
-
-        }
     }
 
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.masksToBounds = true

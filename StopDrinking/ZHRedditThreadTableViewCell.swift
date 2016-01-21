@@ -40,11 +40,13 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
     @IBOutlet weak var commentCountLabel: UILabel!
     @IBOutlet weak var pointCountLabel: UILabel!
     @IBOutlet weak var avatarView: ZHAvatarView!
+    @IBOutlet weak var borderView: UIView!
     var showDetails = false
     
     var index: UInt = 0 {
         didSet {
             indexLabel.text = "\(index + 1)"
+            borderView.hidden = false
         }
     }
     var post: RKLink? = nil{
@@ -80,6 +82,7 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
                         userLabel.text = "-" + post!.author + "\n\(days) days"
                     }
                 }
+
             } else {
                 userLabel.text = "-" + post!.author
             }
@@ -91,6 +94,7 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         indexLabel.text = ""
+        borderView.hidden = true
     }
 
     

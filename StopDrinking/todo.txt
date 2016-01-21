@@ -73,6 +73,7 @@ Coming soon:
 
 
 
+
 * Get tree view scrolling under control
 * Settings panel with cocoapods
 * nib containers
@@ -81,8 +82,16 @@ Coming soon:
     * Allow upvoting and commenting
     * Log in / sign up
     * Allow replies
+    * Pagination for comments?
 * New online chat feature
 * Tapping on some links does nothing
+* Onboarding
+    * precalculate calories / money. Let the user refine it
+    * Suggestion table should return a value and enter it
+    * Suggestion table should have bar sizes
+
+* Photo background
+
 
 
 
