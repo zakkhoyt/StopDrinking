@@ -29,6 +29,12 @@
 		C635D8151C1013F900616D3A /* ZHTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D8141C1013F900616D3A /* ZHTodayViewController.swift */; };
 		C635D8181C1013F900616D3A /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D8161C1013F900616D3A /* Today.storyboard */; };
 		C635D81C1C1013F900616D3A /* StopDrinkingToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C635D8101C1013F900616D3A /* StopDrinkingToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C63705D01C4F774900319316 /* TreeTable.m in Sources */ = {isa = PBXBuildFile; fileRef = C63705CF1C4F774900319316 /* TreeTable.m */; };
+		C63706621C515C8E00319316 /* ZHNibDefinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63706611C515C8E00319316 /* ZHNibDefinable.swift */; };
+		C63706641C515F0E00319316 /* ZHNibDefinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63706611C515C8E00319316 /* ZHNibDefinable.swift */; };
+		C63706661C5161BD00319316 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C63706651C5161BD00319316 /* Settings.bundle */; };
+		C63706691C516AD200319316 /* ZHSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63706681C516AD200319316 /* ZHSummaryView.swift */; };
+		C637066B1C516AEB00319316 /* ZHSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C637066A1C516AEB00319316 /* ZHSummaryView.xib */; };
 		C65CA6311C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65CA6301C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift */; };
 		C66623E71C1131E500652B42 /* ZHWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66623E61C1131E500652B42 /* ZHWebViewController.swift */; };
 		C66623E91C1131F400652B42 /* Web.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66623E81C1131F400652B42 /* Web.storyboard */; };
@@ -37,6 +43,8 @@
 		C66623ED1C11348700652B42 /* ZHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */; };
 		C66623EE1C11348D00652B42 /* ZHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */; };
 		C66623F71C114A2400652B42 /* ZHNotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */; };
+		C69A60061C516D1D0057B8D2 /* ZHSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63706681C516AD200319316 /* ZHSummaryView.swift */; };
+		C69A60071C516D1D0057B8D2 /* ZHSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C637066A1C516AEB00319316 /* ZHSummaryView.xib */; };
 		C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */; };
 		C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */; };
 		C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */; };
@@ -153,6 +161,12 @@
 		C635D8171C1013F900616D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Today.storyboard; sourceTree = "<group>"; };
 		C635D8191C1013F900616D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C635D8211C10151A00616D3A /* StopDrinkingToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinkingToday.entitlements; sourceTree = "<group>"; };
+		C63705CE1C4F774900319316 /* TreeTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTable.h; sourceTree = "<group>"; };
+		C63705CF1C4F774900319316 /* TreeTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeTable.m; sourceTree = "<group>"; };
+		C63706611C515C8E00319316 /* ZHNibDefinable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNibDefinable.swift; sourceTree = "<group>"; };
+		C63706651C5161BD00319316 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		C63706681C516AD200319316 /* ZHSummaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHSummaryView.swift; sourceTree = "<group>"; };
+		C637066A1C516AEB00319316 /* ZHSummaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHSummaryView.xib; sourceTree = "<group>"; };
 		C65CA6301C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHCaloriesPerDrinkTableViewController.swift; sourceTree = "<group>"; };
 		C66623E61C1131E500652B42 /* ZHWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHWebViewController.swift; sourceTree = "<group>"; };
 		C66623E81C1131F400652B42 /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
@@ -285,6 +299,7 @@
 				C6CA9A7A1C12444400F21544 /* Categories */,
 				C69FC73D1C10F04800A3E3E0 /* Documents */,
 				C635D7F61C0FD17F00616D3A /* Model */,
+				C63706671C5161C300319316 /* Settings */,
 				C66623EF1C11364000652B42 /* StopDrinking.entitlements */,
 				C635D7F31C0FBDC900616D3A /* SupporingFiles */,
 				C635D7F21C0FBDBD00616D3A /* UserInterface */,
@@ -443,6 +458,9 @@
 				C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */,
 				C6CA9A9E1C13956500F21544 /* ZHRedditThreadTableViewCell.swift */,
 				C6CA9AA01C13957200F21544 /* ZHRedditThreadTableViewCell.xib */,
+				C63706611C515C8E00319316 /* ZHNibDefinable.swift */,
+				C63706681C516AD200319316 /* ZHSummaryView.swift */,
+				C637066A1C516AEB00319316 /* ZHSummaryView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -456,6 +474,15 @@
 				C635D8191C1013F900616D3A /* Info.plist */,
 			);
 			path = StopDrinkingToday;
+			sourceTree = "<group>";
+		};
+		C63706671C5161C300319316 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C63706651C5161BD00319316 /* Settings.bundle */,
+			);
+			name = Settings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C65CA6321C221CE900908257 /* CaloriesPerDrink */ = {
@@ -477,6 +504,8 @@
 		C69FC7321C10E37C00A3E3E0 /* RedditThread */ = {
 			isa = PBXGroup;
 			children = (
+				C63705CE1C4F774900319316 /* TreeTable.h */,
+				C63705CF1C4F774900319316 /* TreeTable.m */,
 				C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */,
 			);
 			name = RedditThread;
@@ -692,10 +721,12 @@
 				C635D7ED1C0FBAB400616D3A /* Main.storyboard in Resources */,
 				C6CA9ACE1C141A6200F21544 /* ZHIntroWelcomeCollectionViewCell.xib in Resources */,
 				C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */,
+				C63706661C5161BD00319316 /* Settings.bundle in Resources */,
 				C6CA9AC61C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.xib in Resources */,
 				C635D79B1C0EEA9B00616D3A /* LaunchScreen.storyboard in Resources */,
 				C635D7981C0EEA9B00616D3A /* Assets.xcassets in Resources */,
 				C6CA9AA81C13E48800F21544 /* scratch.txt in Resources */,
+				C637066B1C516AEB00319316 /* ZHSummaryView.xib in Resources */,
 				C635D7961C0EEA9B00616D3A /* Intro.storyboard in Resources */,
 				C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */,
 				C6CA9ABF1C141A6200F21544 /* ZHIntroBadgeCollectionViewCell.xib in Resources */,
@@ -721,6 +752,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C635D8181C1013F900616D3A /* Today.storyboard in Resources */,
+				C69A60071C516D1D0057B8D2 /* ZHSummaryView.xib in Resources */,
 				C60AB6B01C155A4700A0358C /* Assets.xcassets in Resources */,
 				C66623EC1C11348200652B42 /* ZHAvatarView.xib in Resources */,
 			);
@@ -772,12 +804,14 @@
 				C6CA9A9F1C13956500F21544 /* ZHRedditThreadTableViewCell.swift in Sources */,
 				C635D7EF1C0FBB6500616D3A /* ZHHomeViewController.swift in Sources */,
 				C6CA9ACB1C141A6200F21544 /* ZHIntroStartDateCollectionViewCell.swift in Sources */,
+				C63705D01C4F774900319316 /* TreeTable.m in Sources */,
 				C66623F71C114A2400652B42 /* ZHNotificationScheduler.swift in Sources */,
 				C6CA9AC51C141A6200F21544 /* ZHIntroMoneyPerDayCollectionViewCell.swift in Sources */,
 				C6CA9A921C12446A00F21544 /* UIColor+ZH.m in Sources */,
 				C6CA9A9A1C1244A800F21544 /* ZHLog.swift in Sources */,
 				C6CA9A931C12446A00F21544 /* UIFont+ZH.m in Sources */,
 				C6CA9A8F1C12446A00F21544 /* NSError+ZH.m in Sources */,
+				C63706621C515C8E00319316 /* ZHNibDefinable.swift in Sources */,
 				C6CA9A8D1C12446A00F21544 /* NSDate+Utilities.m in Sources */,
 				C635D8081C10076800616D3A /* ZHAvatarView.swift in Sources */,
 				C6CA9AC31C141A6200F21544 /* ZHIntroDrinksPerDayCollectionViewCell.swift in Sources */,
@@ -797,6 +831,7 @@
 				C6CA9AD61C141AAE00F21544 /* ZHIntroWelcomeCollectionViewCell.swift in Sources */,
 				C60AB6AF1C154DCB00A0358C /* ZHReachability.swift in Sources */,
 				C6CA9AD41C141AAE00F21544 /* ZHIntroDoneCollectionViewCell.swift in Sources */,
+				C63706691C516AD200319316 /* ZHSummaryView.swift in Sources */,
 				C6CA9A901C12446A00F21544 /* NSTimer+Blocks.m in Sources */,
 				C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */,
 				C6CA9A911C12446A00F21544 /* PHAsset+Utility.m in Sources */,
@@ -827,7 +862,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C66623EE1C11348D00652B42 /* ZHUserDefaults.swift in Sources */,
+				C69A60061C516D1D0057B8D2 /* ZHSummaryView.swift in Sources */,
 				C635D8151C1013F900616D3A /* ZHTodayViewController.swift in Sources */,
+				C63706641C515F0E00319316 /* ZHNibDefinable.swift in Sources */,
 				C66623ED1C11348700652B42 /* ZHUserModel.swift in Sources */,
 				C66623EB1C11348200652B42 /* ZHAvatarView.swift in Sources */,
 			);

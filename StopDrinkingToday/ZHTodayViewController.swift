@@ -12,22 +12,10 @@ import NotificationCenter
 class ZHTodayViewController: UIViewController, NCWidgetProviding {
     
     var user: ZHUserModel? = nil
-
-
-    @IBOutlet weak var avatarContainerView: UIView!
-    @IBOutlet weak var daysQuitLabel: UILabel!
-    @IBOutlet weak var drinksSavedLabel: UILabel!
-    @IBOutlet weak var moneySavedLabel: UILabel!
-    @IBOutlet weak var caloriesSavedLabel: UILabel!
-    var avatarView: ZHAvatarView? = nil
+    @IBOutlet weak var summaryView: ZHSummaryView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        daysQuitLabel.text = ""
-        drinksSavedLabel.text = ""
-        moneySavedLabel.text = ""
-        caloriesSavedLabel.text = ""
 
         
         let tap = UITapGestureRecognizer(target: self, action: "tapHandler:")
@@ -47,20 +35,10 @@ class ZHTodayViewController: UIViewController, NCWidgetProviding {
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         user = ZHUserDefaults.sharedInstance.currentUser()
         if let user = user {
-            avatarView = NSBundle.mainBundle().loadNibNamed("ZHAvatarView", owner: self, options: nil).first as? ZHAvatarView
-            avatarView!.frame = avatarContainerView.bounds
-            avatarView!.user = user
-            avatarContainerView.addSubview(avatarView!)
-            daysQuitLabel.text = user.stringForDaysQuit()
-            drinksSavedLabel.text = user.stringForDrinksMissed()
-            moneySavedLabel.text = user.stringForMoneyMissed()
-            caloriesSavedLabel.text = user.stringForCaloriesMissed()
+            summaryView.user = user
             completionHandler(NCUpdateResult.NewData)
         } else {
-            daysQuitLabel.text = "Open Stop Drinking to get started"
-            drinksSavedLabel.text = ""
-            moneySavedLabel.text = ""
-            caloriesSavedLabel.text = ""
+            summaryView.user = nil
             completionHandler(NCUpdateResult.NoData)
         }
     }

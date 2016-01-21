@@ -26,14 +26,24 @@ class ZHRedditThreadCellModel {
 
 class ZHRedditThreadViewController: UIViewController {
     
-    @IBOutlet weak var treeView: RATreeView!
+
+
+    @IBOutlet var treeModel: TreeTable!
+    @IBOutlet weak var treeView: UITableView!
+    var expandedItems = NSMutableDictionary()
+    
+    
+    
     @IBOutlet var sortBarButton: UIBarButtonItem!
-    var post: RKLink? = nil
+    var post: RKLink? = nil {
+        didSet {
+            print("set post")
+        }
+    }
     var commentModels: [ZHRedditThreadCellModel]? = nil
     var statusBarHidden: Bool = false
     var pagination: RKPagination? = nil
     var refreshControl: UIRefreshControl? =  nil
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +65,7 @@ class ZHRedditThreadViewController: UIViewController {
     // MARK: Private methods
     
     func setupTreeView() {
+
         
         // Add pull to refresh control
         refreshControl = UIRefreshControl()
@@ -62,21 +73,15 @@ class ZHRedditThreadViewController: UIViewController {
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attr)
         refreshControl?.tintColor = UIColor.yellowColor()
         refreshControl?.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
-        treeView.scrollView.addSubview(refreshControl!)
+        treeView.addSubview(refreshControl!)
         
         let nib = UINib(nibName: "ZHRedditCommentTableViewCell", bundle: NSBundle.mainBundle())
         treeView.registerNib(nib, forCellReuseIdentifier: "ZHRedditCommentTableViewCell")
-        
-        treeView.rowsCollapsingAnimation = RATreeViewRowAnimationTop
-        treeView.rowsExpandingAnimation = RATreeViewRowAnimationTop
-        treeView.expandsChildRowsWhenRowExpands = false
-        treeView.collapsesChildRowsWhenRowCollapses = false
-        treeView.dataSource = self;
-        treeView.delegate = self;
-        treeView.separatorStyle = RATreeViewCellSeparatorStyleNone
+        treeView.estimatedRowHeight = 100;
+        treeView.rowHeight = UITableViewAutomaticDimension
         treeView.backgroundColor = UIColor.darkGrayColor()
         treeView.separatorColor = UIColor.darkGrayColor()
-        
+
     }
     
     
@@ -102,7 +107,7 @@ class ZHRedditThreadViewController: UIViewController {
                             let model = ZHRedditThreadCellModel(comment: comment as! RKComment, expanded: false)
                             self.commentModels?.append(model)
                         } else if comment is RKMoreComments {
-                            assert(false, "Finally found a RKMoreComments")
+                            //assert(false, "Finally found a RKMoreComments")
                         }
                     }
                     print("commentModels.count: \(self.commentModels?.count)")
@@ -166,80 +171,139 @@ class ZHRedditThreadViewController: UIViewController {
         sender.endRefreshing()
         resetComments()
     }
+    
+    func commentModel(indexPath: NSIndexPath) -> ZHRedditThreadCellModel? {
+        // Only care about section 1
+        if indexPath.section == 1 {
+           // start at "row"
+            if let commentModels = commentModels {
+                let rootIndex = indexPath.indexAtPosition(1)
+                var commentModel = commentModels[rootIndex]
+                for i in 2..<indexPath.length {
+                    let index = indexPath.indexAtPosition(i)
+                    if index < commentModel.comment.replies.count {
+                        let comment = commentModel.comment.replies[index]
+                        commentModel = ZHRedditThreadCellModel(comment: comment as! RKComment, expanded: false)
+                    } else {
+                        return nil
+                    }
+                }
+                return commentModel
+            }
+        }
+        return nil
+    }
 }
 
-
-extension ZHRedditThreadViewController: RATreeViewDataSource{
+extension ZHRedditThreadViewController: TreeTableDataSource {
     
-    func treeView(treeView: RATreeView!, cellForItem item: AnyObject!) -> UITableViewCell! {
-        if item is RKLink {
+    // These two are additional to UITableViewDataSource
+    func tableView(tableView: UITableView!, isCellExpanded indexPath: NSIndexPath!) -> Bool {
+
+        let expanded = expandedItems[indexPath] as? Bool
+        if let expanded = expanded {
+            return expanded
+        } else {
+            print("No entry for expandedItem")
+            return false
+        }
+    }
+    
+    func tableView(tableView: UITableView!, numberOfSubCellsForCellAtIndexPath indexPath: NSIndexPath!) -> UInt {
+        switch(indexPath.section) {
+        case 0:
+            return 0
+        case 1:
+            if let model = self.commentModel(indexPath) {
+                return UInt(model.comment.replies.count)
+            } else {
+                return 0
+            }
+        default:
+            print("Invalid section")
+            return 0
+        }
+    }
+    
+    
+    
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            if let commentModels = commentModels {
+                return commentModels.count
+            } else {
+                assert(false)
+            }
+        default:
+            assert(false)
+            return 0
+        }
+    }
+    
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
             let cell = ZHRedditThreadTableViewCell.cellFromNib()
-            if let post = item as! RKLink? {
+            if let post = post {
                 cell.showDetails = true
                 cell.post = post
+            } else {
+                print("could not unwrap post")
             }
             return cell
-        } else if item is ZHRedditThreadCellModel {
+
+        case 1:
             
-            let cell = treeView.dequeueReusableCellWithIdentifier("ZHRedditCommentTableViewCell") as? ZHRedditCommentTableViewCell
-            // TODO: Write a setting with all 3 parameters since they need to go in that order
-            cell?.treeView = treeView
-            cell?.level = treeView.levelForCellForItem(item)
-            let model = item as! ZHRedditThreadCellModel
+            let cell = tableView.dequeueReusableCellWithIdentifier("ZHRedditCommentTableViewCell") as? ZHRedditCommentTableViewCell
+
+            let model = self.commentModel(indexPath)
             cell?.model = model
+            cell?.level = indexPath.length - 2
+            return cell!
+
             
-            return cell
-        } else if item is RKComment {
-            
-        }
-        assert(false, "bad default case here")
-        return UITableViewCell()
-    }
-    
-    func treeView(treeView: RATreeView!, numberOfChildrenOfItem item: AnyObject!) -> Int {
-        // Base case
-        if item == nil {
-            if let commentModels = commentModels {
-                return commentModels.count + 1
-            } else {
-                return 1
-            }
+        default:
+            assert(false)
+            return UITableViewCell()
         }
         
-        if item is RKLink {
-            return 0
-        } else if item is ZHRedditThreadCellModel {
-            let commentModel = item as! ZHRedditThreadCellModel
-            return commentModel.comment.replies.count
-        }
-        
-        return 0
-        
-    }
-    
-    func treeView(treeView: RATreeView!, child index: Int, ofItem item: AnyObject!) -> AnyObject! {
-        if item == nil {
-            if index == ZHRedditThreadViewControllerSection.Post.rawValue {
-                return post
-            } else {
-                return commentModels![index-1]
-            }
-        } else {
-            let commentModel = item as! ZHRedditThreadCellModel
-            let comment = commentModel.comment.replies[index] as! RKComment
-            let nextCommentModel = ZHRedditThreadCellModel(comment: comment, expanded: false)
-            return nextCommentModel
-        }
     }
 }
 
-extension ZHRedditThreadViewController: RATreeViewDelegate {
-    func treeView(treeView: RATreeView!, shouldCollapaseRowForItem item: AnyObject!) -> Bool {
-        return false
-    }
-    
-    func treeView(treeView: RATreeView!, shouldExpandRowForItem item: AnyObject!) -> Bool {
-        return false
+extension ZHRedditThreadViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath tableIndexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(tableIndexPath, animated: false)
+        let treeIndexPath = tableView.treeIndexPathFromTablePath(tableIndexPath)
+        let expanded = tableView.isExpanded(tableIndexPath)
+        
+        switch tableIndexPath.section {
+
+        case 1:
+            
+            let cell = tableView.cellForRowAtIndexPath(tableIndexPath) as? ZHRedditCommentTableViewCell
+            
+            if expanded {
+                expandedItems.removeObjectForKey(treeIndexPath)
+                tableView.collapse(treeIndexPath)
+                cell?.animateCollapse()
+            } else {
+                expandedItems[treeIndexPath] = true
+                tableView.expand(treeIndexPath)
+                cell?.animateExpand()
+            }
+            
+        default:
+            print("disregard tap")
+        }
     }
 }
 

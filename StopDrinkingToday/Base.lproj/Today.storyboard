@@ -17,57 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="143"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your last drink was on ______" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFj-80-hiX">
-                                <rect key="frame" x="60" y="8" width="526" height="25.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beers not drank" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsz-F5-8Kb">
-                                <rect key="frame" x="60" y="41" width="526" height="25.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibO-kP-QCA">
-                                <rect key="frame" x="8" y="50" width="44" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="0KJ-a8-RIu"/>
-                                    <constraint firstAttribute="height" constant="44" id="IKd-P1-Og0"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbQ-M9-Agj" customClass="ZHSummaryView" customModule="StopDrinkingToday" customModuleProvider="target">
+                                <rect key="frame" x="20" y="0.0" width="560" height="143"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories not drank" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5I-gi-zFT">
-                                <rect key="frame" x="60" y="109" width="526" height="25.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money not spent" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S63-eZ-8TC">
-                                <rect key="frame" x="60" y="75" width="526" height="25.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="ibO-kP-QCA" firstAttribute="leading" secondItem="BRR-j5-73O" secondAttribute="leading" constant="8" id="11J-vV-zdW"/>
-                            <constraint firstItem="Zsz-F5-8Kb" firstAttribute="leading" secondItem="ibO-kP-QCA" secondAttribute="trailing" constant="8" id="19L-0V-8PG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="B5I-gi-zFT" secondAttribute="trailing" constant="-6" id="1ea-Qe-Bu9"/>
-                            <constraint firstItem="mFj-80-hiX" firstAttribute="leading" secondItem="Zsz-F5-8Kb" secondAttribute="leading" id="2NM-Y9-X8e"/>
-                            <constraint firstItem="Zsz-F5-8Kb" firstAttribute="top" secondItem="mFj-80-hiX" secondAttribute="bottom" constant="7.5" id="Lzc-6i-6cz"/>
-                            <constraint firstItem="S63-eZ-8TC" firstAttribute="leading" secondItem="ibO-kP-QCA" secondAttribute="trailing" constant="8" id="OQM-XV-um1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mFj-80-hiX" secondAttribute="trailing" constant="-6" id="Sie-U2-X7r"/>
-                            <constraint firstItem="itW-I1-WoS" firstAttribute="top" secondItem="B5I-gi-zFT" secondAttribute="bottom" constant="8.5" id="TvY-Er-KpX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Zsz-F5-8Kb" secondAttribute="trailing" constant="-6" id="Zar-87-GwS"/>
-                            <constraint firstItem="S63-eZ-8TC" firstAttribute="top" secondItem="Zsz-F5-8Kb" secondAttribute="bottom" constant="8.5" id="dGT-jU-xB0"/>
-                            <constraint firstItem="S63-eZ-8TC" firstAttribute="top" secondItem="Zsz-F5-8Kb" secondAttribute="bottom" constant="8.5" id="hI8-Xu-KRI"/>
-                            <constraint firstItem="S63-eZ-8TC" firstAttribute="top" secondItem="Zsz-F5-8Kb" secondAttribute="bottom" constant="8.5" id="nxe-f8-7Cp"/>
-                            <constraint firstItem="mFj-80-hiX" firstAttribute="top" secondItem="hdj-s7-KCU" secondAttribute="bottom" constant="8" id="ouJ-Kh-dY5"/>
-                            <constraint firstItem="B5I-gi-zFT" firstAttribute="top" secondItem="S63-eZ-8TC" secondAttribute="bottom" constant="8.5" id="ukc-xh-Jzl"/>
-                            <constraint firstItem="B5I-gi-zFT" firstAttribute="leading" secondItem="S63-eZ-8TC" secondAttribute="leading" id="vnE-br-odJ"/>
-                            <constraint firstItem="ibO-kP-QCA" firstAttribute="centerY" secondItem="BRR-j5-73O" secondAttribute="centerY" id="xP8-KM-HGN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="S63-eZ-8TC" secondAttribute="trailing" constant="-6" id="zjc-By-LLN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RbQ-M9-Agj" secondAttribute="trailing" id="5I8-9v-Pu7"/>
+                            <constraint firstItem="itW-I1-WoS" firstAttribute="top" secondItem="RbQ-M9-Agj" secondAttribute="bottom" id="VW5-Y9-PY9"/>
+                            <constraint firstItem="RbQ-M9-Agj" firstAttribute="leading" secondItem="BRR-j5-73O" secondAttribute="leadingMargin" id="cs2-FG-ck1"/>
+                            <constraint firstItem="RbQ-M9-Agj" firstAttribute="top" secondItem="hdj-s7-KCU" secondAttribute="bottom" id="wZ2-qc-0Md"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -77,11 +36,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="143"/>
                     <connections>
-                        <outlet property="avatarContainerView" destination="ibO-kP-QCA" id="62R-gN-djb"/>
-                        <outlet property="caloriesSavedLabel" destination="B5I-gi-zFT" id="lxb-Wi-kv7"/>
-                        <outlet property="daysQuitLabel" destination="mFj-80-hiX" id="3if-pg-UuN"/>
-                        <outlet property="drinksSavedLabel" destination="Zsz-F5-8Kb" id="UsQ-fl-uKL"/>
-                        <outlet property="moneySavedLabel" destination="S63-eZ-8TC" id="BAf-7f-0qo"/>
+                        <outlet property="summaryView" destination="RbQ-M9-Agj" id="AWf-cs-Kvz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOD-yH-uoQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

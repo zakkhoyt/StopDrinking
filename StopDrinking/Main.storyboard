@@ -28,65 +28,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your last drink was on ______" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-rz-U9u">
-                                                    <rect key="frame" x="8" y="106" width="584" height="25.5"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beers not drank" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-xd-u9E">
-                                                    <rect key="frame" x="8" y="139" width="584" height="25.5"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money not spent" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVx-HJ-F9v">
-                                                    <rect key="frame" x="8" y="173" width="584" height="25.5"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories not drank" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avc-eq-7yO">
-                                                    <rect key="frame" x="8" y="207" width="584" height="25.5"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPg-oh-TlK" customClass="ZHAvatarView" customModule="StopDrinking" customModuleProvider="target">
-                                                    <rect key="frame" x="255" y="8" width="90" height="90"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="3Lm-T8-YMP"/>
-                                                        <constraint firstAttribute="height" constant="90" id="HWH-FO-kVr"/>
-                                                    </constraints>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZz-kd-Ijb" customClass="ZHSummaryView" customModule="StopDrinking" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="249"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="Avc-eq-7yO" firstAttribute="leading" secondItem="KCN-HL-Awd" secondAttribute="leadingMargin" id="35J-fx-KEf"/>
-                                                <constraint firstItem="FVx-HJ-F9v" firstAttribute="trailing" secondItem="KCN-HL-Awd" secondAttribute="trailingMargin" id="6NY-uz-CIa"/>
-                                                <constraint firstItem="FVx-HJ-F9v" firstAttribute="leading" secondItem="KCN-HL-Awd" secondAttribute="leadingMargin" id="AmC-Mp-lZ2"/>
-                                                <constraint firstItem="1wZ-xd-u9E" firstAttribute="top" secondItem="8eg-rz-U9u" secondAttribute="bottom" constant="7.5" id="Chu-Fd-1Yy"/>
-                                                <constraint firstItem="FVx-HJ-F9v" firstAttribute="top" secondItem="1wZ-xd-u9E" secondAttribute="bottom" constant="8.5" id="Ead-qx-5D1"/>
-                                                <constraint firstItem="Avc-eq-7yO" firstAttribute="trailing" secondItem="KCN-HL-Awd" secondAttribute="trailingMargin" id="Hed-rT-pAj"/>
-                                                <constraint firstItem="Avc-eq-7yO" firstAttribute="top" secondItem="FVx-HJ-F9v" secondAttribute="bottom" constant="8.5" id="PEE-qe-qcQ"/>
-                                                <constraint firstItem="1wZ-xd-u9E" firstAttribute="trailing" secondItem="KCN-HL-Awd" secondAttribute="trailingMargin" id="XDO-vM-B5t"/>
-                                                <constraint firstItem="wPg-oh-TlK" firstAttribute="top" secondItem="KCN-HL-Awd" secondAttribute="topMargin" id="YMo-x6-scF"/>
-                                                <constraint firstItem="1wZ-xd-u9E" firstAttribute="leading" secondItem="KCN-HL-Awd" secondAttribute="leadingMargin" id="ZDV-48-pB0"/>
-                                                <constraint firstItem="8eg-rz-U9u" firstAttribute="leading" secondItem="KCN-HL-Awd" secondAttribute="leadingMargin" id="cAR-DM-DYv"/>
-                                                <constraint firstItem="8eg-rz-U9u" firstAttribute="top" secondItem="wPg-oh-TlK" secondAttribute="bottom" constant="8" id="dz3-8w-c1z"/>
-                                                <constraint firstItem="8eg-rz-U9u" firstAttribute="trailing" secondItem="KCN-HL-Awd" secondAttribute="trailingMargin" id="phP-6H-jQn"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Avc-eq-7yO" secondAttribute="bottom" constant="8" id="uao-VB-GIT"/>
-                                                <constraint firstItem="wPg-oh-TlK" firstAttribute="centerX" secondItem="KCN-HL-Awd" secondAttribute="centerX" id="uv0-XI-5zy"/>
+                                                <constraint firstItem="cZz-kd-Ijb" firstAttribute="top" secondItem="KCN-HL-Awd" secondAttribute="topMargin" constant="-8" id="YAD-XL-Q8b"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cZz-kd-Ijb" secondAttribute="trailing" constant="-8" id="aTQ-24-5m7"/>
+                                                <constraint firstItem="cZz-kd-Ijb" firstAttribute="leading" secondItem="KCN-HL-Awd" secondAttribute="leadingMargin" constant="-8" id="fyi-QE-bPT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cZz-kd-Ijb" secondAttribute="bottom" constant="-8" id="iS2-J0-eIY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="avatarContainerView" destination="wPg-oh-TlK" id="xut-mq-WGn"/>
-                                            <outlet property="caloriesMissedLabel" destination="Avc-eq-7yO" id="QnL-rc-U67"/>
-                                            <outlet property="daysQuitLabel" destination="8eg-rz-U9u" id="4nW-nU-xfc"/>
-                                            <outlet property="drinksMissedLabel" destination="1wZ-xd-u9E" id="pVJ-kr-28K"/>
-                                            <outlet property="moneyMissedLabel" destination="FVx-HJ-F9v" id="eKQ-gw-teK"/>
+                                            <outlet property="summaryView" destination="cZz-kd-Ijb" id="rL0-G5-gq2"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ZHHomeRedditTableViewCell" rowHeight="135" id="Bqm-fE-yTp" customClass="ZHHomeRedditTableViewCell" customModule="StopDrinking" customModuleProvider="target">
@@ -97,13 +54,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIK-IQ-hQC">
-                                                    <rect key="frame" x="8" y="112" width="584" height="14.5"/>
+                                                    <rect key="frame" x="8" y="112" width="584" height="15"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXK-Q4-xNR">
-                                                    <rect key="frame" x="8" y="8" width="41.5" height="19.5"/>
+                                                    <rect key="frame" x="8" y="8" width="42" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -117,7 +74,7 @@
                                                     </constraints>
                                                 </view>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HH-1x-vv6">
-                                                    <rect key="frame" x="57" y="0.0" width="534.5" height="112"/>
+                                                    <rect key="frame" x="57" y="0.0" width="535" height="112"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

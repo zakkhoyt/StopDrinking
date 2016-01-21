@@ -39,13 +39,14 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var commentCountLabel: UILabel!
     @IBOutlet weak var pointCountLabel: UILabel!
-    @IBOutlet weak var avatarContainerView: UIView!
+    @IBOutlet weak var avatarView: ZHAvatarView!
+    @IBOutlet weak var borderView: UIView!
     var showDetails = false
-    var avatarView: ZHAvatarView!
     
     var index: UInt = 0 {
         didSet {
             indexLabel.text = "\(index + 1)"
+            borderView.hidden = false
         }
     }
     var post: RKLink? = nil{
@@ -81,6 +82,7 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
                         userLabel.text = "-" + post!.author + "\n\(days) days"
                     }
                 }
+
             } else {
                 userLabel.text = "-" + post!.author
             }
@@ -92,12 +94,7 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         indexLabel.text = ""
-        
-        
-        avatarView = NSBundle.mainBundle().loadNibNamed("ZHAvatarView", owner: self, options: nil).first as? ZHAvatarView
-        avatarView.frame = avatarContainerView.bounds
-        avatarContainerView.addSubview(avatarView!)
-
+        borderView.hidden = true
     }
 
     
