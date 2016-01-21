@@ -40,9 +40,8 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var avatarContainerView: UIView!
+    @IBOutlet weak var avatarView: ZHAvatarView!
     @IBOutlet weak var indentConstrint: NSLayoutConstraint!
-    var avatarView: ZHAvatarView!
     
     @IBOutlet weak var headerLayoutConstraint: NSLayoutConstraint!
     
@@ -66,7 +65,10 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
 
     var model: ZHRedditThreadCellModel? = nil {
         didSet {
-            renderCellContents()
+            print("inspect")
+            if let model = model {
+                renderCellContents()
+            }
         }
     }
     
@@ -88,7 +90,7 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         
         let decodedHTML = ZHStringFormatter.bodyHTMLToAttributedString(model?.comment.bodyHTML)
         commentTextView.attributedText = decodedHTML
-        avatarContainerView.hidden = true
+//        avatarView.hidden = true
         
         if model?.expanded == false {
             self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
@@ -127,13 +129,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.masksToBounds = true
-        
-        avatarView = NSBundle.mainBundle().loadNibNamed("ZHAvatarView", owner: self, options: nil).first as? ZHAvatarView
-        avatarView.frame = avatarContainerView.bounds
-        avatarContainerView.addSubview(avatarView!)
-
-
-        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

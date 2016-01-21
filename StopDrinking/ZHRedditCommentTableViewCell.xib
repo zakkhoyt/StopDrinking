@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="645" height="404"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="soh-w6-T2x" id="Azf-Uu-O6e">
-                <rect key="frame" x="0.0" y="0.0" width="645" height="404"/>
+                <rect key="frame" x="0.0" y="0.0" width="645" height="403.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvn-Lu-4Ct">
@@ -44,7 +44,7 @@
                             <constraint firstAttribute="height" constant="1" id="vmx-WO-qVM"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-4W-c7o">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-4W-c7o" customClass="ZHAvatarView" customModule="StopDrinking" customModuleProvider="target">
                         <rect key="frame" x="637" y="9" width="0.0" height="30"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -53,13 +53,13 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3n-1f-l6E">
-                        <rect key="frame" x="91" y="16" width="24" height="16"/>
+                        <rect key="frame" x="91" y="16" width="23" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Sat at my favorite restaurant, crying quietly at the table after ordering a drink and... " translatesAutoresizingMaskIntoConstraints="NO" id="paH-E5-sWU">
-                        <rect key="frame" x="8" y="39" width="637" height="365"/>
+                        <rect key="frame" x="8" y="39" width="637" height="395"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -73,7 +73,7 @@
                 <constraints>
                     <constraint firstItem="O3n-1f-l6E" firstAttribute="centerY" secondItem="Hvn-Lu-4Ct" secondAttribute="centerY" id="0wY-Ls-1Da"/>
                     <constraint firstItem="paH-E5-sWU" firstAttribute="leading" secondItem="R3n-El-AcX" secondAttribute="leading" id="32R-Gv-kzC"/>
-                    <constraint firstAttribute="bottom" secondItem="paH-E5-sWU" secondAttribute="bottom" id="Ckf-ye-3iF"/>
+                    <constraint firstAttribute="bottom" secondItem="paH-E5-sWU" secondAttribute="bottom" constant="-30" id="Ckf-ye-3iF"/>
                     <constraint firstItem="tWH-ED-9Rh" firstAttribute="centerY" secondItem="vdg-4W-c7o" secondAttribute="centerY" id="Dfs-ak-6kp"/>
                     <constraint firstItem="jBe-Bc-gSc" firstAttribute="top" secondItem="Azf-Uu-O6e" secondAttribute="topMargin" constant="-8" id="MOS-QR-lzj"/>
                     <constraint firstItem="Hvn-Lu-4Ct" firstAttribute="leading" secondItem="R3n-El-AcX" secondAttribute="trailing" constant="8" id="PxR-Db-Dt9"/>
@@ -93,7 +93,7 @@
             <connections>
                 <outlet property="ageLabel" destination="O3n-1f-l6E" id="YTG-Xw-cNK"/>
                 <outlet property="authorLabel" destination="tWH-ED-9Rh" id="eMh-FP-BUD"/>
-                <outlet property="avatarContainerView" destination="vdg-4W-c7o" id="mvh-nJ-TiV"/>
+                <outlet property="avatarView" destination="vdg-4W-c7o" id="yhl-0D-p9y"/>
                 <outlet property="commentTextView" destination="paH-E5-sWU" id="Tb8-Gt-iFn"/>
                 <outlet property="expandButton" destination="R3n-El-AcX" id="Eg4-4a-OfR"/>
                 <outlet property="headerLayoutConstraint" destination="PxR-Db-Dt9" id="Eip-Ey-IuO"/>

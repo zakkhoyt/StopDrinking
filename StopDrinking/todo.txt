@@ -82,5 +82,7 @@ Coming soon:
     * Log in / sign up
     * Allow replies
 * New online chat feature
+* Tapping on some links does nothing
+
 
 

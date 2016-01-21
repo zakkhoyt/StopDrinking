@@ -283,11 +283,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
-            timestampString = "475021107.119864"
+            timestampString = "475096680.669142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "renderCellContents()"
             landmarkType = "5">
          </BreakpointContent>
@@ -587,11 +587,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
-            timestampString = "475021107.119864"
+            timestampString = "475096680.669142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "ZHRedditCommentTableViewCell"
             landmarkType = "3">
          </BreakpointContent>
@@ -907,6 +907,38 @@
             startingLineNumber = "273"
             endingLineNumber = "273"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StopDrinking/ZHRedditThreadViewController.swift"
+            timestampString = "475096601.921863"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StopDrinking/ZHRedditCommentTableViewCell.swift"
+            timestampString = "475096809.250137"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "renderCellContents()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
