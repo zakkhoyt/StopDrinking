@@ -51,22 +51,15 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         }
     }
     
-    var expanded: Bool = false {
-        didSet{
-            renderCellContents()
-        }
-    }
-    
     var level: Int = 0{
         didSet{
             indentConstrint.constant = CGFloat(level) * 16
         }
     }
-
-    var model: ZHRedditThreadCellModel? = nil {
+    
+    var comment: RKComment? = nil {
         didSet {
-            print("inspect")
-            if let _ = model {
+            if let _ = comment {
                 renderCellContents()
             }
         }
@@ -75,45 +68,45 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     func renderCellContents() {
         
         
-        if model?.comment.replies.count > 0 {
-            expandButton.hidden = false
-            headerLayoutConstraint.constant = 0
+        if let comment = comment {
+            if comment.replies.count > 0 {
+                expandButton.hidden = false
+                headerLayoutConstraint.constant = 0
+            } else {
+                expandButton.hidden = true
+                headerLayoutConstraint.constant = -22
+            }
+            
+            authorLabel.text = NSString(format: "%@", comment.author!) as String
+            scoreLabel.text = NSString(format: "+%lu", comment.score) as String
+            ageLabel.text = comment.created.stringRelativeTimeFromDate()
+            
+            
+            let decodedHTML = ZHStringFormatter.bodyHTMLToAttributedString(comment.bodyHTML)
+            commentTextView.attributedText = decodedHTML
+            
+            
+            avatarView.configureForFlairClass(comment.authorFlairText)
+            
         } else {
-            expandButton.hidden = true
-            headerLayoutConstraint.constant = -22
+            
         }
         
-        authorLabel.text = NSString(format: "%@", (model?.comment.author)!) as String
-        scoreLabel.text = NSString(format: "+%lu", (model?.comment.score)!) as String
-        ageLabel.text = model?.comment.created.stringRelativeTimeFromDate()
-
         
-        let decodedHTML = ZHStringFormatter.bodyHTMLToAttributedString(model?.comment.bodyHTML)
-        commentTextView.attributedText = decodedHTML
-        
-        if model?.expanded == false {
-            self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
-            self.expandButton.transform = CGAffineTransformIdentity
-        } else {
-            self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
-            self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
-        }
-        
-        avatarView.configureForFlairClass(model?.comment.authorFlairText)
     }
     
     
 
-    func animateExpand() {
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
+    func animateExpand(duration: NSTimeInterval) {
+        UIView.animateWithDuration(duration, animations: { () -> Void in
             self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
             self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
         })
         
     }
     
-    func animateCollapse() {
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
+    func animateCollapse(duration: NSTimeInterval) {
+        UIView.animateWithDuration(duration, animations: { () -> Void in
             self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
             self.expandButton.transform = CGAffineTransformIdentity
         })

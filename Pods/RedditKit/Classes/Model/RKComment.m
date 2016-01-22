@@ -29,32 +29,31 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     NSDictionary *keyPaths = @{
-        @"approvedBy": @"data.approved_by",
-        @"bannedBy": @"data.banned_by",
-        @"author": @"data.author",
-        @"authorFlairClass": @"data.author_flair_css_class",
-        @"authorFlairText": @"data.author_flair_text",
-        @"linkAuthor": @"data.link_author",
-        @"body": @"data.body",
-        @"bodyHTML": @"data.body_html",
-        @"scoreHidden": @"data.score_hidden",
-        @"replies": @"data.replies",
-        @"edited": @"data.edited",
-        @"archived": @"data.archived",
-        @"saved": @"data.saved",
-        @"linkID": @"data.link_id",
-        @"gilded": @"data.gilded",
-        @"score": @"data.score",
-        @"controversiality": @"controversiality",
-        @"parentID": @"data.parent_id",
-        @"subreddit": @"data.subreddit",
-        @"subredditID": @"data.subreddit_id",
-		@"submissionContentText": @"data.contentText", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
-		@"submissionContentHTML": @"data.contentHTML", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
-		@"submissionLink": @"data.link", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
-		@"submissionParent": @"data.parent" // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
-        //		@"totalReports": @"data.num_reports",          // not required for now.
-        //		@"distinguishedStatus": @"data.distinguished", // not required for now.
+                               @"approvedBy": @"data.approved_by",
+                               @"archived": @"data.archived",
+                               @"bannedBy": @"data.banned_by",
+                               @"controversiality": @"controversiality",
+                               @"author": @"data.author",
+                               @"authorFlairClass": @"data.author_flair_css_class",
+                               @"authorFlairText": @"data.author_flair_text",
+                               @"body": @"data.body",
+                               @"bodyHTML": @"data.body_html",
+                               @"edited": @"data.edited",
+                               @"gilded": @"data.gilded",
+                               @"linkAuthor": @"data.link_author",
+                               @"linkID": @"data.link_id",
+                               @"parentID": @"data.parent_id",
+                               @"replies": @"data.replies",
+                               @"saved": @"data.saved",
+                               @"score": @"data.score",
+                               @"scoreHidden": @"data.score_hidden",
+//                               @"stickied" : @"data.stickied",
+                               @"submissionContentText": @"data.contentText", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+                               @"submissionContentHTML": @"data.contentHTML", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+                               @"submissionLink": @"data.link", // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+                               @"submissionParent": @"data.parent",  // Note: This data is only sent back from reddit's API as a response to submitting a new comment.
+                               @"subreddit": @"data.subreddit",
+                               @"subredditID": @"data.subreddit_id",
     };
     
     return [[super JSONKeyPathsByPropertyKey] mtl_dictionaryByAddingEntriesFromDictionary:keyPaths];

@@ -14,16 +14,6 @@ enum ZHRedditThreadViewControllerSection: Int {
 }
 
 
-class ZHRedditThreadCellModel {
-    var comment: RKComment
-    var expanded: Bool
-    init(comment: RKComment, expanded: Bool){
-        self.comment = comment
-        self.expanded = expanded
-    }
-}
-
-
 class ZHRedditThreadViewController: UIViewController {
     
 
@@ -40,7 +30,7 @@ class ZHRedditThreadViewController: UIViewController {
             print("set post")
         }
     }
-    var commentModels: [ZHRedditThreadCellModel]? = nil
+    var comments: [RKComment]? = nil
     var statusBarHidden: Bool = false
     var pagination: RKPagination? = nil
     var refreshControl: UIRefreshControl? =  nil
@@ -87,7 +77,7 @@ class ZHRedditThreadViewController: UIViewController {
     
     func resetComments() {
         pagination = nil
-        commentModels = []
+        comments = []
         treeView.reloadData()
         getNextPageOfComments()
     }
@@ -104,13 +94,12 @@ class ZHRedditThreadViewController: UIViewController {
                 }  else {
                     for comment in comments {
                         if comment is RKComment {
-                            let model = ZHRedditThreadCellModel(comment: comment as! RKComment, expanded: false)
-                            self.commentModels?.append(model)
+                            self.comments?.append(comment as! RKComment)
                         } else if comment is RKMoreComments {
-                            //assert(false, "Finally found a RKMoreComments")
+                            assert(false, "Finally found a RKMoreComments")
                         }
                     }
-                    print("commentModels.count: \(self.commentModels?.count)")
+                    print("comments.count: \(self.comments?.count)")
                     self.treeView.reloadData()
                 }
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
@@ -172,23 +161,22 @@ class ZHRedditThreadViewController: UIViewController {
         resetComments()
     }
     
-    func commentModel(indexPath: NSIndexPath) -> ZHRedditThreadCellModel? {
+    func commentForIndexPath(indexPath: NSIndexPath) -> RKComment? {
         // Only care about section 1
         if indexPath.section == 1 {
            // start at "row"
-            if let commentModels = commentModels {
+            if let comments = comments {
                 let rootIndex = indexPath.indexAtPosition(1)
-                var commentModel = commentModels[rootIndex]
+                var comment = comments[rootIndex]
                 for i in 2..<indexPath.length {
                     let index = indexPath.indexAtPosition(i)
-                    if index < commentModel.comment.replies.count {
-                        let comment = commentModel.comment.replies[index]
-                        commentModel = ZHRedditThreadCellModel(comment: comment as! RKComment, expanded: false)
+                    if index < comment.replies.count {
+                        comment = comment.replies[index] as! RKComment
                     } else {
                         return nil
                     }
                 }
-                return commentModel
+                return comment
             }
         }
         return nil
@@ -214,8 +202,8 @@ extension ZHRedditThreadViewController: TreeTableDataSource {
         case 0:
             return 0
         case 1:
-            if let model = self.commentModel(indexPath) {
-                return UInt(model.comment.replies.count)
+            if let comment = commentForIndexPath(indexPath) {
+                return UInt(comment.replies.count)
             } else {
                 return 0
             }
@@ -237,8 +225,8 @@ extension ZHRedditThreadViewController: TreeTableDataSource {
         case 0:
             return 1
         case 1:
-            if let commentModels = commentModels {
-                return commentModels.count
+            if let comments = comments {
+                return comments.count
             } else {
                 assert(false)
             }
@@ -265,8 +253,14 @@ extension ZHRedditThreadViewController: TreeTableDataSource {
             
             let cell = tableView.dequeueReusableCellWithIdentifier("ZHRedditCommentTableViewCell") as? ZHRedditCommentTableViewCell
 
-            let model = self.commentModel(indexPath)
-            cell?.model = model
+            if let _ = expandedItems[indexPath] {
+                cell?.animateExpand(0.1)
+            } else {
+                cell?.animateCollapse(0.1)
+            }
+            
+            let comment = self.commentForIndexPath(indexPath)
+            cell?.comment = comment
             cell?.level = indexPath.length - 2
             return cell!
 
@@ -294,11 +288,11 @@ extension ZHRedditThreadViewController: UITableViewDelegate {
             if expanded {
                 expandedItems.removeObjectForKey(treeIndexPath)
                 tableView.collapse(treeIndexPath)
-                cell?.animateCollapse()
+                cell?.animateCollapse(0.3)
             } else {
                 expandedItems[treeIndexPath] = true
                 tableView.expand(treeIndexPath)
-                cell?.animateExpand()
+                cell?.animateExpand(0.3)
             }
             
         default:
