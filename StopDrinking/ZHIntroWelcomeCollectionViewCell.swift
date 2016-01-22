@@ -13,7 +13,7 @@ class ZHIntroWelcomeCollectionViewCell: ZHIntroCollectionViewCell {
     @IBOutlet weak var textView: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        textView.text = "Let's set up a few data points to help you track your progress"
+        textView.text = "Welcome to Stop Drinking, an app which uses the /r/sd community and your own progress to keep you motivated and off of alcohol. To get started just tap the next button and answer a few questions."
     }
     
     class func cellFromNib() -> ZHIntroWelcomeCollectionViewCell {

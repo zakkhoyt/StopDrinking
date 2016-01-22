@@ -9,7 +9,7 @@
 import UIKit
 
 class Constants {
-    static let AverageCaloriesPerDrink = UInt(200)
+    static let AverageCaloriesPerDrink = UInt(150)
     static let AverageCostPerDrink = UInt(4)
 }
 
@@ -70,7 +70,7 @@ class ZHUserModel: NSObject {
         let days = daysSinceStartDate()
         
         if let days = days {
-            return "It's been \(days + offset) days since your last drink. (" + stringForStartDate() + ")"
+            return "It's been \(days + offset) days since your last drink (" + stringForStartDate() + ")"
         } else {
             return ""
         }
@@ -81,7 +81,7 @@ class ZHUserModel: NSObject {
         let days = daysSinceStartDate()
         
         if let days = days {
-            return "It's been \(days) days since your last drink. (" + stringForStartDate() + ")"
+            return "It's been \(days) days since your last drink (" + stringForStartDate() + ")"
         } else {
             return ""
         }
@@ -104,7 +104,7 @@ class ZHUserModel: NSObject {
         if let days = days {
             if let drinksPerDay = drinksPerDay {
                 let drinks = drinksPerDay * days
-                return "You've passed on \(drinks) drinks"
+                return "You've passed up \(drinks) drinks"
             }
         }
         return ""
@@ -128,7 +128,7 @@ class ZHUserModel: NSObject {
                 if let drinksPerDay = drinksPerDay {
                     let calories = days * drinksPerDay * caloriesPerDrink
                     let fat = calories / 3500
-                    return "You've skipped drinking \(calories) Calories or \(fat) lbs of fat"
+                    return "You've spared your body \(calories) Calories or \(fat) lbs of fat"
                 }
             }
         }

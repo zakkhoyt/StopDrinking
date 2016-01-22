@@ -22,7 +22,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50I-Nk-WRT">
-                                <rect key="frame" x="143.5" y="416" width="55" height="45"/>
+                                <rect key="frame" x="143" y="416" width="55" height="45"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -30,16 +30,16 @@
                                 </connections>
                             </button>
                             <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="200" verticalHuggingPriority="200" image="badge" translatesAutoresizingMaskIntoConstraints="NO" id="9YX-d7-Gg2">
-                                <rect key="frame" x="0.0" y="77" width="342" height="312"/>
+                                <rect key="frame" x="0.0" y="77" width="342" height="298"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wet-qz-ksW">
-                                <rect key="frame" x="0.0" y="77" width="342" height="312"/>
+                                <rect key="frame" x="0.0" y="77" width="342" height="298"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="M4k-8F-B9L">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="312"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <datePicker contentMode="scaleToFill" placeholderIntrinsicWidth="342" placeholderIntrinsicHeight="255.5" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="SvG-ms-1Jz">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="312"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="298"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <date key="date" timeIntervalSinceReferenceDate="470873516.68868202">
                                                 <!--2015-12-03 22:11:56 +0000-->
@@ -58,32 +58,32 @@
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZ7-Hq-GuX">
-                                <rect key="frame" x="273" y="397" width="51" height="31"/>
-                                <connections>
-                                    <action selector="timeSwitchValueChanged:" destination="Al2-Jz-lEY" eventType="valueChanged" id="w5H-9N-kto"/>
-                                </connections>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify me daily" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0g-UL-bji">
                                 <rect key="frame" x="77" y="389" width="188" height="19.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZ7-Hq-GuX">
+                                <rect key="frame" x="285" y="383" width="51" height="31"/>
+                                <connections>
+                                    <action selector="timeSwitchValueChanged:" destination="Al2-Jz-lEY" eventType="valueChanged" id="w5H-9N-kto"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="50I-Nk-WRT" secondAttribute="bottom" constant="8" id="1FO-vj-Hde"/>
                             <constraint firstItem="QZ7-Hq-GuX" firstAttribute="top" secondItem="9YX-d7-Gg2" secondAttribute="bottom" constant="8" id="5XO-gj-Cp8"/>
-                            <constraint firstAttribute="trailing" secondItem="QZ7-Hq-GuX" secondAttribute="trailing" constant="20" id="66c-E2-HoW"/>
+                            <constraint firstAttribute="trailing" secondItem="QZ7-Hq-GuX" secondAttribute="trailing" constant="8" id="66c-E2-HoW"/>
                             <constraint firstItem="50I-Nk-WRT" firstAttribute="centerX" secondItem="KwB-9J-zMA" secondAttribute="centerX" id="9r0-6q-ZTa"/>
-                            <constraint firstAttribute="bottom" secondItem="QZ7-Hq-GuX" secondAttribute="bottom" constant="41" id="FKu-QV-aSw"/>
+                            <constraint firstAttribute="bottom" secondItem="QZ7-Hq-GuX" secondAttribute="bottom" constant="55" id="FKu-QV-aSw"/>
                             <constraint firstItem="QZ7-Hq-GuX" firstAttribute="top" secondItem="Wet-qz-ksW" secondAttribute="bottom" constant="8" id="Gf5-F8-4b2"/>
-                            <constraint firstItem="QZ7-Hq-GuX" firstAttribute="leading" secondItem="c0g-UL-bji" secondAttribute="trailing" constant="8" id="IVJ-da-WDb"/>
+                            <constraint firstItem="QZ7-Hq-GuX" firstAttribute="leading" secondItem="c0g-UL-bji" secondAttribute="trailing" constant="20" id="IVJ-da-WDb"/>
                             <constraint firstAttribute="trailing" secondItem="Wet-qz-ksW" secondAttribute="trailing" id="KvO-Lm-bI9"/>
                             <constraint firstItem="9YX-d7-Gg2" firstAttribute="top" secondItem="J08-yg-3L2" secondAttribute="bottom" constant="7.5" id="PhH-Mg-5bi"/>
                             <constraint firstItem="Wet-qz-ksW" firstAttribute="leading" secondItem="KwB-9J-zMA" secondAttribute="leading" id="R2l-og-l1d"/>
-                            <constraint firstItem="QZ7-Hq-GuX" firstAttribute="leading" secondItem="c0g-UL-bji" secondAttribute="trailing" constant="8" id="Rdo-iH-onk"/>
+                            <constraint firstItem="QZ7-Hq-GuX" firstAttribute="leading" secondItem="c0g-UL-bji" secondAttribute="trailing" constant="20" id="Rdo-iH-onk"/>
                             <constraint firstItem="9YX-d7-Gg2" firstAttribute="leading" secondItem="KwB-9J-zMA" secondAttribute="leading" id="SDK-5T-W2b"/>
                             <constraint firstItem="J08-yg-3L2" firstAttribute="leading" secondItem="KwB-9J-zMA" secondAttribute="leading" constant="20" id="SQn-Ou-FQe"/>
                             <constraint firstItem="Wet-qz-ksW" firstAttribute="top" secondItem="J08-yg-3L2" secondAttribute="bottom" constant="7.5" id="SnL-aF-JAe"/>

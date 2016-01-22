@@ -11,33 +11,47 @@ import UIKit
 class ZHCaloriesPerDrinkTableViewController: UITableViewController {
 
     
+    let bar = [
+        ("7 oz Long Island", 780),
+        ("8 oz Margarita", 740),
+        ("6 oz Pina Colada", 644),
+        ("9 oz Mai Tai", 620),
+        ("12 oz Mudslide", 594),
+        ("6 oz Appletini", 525),
+        ("5 oz White Russian", 425),
+        ("3 oz Cosmopolitan", 150),
+    ]
+    
     let beers = [
-        ("Light Beer", 100),
-        ("Regular Beer", 150),
-        ("Heavy Beer", 200),
-        ("Malt Beverage", 250),
-        ("Cider", 200),
+        ("12 oz Light Beer", 100),
+        ("12 oz Regular Beer", 150),
+        ("12 oz Heavy Beer", 200),
+        ("12 oz Malt Beverage", 250),
+        ("12 oz Cider", 200),
+        ("6 oz Mojito", 160),
+        ("10 oz Bloody Mary", 180),
+        ("6 oz Jägerbomb", 200),
     ]
     
     let spirits = [
-        ("Vodka", 100),
-        ("Whiskey", 100),
-        ("Gin", 100),
-        ("Rum", 100),
-        ("Tequilla", 100),
+        ("1.5 oz Vodka", 100),
+        ("1.5 oz Whiskey", 100),
+        ("1.5 oz Gin", 100),
+        ("1.5 oz Rum", 100),
+        ("1.5 oz Tequilla", 100),
     ]
 
     let wines = [
-        ("Red", 120),
-        ("Rose", 130),
-        ("White", 120),
-        ("Dessert", 200),
+        ("5 oz Red", 120),
+        ("5 oz Rose", 130),
+        ("5 oz White", 120),
+        ("5 oz Dessert", 200),
     ]
 
     let mixers = [
-        ("Fruit Juice", 125),
-        ("Tonic", 80),
-        ("Soda", 130),
+        ("8 oz Fruit Juice", 125),
+        ("8 oz Tonic", 80),
+        ("8 oz Soda", 130),
         ("Diet Soda", 0),
     ]
 
@@ -48,18 +62,20 @@ class ZHCaloriesPerDrinkTableViewController: UITableViewController {
     
  
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return beers.count
+            return bar.count
         case 1:
-            return spirits.count
+            return beers.count
         case 2:
-            return wines.count
+            return spirits.count
         case 3:
+            return wines.count
+        case 4:
             return mixers.count
         default:
             return 0
@@ -121,6 +137,8 @@ class ZHCaloriesPerDrinkTableViewController: UITableViewController {
         
         let frame = CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 60)
         let header = UITableViewHeaderFooterView(frame: frame)
+        header.textLabel?.textColor = UIColor.whiteColor()
+        
         switch section {
         case 0:
             header.textLabel?.text = "Beers"
