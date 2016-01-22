@@ -32,6 +32,8 @@
         @"approvedBy": @"data.approved_by",
         @"bannedBy": @"data.banned_by",
         @"author": @"data.author",
+        @"authorFlairClass": @"data.author_flair_css_class",
+        @"authorFlairText": @"data.author_flair_text",
         @"linkAuthor": @"data.link_author",
         @"body": @"data.body",
         @"bodyHTML": @"data.body_html",

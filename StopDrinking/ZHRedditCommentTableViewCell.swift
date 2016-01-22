@@ -98,6 +98,8 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
             self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
             self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
         }
+        
+        avatarView.configureForFlairClass(model?.comment.authorFlairText)
     }
     
     
