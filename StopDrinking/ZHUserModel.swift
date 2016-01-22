@@ -141,9 +141,16 @@ class ZHUserModel: NSObject {
     }
 
     // View (star and colors)
+    #if os(iOS)
     func getStarView() -> UIView {
         return UIView()
     }
+    #else
+        #if os(watchOS)
+    
+        #endif
+    
+    #endif
     
 //     Drinks saved
     func getDrinksSaved() -> UInt {
