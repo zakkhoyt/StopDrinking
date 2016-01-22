@@ -123,7 +123,6 @@ class ZHHomeViewController: UIViewController {
         getNextPageOfPosts()
     }
     
-    
     func getNextPageOfPosts(){
         
         if ZHReachability.isConnectedToNetwork() == false {

@@ -74,23 +74,30 @@ Coming soon:
 
 
 
-* Get tree view scrolling under control
-* Settings panel with cocoapods
-* nib containers
-* fix Today alignment
-* Reddit
-    * Allow upvoting and commenting
-    * Log in / sign up
-    * Allow replies
-    * Pagination for comments?
-* New online chat feature
+// * Get tree view scrolling under control
+// * Settings panel with cocoapods
+// * nib containers
+// * fix Today alignment
+
+* Expand and contract is a little buggy
+
 * Tapping on some links does nothing
+
 * Onboarding
     * precalculate calories / money. Let the user refine it
     * Suggestion table should return a value and enter it
     * Suggestion table should have bar sizes
 
 * Photo background
+
+* Reddit
+    * Allow upvoting and commenting
+    * Log in
+    * Allow replies
+    * Pagination for comments?
+    * submit new post
+    * gilded
+
 
 
 

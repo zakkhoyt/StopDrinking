@@ -90,7 +90,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         
         let decodedHTML = ZHStringFormatter.bodyHTMLToAttributedString(model?.comment.bodyHTML)
         commentTextView.attributedText = decodedHTML
-//        avatarView.hidden = true
         
         if model?.expanded == false {
             self.expandButton.setBackgroundImage(UIImage(named: "arrow"), forState: .Normal)
@@ -99,7 +98,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
             self.expandButton.setBackgroundImage(UIImage(named: "arrow_hollow"), forState: .Normal)
             self.expandButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2))
         }
-
     }
     
     

@@ -91,6 +91,11 @@ class ZHRedditThreadTableViewCell: UITableViewCell {
         }
     }
     
+//    func getFlair() {
+//        RKClient.sharedClient().
+//    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         indexLabel.text = ""
