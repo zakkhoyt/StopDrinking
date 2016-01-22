@@ -91,12 +91,13 @@ class ZHRedditThreadViewController: UIViewController {
             RKClient.sharedClient().commentsForLink(post) { (comments, error) -> Void in
                 if error != nil {
                     self.presentAlertDialogWithTitle("Could not get comments. Try again later", errorAsMessage: error)
-                }  else {
+                }  else {1
                     for comment in comments {
                         if comment is RKComment {
                             self.comments?.append(comment as! RKComment)
                         } else if comment is RKMoreComments {
-                            assert(false, "Finally found a RKMoreComments")
+                            //assert(false, "Finally found a RKMoreComments")
+                            print("Finally found a RKMoreComments")
                         }
                     }
                     print("comments.count: \(self.comments?.count)")

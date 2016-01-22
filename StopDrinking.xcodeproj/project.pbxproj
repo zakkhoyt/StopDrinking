@@ -45,6 +45,8 @@
 		C66623F71C114A2400652B42 /* ZHNotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */; };
 		C69A60061C516D1D0057B8D2 /* ZHSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63706681C516AD200319316 /* ZHSummaryView.swift */; };
 		C69A60071C516D1D0057B8D2 /* ZHSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C637066A1C516AEB00319316 /* ZHSummaryView.xib */; };
+		C69A608E1C51E90C0057B8D2 /* ZHCaloriesPerDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A608D1C51E90C0057B8D2 /* ZHCaloriesPerDrinkTableViewCell.swift */; };
+		C69A60901C51EBF60057B8D2 /* ZHCaloriesTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A608F1C51EBF60057B8D2 /* ZHCaloriesTableViewHeader.swift */; };
 		C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */; };
 		C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */; };
 		C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */; };
@@ -172,6 +174,8 @@
 		C66623E81C1131F400652B42 /* Web.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Web.storyboard; sourceTree = "<group>"; };
 		C66623EF1C11364000652B42 /* StopDrinking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinking.entitlements; sourceTree = "<group>"; };
 		C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNotificationScheduler.swift; sourceTree = "<group>"; };
+		C69A608D1C51E90C0057B8D2 /* ZHCaloriesPerDrinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHCaloriesPerDrinkTableViewCell.swift; sourceTree = "<group>"; };
+		C69A608F1C51EBF60057B8D2 /* ZHCaloriesTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHCaloriesTableViewHeader.swift; sourceTree = "<group>"; };
 		C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reddit.storyboard; sourceTree = "<group>"; };
 		C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditThreadViewController.swift; sourceTree = "<group>"; };
 		C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditCommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -489,6 +493,8 @@
 			isa = PBXGroup;
 			children = (
 				C65CA6301C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift */,
+				C69A608D1C51E90C0057B8D2 /* ZHCaloriesPerDrinkTableViewCell.swift */,
+				C69A608F1C51EBF60057B8D2 /* ZHCaloriesTableViewHeader.swift */,
 			);
 			name = CaloriesPerDrink;
 			sourceTree = "<group>";
@@ -800,6 +806,7 @@
 			files = (
 				C66623E71C1131E500652B42 /* ZHWebViewController.swift in Sources */,
 				C635D7F51C0FD17C00616D3A /* ZHUserModel.swift in Sources */,
+				C69A608E1C51E90C0057B8D2 /* ZHCaloriesPerDrinkTableViewCell.swift in Sources */,
 				C6CA9AD51C141AAE00F21544 /* ZHIntroTodayCollectionViewCell.swift in Sources */,
 				C6CA9A9F1C13956500F21544 /* ZHRedditThreadTableViewCell.swift in Sources */,
 				C635D7EF1C0FBB6500616D3A /* ZHHomeViewController.swift in Sources */,
@@ -821,6 +828,7 @@
 				C6CA9A8E1C12446A00F21544 /* NSDate+ZH.m in Sources */,
 				C6CA9AD31C141AAE00F21544 /* ZHIntroCollectionViewCell.swift in Sources */,
 				C6CA9A941C12446A00F21544 /* UIView+RenderToImage.m in Sources */,
+				C69A60901C51EBF60057B8D2 /* ZHCaloriesTableViewHeader.swift in Sources */,
 				C65CA6311C2218E400908257 /* ZHCaloriesPerDrinkTableViewController.swift in Sources */,
 				C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */,
 				C60AB6AD1C14FDE200A0358C /* ZHStringFormatter.m in Sources */,

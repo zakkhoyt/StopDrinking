@@ -31,6 +31,17 @@ class ZHIntroCaloriesPerDayCollectionViewCell: ZHIntroCollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        NSNotificationCenter.defaultCenter().addObserverForName("CaloriesSuggestionNotification", object: nil, queue: NSOperationQueue.mainQueue()) { (note) -> Void in
+            if let calories = note.userInfo!["calories"] as? UInt {
+                self.user?.caloriesPerDrink = calories
+                self.updateUI()
+            }
+        }
+        updateUI()
+    }
+
+    func updateUI() {
         if user?.caloriesPerDrink == nil {
             nextButton.enabled = false
             updateLabel(UInt(stepper.value))
@@ -39,6 +50,7 @@ class ZHIntroCaloriesPerDayCollectionViewCell: ZHIntroCollectionViewCell {
             stepper.value = Double((user?.caloriesPerDrink!)!)
             nextButton.enabled = true
         }
+
     }
     
     @IBAction func stepperValueChanged(sender: UIStepper) {

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
@@ -17,29 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="342" height="469"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We can remind you how far you've come during the toughest time of your day with a local notification." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J08-yg-3L2">
-                                <rect key="frame" x="20" y="8" width="302" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="8" width="302" height="61.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50I-Nk-WRT">
-                                <rect key="frame" x="155" y="431" width="32" height="30"/>
+                                <rect key="frame" x="143.5" y="416" width="55" height="45"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonTouchUpInside:" destination="Al2-Jz-lEY" eventType="touchUpInside" id="bRN-9S-QDd"/>
                                 </connections>
                             </button>
                             <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="200" verticalHuggingPriority="200" image="badge" translatesAutoresizingMaskIntoConstraints="NO" id="9YX-d7-Gg2">
-                                <rect key="frame" x="0.0" y="76.5" width="342" height="312.5"/>
+                                <rect key="frame" x="0.0" y="77" width="342" height="312"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wet-qz-ksW">
-                                <rect key="frame" x="0.0" y="76.5" width="342" height="312.5"/>
+                                <rect key="frame" x="0.0" y="77" width="342" height="312"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="M4k-8F-B9L">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="312.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="312"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <datePicker contentMode="scaleToFill" placeholderIntrinsicWidth="342" placeholderIntrinsicHeight="255.5" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="SvG-ms-1Jz">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="312.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="312"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <date key="date" timeIntervalSinceReferenceDate="470873516.68868202">
                                                 <!--2015-12-03 22:11:56 +0000-->
@@ -65,8 +65,8 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify me daily" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0g-UL-bji">
-                                <rect key="frame" x="77" y="403" width="188" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="77" y="389" width="188" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

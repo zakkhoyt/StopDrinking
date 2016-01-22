@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ZHUserModel: NSObject {
+class Constants {
+    static let AverageCaloriesPerDrink = UInt(200)
+    static let AverageCostPerDrink = UInt(4)
+}
 
+class ZHUserModel: NSObject {
     var startDate: NSDate? = nil
     var drinksPerDay: UInt? = nil
     var moneyPerDay: UInt? = nil
@@ -130,11 +134,6 @@ class ZHUserModel: NSObject {
         }
         return ""
     }
-
-    
-    
-    
-    
     
     // Days quit
     func getDaysQuit() -> UInt {

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -17,61 +16,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="351" height="332"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reddit" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBQ-o3-EL8">
-                                <rect key="frame" x="20" y="8" width="311" height="20.5"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="8" width="311" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYu-1i-POV">
-                                <rect key="frame" x="296" y="294" width="47" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Sign In"/>
-                                <connections>
-                                    <action selector="signInButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="QkS-gX-3jS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkk-pe-O1S">
-                                <rect key="frame" x="157" y="294" width="36" height="30"/>
-                                <animations/>
+                                <rect key="frame" x="145" y="279" width="60" height="45"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Later"/>
                                 <connections>
                                     <action selector="nextButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Y5f-ph-95q"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="wXz-eQ-TFW">
-                                <rect key="frame" x="8" y="36" width="335" height="250"/>
-                                <animations/>
+                                <rect key="frame" x="8" y="35" width="335" height="236"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">This app shows you content from Reddit's /r/stopdrinking subreddit. Signing in is not required but will allow you to reply and upvote. </string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxz-sA-UyB">
                                 <rect key="frame" x="154" y="156" width="42" height="20.5"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signed In as ____" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PR7-9G-AWo">
                                 <rect key="frame" x="112" y="156" width="126.5" height="20.5"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOJ-24-fd5">
-                                <rect key="frame" x="8" y="294" width="60" height="30"/>
-                                <animations/>
+                                <rect key="frame" x="8" y="286" width="63" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
                                     <action selector="signOutButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="xVy-uP-7uN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYu-1i-POV">
+                                <rect key="frame" x="293" y="286" width="50" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInButtonTouchUpInside:" destination="gTV-IL-0wX" eventType="touchUpInside" id="QkS-gX-3jS"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SOJ-24-fd5" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="8" id="9Pt-Lx-nFq"/>
@@ -79,12 +73,12 @@
                             <constraint firstItem="wXz-eQ-TFW" firstAttribute="top" secondItem="NBQ-o3-EL8" secondAttribute="bottom" constant="7.5" id="Fvn-uo-UYQ"/>
                             <constraint firstAttribute="trailing" secondItem="aYu-1i-POV" secondAttribute="trailing" constant="8" id="HFj-Lk-Crd"/>
                             <constraint firstItem="PR7-9G-AWo" firstAttribute="centerY" secondItem="bzy-Cg-cyd" secondAttribute="centerY" id="VPX-Zq-bes"/>
-                            <constraint firstAttribute="bottom" secondItem="SOJ-24-fd5" secondAttribute="bottom" constant="8" id="X0I-Jv-a4J"/>
+                            <constraint firstAttribute="bottom" secondItem="SOJ-24-fd5" secondAttribute="bottom" constant="14" id="X0I-Jv-a4J"/>
                             <constraint firstItem="PR7-9G-AWo" firstAttribute="centerX" secondItem="bzy-Cg-cyd" secondAttribute="centerX" id="YZ8-OP-JdF"/>
                             <constraint firstItem="bxz-sA-UyB" firstAttribute="centerY" secondItem="bzy-Cg-cyd" secondAttribute="centerY" id="bD9-dG-VoQ"/>
                             <constraint firstItem="NBQ-o3-EL8" firstAttribute="leading" secondItem="bzy-Cg-cyd" secondAttribute="leading" constant="20" id="dqk-km-06C"/>
                             <constraint firstItem="NBQ-o3-EL8" firstAttribute="top" secondItem="bzy-Cg-cyd" secondAttribute="top" constant="8" id="f8i-Le-vFd"/>
-                            <constraint firstAttribute="bottom" secondItem="aYu-1i-POV" secondAttribute="bottom" constant="8" id="fBA-7z-264"/>
+                            <constraint firstAttribute="bottom" secondItem="aYu-1i-POV" secondAttribute="bottom" constant="14" id="fBA-7z-264"/>
                             <constraint firstItem="bxz-sA-UyB" firstAttribute="centerX" secondItem="bzy-Cg-cyd" secondAttribute="centerX" id="kY7-g3-vkT"/>
                             <constraint firstAttribute="trailing" secondItem="wXz-eQ-TFW" secondAttribute="trailing" constant="8" id="lAK-7t-Vab"/>
                             <constraint firstAttribute="trailing" secondItem="NBQ-o3-EL8" secondAttribute="trailing" constant="20" id="sGy-nH-JlV"/>
@@ -94,10 +88,8 @@
                         </constraints>
                     </view>
                 </subviews>
-                <animations/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <animations/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="bzy-Cg-cyd" secondAttribute="bottom" id="3Yb-Ot-89l"/>
                 <constraint firstAttribute="trailing" secondItem="bzy-Cg-cyd" secondAttribute="trailing" id="Rl2-6i-7Bh"/>

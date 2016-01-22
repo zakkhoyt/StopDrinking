@@ -118,6 +118,12 @@ extension ZHIntroViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroDrinksPerDayCollectionViewCell", forIndexPath: indexPath) as? ZHIntroDrinksPerDayCollectionViewCell
             cell?.user = user
             cell?.nextHandler = ({ () -> Void in
+                
+                if let user = self.user, drinksPerDay = self.user!.drinksPerDay {
+                    user.moneyPerDay = drinksPerDay * Constants.AverageCostPerDrink
+                    user.caloriesPerDrink = Constants.AverageCaloriesPerDrink
+                }
+                
                 self.scrollToNextPage()
             })
             return cell!
