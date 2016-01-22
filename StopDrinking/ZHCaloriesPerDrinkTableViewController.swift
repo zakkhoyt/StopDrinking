@@ -88,20 +88,22 @@ class ZHCaloriesPerDrinkTableViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
+            let beverage = bar[indexPath.row].0
+            let calories = bar[indexPath.row].1
+            cell?.setBeverage(beverage, calories: UInt(calories))
+        case 1:
             let beverage = beers[indexPath.row].0
             let calories = beers[indexPath.row].1
             cell?.setBeverage(beverage, calories: UInt(calories))
-        case 1:
+        case 2:
             let beverage = spirits[indexPath.row].0
             let calories = spirits[indexPath.row].1
             cell?.setBeverage(beverage, calories: UInt(calories))
-
-        case 2:
+        case 3:
             let beverage = wines[indexPath.row].0
             let calories = wines[indexPath.row].1
             cell?.setBeverage(beverage, calories: UInt(calories))
-
-        case 3:
+        case 4:
             let beverage = mixers[indexPath.row].0
             let calories = mixers[indexPath.row].1
             cell?.setBeverage(beverage, calories: UInt(calories))
@@ -118,12 +120,14 @@ class ZHCaloriesPerDrinkTableViewController: UITableViewController {
         var calories = 0
         switch indexPath.section {
         case 0:
-            calories = beers[indexPath.row].1
+            calories = bar[indexPath.row].1
         case 1:
-            calories = spirits[indexPath.row].1
+            calories = beers[indexPath.row].1
         case 2:
-            calories = wines[indexPath.row].1
+            calories = spirits[indexPath.row].1
         case 3:
+            calories = wines[indexPath.row].1
+        case 4:
             calories = mixers[indexPath.row].1
         default:
             assert(false)
@@ -141,12 +145,14 @@ class ZHCaloriesPerDrinkTableViewController: UITableViewController {
         
         switch section {
         case 0:
-            header.textLabel?.text = "Beers"
+            header.textLabel?.text = "Bar drinks"
         case 1:
-            header.textLabel?.text = "Spirits"
+            header.textLabel?.text = "Beers"
         case 2:
-            header.textLabel?.text = "Wines"
+            header.textLabel?.text = "Spirits"
         case 3:
+            header.textLabel?.text = "Wines"
+        case 4:
             header.textLabel?.text = "Mixers"
         default:
             assert(false)

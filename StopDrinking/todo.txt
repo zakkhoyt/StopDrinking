@@ -100,5 +100,10 @@ Coming soon:
 
 
 
+* WatchKit extension (summary)
+
+* CloudKit logging
+
+
 
 
