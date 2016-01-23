@@ -25,7 +25,7 @@ class ZHSummaryInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        summaryLabel.setText("Yo yo yo")
+        //summaryLabel.setText("Yo yo yo")
         
         user = ZHUserDefaults.sharedInstance.currentUser()
         if let user = user {

@@ -32,15 +32,22 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="ZHSummaryInterfaceController" customModule="StopDrinkingWatch_Extension">
                     <items>
-                        <label alignment="left" text="Label" id="ouq-N5-18B"/>
-                        <imageView alignment="left" id="bIp-sI-scH"/>
+                        <imageView width="76" height="76" alignment="center" image="star" id="UFO-tl-QmE"/>
+                        <group width="1" alignment="left" layout="vertical" id="FzH-ea-Mnk">
+                            <items>
+                                <label width="1" alignment="center" text="Label" textAlignment="center" id="bzh-My-6sf"/>
+                                <label width="1" alignment="center" text="Label" textAlignment="center" id="IOk-as-JGt"/>
+                                <label width="1" alignment="center" text="Label" textAlignment="center" id="UF2-3D-yc3"/>
+                                <label width="1" alignment="center" text="Label" textAlignment="center" id="HqN-pz-xYK"/>
+                            </items>
+                        </group>
                     </items>
                     <connections>
-                        <outlet property="summaryLabel" destination="ouq-N5-18B" id="isr-0J-V7T"/>
+                        <outlet property="summaryLabel" destination="bzh-My-6sf" id="4LT-Vj-oRp"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="354.5"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

@@ -35,12 +35,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         } else {
             print("no user found")
         }
-        
-
-
-        
-        
-        
     }
 
     func applicationDidBecomeActive() {
