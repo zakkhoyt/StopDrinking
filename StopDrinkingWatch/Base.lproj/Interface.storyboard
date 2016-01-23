@@ -5,27 +5,23 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
-        <!--ZHGlanceInterfaceController-->
-        <scene sceneID="byR-zd-98e">
+        <!--Glance Interface Controller-->
+        <scene sceneID="045-R8-a5j">
             <objects>
-                <glanceController identifier="ZHGlanceInterfaceController" topTemplateType="groupLeftSmall" bottomTemplateType="extraLargeLargeBody1Footer" id="05o-aq-Zb8" customClass="ZHGlanceInterfaceController" customModule="StopDrinkingWatch_Extension">
+                <glanceController topTemplateType="groupLeftSmall" bottomTemplateType="extraLargeLargeBody1Footer" id="zaP-PP-fFt">
                     <items>
-                        <group alignment="left" id="BWy-ta-xC2">
-                            <items>
-                                <imageView width="1" height="1" alignment="left" id="Fyp-TJ-kiv"/>
-                            </items>
-                        </group>
-                        <label alignment="left" text="Label" id="oON-4M-EjE"/>
-                        <label alignment="left" text="Label" id="LKC-Ht-qYF"/>
-                        <label alignment="left" text="Label" id="XSu-V4-Edg"/>
-                        <label alignment="left" text="1234" id="UJ8-06-blS"/>
-                        <label alignment="left" text="1234" id="39E-uO-omx"/>
-                        <label alignment="left" text="Label" id="dRl-g1-JB7"/>
-                        <label alignment="left" text="Footer" id="cSb-Nb-Kjh"/>
+                        <group alignment="left" id="FQh-NM-Z0p"/>
+                        <label alignment="left" text="Label" id="fjP-on-AIG"/>
+                        <label alignment="left" text="Label" id="D1K-g7-xiL"/>
+                        <label alignment="left" text="Label" id="17c-qd-PJ3"/>
+                        <label alignment="left" text="1234" id="Uc4-yw-LmI"/>
+                        <label alignment="left" text="1234" id="ZLS-93-lgF"/>
+                        <label alignment="left" text="Label" id="CFh-Qa-OEQ"/>
+                        <label alignment="left" text="Footer" id="3f5-rQ-k5H"/>
                     </items>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="215" y="26"/>
+            <point key="canvasLocation" x="217" y="90"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
@@ -34,7 +30,7 @@
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="FzH-ea-Mnk">
                             <items>
-                                <group width="1" height="94.5" alignment="left" backgroundImage="star" contentMode="scaleAspectFit" id="Cs5-BB-hne">
+                                <group width="1" height="66" alignment="left" backgroundImage="star" contentMode="scaleAspectFit" id="Cs5-BB-hne">
                                     <items>
                                         <label width="1" height="1" alignment="center" verticalAlignment="center" text="33" textAlignment="center" numberOfLines="0" id="Ava-ch-4ej">
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,11 +39,6 @@
                                     </items>
                                 </group>
                                 <label width="1" alignment="center" text="Label" textAlignment="center" numberOfLines="0" id="bzh-My-6sf"/>
-                                <button width="1" alignment="left" title="Button" id="aAp-v4-eW6">
-                                    <connections>
-                                        <action selector="buttonAction" destination="AgC-eL-Hgc" id="DfZ-05-bAP"/>
-                                    </connections>
-                                </button>
                             </items>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </group>
@@ -59,14 +50,14 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="358.25"/>
+            <point key="canvasLocation" x="220" y="354"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <label width="1" alignment="left" text="Alert Label" textAlignment="center" numberOfLines="0" id="IdU-wH-bcW"/>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
