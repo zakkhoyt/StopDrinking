@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Glance Interface Controller-->
+        <scene sceneID="045-R8-a5j">
+            <objects>
+                <glanceController topTemplateType="groupLeftSmall" bottomTemplateType="extraLargeLargeBody1Footer" id="zaP-PP-fFt">
+                    <items>
+                        <group alignment="left" id="FQh-NM-Z0p"/>
+                        <label alignment="left" text="Label" id="fjP-on-AIG"/>
+                        <label alignment="left" text="Label" id="D1K-g7-xiL"/>
+                        <label alignment="left" text="Label" id="17c-qd-PJ3"/>
+                        <label alignment="left" text="1234" id="Uc4-yw-LmI"/>
+                        <label alignment="left" text="1234" id="ZLS-93-lgF"/>
+                        <label alignment="left" text="Label" id="CFh-Qa-OEQ"/>
+                        <label alignment="left" text="Footer" id="3f5-rQ-k5H"/>
+                    </items>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="217" y="90"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="StopDrinkingWatch_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="FzH-ea-Mnk">
+                            <items>
+                                <group width="1" height="66" alignment="left" backgroundImage="star" contentMode="scaleAspectFit" id="Cs5-BB-hne">
+                                    <items>
+                                        <label width="1" height="1" alignment="center" verticalAlignment="center" text="33" textAlignment="center" numberOfLines="0" id="Ava-ch-4ej">
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <label width="1" alignment="center" text="Label" textAlignment="center" numberOfLines="0" id="bzh-My-6sf"/>
+                            </items>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="badgeImage" destination="Cs5-BB-hne" id="YbC-2h-mEF"/>
+                        <outlet property="badgeLabel" destination="Ava-ch-4ej" id="m8G-2e-eSL"/>
+                        <outlet property="summaryLabel" destination="bzh-My-6sf" id="CSI-yq-dUt"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="354"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label width="1" alignment="left" text="Alert Label" textAlignment="center" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="StopDrinkingWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

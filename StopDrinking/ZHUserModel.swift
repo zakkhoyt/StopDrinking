@@ -87,6 +87,17 @@ class ZHUserModel: NSObject {
         }
     }
     
+    func shortStringForDaysQuit() -> String{
+        let days = daysSinceStartDate()
+        
+        if let days = days {
+            return "\(days) days"
+        } else {
+            return ""
+        }
+    }
+
+    
     func stringForStartDate() -> String {
         if let startDate = startDate {
             let formatString = "MMMM dd, YYYY"
@@ -110,6 +121,18 @@ class ZHUserModel: NSObject {
         return ""
     }
 
+    func shortStringForDrinksMissed() -> String {
+        let days = daysSinceStartDate()
+        if let days = days {
+            if let drinksPerDay = drinksPerDay {
+                let drinks = drinksPerDay * days
+                return "\(drinks) drinks"
+            }
+        }
+        return ""
+    }
+
+    
     func stringForMoneyMissed() -> String {
         let days = daysSinceStartDate()
         if let days = days {
@@ -120,6 +143,18 @@ class ZHUserModel: NSObject {
         }
         return ""
     }
+    
+    func shortStringForMoneyMissed() -> String {
+        let days = daysSinceStartDate()
+        if let days = days {
+            if let moneyPerDay = moneyPerDay {
+                let money = moneyPerDay * days
+                return "$\(money)"
+            }
+        }
+        return ""
+    }
+
 
     func stringForCaloriesMissed() -> String {
         let days = daysSinceStartDate()
@@ -135,15 +170,37 @@ class ZHUserModel: NSObject {
         return ""
     }
     
+    func shortStringForCaloriesMissed() -> String {
+        let days = daysSinceStartDate()
+        if let days = days {
+            if let caloriesPerDrink = caloriesPerDrink {
+                if let drinksPerDay = drinksPerDay {
+                    let calories = days * drinksPerDay * caloriesPerDrink
+                    let fat = calories / 3500
+                    return "\(calories) Cal\n\(fat) lbs"
+                }
+            }
+        }
+        return ""
+    }
+
+    
     // Days quit
     func getDaysQuit() -> UInt {
         return 0
     }
 
     // View (star and colors)
+    #if os(iOS)
     func getStarView() -> UIView {
         return UIView()
     }
+    #else
+        #if os(watchOS)
+    
+        #endif
+    
+    #endif
     
 //     Drinks saved
     func getDrinksSaved() -> UInt {

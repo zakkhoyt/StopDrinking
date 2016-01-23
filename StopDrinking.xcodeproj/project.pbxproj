@@ -11,6 +11,9 @@
 		C60AB6AD1C14FDE200A0358C /* ZHStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */; };
 		C60AB6AF1C154DCB00A0358C /* ZHReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */; };
 		C60AB6B01C155A4700A0358C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C635D7971C0EEA9B00616D3A /* Assets.xcassets */; };
+		C634806B1C53634C0071840D /* ZHAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634806A1C53634C0071840D /* ZHAvatar.swift */; };
+		C634806C1C53639C0071840D /* ZHAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634806A1C53634C0071840D /* ZHAvatar.swift */; };
+		C634806D1C53639C0071840D /* ZHAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634806A1C53634C0071840D /* ZHAvatar.swift */; };
 		C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7901C0EEA9B00616D3A /* AppDelegate.swift */; };
 		C635D7961C0EEA9B00616D3A /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D7941C0EEA9B00616D3A /* Intro.storyboard */; };
 		C635D7981C0EEA9B00616D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C635D7971C0EEA9B00616D3A /* Assets.xcassets */; };
@@ -47,6 +50,17 @@
 		C69A60071C516D1D0057B8D2 /* ZHSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C637066A1C516AEB00319316 /* ZHSummaryView.xib */; };
 		C69A608E1C51E90C0057B8D2 /* ZHCaloriesPerDrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A608D1C51E90C0057B8D2 /* ZHCaloriesPerDrinkTableViewCell.swift */; };
 		C69A60901C51EBF60057B8D2 /* ZHCaloriesTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A608F1C51EBF60057B8D2 /* ZHCaloriesTableViewHeader.swift */; };
+		C69A60FC1C520F9E0057B8D2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69A60FA1C520F9E0057B8D2 /* Interface.storyboard */; };
+		C69A60FE1C520F9E0057B8D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69A60FD1C520F9E0057B8D2 /* Assets.xcassets */; };
+		C69A61051C520F9E0057B8D2 /* StopDrinkingWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C69A61041C520F9E0057B8D2 /* StopDrinkingWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C69A610C1C520F9E0057B8D2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A610B1C520F9E0057B8D2 /* InterfaceController.swift */; };
+		C69A610E1C520F9E0057B8D2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A610D1C520F9E0057B8D2 /* ExtensionDelegate.swift */; };
+		C69A61101C520F9E0057B8D2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A610F1C520F9E0057B8D2 /* NotificationController.swift */; };
+		C69A61121C520F9E0057B8D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69A61111C520F9E0057B8D2 /* Assets.xcassets */; };
+		C69A61161C520F9E0057B8D2 /* StopDrinkingWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C69A60F81C520F9E0057B8D2 /* StopDrinkingWatch.app */; };
+		C69A61291C5211220057B8D2 /* GlanceInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A61281C5211220057B8D2 /* GlanceInterfaceController.swift */; };
+		C69A612C1C52127C0057B8D2 /* ZHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */; };
+		C69A612D1C5212870057B8D2 /* ZHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */; };
 		C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */; };
 		C69FC7311C10E37700A3E3E0 /* ZHRedditThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */; };
 		C69FC7351C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */; };
@@ -113,6 +127,20 @@
 			remoteGlobalIDString = C635D80F1C1013F900616D3A;
 			remoteInfo = StopDrinkingToday;
 		};
+		C69A61061C520F9E0057B8D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C635D7851C0EEA9B00616D3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C69A61031C520F9E0057B8D2;
+			remoteInfo = "StopDrinkingWatch Extension";
+		};
+		C69A61141C520F9E0057B8D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C635D7851C0EEA9B00616D3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C69A60F71C520F9E0057B8D2;
+			remoteInfo = StopDrinkingWatch;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -127,6 +155,28 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C69A611A1C520F9E0057B8D2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C69A61051C520F9E0057B8D2 /* StopDrinkingWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C69A611E1C520F9E0057B8D2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C69A61161C520F9E0057B8D2 /* StopDrinkingWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +186,7 @@
 		C60AB6AB1C14FDE200A0358C /* ZHStringFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHStringFormatter.h; sourceTree = "<group>"; };
 		C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHStringFormatter.m; sourceTree = "<group>"; };
 		C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHReachability.swift; sourceTree = "<group>"; };
+		C634806A1C53634C0071840D /* ZHAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHAvatar.swift; sourceTree = "<group>"; };
 		C635D78D1C0EEA9B00616D3A /* StopDrinking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopDrinking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C635D7901C0EEA9B00616D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C635D7951C0EEA9B00616D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Intro.storyboard; sourceTree = "<group>"; };
@@ -176,6 +227,21 @@
 		C66623F61C114A2400652B42 /* ZHNotificationScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHNotificationScheduler.swift; sourceTree = "<group>"; };
 		C69A608D1C51E90C0057B8D2 /* ZHCaloriesPerDrinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHCaloriesPerDrinkTableViewCell.swift; sourceTree = "<group>"; };
 		C69A608F1C51EBF60057B8D2 /* ZHCaloriesTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHCaloriesTableViewHeader.swift; sourceTree = "<group>"; };
+		C69A60F81C520F9E0057B8D2 /* StopDrinkingWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopDrinkingWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C69A60FB1C520F9E0057B8D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C69A60FD1C520F9E0057B8D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C69A60FF1C520F9E0057B8D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C69A61041C520F9E0057B8D2 /* StopDrinkingWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "StopDrinkingWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C69A610A1C520F9E0057B8D2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		C69A610B1C520F9E0057B8D2 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C69A610D1C520F9E0057B8D2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		C69A610F1C520F9E0057B8D2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		C69A61111C520F9E0057B8D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C69A61131C520F9E0057B8D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C69A61261C5210870057B8D2 /* StopDrinkingWatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StopDrinkingWatch-Bridging-Header.h"; sourceTree = "<group>"; };
+		C69A61281C5211220057B8D2 /* GlanceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlanceInterfaceController.swift; path = ../StopDrinkingWatch/GlanceInterfaceController.swift; sourceTree = "<group>"; };
+		C69A612E1C5213B00057B8D2 /* StopDrinkingWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinkingWatch.entitlements; sourceTree = "<group>"; };
+		C69A612F1C5213C80057B8D2 /* StopDrinkingWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "StopDrinkingWatch Extension.entitlements"; sourceTree = "<group>"; };
 		C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reddit.storyboard; sourceTree = "<group>"; };
 		C69FC7301C10E37700A3E3E0 /* ZHRedditThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHRedditThreadViewController.swift; sourceTree = "<group>"; };
 		C69FC7331C10E42600A3E3E0 /* ZHRedditCommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZHRedditCommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -261,6 +327,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C69A61011C520F9E0057B8D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -280,6 +353,8 @@
 				C635D7A41C0EEA9B00616D3A /* StopDrinkingTests */,
 				C635D7AF1C0EEA9B00616D3A /* StopDrinkingUITests */,
 				C635D8131C1013F900616D3A /* StopDrinkingToday */,
+				C69A60F91C520F9E0057B8D2 /* StopDrinkingWatch */,
+				C69A61081C520F9E0057B8D2 /* StopDrinkingWatch Extension */,
 				C635D78E1C0EEA9B00616D3A /* Products */,
 				670B06C0CC73E30F96A15C10 /* Pods */,
 				CEC67ADF13500CC01298F9F0 /* Frameworks */,
@@ -293,6 +368,8 @@
 				C635D7A11C0EEA9B00616D3A /* StopDrinkingTests.xctest */,
 				C635D7AC1C0EEA9B00616D3A /* StopDrinkingUITests.xctest */,
 				C635D8101C1013F900616D3A /* StopDrinkingToday.appex */,
+				C69A60F81C520F9E0057B8D2 /* StopDrinkingWatch.app */,
+				C69A61041C520F9E0057B8D2 /* StopDrinkingWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -456,6 +533,7 @@
 		C635D8091C10076C00616D3A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C634806A1C53634C0071840D /* ZHAvatar.swift */,
 				C635D8071C10076800616D3A /* ZHAvatarView.swift */,
 				C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */,
 				C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */,
@@ -505,6 +583,41 @@
 				C66623E61C1131E500652B42 /* ZHWebViewController.swift */,
 			);
 			name = Web;
+			sourceTree = "<group>";
+		};
+		C69A60F91C520F9E0057B8D2 /* StopDrinkingWatch */ = {
+			isa = PBXGroup;
+			children = (
+				C69A612E1C5213B00057B8D2 /* StopDrinkingWatch.entitlements */,
+				C69A60FA1C520F9E0057B8D2 /* Interface.storyboard */,
+				C69A60FD1C520F9E0057B8D2 /* Assets.xcassets */,
+				C69A60FF1C520F9E0057B8D2 /* Info.plist */,
+				C69A61261C5210870057B8D2 /* StopDrinkingWatch-Bridging-Header.h */,
+			);
+			path = StopDrinkingWatch;
+			sourceTree = "<group>";
+		};
+		C69A61081C520F9E0057B8D2 /* StopDrinkingWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C69A61281C5211220057B8D2 /* GlanceInterfaceController.swift */,
+				C69A612F1C5213C80057B8D2 /* StopDrinkingWatch Extension.entitlements */,
+				C69A610B1C520F9E0057B8D2 /* InterfaceController.swift */,
+				C69A610D1C520F9E0057B8D2 /* ExtensionDelegate.swift */,
+				C69A610F1C520F9E0057B8D2 /* NotificationController.swift */,
+				C69A61111C520F9E0057B8D2 /* Assets.xcassets */,
+				C69A61131C520F9E0057B8D2 /* Info.plist */,
+				C69A61091C520F9E0057B8D2 /* Supporting Files */,
+			);
+			path = "StopDrinkingWatch Extension";
+			sourceTree = "<group>";
+		};
+		C69A61091C520F9E0057B8D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C69A610A1C520F9E0057B8D2 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C69FC7321C10E37C00A3E3E0 /* RedditThread */ = {
@@ -583,11 +696,13 @@
 				C635D78B1C0EEA9B00616D3A /* Resources */,
 				EBC719AEEB4A649001F564A9 /* Copy Pods Resources */,
 				C635D8201C1013F900616D3A /* Embed App Extensions */,
+				C69A611E1C520F9E0057B8D2 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C635D81B1C1013F900616D3A /* PBXTargetDependency */,
+				C69A61151C520F9E0057B8D2 /* PBXTargetDependency */,
 			);
 			name = StopDrinking;
 			productName = StopDrinking;
@@ -647,13 +762,47 @@
 			productReference = C635D8101C1013F900616D3A /* StopDrinkingToday.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		C69A60F71C520F9E0057B8D2 /* StopDrinkingWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C69A611B1C520F9E0057B8D2 /* Build configuration list for PBXNativeTarget "StopDrinkingWatch" */;
+			buildPhases = (
+				C69A60F61C520F9E0057B8D2 /* Resources */,
+				C69A611A1C520F9E0057B8D2 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C69A61071C520F9E0057B8D2 /* PBXTargetDependency */,
+			);
+			name = StopDrinkingWatch;
+			productName = StopDrinkingWatch;
+			productReference = C69A60F81C520F9E0057B8D2 /* StopDrinkingWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		C69A61031C520F9E0057B8D2 /* StopDrinkingWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C69A61171C520F9E0057B8D2 /* Build configuration list for PBXNativeTarget "StopDrinkingWatch Extension" */;
+			buildPhases = (
+				C69A61001C520F9E0057B8D2 /* Sources */,
+				C69A61011C520F9E0057B8D2 /* Frameworks */,
+				C69A61021C520F9E0057B8D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StopDrinkingWatch Extension";
+			productName = "StopDrinkingWatch Extension";
+			productReference = C69A61041C520F9E0057B8D2 /* StopDrinkingWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		C635D7851C0EEA9B00616D3A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Zakk Hoyt";
 				TargetAttributes = {
@@ -683,6 +832,24 @@
 							};
 						};
 					};
+					C69A60F71C520F9E0057B8D2 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = J7U74N85YF;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+					C69A61031C520F9E0057B8D2 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = J7U74N85YF;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = C635D7881C0EEA9B00616D3A /* Build configuration list for PBXProject "StopDrinking" */;
@@ -702,6 +869,8 @@
 				C635D7A01C0EEA9B00616D3A /* StopDrinkingTests */,
 				C635D7AB1C0EEA9B00616D3A /* StopDrinkingUITests */,
 				C635D80F1C1013F900616D3A /* StopDrinkingToday */,
+				C69A60F71C520F9E0057B8D2 /* StopDrinkingWatch */,
+				C69A61031C520F9E0057B8D2 /* StopDrinkingWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -761,6 +930,23 @@
 				C69A60071C516D1D0057B8D2 /* ZHSummaryView.xib in Resources */,
 				C60AB6B01C155A4700A0358C /* Assets.xcassets in Resources */,
 				C66623EC1C11348200652B42 /* ZHAvatarView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C69A60F61C520F9E0057B8D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C69A60FE1C520F9E0057B8D2 /* Assets.xcassets in Resources */,
+				C69A60FC1C520F9E0057B8D2 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C69A61021C520F9E0057B8D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C69A61121C520F9E0057B8D2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,6 +1031,7 @@
 				C6CA9A911C12446A00F21544 /* PHAsset+Utility.m in Sources */,
 				C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */,
 				C6CA9AC91C141A6200F21544 /* ZHIntroRedditCollectionViewCell.swift in Sources */,
+				C634806B1C53634C0071840D /* ZHAvatar.swift in Sources */,
 				C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -875,6 +1062,21 @@
 				C63706641C515F0E00319316 /* ZHNibDefinable.swift in Sources */,
 				C66623ED1C11348700652B42 /* ZHUserModel.swift in Sources */,
 				C66623EB1C11348200652B42 /* ZHAvatarView.swift in Sources */,
+				C634806C1C53639C0071840D /* ZHAvatar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C69A61001C520F9E0057B8D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C69A61101C520F9E0057B8D2 /* NotificationController.swift in Sources */,
+				C69A610E1C520F9E0057B8D2 /* ExtensionDelegate.swift in Sources */,
+				C69A610C1C520F9E0057B8D2 /* InterfaceController.swift in Sources */,
+				C69A612C1C52127C0057B8D2 /* ZHUserModel.swift in Sources */,
+				C69A61291C5211220057B8D2 /* GlanceInterfaceController.swift in Sources */,
+				C69A612D1C5212870057B8D2 /* ZHUserDefaults.swift in Sources */,
+				C634806D1C53639C0071840D /* ZHAvatar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,6 +1097,16 @@
 			isa = PBXTargetDependency;
 			target = C635D80F1C1013F900616D3A /* StopDrinkingToday */;
 			targetProxy = C635D81A1C1013F900616D3A /* PBXContainerItemProxy */;
+		};
+		C69A61071C520F9E0057B8D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C69A61031C520F9E0057B8D2 /* StopDrinkingWatch Extension */;
+			targetProxy = C69A61061C520F9E0057B8D2 /* PBXContainerItemProxy */;
+		};
+		C69A61151C520F9E0057B8D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C69A60F71C520F9E0057B8D2 /* StopDrinkingWatch */;
+			targetProxy = C69A61141C520F9E0057B8D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -921,6 +1133,14 @@
 				C635D8171C1013F900616D3A /* Base */,
 			);
 			name = Today.storyboard;
+			sourceTree = "<group>";
+		};
+		C69A60FA1C520F9E0057B8D2 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C69A60FB1C520F9E0057B8D2 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1136,6 +1356,87 @@
 			};
 			name = Release;
 		};
+		C69A61181C520F9E0057B8D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "StopDrinkingWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.StopDrinking.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		C69A61191C520F9E0057B8D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "StopDrinkingWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.StopDrinking.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		C69A611C1C520F9E0057B8D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = StopDrinkingWatch_Extension;
+				INFOPLIST_FILE = StopDrinkingWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.StopDrinking.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "StopDrinkingWatch/StopDrinkingWatch-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		C69A611D1C520F9E0057B8D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = StopDrinkingWatch_Extension;
+				INFOPLIST_FILE = StopDrinkingWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaporwarewolf.StopDrinking.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "StopDrinkingWatch/StopDrinkingWatch-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1180,6 +1481,24 @@
 			buildConfigurations = (
 				C635D81E1C1013F900616D3A /* Debug */,
 				C635D81F1C1013F900616D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C69A61171C520F9E0057B8D2 /* Build configuration list for PBXNativeTarget "StopDrinkingWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C69A61181C520F9E0057B8D2 /* Debug */,
+				C69A61191C520F9E0057B8D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C69A611B1C520F9E0057B8D2 /* Build configuration list for PBXNativeTarget "StopDrinkingWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C69A611C1C520F9E0057B8D2 /* Debug */,
+				C69A611D1C520F9E0057B8D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
