@@ -139,11 +139,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHHomeViewController.swift"
-            timestampString = "475113741.319025"
+            timestampString = "475227784.170981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "413"
-            endingLineNumber = "413"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
             landmarkName = "ZHHomeViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -475,11 +475,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StopDrinking/ZHHomeViewController.swift"
-            timestampString = "475113741.319025"
+            timestampString = "475227784.170981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
             landmarkName = "ZHHomeViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1105,54 +1105,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StopDrinkingWatch Extension/ExtensionDelegate.swift"
-            timestampString = "475141506.232326"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "applicationDidFinishLaunching()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StopDrinkingWatch Extension/ExtensionDelegate.swift"
-            timestampString = "475141735.200747"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "applicationDidFinishLaunching()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StopDrinkingWatch Extension/ExtensionDelegate.swift"
-            timestampString = "475141735.82645"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "applicationDidFinishLaunching()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1179,6 +1131,38 @@
             startingLineNumber = "17"
             endingLineNumber = "17"
             landmarkName = "applicationDidFinishLaunching()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StopDrinkingWatch/ZHSummaryInterfaceController.swift"
+            timestampString = "475223230.76375"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "willActivate()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StopDrinkingWatch/ZHSummaryInterfaceController.swift"
+            timestampString = "475223237.207592"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "willActivate()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

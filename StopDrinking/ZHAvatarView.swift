@@ -91,7 +91,8 @@ class ZHAvatarView: UIView, ZHNibDefinable {
     
     func configureViewForDaysQuit(days: UInt) {
         // Image
-        let image = imageForDaysQuit(days)
+
+        let image = ZHAvatar.imageForDaysQuit(days)
         if let i = image {
             let im = i
             shapeImageView.image = im
@@ -101,7 +102,7 @@ class ZHAvatarView: UIView, ZHNibDefinable {
         
         
         // label
-        let count = stringForDaysQuit(days)
+        let count = ZHAvatar.stringForDaysQuit(days)
         if let count = count {
             countLabel.text = "\(count)"
         } else {
@@ -109,7 +110,7 @@ class ZHAvatarView: UIView, ZHNibDefinable {
         }
         
         // label color
-        let color = colorForDaysQuit(days)
+        let color = ZHAvatar.colorForDaysQuit(days)
         if let color = color {
             countLabel.textColor = color
         } else {
@@ -124,61 +125,6 @@ class ZHAvatarView: UIView, ZHNibDefinable {
         
     }
     
-    
-    
-    
-    func stringForDaysQuit(days: UInt) -> String? {
-        if days >= 0 && days <= 6 {
-            return "\(days)d"
-        } else if days >= 7 && days <= 30 {
-            return "\(days / 7)w"
-        } else if days >= 31 && days <= 364 {
-            return "\(days / 31)m"
-        } else if days >= 365 && days <= UInt(UINT32_MAX) {
-            return "\(days / 365)y"
-        }
-        return nil
-    }
-    
-    func imageForDaysQuit(days: UInt) -> UIImage? {
-        if days >= 0 && days <= 30 {
-            return UIImage(named: "circle")
-        } else if days >= 31 {
-            return UIImage(named: "star")
-        }
-        return nil
-    }
-    
-    func colorForDaysQuit(days: UInt) -> UIColor? {
-        if days >= 0 && days <= 6 {
-            return UIColor.blackColor()
-        } else if days >= 7 && days <= 30 {
-            return colorForNumber(days / 7)
-        } else if days >= 31 && days <= 364 {
-            return colorForNumber(days / 31)
-        } else if days >= 365 && days <= UInt(UINT32_MAX) {
-            return UIColor.blackColor()
-        }
-        return nil
-        
-    }
-    
-    
-    
-    func colorForNumber(number: UInt) -> UIColor? {
-        switch number {
-        case 1:
-            return UIColor(colorLiteralRed: 0.0, green: 0.7, blue: 0.0, alpha: 1.0)
-        case 2:
-            return UIColor(colorLiteralRed: 0.7, green: 0.0, blue: 0.0, alpha: 1.0)
-        case 3:
-            return UIColor.blueColor()
-        case 4:
-            return UIColor.purpleColor()
-        default:
-            return UIColor.blackColor()
-        }
-    }
     
 }
 

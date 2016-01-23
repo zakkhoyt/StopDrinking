@@ -25,16 +25,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             //            summaryLabel.setText("No user yet")
             print("no user found")
         }
-
-        
-        
-        let dictionary = NSUserDefaults.standardUserDefaults().objectForKey("currentUser") as? Dictionary<String, AnyObject>
-        if let dictionary = dictionary {
-            let user = ZHUserModel(dictionary: dictionary)
-            print("User found: " + user.stringForDaysQuit())
-        } else {
-            print("no user found")
-        }
     }
 
     func applicationDidBecomeActive() {

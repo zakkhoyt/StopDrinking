@@ -11,6 +11,9 @@
 		C60AB6AD1C14FDE200A0358C /* ZHStringFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */; };
 		C60AB6AF1C154DCB00A0358C /* ZHReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */; };
 		C60AB6B01C155A4700A0358C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C635D7971C0EEA9B00616D3A /* Assets.xcassets */; };
+		C634806B1C53634C0071840D /* ZHAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634806A1C53634C0071840D /* ZHAvatar.swift */; };
+		C634806C1C53639C0071840D /* ZHAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634806A1C53634C0071840D /* ZHAvatar.swift */; };
+		C634806D1C53639C0071840D /* ZHAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C634806A1C53634C0071840D /* ZHAvatar.swift */; };
 		C635D7911C0EEA9B00616D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7901C0EEA9B00616D3A /* AppDelegate.swift */; };
 		C635D7961C0EEA9B00616D3A /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C635D7941C0EEA9B00616D3A /* Intro.storyboard */; };
 		C635D7981C0EEA9B00616D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C635D7971C0EEA9B00616D3A /* Assets.xcassets */; };
@@ -55,8 +58,7 @@
 		C69A61101C520F9E0057B8D2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A610F1C520F9E0057B8D2 /* NotificationController.swift */; };
 		C69A61121C520F9E0057B8D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69A61111C520F9E0057B8D2 /* Assets.xcassets */; };
 		C69A61161C520F9E0057B8D2 /* StopDrinkingWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C69A60F81C520F9E0057B8D2 /* StopDrinkingWatch.app */; };
-		C69A61291C5211220057B8D2 /* ZHGlanceInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A61281C5211220057B8D2 /* ZHGlanceInterfaceController.swift */; };
-		C69A612B1C5212050057B8D2 /* ZHSummaryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A612A1C5212050057B8D2 /* ZHSummaryInterfaceController.swift */; };
+		C69A61291C5211220057B8D2 /* GlanceInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69A61281C5211220057B8D2 /* GlanceInterfaceController.swift */; };
 		C69A612C1C52127C0057B8D2 /* ZHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7F41C0FD17C00616D3A /* ZHUserModel.swift */; };
 		C69A612D1C5212870057B8D2 /* ZHUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C635D7FE1C0FF4B800616D3A /* ZHUserDefaults.swift */; };
 		C69FC72F1C10E35200A3E3E0 /* Reddit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */; };
@@ -184,6 +186,7 @@
 		C60AB6AB1C14FDE200A0358C /* ZHStringFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHStringFormatter.h; sourceTree = "<group>"; };
 		C60AB6AC1C14FDE200A0358C /* ZHStringFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHStringFormatter.m; sourceTree = "<group>"; };
 		C60AB6AE1C154DCB00A0358C /* ZHReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHReachability.swift; sourceTree = "<group>"; };
+		C634806A1C53634C0071840D /* ZHAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHAvatar.swift; sourceTree = "<group>"; };
 		C635D78D1C0EEA9B00616D3A /* StopDrinking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopDrinking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C635D7901C0EEA9B00616D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C635D7951C0EEA9B00616D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Intro.storyboard; sourceTree = "<group>"; };
@@ -236,8 +239,7 @@
 		C69A61111C520F9E0057B8D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C69A61131C520F9E0057B8D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C69A61261C5210870057B8D2 /* StopDrinkingWatch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StopDrinkingWatch-Bridging-Header.h"; sourceTree = "<group>"; };
-		C69A61281C5211220057B8D2 /* ZHGlanceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHGlanceInterfaceController.swift; sourceTree = "<group>"; };
-		C69A612A1C5212050057B8D2 /* ZHSummaryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHSummaryInterfaceController.swift; sourceTree = "<group>"; };
+		C69A61281C5211220057B8D2 /* GlanceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlanceInterfaceController.swift; path = ../StopDrinkingWatch/GlanceInterfaceController.swift; sourceTree = "<group>"; };
 		C69A612E1C5213B00057B8D2 /* StopDrinkingWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = StopDrinkingWatch.entitlements; sourceTree = "<group>"; };
 		C69A612F1C5213C80057B8D2 /* StopDrinkingWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "StopDrinkingWatch Extension.entitlements"; sourceTree = "<group>"; };
 		C69FC72E1C10E35200A3E3E0 /* Reddit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reddit.storyboard; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 		C635D8091C10076C00616D3A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C634806A1C53634C0071840D /* ZHAvatar.swift */,
 				C635D8071C10076800616D3A /* ZHAvatarView.swift */,
 				C635D80A1C100AFF00616D3A /* ZHAvatarView.xib */,
 				C69FC7371C10E47100A3E3E0 /* ZHRedditCommentTableViewCell.swift */,
@@ -590,8 +593,6 @@
 				C69A60FD1C520F9E0057B8D2 /* Assets.xcassets */,
 				C69A60FF1C520F9E0057B8D2 /* Info.plist */,
 				C69A61261C5210870057B8D2 /* StopDrinkingWatch-Bridging-Header.h */,
-				C69A61281C5211220057B8D2 /* ZHGlanceInterfaceController.swift */,
-				C69A612A1C5212050057B8D2 /* ZHSummaryInterfaceController.swift */,
 			);
 			path = StopDrinkingWatch;
 			sourceTree = "<group>";
@@ -599,6 +600,7 @@
 		C69A61081C520F9E0057B8D2 /* StopDrinkingWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C69A61281C5211220057B8D2 /* GlanceInterfaceController.swift */,
 				C69A612F1C5213C80057B8D2 /* StopDrinkingWatch Extension.entitlements */,
 				C69A610B1C520F9E0057B8D2 /* InterfaceController.swift */,
 				C69A610D1C520F9E0057B8D2 /* ExtensionDelegate.swift */,
@@ -1029,6 +1031,7 @@
 				C6CA9A911C12446A00F21544 /* PHAsset+Utility.m in Sources */,
 				C635D8021C0FF86000616D3A /* ZHHomeSummaryTableViewCell.swift in Sources */,
 				C6CA9AC91C141A6200F21544 /* ZHIntroRedditCollectionViewCell.swift in Sources */,
+				C634806B1C53634C0071840D /* ZHAvatar.swift in Sources */,
 				C635D7FF1C0FF4B800616D3A /* ZHUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1059,6 +1062,7 @@
 				C63706641C515F0E00319316 /* ZHNibDefinable.swift in Sources */,
 				C66623ED1C11348700652B42 /* ZHUserModel.swift in Sources */,
 				C66623EB1C11348200652B42 /* ZHAvatarView.swift in Sources */,
+				C634806C1C53639C0071840D /* ZHAvatar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1068,11 +1072,11 @@
 			files = (
 				C69A61101C520F9E0057B8D2 /* NotificationController.swift in Sources */,
 				C69A610E1C520F9E0057B8D2 /* ExtensionDelegate.swift in Sources */,
-				C69A612B1C5212050057B8D2 /* ZHSummaryInterfaceController.swift in Sources */,
 				C69A610C1C520F9E0057B8D2 /* InterfaceController.swift in Sources */,
 				C69A612C1C52127C0057B8D2 /* ZHUserModel.swift in Sources */,
-				C69A61291C5211220057B8D2 /* ZHGlanceInterfaceController.swift in Sources */,
+				C69A61291C5211220057B8D2 /* GlanceInterfaceController.swift in Sources */,
 				C69A612D1C5212870057B8D2 /* ZHUserDefaults.swift in Sources */,
+				C634806D1C53639C0071840D /* ZHAvatar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,27 +27,39 @@
             </objects>
             <point key="canvasLocation" x="215" y="26"/>
         </scene>
-        <!--Summary Interface Controller-->
+        <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="ZHSummaryInterfaceController" customModule="StopDrinkingWatch_Extension">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="StopDrinkingWatch_Extension">
                     <items>
-                        <imageView width="76" height="76" alignment="center" image="star" id="UFO-tl-QmE"/>
                         <group width="1" alignment="left" layout="vertical" id="FzH-ea-Mnk">
                             <items>
-                                <label width="1" alignment="center" text="Label" textAlignment="center" id="bzh-My-6sf"/>
-                                <label width="1" alignment="center" text="Label" textAlignment="center" id="IOk-as-JGt"/>
-                                <label width="1" alignment="center" text="Label" textAlignment="center" id="UF2-3D-yc3"/>
-                                <label width="1" alignment="center" text="Label" textAlignment="center" id="HqN-pz-xYK"/>
+                                <group width="1" height="94.5" alignment="left" backgroundImage="star" contentMode="scaleAspectFit" id="Cs5-BB-hne">
+                                    <items>
+                                        <label width="1" height="1" alignment="center" verticalAlignment="center" text="33" textAlignment="center" numberOfLines="0" id="Ava-ch-4ej">
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <label width="1" alignment="center" text="Label" textAlignment="center" numberOfLines="0" id="bzh-My-6sf"/>
+                                <button width="1" alignment="left" title="Button" id="aAp-v4-eW6">
+                                    <connections>
+                                        <action selector="buttonAction" destination="AgC-eL-Hgc" id="DfZ-05-bAP"/>
+                                    </connections>
+                                </button>
                             </items>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="summaryLabel" destination="bzh-My-6sf" id="4LT-Vj-oRp"/>
+                        <outlet property="badgeImage" destination="Cs5-BB-hne" id="YbC-2h-mEF"/>
+                        <outlet property="badgeLabel" destination="Ava-ch-4ej" id="m8G-2e-eSL"/>
+                        <outlet property="summaryLabel" destination="bzh-My-6sf" id="CSI-yq-dUt"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="354.5"/>
+            <point key="canvasLocation" x="220" y="358.25"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

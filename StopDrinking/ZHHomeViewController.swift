@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import WatchConnectivity
 
 enum ZHHomeViewControllerTableViewSection: Int{
     case Status = 0
@@ -21,6 +21,9 @@ let SegueMainToRedditThread = "SegueMainToRedditThread"
 
 
 class ZHHomeViewController: UIViewController {
+    var session: WCSession? = nil
+    
+    
     var category: RKSubredditCategory = .Hot
     var user: ZHUserModel? = nil
 
@@ -40,8 +43,11 @@ class ZHHomeViewController: UIViewController {
         resetReddit()
     }
     
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        startSession()
+        sendUserToWatch()
     }
     
     
@@ -79,6 +85,32 @@ class ZHHomeViewController: UIViewController {
     
     
     // MARK: Private methods
+    
+    private func startSession() {
+        if(WCSession.isSupported()) {
+            session = WCSession.defaultSession()
+            session?.delegate = self
+            session?.activateSession()
+        }
+    }
+    
+    private func sendUserToWatch() {
+        if let session = session where session.reachable {
+            if let userDicationary = user?.dictionaryRepresentation() {
+                session.sendMessage(["user": userDicationary], replyHandler: { (replies: [String : AnyObject]) -> Void in
+                    if let reply = replies["reply"] as? String {
+                        print("Received reply: " + reply)
+                    } else {
+                        print("Failed to parse message")
+                    }
+                    }, errorHandler: { (error: NSError) -> Void in
+                        print("error: " + error.localizedDescription)
+                })                
+            }
+        }
+    }
+
+    
     
     func setupTableView() {
         
@@ -324,5 +356,18 @@ extension ZHHomeViewController: UIScrollViewDelegate {
         } else if scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.bounds.size.height {
             getNextPageOfPosts()
         }
+    }
+}
+
+extension ZHHomeViewController: WCSessionDelegate {
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        if let user = message["user"] as? String {
+            print("received message: " + user)
+            let reply = ["reply": "a reply message"]
+            replyHandler(reply)
+        } else {
+            print("Failed to parse message")
+        }
+        
     }
 }
