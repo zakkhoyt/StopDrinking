@@ -14,10 +14,9 @@ enum ZHRedditThreadViewControllerSection: Int {
 }
 
 
-class ZHRedditThreadViewController: UIViewController {
-    
+class ZHRedditThreadViewController: UIViewController
 
-
+{
     @IBOutlet var treeModel: TreeTable!
     @IBOutlet weak var treeView: UITableView!
     var expandedItems = NSMutableDictionary()
@@ -193,7 +192,6 @@ extension ZHRedditThreadViewController: TreeTableDataSource {
         if let expanded = expanded {
             return expanded
         } else {
-            print("No entry for expandedItem")
             return false
         }
     }
@@ -230,6 +228,7 @@ extension ZHRedditThreadViewController: TreeTableDataSource {
                 return comments.count
             } else {
                 assert(false)
+                return 0
             }
         default:
             assert(false)
@@ -255,9 +254,9 @@ extension ZHRedditThreadViewController: TreeTableDataSource {
             let cell = tableView.dequeueReusableCellWithIdentifier("ZHRedditCommentTableViewCell") as? ZHRedditCommentTableViewCell
 
             if let _ = expandedItems[indexPath] {
-                cell?.animateExpand(0.1)
+                cell?.animateExpand(0.0)
             } else {
-                cell?.animateCollapse(0.1)
+                cell?.animateCollapse(0.0)
             }
             
             let comment = self.commentForIndexPath(indexPath)
@@ -278,7 +277,10 @@ extension ZHRedditThreadViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath tableIndexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(tableIndexPath, animated: false)
         let treeIndexPath = tableView.treeIndexPathFromTablePath(tableIndexPath)
-        let expanded = tableView.isExpanded(tableIndexPath)
+        var expanded = false
+        if let _ = expandedItems[treeIndexPath] {
+            expanded = true
+        }
         
         switch tableIndexPath.section {
 

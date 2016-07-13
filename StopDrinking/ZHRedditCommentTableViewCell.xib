@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -26,17 +26,6 @@
                         <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3n-El-AcX">
-                        <rect key="frame" x="8" y="9" width="30" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="56b-j5-gzT"/>
-                            <constraint firstAttribute="width" constant="30" id="AjJ-nv-uv0"/>
-                        </constraints>
-                        <state key="normal" backgroundImage="arrow"/>
-                        <connections>
-                            <action selector="expandButtonTouchUpInside:" destination="soh-w6-T2x" eventType="touchUpInside" id="iKu-af-Tzq"/>
-                        </connections>
-                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBe-Bc-gSc" userLabel="BorderView">
                         <rect key="frame" x="0.0" y="0.0" width="645" height="1"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,6 +57,17 @@
                             <outlet property="delegate" destination="-1" id="XNG-OV-0Iw"/>
                         </connections>
                     </textView>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3n-El-AcX">
+                        <rect key="frame" x="8" y="9" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="56b-j5-gzT"/>
+                            <constraint firstAttribute="width" constant="30" id="AjJ-nv-uv0"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="arrow"/>
+                        <connections>
+                            <action selector="expandButtonTouchUpInside:" destination="soh-w6-T2x" eventType="touchUpInside" id="iKu-af-Tzq"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>

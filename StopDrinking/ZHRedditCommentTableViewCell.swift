@@ -66,8 +66,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
     }
     
     func renderCellContents() {
-        
-        
         if let comment = comment {
             if comment.replies.count > 0 {
                 expandButton.hidden = false
@@ -91,8 +89,6 @@ class ZHRedditCommentTableViewCell: UITableViewCell {
         } else {
             
         }
-        
-        
     }
     
     
