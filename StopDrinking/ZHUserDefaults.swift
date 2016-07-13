@@ -29,6 +29,11 @@ class ZHUserDefaults: NSObject {
         } else {
             return nil
         }
+    }
+    
+    func removeCurrentUser() {
+        groupDefaults?.removeObjectForKey("currentUser")
+        groupDefaults?.synchronize()
 
     }
     

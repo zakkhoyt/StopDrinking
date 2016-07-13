@@ -66,14 +66,9 @@ class ZHIntroViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func scrollToNextPage() {
-        var x = collectionView.contentOffset.x
-        x += collectionView.bounds.width
-        let offset = CGPoint(x: x, y: 0)
-        collectionView.setContentOffset(offset, animated: true)
-    }
 
+    // MARK: IBActions
+    
     @IBAction func next(sender: AnyObject) {
         scrollToNextPage()
     }
@@ -81,13 +76,29 @@ class ZHIntroViewController: UIViewController {
     @IBAction func closeBarButtonAction(sender: AnyObject) {
         self.introCompleteHandler(user: self.user!)
     }
+
     
+    // MARK: Helpers
+    
+    func scrollToNextPage() {
+        var x = collectionView.contentOffset.x
+        x += collectionView.bounds.width
+        let offset = CGPoint(x: x, y: 0)
+        collectionView.setContentOffset(offset, animated: true)
+    }
+    
+
+    
+    func indexPathForCenterPoint() -> NSIndexPath? {
+        let point = CGPoint(x: collectionView.center.x + collectionView.contentOffset.x,
+                            y: collectionView.center.y + collectionView.contentOffset.y)
+        return collectionView.indexPathForItemAtPoint(point)
+    }
 }
 
 extension ZHIntroViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let page = round(scrollView.contentOffset.x / scrollView.bounds.size.width)
-//        let page = Int(scrollView.contentOffset.x / scrollView.bounds.size.width)
         pageControl.currentPage = Int(page)
     }
 }
@@ -99,6 +110,7 @@ extension ZHIntroViewController: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
+        
         switch indexPath.item {
         case 0:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZHIntroWelcomeCollectionViewCell", forIndexPath: indexPath) as? ZHIntroWelcomeCollectionViewCell
