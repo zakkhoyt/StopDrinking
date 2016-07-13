@@ -61,7 +61,7 @@ class ZHRedditThreadViewController: UIViewController
         let attr = [NSForegroundColorAttributeName : UIColor.yellowColor()]
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attr)
         refreshControl?.tintColor = UIColor.yellowColor()
-        refreshControl?.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: #selector(ZHRedditThreadViewController.refreshControlAction(_:)), forControlEvents: UIControlEvents.ValueChanged)
         treeView.addSubview(refreshControl!)
         
         let nib = UINib(nibName: "ZHRedditCommentTableViewCell", bundle: NSBundle.mainBundle())

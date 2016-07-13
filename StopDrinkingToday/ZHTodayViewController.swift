@@ -18,7 +18,7 @@ class ZHTodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
 
         
-        let tap = UITapGestureRecognizer(target: self, action: "tapHandler:")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ZHTodayViewController.tapHandler(_:)))
         self.view.addGestureRecognizer(tap)
     }
 

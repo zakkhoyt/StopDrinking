@@ -101,13 +101,11 @@ extension InterfaceController: WCSessionDelegate {
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         if let userDictionary = message["user"] as? Dictionary<String, AnyObject> {
-            if let user = ZHUserModel(dictionary: userDictionary) as? ZHUserModel {
-                self.user = user
-                ZHUserDefaults.sharedInstance.setCurrentUser(user)
-                refreshUI()
-            } else {
-                print("Failed to create user from dictionary")
-            }
+            let user = ZHUserModel(dictionary: userDictionary)
+            self.user = user
+            ZHUserDefaults.sharedInstance.setCurrentUser(user)
+            refreshUI()
+
         } else {
             print("Could not parse user message")
         }

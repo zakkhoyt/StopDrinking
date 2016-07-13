@@ -77,9 +77,8 @@
   tableView.tableViewDelegate = (id<UITableViewDelegate>)self;
   tableView.dataSource = (id<UITableViewDataSource>)self;
   tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//  tableView.backgroundColor = [UIColor clearColor];
-    self.backgroundColor = [UIColor darkGrayColor];
-    tableView.backgroundColor = [UIColor darkGrayColor];
+  tableView.backgroundColor = [UIColor clearColor];
+
   [self addSubview:tableView];
   [self setTableView:tableView];
 

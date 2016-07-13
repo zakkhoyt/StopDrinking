@@ -127,7 +127,7 @@ class ZHHomeViewController: UIViewController {
         let attr = [NSForegroundColorAttributeName : UIColor.yellowColor()]
         refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh", attributes: attr)
         refreshControl?.tintColor = UIColor.yellowColor()
-        refreshControl?.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: #selector(ZHHomeViewController.refreshControlAction(_:)), forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl!)
     }
     

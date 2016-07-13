@@ -20,9 +20,9 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Mantle (1.5.6):
-    - Mantle/extobjc (= 1.5.6)
-  - Mantle/extobjc (1.5.6)
+  - Mantle (1.5.8):
+    - Mantle/extobjc (= 1.5.8)
+  - Mantle/extobjc (1.5.8)
   - MBProgressHUD (0.9.1)
   - RATreeView (2.0.1)
   - RedditKit (2.0.0-beta1):
@@ -52,7 +52,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  Mantle: a197db93e0f1e36194b1fdbc078219a8492eaef2
+  Mantle: f03b2b606c3f0cabd80214ad8a2fed6b464a7359
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   RATreeView: 42cd7a96cad0dea6330a9fd98b4b7a5222a01083
   RedditKit: c006313e6a8585bf4afaec0a9903447d3ed61080
@@ -60,4 +60,6 @@ SPEC CHECKSUMS:
   RFMarkdownTextView: 14f5a603264cb78b61050d6cb7f87a1da8ceb8cd
   RSDayFlow: d9dbd8a7f0d57019a482220e5f3ed9d836fdb397
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: 1274e3d24280a6eb0def1ba80240861b86b4e332
+
+COCOAPODS: 1.0.0

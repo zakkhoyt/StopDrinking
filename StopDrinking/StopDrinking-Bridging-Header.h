@@ -4,7 +4,8 @@
 
 #import "RSDFDatePickerView.h"
 #import "MBProgressHUD.h"
-#import "RedditKit.h"
+//#import "RedditKit.h"
+#import <RedditKit/RedditKit.h>
 #import "RATreeView.h"
 #import "RFMarkdownTextView.h"
 #import "NSDate+ZH.h"

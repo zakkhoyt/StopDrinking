@@ -19,7 +19,7 @@ enum ZHSwiftLogType: String {
     case Callstack = "callstack"
 }
 
-func ZHLog(type: ZHSwiftLogType, log: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
+func ZHLog(type: ZHSwiftLogType, log: String, file: String = #file, function: String = #function, line: Int = #line) {
     let typeString: String = type.rawValue
     
     switch type {
