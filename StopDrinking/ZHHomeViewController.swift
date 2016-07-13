@@ -266,14 +266,15 @@ class ZHHomeViewController: UIViewController {
         ac.popoverPresentationController?.barButtonItem = sender as? UIBarButtonItem
         
 
+        ac.addAction(UIAlertAction(title: "About this app", style: .Default, handler: { (action) -> Void in
+            self.performSegueWithIdentifier(SegueMainToAbout, sender: nil)
+        }))
+
         
         ac.addAction(UIAlertAction(title: "Your settings", style: .Default, handler: { (action) -> Void in
             self.performSegueWithIdentifier(SegueMainToIntro, sender: nil)
         }))
         
-        ac.addAction(UIAlertAction(title: "About this app", style: .Default, handler: { (action) -> Void in
-            self.performSegueWithIdentifier(SegueMainToAbout, sender: nil)
-        }))
 
         ac.addAction(UIAlertAction(title: "Sign out", style: .Default, handler: { (action) -> Void in
             ZHUserDefaults.sharedInstance.removeCurrentUser()

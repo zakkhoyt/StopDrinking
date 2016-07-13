@@ -24,3 +24,24 @@ Mixers:
 * Juice: 125
 * Tonic: 80
 * Soda: 130
+
+
+
+
+
+
+
+
+
+
+
+Written by Zakk Hoyt
+vaporwarewolf@gmail.com
+github.com/zakkhoyt
+
+
+Powered by
+/r/stopdrinking
+RedditKit
+https://github.com/genkernel/TreeView
+Swift 2.2

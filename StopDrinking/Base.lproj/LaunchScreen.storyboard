@@ -80,4 +80,5 @@
     <resources>
         <image name="StopDrinking_320" width="320" height="320"/>
     </resources>
+    <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

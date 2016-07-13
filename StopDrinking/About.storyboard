@@ -38,46 +38,38 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="rGq-2p-OrQ">
-                                        <rect key="frame" x="0.0" y="108" width="600" height="70"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="rGq-2p-OrQ">
+                                        <rect key="frame" x="0.0" y="108" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rGq-2p-OrQ" id="B6e-bi-sVQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzh-YM-cUM">
-                                                    <rect key="frame" x="268" y="8" width="64.5" height="13.5"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bKm-AM-hS9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Powered by
+/r/stopdrinking
+RedditKit
+https://github.com/genkernel/TreeView
+Swift 2.2</string>
                                                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/r/stopdrinking" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybN-s7-A4D">
-                                                    <rect key="frame" x="262" y="27.5" width="77.5" height="13.5"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RedditKit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDg-X9-CgI">
-                                                    <rect key="frame" x="276" y="48" width="48.5" height="13.5"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ybN-s7-A4D" firstAttribute="centerX" secondItem="B6e-bi-sVQ" secondAttribute="centerX" id="6UM-cP-i2Q"/>
-                                                <constraint firstItem="hDg-X9-CgI" firstAttribute="top" secondItem="ybN-s7-A4D" secondAttribute="bottom" constant="7.5" id="Gqb-RB-Wto"/>
-                                                <constraint firstItem="hDg-X9-CgI" firstAttribute="centerX" secondItem="B6e-bi-sVQ" secondAttribute="centerX" id="beL-ac-Gid"/>
-                                                <constraint firstAttribute="bottom" secondItem="hDg-X9-CgI" secondAttribute="bottom" constant="8" id="cwl-MU-9sf"/>
-                                                <constraint firstItem="ybN-s7-A4D" firstAttribute="top" secondItem="fzh-YM-cUM" secondAttribute="bottom" constant="6" id="kcR-gL-o5G"/>
-                                                <constraint firstItem="fzh-YM-cUM" firstAttribute="top" secondItem="B6e-bi-sVQ" secondAttribute="topMargin" id="mfN-Sy-rLc"/>
-                                                <constraint firstItem="fzh-YM-cUM" firstAttribute="centerX" secondItem="B6e-bi-sVQ" secondAttribute="centerX" id="s4u-hx-rTj"/>
+                                                <constraint firstItem="bKm-AM-hS9" firstAttribute="leading" secondItem="B6e-bi-sVQ" secondAttribute="leadingMargin" constant="-8" id="IsE-nF-WKm"/>
+                                                <constraint firstItem="bKm-AM-hS9" firstAttribute="top" secondItem="B6e-bi-sVQ" secondAttribute="topMargin" constant="-8" id="X4G-Jx-2lP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bKm-AM-hS9" secondAttribute="bottom" constant="-8" id="ZBW-uR-OWL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bKm-AM-hS9" secondAttribute="trailing" constant="-8" id="eXD-XJ-7BL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="128" id="FRz-5Q-JWt">
-                                        <rect key="frame" x="0.0" y="178" width="600" height="128"/>
+                                        <rect key="frame" x="0.0" y="208" width="600" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FRz-5Q-JWt" id="pA9-zn-AL8">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
@@ -100,7 +92,7 @@
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="70" id="po8-II-XqF">
-                                        <rect key="frame" x="0.0" y="306" width="600" height="70"/>
+                                        <rect key="frame" x="0.0" y="336" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="po8-II-XqF" id="pk9-p2-hiK">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
@@ -109,8 +101,9 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oCh-ic-jD2">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Open Source: https://github.com/zakkhoyt/StopDrinking
-Contributions welcome. Art, pull requests, and text are all welcome.
+                                                    <string key="text">Written by Zakk Hoyt
+vaporwarewolf@gmail.com
+github.com/zakkhoyt
 </string>
                                                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -128,7 +121,7 @@ Contributions welcome. Art, pull requests, and text are all welcome.
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="90" id="u8Y-kj-3xp">
-                                        <rect key="frame" x="0.0" y="376" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="406" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u8Y-kj-3xp" id="NTD-iq-yFL">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
@@ -137,10 +130,6 @@ Contributions welcome. Art, pull requests, and text are all welcome.
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BUV-Hw-Nac">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Coming soon:
-* Log into your reddit account
-* Post replies
-* Upvote/Downvote</string>
                                                     <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -198,4 +187,5 @@ Contributions welcome. Art, pull requests, and text are all welcome.
     <resources>
         <image name="StopDrinking_128" width="128" height="128"/>
     </resources>
+    <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
