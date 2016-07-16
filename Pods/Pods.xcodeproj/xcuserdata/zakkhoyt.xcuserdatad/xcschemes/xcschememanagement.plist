@@ -22,7 +22,17 @@
 		<key>Pods-StopDrinking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
+		</dict>
+		<key>Pods-StopDrinkingWatch Extension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-StopDrinkingWatch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>RATreeView.xcscheme</key>
 		<dict>
@@ -52,6 +62,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0EE656BA495A1D1E53525C65769FFE71</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>29C0BB24A1DAD77715039E7A79118823</key>
 		<dict>
 			<key>primary</key>
@@ -68,6 +83,11 @@
 			<true/>
 		</dict>
 		<key>6A83B55CB115A970668838A04818D34D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>73E23CF236DECD17087C062AC4D34802</key>
 		<dict>
 			<key>primary</key>
 			<true/>

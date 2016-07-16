@@ -14,3 +14,12 @@ end
 target :StopDrinking do
   appPods
 end
+
+
+target :StopDrinkingWatch do
+    
+end
+
+target :'StopDrinkingWatch Extension' do
+    
+end
